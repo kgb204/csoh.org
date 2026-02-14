@@ -35,73 +35,99 @@ def remove_attr(tag: str, attr: str) -> str:
 
 def calculate_sri_hash(file_path: Path) -> str:
     """Calculate SHA-384 SRI hash for a file.
-    
+
     Args:
         file_path: Path to the file to hash
-        
+
     Returns:
         SRI hash in the format: sha384-{base64_hash}
     """
     sha384 = hashlib.sha384()
     with open(file_path, 'rb') as f:
         sha384.update(f.read())
-    
+
     hash_bytes = sha384.digest()
     hash_b64 = base64.b64encode(hash_bytes).decode('ascii')
     return f"sha384-{hash_b64}"
 
 
-def update_html_file(html_path: Path, hashes: Dict[str, str]) -> bool:
-    """Update SRI hashes in an HTML file.
-    
+def calculate_cache_bust(file_path: Path) -> str:
+    """Calculate a short hash for cache-busting query param.
+
+    Returns:
+        First 8 hex characters of the file's SHA-256 hash.
+    """
+    sha256 = hashlib.sha256()
+    with open(file_path, 'rb') as f:
+        sha256.update(f.read())
+    return sha256.hexdigest()[:8]
+
+
+def update_html_file(html_path: Path, hashes: Dict[str, str],
+                     cache_busts: Dict[str, str]) -> bool:
+    """Update SRI hashes and cache-bust params in an HTML file.
+
     Args:
         html_path: Path to the HTML file
         hashes: Dictionary mapping file names to their SRI hashes
-        
+        cache_busts: Dictionary mapping file names to cache-bust strings
+
     Returns:
         True if file was modified, False otherwise
     """
     with open(html_path, 'r', encoding='utf-8') as f:
         content = f.read()
-    
+
     original_content = content
-    
-    # Update or add style.css SRI/crossorigin on matching <link> tags
+
+    # Update style.css: SRI hash, cache-bust param, remove crossorigin
     if 'style.css' in hashes:
         link_pattern = re.compile(
-            r'<link\b[^>]*\bhref=["\'](?:\.?/)?style\.css["\'][^>]*>',
+            r'<link\b[^>]*\bhref=(["\'])(?:\.?/)?style\.css(?:\?[^"\']*)?(\1)[^>]*>',
             re.IGNORECASE,
         )
 
         def replace_style_link(match: re.Match) -> str:
             tag = match.group(0)
+            # Update href to include cache-bust query param
+            tag = re.sub(
+                r'(href=["\'])(?:\.?/)?style\.css(?:\?[^"\']*)?(["\'])',
+                rf'\g<1>/style.css?v={cache_busts["style.css"]}\2',
+                tag,
+            )
             tag = upsert_attr(tag, 'integrity', hashes['style.css'])
             tag = remove_attr(tag, 'crossorigin')
             return tag
 
         content = link_pattern.sub(replace_style_link, content)
 
-    # Update or add main.js SRI/crossorigin on matching <script> tags
+    # Update main.js: SRI hash, cache-bust param, remove crossorigin
     if 'main.js' in hashes:
         script_pattern = re.compile(
-            r'<script\b[^>]*\bsrc=["\'](?:\.?/)?main\.js["\'][^>]*>',
+            r'<script\b[^>]*\bsrc=(["\'])(?:\.?/)?main\.js(?:\?[^"\']*)?(\1)[^>]*>',
             re.IGNORECASE,
         )
 
         def replace_main_script(match: re.Match) -> str:
             tag = match.group(0)
+            # Update src to include cache-bust query param
+            tag = re.sub(
+                r'(src=["\'])(?:\.?/)?main\.js(?:\?[^"\']*)?(["\'])',
+                rf'\g<1>/main.js?v={cache_busts["main.js"]}\2',
+                tag,
+            )
             tag = upsert_attr(tag, 'integrity', hashes['main.js'])
             tag = remove_attr(tag, 'crossorigin')
             return tag
 
         content = script_pattern.sub(replace_main_script, content)
-    
+
     # Write back if changed
     if content != original_content:
         with open(html_path, 'w', encoding='utf-8') as f:
             f.write(content)
         return True
-    
+
     return False
 
 
@@ -116,37 +142,39 @@ def main():
         'main.js': repo_root / 'main.js',
     }
     
-    # Calculate SRI hashes
+    # Calculate SRI hashes and cache-bust strings
     print("Calculating SRI hashes...")
     hashes = {}
+    cache_busts = {}
     missing_files = []
-    
+
     for name, path in files_to_hash.items():
         if not path.exists():
             missing_files.append(str(path))
             continue
-        
+
         sri_hash = calculate_sri_hash(path)
         hashes[name] = sri_hash
-        print(f"  {name}: {sri_hash}")
-    
+        cache_busts[name] = calculate_cache_bust(path)
+        print(f"  {name}: {sri_hash} (v={cache_busts[name]})")
+
     # If any required files are missing, exit with error
     if missing_files:
         print(f"Error: Required files not found: {', '.join(missing_files)}", file=sys.stderr)
         return 1
-    
+
     # Find all HTML files recursively in the repository
     html_files = list(repo_root.rglob('*.html'))
-    
+
     if not html_files:
         print("Warning: No HTML files found", file=sys.stderr)
         return 0
-    
+
     # Update each HTML file
     print(f"\nUpdating {len(html_files)} HTML files...")
     modified_count = 0
     for html_path in sorted(html_files):
-        if update_html_file(html_path, hashes):
+        if update_html_file(html_path, hashes, cache_busts):
             print(f"  ✓ Updated: {html_path.name}")
             modified_count += 1
         else:
