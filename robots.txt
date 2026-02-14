@@ -1,0 +1,18 @@
+# Cloud Security Office Hours - Robots.txt
+# Updated: February 2026
+
+User-agent: *
+Allow: /
+
+Sitemap: https://csoh.org/sitemap.xml
+
+# Allow image crawling
+User-agent: Googlebot-Image
+Allow: /img/
+
+# Rate-limit aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

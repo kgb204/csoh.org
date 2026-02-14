@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="description"
+        content="Guide for contributing to CSOH.org. Add news sources, suggest improvements, report bugs, or contribute content. Beginner-friendly—no coding experience needed.">
+    <meta name="keywords"
+        content="contribute, CSOH, pull request, GitHub, how to contribute, bug report, feature request, news sources">
+    <title>Contributing to CSOH.org - Cloud Security Office Hours</title>
+
+    <link rel="canonical" href="https://csoh.org/contribute.html">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="theme-color" content="#2c3e50">
+
+    <meta property="og:title" content="Contributing to CSOH.org">
+    <meta property="og:description"
+        content="Beginner-friendly guide for contributing to CSOH. Add news sources, improve content, report bugs, or suggest features.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://csoh.org/contribute.html">
+    <meta property="og:image" content="https://csoh.org/banner.png">
+
+    <link rel="preload" href="/style.css" as="style"
+        integrity="sha384-hHmucINBFdJIi046/zq1WghRnn3rZbepGH80nHdmF/iin1gnle4GL8cZWXmlRSXc" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css"
+        integrity="sha384-hHmucINBFdJIi046/zq1WghRnn3rZbepGH80nHdmF/iin1gnle4GL8cZWXmlRSXc" crossorigin="anonymous">
+
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://csoh.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contribute",
+          "item": "https://csoh.org/contribute.html"
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>CSOH</h1>
+                    <p>Cloud Security Office Hours</p>
+                </div>
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="sessions.html">Zoom Sessions</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contribute.html" class="active" aria-current="page">Contribute</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero hero--compact">
+        <img src="banner.png" alt="Cloud Security Office Hours Banner" width="1200" height="400" class="hero-img"
+            decoding="async">
+        <h2>🤝 Contributing to CSOH.org</h2>
+        <p>Your ideas and contributions help us serve 2000+ cloud security professionals</p>
+        <div class="cta-buttons">
+            <a href="#types" class="btn btn-primary">See Contribution Types</a>
+            <a href="contribute-resources.html" class="btn btn-secondary">Add a Resource</a>
+        </div>
+    </section>
+
+    <main class="container contribute-article">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Contribute</span>
+        </div>
+
+        <div class="highlight-box">
+            <strong>✨ No coding required!</strong> This guide covers all changes you can suggest to the website—whether
+            it's adding news sources, fixing typos, improving descriptions, or reporting bugs. You don't need to be a
+            developer.
+        </div>
+
+        <div class="toc">
+            <h3>📖 What You'll Learn</h3>
+            <ol>
+                <li><a href="#types">Types of contributions</a></li>
+                <li><a href="#news">Adding news sources</a></li>
+                <li><a href="#content">Improving content</a></li>
+                <li><a href="#reorganize">Reorganizing resources</a></li>
+                <li><a href="#issues">Reporting issues</a></li>
+                <li><a href="#pull-request">Creating pull requests</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ol>
+            <p class="mb-0"><strong>⏱️ Time needed:</strong> 5-20 minutes depending on what you're
+                contributing</p>
+        </div>
+
+        <section id="types">
+            <h2>🎯 Types of Contributions</h2>
+            <p>Here are six common ways you can help improve CSOH:</p>
+
+            <div class="contribution-grid">
+                <div class="contribution-type">
+                    <h4>📰 Adding News Sources</h4>
+                    <p>Suggest RSS feeds we should pull news articles from</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> A security blog, vendor blog with good research, news aggregator
+                    </div>
+                    <p><strong>Why it matters:</strong> More sources = better, more diverse news for readers</p>
+                    <p><a href="#news">See how →</a></p>
+                </div>
+
+                <div class="contribution-type">
+                    <h4>📝 Improving Descriptions</h4>
+                    <p>Fix grammar, clarify confusing text, update outdated info</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Fix a typo, improve clarity, update a certification, clarify a tool's
+                        purpose
+                    </div>
+                    <p><strong>Why it matters:</strong> Clear text helps people learn and find what they need</p>
+                    <p><a href="#content">See how →</a></p>
+                </div>
+
+                <div class="contribution-type">
+                    <h4>🏷️ Better Categorization</h4>
+                    <p>Suggest reorganizing, adding tags, or moving resources</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> A resource has wrong tags, combine similar sections, new tag would
+                        help discovery
+                    </div>
+                    <p><strong>Why it matters:</strong> Good organization helps people discover resources</p>
+                    <p><a href="#reorganize">See how →</a></p>
+                </div>
+
+                <div class="contribution-type">
+                    <h4>🏠 Homepage Improvements</h4>
+                    <p>Suggest changes to the main page or any page's header/footer</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Update outdated content, add new featured resources, clarify
+                        navigation
+                    </div>
+                    <p><strong>Why it matters:</strong> The homepage is people's first impression of CSOH</p>
+                    <p><a href="#content">See how →</a></p>
+                </div>
+
+                <div class="contribution-type">
+                    <h4>🐛 Bug Reports</h4>
+                    <p>Report broken links, display problems, or errors</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Broken link, text looks wrong on mobile, button doesn't work
+                    </div>
+                    <p><strong>Why it matters:</strong> We want the site to work perfectly for everyone</p>
+                    <p><a href="#issues">See how →</a></p>
+                </div>
+
+                <div class="contribution-type">
+                    <h4>✨ Feature Suggestions</h4>
+                    <p>Ideas for new pages, tools, or functionality</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> New page for interview prep, "recently added" section, community
+                        ratings
+                    </div>
+                    <p><strong>Why it matters:</strong> Great ideas help CSOH grow and stay useful</p>
+                    <p><a href="#issues">See how →</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>📰 Adding News Sources</h2>
+            <p>News articles power our <a href="news.html">News page</a>. The more sources we have, the better articles
+                our readers see.</p>
+
+            <h3>Step 1: Find the News Script</h3>
+            <ol>
+                <li>Go to <a href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/update_news.py"
+                        target="_blank" rel="noopener noreferrer">update_news.py</a> on GitHub</li>
+                <li>Click the pencil ✏️ icon to edit</li>
+            </ol>
+
+            <h3>Step 2: Add Your Feed</h3>
+            <p>Look for this section:</p>
+            <div class="code-block">
+                FEEDS = [
+                {"name": "AWS Security Blog", "url": "https://aws.amazon.com/blogs/security/feed/"},
+                {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/feed/"},
+                # ... more feeds
+                ]
+            </div>
+
+            <p>Add your new feed to the list:</p>
+            <div class="code-block">
+                FEEDS = [
+                {"name": "AWS Security Blog", "url": "https://aws.amazon.com/blogs/security/feed/"},
+                {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/feed/"},
+                {"name": "Your Source Name", "url": "https://your-source.com/feed.xml"}, # ← Add here
+                ]
+            </div>
+
+            <h3>Step 3: Commit and Create a Pull Request</h3>
+            <ol>
+                <li>Scroll down and click <strong>"Commit changes"</strong></li>
+                <li>Write a message: <code>"Add [Source Name] to news feeds"</code></li>
+                <li>Create a pull request (see <a href="#pull-request">Creating a Pull Request</a> below)</li>
+            </ol>
+
+            <div class="highlight-box">
+                <strong>💡 Tips:</strong>
+                <ul class="mb-0">
+                    <li>Many websites have <strong>RSS feeds</strong> (look for an RSS icon 🔘)</li>
+                    <li>Try common URLs: <code>/feed</code>, <code>/feed.xml</code>, or <code>/rss</code></li>
+                    <li>Check the feed actually contains cloud security articles</li>
+                    <li>Use <strong>reputable sources</strong> (established news sites, vendor blogs, research orgs)
+                    </li>
+                    <li>Try <a href="https://www.feedly.com/" target="_blank" rel="noopener noreferrer">Feed Finder</a>
+                        to discover feeds</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="content">
+            <h2>📝 Editing Content & Descriptions</h2>
+            <p>Whether you're fixing a typo or rewriting a section, the process is the same.</p>
+
+            <h3>Step 1: Find the File to Edit</h3>
+            <p>Different content is in different files:</p>
+            <ul>
+                <li><strong>Resource descriptions:</strong> <a
+                        href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/resources.html"
+                        target="_blank" rel="noopener noreferrer">resources.html</a></li>
+                <li><strong>Homepage content:</strong> <a
+                        href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/index.html" target="_blank"
+                        rel="noopener noreferrer">index.html</a></li>
+                <li><strong>News page:</strong> <a
+                        href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/news.html" target="_blank"
+                        rel="noopener noreferrer">news.html</a></li>
+                <li><strong>Sessions info:</strong> <a
+                        href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/sessions.html"
+                        target="_blank" rel="noopener noreferrer">sessions.html</a></li>
+                <li><strong>Past presentations:</strong> <a
+                        href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/presentations.html"
+                        target="_blank" rel="noopener noreferrer">presentations.html</a></li>
+            </ul>
+
+            <h3>Step 2: Open the File for Editing</h3>
+            <ol>
+                <li>Click on the file name above</li>
+                <li>Click the pencil ✏️ icon to edit</li>
+            </ol>
+
+            <h3>Step 3: Find What You're Changing</h3>
+            <p>Use <code>Ctrl+F</code> (or <code>Cmd+F</code> on Mac) to search for the text you're changing.</p>
+            <p>For example, if you're fixing a resource description, search for the resource name.</p>
+
+            <h3>Step 4: Make Your Edit</h3>
+            <p>Just type! You're editing text like a document:</p>
+            <ul>
+                <li><strong>Fix typos:</strong> Select wrong word, delete it, type the right one</li>
+                <li><strong>Improve descriptions:</strong> Select old text, replace with better wording</li>
+                <li><strong>Update info:</strong> Change dates, numbers, or outdated content</li>
+            </ul>
+
+            <p><strong>Example - Fixing a typo:</strong></p>
+            <div class="code-block">
+                <!-- BEFORE -->
+                &lt;p&gt;Learn cloud security with hands-on laps.&lt;/p&gt;
+
+                <!-- AFTER -->
+                &lt;p&gt;Learn cloud security with hands-on labs.&lt;/p&gt;
+            </div>
+
+            <h3>Step 5: Commit and Create a Pull Request</h3>
+            <ol>
+                <li>Scroll down and click <strong>"Commit changes"</strong></li>
+                <li>Write a helpful message explaining what you changed</li>
+                <li>Create a pull request (see <a href="#pull-request">below</a>)</li>
+            </ol>
+        </section>
+
+        <section id="reorganize">
+            <h2>🏷️ Suggesting Reorganization</h2>
+            <p>Want to suggest moving a resource, adding new tags, or reorganizing sections?</p>
+
+            <h3>Option A: Edit the File Directly</h3>
+            <p>If it's a simple change (moving a resource, fixing a tag):</p>
+            <ol>
+                <li>Open <a href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/resources.html"
+                        target="_blank" rel="noopener noreferrer">resources.html</a></li>
+                <li>Find the resource card</li>
+                <li>Change the tag lines to add/remove/fix tags</li>
+                <li>Move the resource block to a different section if needed</li>
+                <li>Commit with a message like: "Move [Resource] to correct category"</li>
+            </ol>
+
+            <h3>Option B: Suggest It in a Pull Request</h3>
+            <p>If you're not sure exactly how to do it, make the changes and explain your reasoning:</p>
+            <div class="code-block">
+                **Suggestion:** Move Redis Labs to "Security Tools" instead of "Labs"
+                **Reason:** Redis Labs is a vendor tool, not a training lab
+                **Benefit:** Better organization helps users find what they're looking for
+            </div>
+        </section>
+
+        <section id="issues">
+            <h2>🐛 Reporting Issues & Feature Requests</h2>
+
+            <p>Found a bug or have a great idea? You can create an <strong>Issue</strong> on GitHub—no coding required!
+            </p>
+
+            <h3>Step 1: Go to Issues</h3>
+            <ol>
+                <li>Visit <a href="https://github.com/CloudSecurityOfficeHours/csoh.org" target="_blank"
+                        rel="noopener noreferrer">github.com/CloudSecurityOfficeHours/csoh.org</a></li>
+                <li>Click the <strong>"Issues"</strong> tab</li>
+            </ol>
+
+            <h3>Step 2: Create a New Issue</h3>
+            <ol>
+                <li>Click <strong>"New Issue"</strong></li>
+                <li>Give it a clear title
+                    <div class="examples">
+                        Examples: "Broken link in Resources page" • "Mobile display issue on homepage" • "Feature:
+                        Interview prep resources"
+                    </div>
+                </li>
+                <li>Describe the problem or suggestion</li>
+                <li>Click <strong>"Submit new issue"</strong></li>
+            </ol>
+
+            <p><strong>Example for a bug report:</strong></p>
+            <div class="code-block">
+                **What's broken:**
+                The link to CloudGoat doesn't work
+
+                **Where it is:**
+                Resources page, CTF section
+
+                **What should happen:**
+                The link should go to https://github.com/RhinoSecurityLabs/cloudgoat
+
+                **What's happening instead:**
+                404 error / page doesn't load
+            </div>
+
+            <p><strong>Example for a feature request:</strong></p>
+            <div class="code-block">
+                **The idea:**
+                Create a new "Interview Prep" category with resources for cloud
+                security job interviews
+
+                **Why it would help:**
+                Many community members ask interview questions. A dedicated section
+                would help them prepare.
+
+                **Example content:**
+                - Behavioral interview guides
+                - Technical interview prep
+                - Mock interview platforms
+            </div>
+
+            <div class="highlight-box">
+                <strong>That's it!</strong> Maintainers will discuss your issue and take action.
+            </div>
+        </section>
+
+        <section id="pull-request">
+            <h2>📝 Creating a Pull Request</h2>
+
+            <div class="highlight-box">
+                <strong>What's a pull request (PR)?</strong> It's how you submit your changes for review. Think of it
+                like raising your hand in class to share an idea.
+            </div>
+
+            <h3>Beginner-Friendly Method: GitHub's Web Interface</h3>
+            <p>You don't need command-line. Here's the easiest way:</p>
+
+            <div class="step-box">
+                <div class="step-number">1</div>
+                <h3>Fork the Repository</h3>
+                <ol>
+                    <li>Go to <a href="https://github.com/CloudSecurityOfficeHours/csoh.org" target="_blank"
+                            rel="noopener noreferrer">github.com/CloudSecurityOfficeHours/csoh.org</a></li>
+                    <li>Click <strong>"Fork"</strong> button (top-right)</li>
+                    <li>This creates your own copy of the project</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">2</div>
+                <h3>Make Your Changes</h3>
+                <p>In your fork:</p>
+                <ol>
+                    <li>Click on a file you want to edit</li>
+                    <li>Click the pencil ✏️ icon</li>
+                    <li>Make your changes</li>
+                    <li>Click <strong>"Commit changes"</strong></li>
+                    <li>Write a commit message</li>
+                    <li>Click <strong>"Commit changes"</strong> again</li>
+                </ol>
+                <p><strong>Repeat for any other files you're changing.</strong></p>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">3</div>
+                <h3>Create the Pull Request</h3>
+                <ol>
+                    <li>Go back to your fork's main page</li>
+                    <li>You'll see a banner: <strong>"This branch is ahead of CloudSecurityOfficeHours:main"</strong>
+                    </li>
+                    <li>Click <strong>"Contribute"</strong> → <strong>"Open pull request"</strong></li>
+                    <li>Check the changes look right</li>
+                    <li>Add a <strong>Title</strong>: What did you change?
+                        <div class="examples">
+                            "Add Snyk to Security Tools" • "Fix HomeLab description" • "Add 5 new news sources"
+                        </div>
+                    </li>
+                    <li>Add a <strong>Description</strong>: Why did you change it?
+                        <div class="code-block">
+                            **What I changed:**
+                            - Added Snyk to Security Tools section
+                            - Tagged with: Tool, CSPM, Vulnerability Management
+
+                            **Why:**
+                            Snyk is a popular tool that wasn't listed. Many community members use it.
+                        </div>
+                    </li>
+                    <li>Click <strong>"Create pull request"</strong></li>
+                </ol>
+            </div>
+
+            <div class="highlight-box">
+                <strong>🎉 Done!</strong> A maintainer will review your contribution.
+            </div>
+
+            <h3>Using Git Commands (Optional)</h3>
+            <p>If you're comfortable with command-line, use Git:</p>
+            <div class="code-block">
+                # Clone the repository
+                git clone https://github.com/CloudSecurityOfficeHours/csoh.org.git
+                cd csoh.org
+
+                # Create a new branch
+                git checkout -b add-news-sources
+
+                # Edit files
+                nano update_news.py # or use your editor
+
+                # Stage changes
+                git add .
+
+                # Commit
+                git commit -m "Add TechCrunch security feed"
+
+                # Push to your fork
+                git push origin add-news-sources
+
+                # Go to GitHub and create a pull request
+            </div>
+
+            <p><strong>Learning resources:</strong></p>
+            <ul>
+                <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics" target="_blank"
+                        rel="noopener noreferrer">Git Basics</a></li>
+                <li><a href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf"
+                        target="_blank" rel="noopener noreferrer">GitHub Git Cheat Sheet</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📋 Pull Request Checklist</h2>
+            <p>Before you submit, make sure:</p>
+            <ul>
+                <li>✅ Changes are clear — Someone can understand what you did</li>
+                <li>✅ Spelling/grammar is correct — Your PR text is well-written</li>
+                <li>✅ Links work — Test any URLs you're adding</li>
+                <li>✅ Formatting looks right — Check your edits look good</li>
+                <li>✅ Commit message is helpful — Clearly describe what you did</li>
+                <li>✅ You're not changing too much — Keep each PR focused on one thing</li>
+            </ul>
+        </section>
+
+        <section id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <p><strong>Q: Do I need to be a developer?</strong></p>
+                <p>A: No! All examples above use GitHub's web interface. No coding experience needed.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: What if I make a mistake?</strong></p>
+                <p>A: You can edit your PR before it's merged. Or maintainers can suggest fixes. Mistakes are learning
+                    opportunities!</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: How long until my change is published?</strong></p>
+                <p>A: Usually 1-3 days. Maintainers review each PR to maintain quality.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: Can I suggest changes I don't know how to make?</strong></p>
+                <p>A: Yes! Open an issue with your suggestion. You don't have to code it.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: What if my pull request gets rejected?</strong></p>
+                <p>A: That's okay! You'll get feedback on why. You can discuss it or try again.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: Can I make multiple changes at once?</strong></p>
+                <p>A: It's better to do one thing per PR. But you can have multiple PRs open.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: What qualifies as a good news source?</strong></p>
+                <p>A: Reputable sources with regular cloud security content. Not spam, not paywalled (usually).</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: Can I suggest a resource for myself/my company?</strong></p>
+                <p>A: Sure! Disclose that it's yours. If it's genuinely useful to the community, it'll be accepted.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: How do I know if something is "good enough" to suggest?</strong></p>
+                <p>A: If it would help a cloud security professional learn or advance, it's worth suggesting. The
+                    community decides!</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎁 Recognition</h2>
+            <p>Contributors get:</p>
+            <ul>
+                <li>Your name and link in our contributor credits</li>
+                <li>Recognition in community posts</li>
+                <li>Gratitude from 2000+ cloud security professionals</li>
+                <li>The satisfaction of helping people learn</li>
+            </ul>
+        </section>
+
+        <section class="cta-section">
+            <h2>🚀 Ready to Contribute?</h2>
+            <div class="mt-1">
+                <p><a href="https://github.com/CloudSecurityOfficeHours/csoh.org/issues/new" target="_blank"
+                rel="noopener noreferrer" class="cta-link">📝
+                        Report an Issue</a></p>
+            <p><a href="contribute-resources.html" class="cta-link">📚
+                        Add a Resource</a></p>
+                <p><a href="https://github.com/CloudSecurityOfficeHours/csoh.org" target="_blank"
+                rel="noopener noreferrer" class="cta-link">🍴
+                        Fork on GitHub</a></p>
+            </div>
+            <p class="mt-1 text-muted">Every contribution—from fixing a typo to suggesting a whole new
+                section—helps our community grow.</p>
+        </section>
+
+        <section id="help">
+            <h2>📞 Need Help?</h2>
+            <div class="link-box">
+                <ul>
+                    <li><a href="https://discord.gg/AVzAY97D8E" target="_blank" rel="noopener noreferrer">💬 Join our
+                            Discord community</a></li>
+                    <li><a href="https://github.com/CloudSecurityOfficeHours/csoh.org/discussions" target="_blank"
+                            rel="noopener noreferrer">💭 Ask in GitHub Discussions</a></li>
+                    <li><a href="contribute-resources.html">📚 Learn how to add resources</a></li>
+                    <li><a href="https://github.com/CloudSecurityOfficeHours/csoh.org" target="_blank"
+                            rel="noopener noreferrer">🍴 View the GitHub repository</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="resources.html">All Resources</a></li>
+                    <li><a href="sessions.html">Zoom Sessions</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="index.html#about">About CSOH</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="https://discord.gg/AVzAY97D8E" target="_blank" rel="noopener noreferrer">Discord
+                            Server</a></li>
+                    <li><a href="https://sendfox.com/CSOH" target="_blank" rel="noopener noreferrer">Zoom
+                            Registration</a></li>
+                    <li><a href="https://paypal.me/cloudsec" target="_blank" rel="noopener noreferrer">Support CSOH</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contributing</h3>
+                <ul>
+                    <li><a href="contribute-resources.html">Add a Resource</a></li>
+                    <li><a href="contribute.html">General Contributions</a></li>
+                    <li><a href="https://github.com/CloudSecurityOfficeHours/csoh.org" target="_blank"
+                            rel="noopener noreferrer">GitHub</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>About CSOH</h3>
+                <p>Vendor-neutral community for cloud security professionals. Weekly Zoom sessions, 260+ curated
+                    resources, and 120+ news articles.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023-2026 Cloud Security Office Hours. All resources provided for educational purposes.</p>
+        </div>
+    </footer>
+
+    <script src="/main.js" integrity="sha384-VaUAqRVQ58o0f0dhp0pLfb614ANkPxICJQVo7yxLMPO+t4vZqh3FGkOClf9Nja0/"
+        crossorigin="anonymous" defer></script>
+</body>
+
+</html>

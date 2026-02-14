@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="description"
+        content="Guide for adding cloud security resources to CSOH. Step-by-step instructions for beginners—no coding experience required. Add CTF challenges, tools, certifications, and labs.">
+    <meta name="keywords"
+        content="contribute, CSOH, cloud security resources, pull request, GitHub, how to contribute, resource guide">
+    <title>How to Add a Resource - Cloud Security Office Hours</title>
+
+    <link rel="canonical" href="https://csoh.org/contribute-resources.html">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="theme-color" content="#2c3e50">
+
+    <meta property="og:title" content="How to Add a Resource - CSOH">
+    <meta property="og:description"
+        content="Beginner-friendly guide for adding cloud security resources to CSOH. No coding experience needed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://csoh.org/contribute-resources.html">
+    <meta property="og:image" content="https://csoh.org/banner.png">
+
+    <link rel="preload" href="/style.css" as="style"
+        integrity="sha384-hHmucINBFdJIi046/zq1WghRnn3rZbepGH80nHdmF/iin1gnle4GL8cZWXmlRSXc" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css"
+        integrity="sha384-hHmucINBFdJIi046/zq1WghRnn3rZbepGH80nHdmF/iin1gnle4GL8cZWXmlRSXc" crossorigin="anonymous">
+
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://csoh.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contribute",
+          "item": "https://csoh.org/contribute-resources.html"
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>CSOH</h1>
+                    <p>Cloud Security Office Hours</p>
+                </div>
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="sessions.html">Zoom Sessions</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contribute.html" class="active" aria-current="page">Contribute</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero hero--compact">
+        <img src="banner.png" alt="Cloud Security Office Hours Banner" width="1200" height="400" class="hero-img"
+            decoding="async">
+        <h2>📚 How to Add a Cloud Security Resource</h2>
+        <p>A beginner-friendly guide for sharing resources with 2000+ cloud security professionals</p>
+        <div class="cta-buttons">
+            <a href="#quick-start" class="btn btn-primary">Get Started</a>
+            <a href="contribute.html" class="btn btn-secondary">Other Contributions</a>
+        </div>
+    </section>
+
+    <main class="container contribute-article">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="contribute.html">Contribute</a>
+            <span>/</span>
+            <span>Add Resources</span>
+        </div>
+
+        <div class="toc">
+            <h3>📖 What You'll Learn</h3>
+            <ol>
+                <li><a href="#what-is-resource">Understanding what you're doing</a></li>
+                <li><a href="#what-is-resource-type">Finding and preparing your resource</a></li>
+                <li><a href="#quick-start">Adding it to the website</a></li>
+                <li><a href="#pull-request">Creating a pull request</a></li>
+                <li><a href="#faq">Getting your resource published</a></li>
+            </ol>
+            <p class="mb-0"><strong>⏱️ Time needed:</strong> ~10-15 minutes for your first contribution</p>
+        </div>
+
+        <div class="highlight-box">
+            <strong>✨ Good news:</strong> You don't need to be a programmer. You just need to find a cool resource, copy
+            and paste some text, and follow a few simple steps.
+        </div>
+
+        <section id="what-is-resource">
+            <h2>🎯 What is a Resource?</h2>
+            <p>A <strong>resource</strong> is anything that helps cloud security professionals learn, practice, or
+                advance their careers. Examples:</p>
+
+            <ul class="font-up">
+                <li>🎯 <strong>CTF Challenges</strong> — Intentionally broken cloud setups you practice hacking</li>
+                <li>🛠️ <strong>Security Tools</strong> — Software that scans or protects cloud infrastructure</li>
+                <li>🎓 <strong>Certifications</strong> — Official courses that teach cloud security skills</li>
+                <li>🧪 <strong>Hands-On Labs</strong> — Interactive exercises where you learn by doing</li>
+                <li>💼 <strong>Job Boards</strong> — Places to find cloud security careers</li>
+                <li>🤖 <strong>AI Security Resources</strong> — Tools and training for AI/ML security</li>
+            </ul>
+        </section>
+
+        <section id="quick-start">
+            <h2>🚀 Quick Start: Add a Resource in 5 Steps</h2>
+
+            <div class="step-box">
+                <div class="step-number">1</div>
+                <h3>Gather Your Resource Info</h3>
+                <p>Before you do anything technical, write down these details about your resource:</p>
+                <div class="code-block">
+                    Name: [e.g., "CloudGoat"]
+                    URL: [e.g., "https://github.com/RhinoSecurityLabs/cloudgoat"]
+                    Description: [1-2 sentences explaining what it is and why it's useful]
+                    Tags: [Select from the list below]
+                    Category: [Pick one main category]
+                </div>
+                <p><strong>Example:</strong></p>
+                <div class="code-block">
+                    Name: OWASP EKS Goat
+                    URL: https://github.com/OWASP/www-project-eks-goat
+                    Description: Intentionally vulnerable AWS EKS environment with 20+ attack-defense
+                    labs simulating real-world misconfigurations and IAM flaws.
+                    Tags: CTF, Labs & Training, AWS, Kubernetes
+                    Category: CTF Challenges
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">2</div>
+                <h3>Pick Your Tags</h3>
+                <p>Tags help people find resources. Pick 2-5 tags from this list:</p>
+
+                <p><strong>Resource Types:</strong></p>
+                <div>
+                    <span class="tag-example ctf">CTF</span>
+                    <span class="tag-example lab">Labs & Training</span>
+                    <span class="tag-example tool">Tool</span>
+                    <span class="tag-example certification">Certification</span>
+                    <span class="tag-example job">Job Search</span>
+                </div>
+
+                <p class="mt-1"><strong>Cloud Platforms:</strong></p>
+                <div>
+                    <span class="tag-example">AWS</span>
+                    <span class="tag-example">Azure</span>
+                    <span class="tag-example">GCP</span>
+                    <span class="tag-example">Kubernetes</span>
+                    <span class="tag-example">Multi-Cloud</span>
+                </div>
+
+                <p class="mt-1"><strong>Security Focus:</strong></p>
+                <div>
+                    <span class="tag-example">Vulnerability Testing</span>
+                    <span class="tag-example">Penetration Testing</span>
+                    <span class="tag-example">Cloud Scanning</span>
+                    <span class="tag-example">Secrets Management</span>
+                    <span class="tag-example">Compliance</span>
+                    <span class="tag-example">AI Security</span>
+                    <span class="tag-example">IAM</span>
+                    <span class="tag-example">DevSecOps</span>
+                </div>
+
+                <p class="mt-1"><strong>Other:</strong></p>
+                <div>
+                    <span class="tag-example">NEW 2025</span>
+                    <span class="tag-example">Free</span>
+                    <span class="tag-example">Paid</span>
+                    <span class="tag-example">Open Source</span>
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">3</div>
+                <h3>Get a Preview Image (Optional)</h3>
+                <p>Preview images are the small screenshot shown for each resource. They're optional—the site works
+                    without them!</p>
+
+                <p><strong>Easy option:</strong> Just skip this step! The website will automatically generate
+                    thumbnails.</p>
+
+                <p><strong>Better option:</strong> Provide a custom preview image:
+                <ul>
+                    <li>Take a screenshot of the resource's homepage</li>
+                    <li>Save it as a JPG file (about 150KB or smaller)</li>
+                    <li>Name it something clear, like: <code>cloudgoat-preview.jpg</code></li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">4</div>
+                <h3>Edit the Resources HTML File</h3>
+                <p><strong>Don't be scared!</strong> HTML is just text with special labels. Here's what you need to do:
+                </p>
+
+                <ol>
+                    <li>Go to <a href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/resources.html"
+                            target="_blank" rel="noopener noreferrer">resources.html</a> on GitHub</li>
+                    <li>Find the section for your resource's category</li>
+                    <li>Copy an <strong>existing resource card</strong> (we'll show you how)</li>
+                    <li>Paste it and change the details</li>
+                </ol>
+
+                <p><strong>Here's what a resource card looks like:</strong></p>
+                <div class="code-block">
+                    &lt;a href="PASTE_YOUR_URL_HERE" class="card-link" target="_blank" rel="noopener noreferrer"&gt;
+                    &lt;div class="resource-card"&gt;
+                    &lt;h3&gt;Your Resource Name&lt;/h3&gt;
+                    &lt;p&gt;Your description (1-2 sentences)&lt;/p&gt;
+                    &lt;div class="resource-tags"&gt;
+                    &lt;span class="tag ctf"&gt;CTF&lt;/span&gt;
+                    &lt;span class="tag"&gt;AWS&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;/a&gt;
+                </div>
+
+                <p><strong>What to change:</strong></p>
+                <ul>
+                    <li><code>PASTE_YOUR_URL_HERE</code> → Your resource's URL</li>
+                    <li><code>Your Resource Name</code> → The actual name</li>
+                    <li><code>Your description...</code> → What you wrote in Step 1</li>
+                    <li>The <code>&lt;span class="tag"&gt;</code> lines → Your tags</li>
+                </ul>
+
+                <p><strong>Tag styling:</strong> Some tags have special colors:
+                <ul>
+                    <li><code>&lt;span class="tag ctf"&gt;</code> = CTF (teal)</li>
+                    <li><code>&lt;span class="tag tool"&gt;</code> = Tool (purple)</li>
+                    <li><code>&lt;span class="tag lab"&gt;</code> = Lab/Training (green)</li>
+                    <li><code>&lt;span class="tag ai-security"&gt;</code> = AI Security (orange)</li>
+                    <li><code>&lt;span class="tag certification"&gt;</code> = Certification (blue)</li>
+                    <li><code>&lt;span class="tag job"&gt;</code> = Job Search (pink)</li>
+                    <li><code>&lt;span class="tag"&gt;</code> = Regular tag (gray)</li>
+                </ul>
+                </p>
+
+                <div class="highlight-box">
+                    <strong>💡 Don't worry about images yet!</strong> The site will handle that automatically. If you
+                    want to add a custom preview image, see Step 5.
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">5</div>
+                <h3>Add a Preview Image (Optional)</h3>
+                <p>If you took a screenshot in Step 3, follow these sub-steps:</p>
+
+                <h4>5a. Upload Your Image</h4>
+                <ol>
+                    <li>Go to the <a href="https://github.com/CloudSecurityOfficeHours/csoh.org/tree/main/img/previews"
+                            target="_blank" rel="noopener noreferrer">img/previews/</a> folder on GitHub</li>
+                    <li>Click "Add file" → "Upload files"</li>
+                    <li>Drag/drop your screenshot</li>
+                    <li>Write a commit message: "Add preview image for [Resource Name]"</li>
+                    <li>Click "Commit changes"</li>
+                </ol>
+
+                <h4>5b. Edit preview-mapping.json</h4>
+                <ol>
+                    <li>Open <a
+                            href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/preview-mapping.json"
+                            target="_blank" rel="noopener noreferrer">preview-mapping.json</a></li>
+                    <li>Click the pencil icon to edit</li>
+                    <li>Find this section and add a new line:</li>
+                </ol>
+                <div class="code-block">
+                    {
+                    "https://your-resource-url.com": "img/previews/your-preview-image.jpg",
+                    "https://another-resource.com": "img/previews/another-preview.jpg"
+                    }
+                </div>
+                <ol start="4">
+                    <li>Scroll down and click "Commit changes"</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="pull-request">
+            <h2>🍴 Creating a Pull Request (GitHub)</h2>
+
+            <div class="highlight-box">
+                <strong>What's a pull request?</strong> It's how you ask a project to accept your changes. Think of it
+                as raising your hand in class to share something.
+            </div>
+
+            <h3>Beginner-Friendly Method: GitHub's Web Interface</h3>
+            <p>You don't need to install anything or learn command-line. Here's the easiest way:</p>
+
+            <h4>Step A: Fork the Repository</h4>
+            <ol>
+                <li>Go to <a href="https://github.com/CloudSecurityOfficeHours/csoh.org" target="_blank"
+                        rel="noopener noreferrer">github.com/CloudSecurityOfficeHours/csoh.org</a></li>
+                <li>Click the <strong>"Fork"</strong> button (top-right corner)</li>
+                <li>This creates your own copy of the project</li>
+            </ol>
+
+            <h4>Step B: Edit the Files</h4>
+            <ol>
+                <li>In <strong>your fork</strong>, click on <code>resources.html</code></li>
+                <li>Click the pencil icon ✏️ to edit</li>
+                <li>Find where you want to add your resource (scroll to the right category section)</li>
+                <li>Paste your resource card (see Step 4 above)</li>
+                <li>Scroll down and click <strong>"Commit changes"</strong></li>
+                <li>Add a message like: "Add [Resource Name] to resources"</li>
+                <li>Click <strong>"Commit changes"</strong> again</li>
+            </ol>
+
+            <p><strong>Repeat for <code>preview-mapping.json</code></strong> if you have a custom preview image.</p>
+
+            <h4>Step C: Create the Pull Request</h4>
+            <ol>
+                <li>Go back to <strong>your fork</strong> homepage</li>
+                <li>You'll see a yellow banner saying <strong>"This branch is ahead of
+                        CloudSecurityOfficeHours:main"</strong></li>
+                <li>Click the <strong>"Contribute"</strong> button → <strong>"Open pull request"</strong></li>
+                <li>Add a title: "Add [Resource Name]"</li>
+                <li>Add a description:</li>
+            </ol>
+            <div class="code-block">
+                **Resource:** [Name]
+                **URL:** [Link]
+                **Category:** [Category]
+
+                This resource teaches [what it teaches]. It would be great
+                for people learning about [what topic].
+            </div>
+            <ol start="6">
+                <li>Click <strong>"Create pull request"</strong></li>
+            </ol>
+
+            <div class="highlight-box">
+                <strong>That's it!</strong> The maintainers will review your contribution.
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <p><strong>Q: Do I need to be a developer to contribute?</strong></p>
+                <p>A: No! This guide is specifically designed for non-technical people. You just need to copy/paste and
+                    follow instructions.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: What if I make a mistake?</strong></p>
+                <p>A: No problem! That's why pull requests exist. You can edit your PR before it's merged, and
+                    maintainers can help fix issues.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: How long until my resource is published?</strong></p>
+                <p>A: Usually within a few days. Maintainers review every contribution.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: Can I add multiple resources at once?</strong></p>
+                <p>A: Yes! But start with one to get comfortable with the process.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: What if the preview image doesn't show?</strong></p>
+                <p>A: That's okay! The website will auto-generate a thumbnail. You can always improve it later.</p>
+            </div>
+
+            <div class="faq-item">
+                <p><strong>Q: What makes a "good" resource?</strong></p>
+                <p>A: Anything that helps cloud security professionals learn, practice, or advance their careers. Our
+                    community votes with their clicks!</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>💡 Pro Tips</h2>
+            <ul>
+                <li><strong>Check if it already exists:</strong> Search <code>resources.html</code> to make sure your
+                    resource isn't already there</li>
+                <li><strong>Write clear descriptions:</strong> Pretend you're explaining this to a friend who's new to
+                    cloud security</li>
+                <li><strong>Tag appropriately:</strong> Pick tags that help people find it (be specific!)</li>
+                <li><strong>Test your link:</strong> Make sure the URL you're adding actually works</li>
+                <li><strong>Welcome feedback:</strong> Maintainers might suggest improvements—that's normal!</li>
+                <li><strong>Start with one:</strong> Add 1-2 resources first. You'll get the hang of it</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📞 Need Help?</h2>
+            <div class="link-box">
+                <p>💬 <strong>Questions?</strong></p>
+                <ul class="mt-1">
+                    <li><a href="https://discord.gg/AVzAY97D8E" target="_blank" rel="noopener noreferrer">Join our
+                            Discord community</a></li>
+                    <li><a href="https://github.com/CloudSecurityOfficeHours/csoh.org/issues" target="_blank"
+                            rel="noopener noreferrer">Open an issue on GitHub</a></li>
+                    <li><a href="contribute.html">See our general contribution guide</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>🎉 Ready to Add Your First Resource?</h2>
+            <p>Start with <a href="#quick-start" class="cta-link">Step 1</a> above!</p>
+            <p class="mt-1 text-muted">By adding a resource, you're helping grow the cloud security
+                community. Every contribution matters.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="resources.html">All Resources</a></li>
+                    <li><a href="sessions.html">Zoom Sessions</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="#about">About CSOH</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="https://discord.gg/AVzAY97D8E" target="_blank" rel="noopener noreferrer">Discord
+                            Server</a></li>
+                    <li><a href="https://sendfox.com/CSOH" target="_blank" rel="noopener noreferrer">Zoom
+                            Registration</a></li>
+                    <li><a href="https://paypal.me/cloudsec" target="_blank" rel="noopener noreferrer">Support CSOH</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contributing</h3>
+                <ul>
+                    <li><a href="contribute-resources.html">Add a Resource</a></li>
+                    <li><a href="contribute.html">General Contributions</a></li>
+                    <li><a href="https://github.com/CloudSecurityOfficeHours/csoh.org" target="_blank"
+                            rel="noopener noreferrer">GitHub</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>About CSOH</h3>
+                <p>Vendor-neutral community for cloud security professionals. Weekly Zoom sessions, 260+ curated
+                    resources, and 120+ news articles.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023-2026 Cloud Security Office Hours. All resources provided for educational purposes.</p>
+        </div>
+    </footer>
+
+    <script src="/main.js" integrity="sha384-VaUAqRVQ58o0f0dhp0pLfb614ANkPxICJQVo7yxLMPO+t4vZqh3FGkOClf9Nja0/"
+        crossorigin="anonymous" defer></script>
+</body>
+
+</html>

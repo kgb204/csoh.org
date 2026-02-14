@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description"
+        content="Security vulnerability disclosure policy for Cloud Security Office Hours (CSOH) website and community resources.">
+    <title>Security Policy - Cloud Security Office Hours (CSOH)</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://csoh.org/security-policy.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="theme-color" content="#2c3e50">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="/style.css" as="style"
+        integrity="sha384-hHmucINBFdJIi046/zq1WghRnn3rZbepGH80nHdmF/iin1gnle4GL8cZWXmlRSXc" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/style.css"
+        integrity="sha384-hHmucINBFdJIi046/zq1WghRnn3rZbepGH80nHdmF/iin1gnle4GL8cZWXmlRSXc" crossorigin="anonymous">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="/" class="logo-link">
+                    <h1>CSOH</h1>
+                </a>
+                <p>Cloud Security Office Hours</p>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources.html">Resources</a></li>
+                    <li><a href="/sessions.html">Sessions</a></li>
+                    <li><a href="/presentations.html">Presentations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero hero--compact">
+        <img src="banner.png" alt="Cloud Security Office Hours Banner" width="1200" height="400" class="hero-img"
+            decoding="async">
+        <h2>🔒 Security Policy</h2>
+        <p>How to responsibly disclose security vulnerabilities related to the CSOH website and community resources.</p>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h1>🔒 Security Vulnerability Disclosure Policy</h1>
+
+            <div class="info-box--blue">
+                <p><strong>About CSOH:</strong> Cloud Security Office Hours is a volunteer-run community for cloud
+                    security professionals. We are not a company and do not produce software products or services. This
+                    policy covers security issues related to our website (csoh.org) and community resources only.</p>
+            </div>
+
+            <h2>📋 Scope</h2>
+            <p>This security policy applies to vulnerabilities found in:</p>
+            <ul>
+                <li><strong>The csoh.org website</strong> - our public-facing community website</li>
+                <li><strong>Our web infrastructure</strong> - server configurations, DNS, SSL/TLS, hosting</li>
+                <li><strong>Community resources</strong> - publicly hosted materials and documentation</li>
+            </ul>
+
+            <h3>❌ Out of Scope</h3>
+            <p>The following are <strong>NOT</strong> covered by this policy:</p>
+            <ul>
+                <li>Third-party services we link to (Discord, Zoom, PayPal, etc.)</li>
+                <li>Third-party security tools, labs, or CTF platforms listed in our resources</li>
+                <li>User-generated content in our Discord community</li>
+                <li>Social engineering attacks against community members</li>
+                <li>Theoretical vulnerabilities without proof of exploitability</li>
+            </ul>
+
+            <h2>🐛 What We Consider a Security Vulnerability</h2>
+            <p>We take security seriously and welcome reports of genuine security issues, including:</p>
+            <ul>
+                <li>Cross-Site Scripting (XSS)</li>
+                <li>SQL Injection or other injection attacks</li>
+                <li>Server-Side Request Forgery (SSRF)</li>
+                <li>Authentication or authorization bypass</li>
+                <li>Sensitive data exposure (e.g., exposed credentials, API keys)</li>
+                <li>Security misconfigurations with exploitable impact</li>
+                <li>Content Security Policy (CSP) bypasses</li>
+            </ul>
+
+            <h2>📢 How to Report a Vulnerability</h2>
+            <p>If you discover a security vulnerability on csoh.org, please report it responsibly:</p>
+
+            <div class="cta-buttons cta-buttons--spaced">
+                <a href="https://discord.gg/AVzAY97D8E" class="cta-button" target="_blank" rel="noopener noreferrer">
+                    Report via Discord
+                </a>
+            </div>
+
+            <p><strong>Preferred method:</strong> Join our <a href="https://discord.gg/AVzAY97D8E" target="_blank"
+                    rel="noopener noreferrer">Discord server</a> and send a direct message to one of the community
+                organizers, or post in a private channel if available.</p>
+
+            <p><strong>What to include in your report:</strong></p>
+            <ul>
+                <li>Description of the vulnerability</li>
+                <li>Steps to reproduce the issue</li>
+                <li>Potential impact and severity</li>
+                <li>Any proof-of-concept code or screenshots (if applicable)</li>
+                <li>Your suggested remediation (optional but appreciated)</li>
+            </ul>
+
+            <h2>⏱️ What to Expect</h2>
+            <p>As a volunteer-run community, our response times may vary:</p>
+            <ul>
+                <li><strong>Acknowledgment:</strong> We aim to acknowledge receipt within 7 days</li>
+                <li><strong>Initial assessment:</strong> We will assess the issue and communicate our findings within 14
+                    days</li>
+                <li><strong>Resolution timeline:</strong> Depends on severity and complexity - we'll keep you updated
+                </li>
+                <li><strong>Public disclosure:</strong> We appreciate coordinated disclosure and will work with you on
+                    timing</li>
+            </ul>
+
+            <h2>🤝 Our Commitment</h2>
+            <p>If you report a security issue in good faith, we will:</p>
+            <ul>
+                <li>Not pursue legal action against you</li>
+                <li>Work with you to understand and validate the issue</li>
+                <li>Keep you informed about our progress toward resolution</li>
+                <li>Publicly acknowledge your contribution (if you wish) after the issue is resolved</li>
+            </ul>
+
+            <h2>🎯 Responsible Disclosure Guidelines</h2>
+            <p>When researching and reporting vulnerabilities, please:</p>
+            <ul>
+                <li><strong>Do not</strong> access, modify, or delete data that doesn't belong to you</li>
+                <li><strong>Do not</strong> perform actions that could harm our website availability (DoS/DDoS)</li>
+                <li><strong>Do not</strong> disclose the issue publicly until we've had a chance to address it</li>
+                <li><strong>Do not</strong> exploit the vulnerability beyond what's necessary for validation</li>
+                <li><strong>Do</strong> test only against csoh.org (not our members or users)</li>
+                <li><strong>Do</strong> stop testing if you encounter user data and report immediately</li>
+            </ul>
+
+            <h2>🏆 Recognition</h2>
+            <p>While we don't offer bug bounties (we're an all-volunteer community with no funding), we deeply
+                appreciate responsible disclosure. With your permission, we'll:</p>
+            <ul>
+                <li>Publicly thank you in our Discord community</li>
+                <li>Add your name to a security researchers acknowledgments section (coming soon)</li>
+                <li>Offer a recommendation/testimonial for your professional profile</li>
+            </ul>
+
+            <h2>📜 Security.txt</h2>
+            <p>This policy is also published in machine-readable format according to RFC 9116:</p>
+            <p><a href="/.well-known/security.txt" target="_blank"
+                    rel="noopener noreferrer">https://csoh.org/.well-known/security.txt</a></p>
+
+            <h2>📞 Contact</h2>
+            <p>For security-related inquiries:</p>
+            <ul>
+                <li><strong>Discord:</strong> <a href="https://discord.gg/AVzAY97D8E" target="_blank"
+                        rel="noopener noreferrer">https://discord.gg/AVzAY97D8E</a></li>
+                <li><strong>Community:</strong> Reach out to organizers during Friday Zoom sessions</li>
+            </ul>
+
+            <div class="info-box--yellow">
+                <p><strong>Note:</strong> This policy may be updated periodically. Last updated: February 11, 2026.</p>
+            </div>
+
+            <div class="cta-buttons cta-buttons--spaced-lg">
+                <a href="/" class="cta-button">Back to Home</a>
+                <a href="/resources.html" class="cta-button secondary">Browse Resources</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources.html">All Resources</a></li>
+                    <li><a href="/sessions.html">Zoom Sessions</a></li>
+                    <li><a href="/presentations.html">Presentations</a></li>
+                    <li><a href="/news.html">News</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="https://discord.gg/AVzAY97D8E" target="_blank" rel="noopener noreferrer">Discord
+                            Server</a></li>
+                    <li><a href="https://sendfox.com/CSOH" target="_blank" rel="noopener noreferrer">Zoom
+                            Registration</a></li>
+                    <li><a href="https://paypal.me/cloudsec" target="_blank" rel="noopener noreferrer">Support CSOH</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Cloud Security Office Hours is a vendor-neutral community for cloud security professionals. We meet
+                    weekly on Zoom and maintain this curated collection of resources.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023-2026 Cloud Security Office Hours. All resources are provided as-is for educational purposes.
+            </p>
+        </div>
+    </footer>
+
+    <script src="/main.js" defer integrity="sha384-VaUAqRVQ58o0f0dhp0pLfb614ANkPxICJQVo7yxLMPO+t4vZqh3FGkOClf9Nja0/" crossorigin="anonymous"></script>
+</body>
+
+</html>

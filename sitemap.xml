@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage - Highest priority -->
+  <url>
+    <loc>https://csoh.org/</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://csoh.org/banner.png</image:loc>
+      <image:title>Cloud Security Office Hours Banner</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Resources - High priority, updates frequently -->
+  <url>
+    <loc>https://csoh.org/resources.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- News - Updates very frequently -->
+  <url>
+    <loc>https://csoh.org/news.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Sessions - Regular updates -->
+  <url>
+    <loc>https://csoh.org/sessions.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Presentations - Regular updates -->
+  <url>
+    <loc>https://csoh.org/presentations.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Kevin Mitnick Memorial -->
+  <url>
+    <loc>https://csoh.org/kevin-mitnick.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Contribute pages -->
+  <url>
+    <loc>https://csoh.org/contribute.html</loc>
+    <lastmod>2026-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://csoh.org/contribute-resources.html</loc>
+    <lastmod>2026-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="description"
+    content="Join 2000+ cloud security professionals at CSOH. Access 260+ curated resources: AWS/Azure/GCP CTF challenges, hands-on labs, CSPM tools, certifications, and free weekly Zoom sessions every Friday. 100% vendor-neutral.">
+  <meta name="keywords"
+    content="cloud security, AWS security, Azure security, GCP security, kubernetes security, CTF challenges, CSPM, CNAPP, cloud security training, security certifications, penetration testing, cloud security community">
+  <title>Cloud Security Office Hours (CSOH)</title>
+
+  <!-- Resource Hints for Performance -->
+  <link rel="dns-prefetch" href="https://discord.gg">
+  <link rel="dns-prefetch" href="https://sendfox.com">
+  <link rel="dns-prefetch" href="https://paypal.me">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://csoh.org/">
+
+  <!-- Favicon and Icons -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="theme-color" content="#2c3e50">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Cloud Security Office Hours (CSOH)">
+  <meta property="og:description"
+    content="Join 2000+ cloud security professionals. 260+ curated resources, CTF challenges, training labs, and free weekly Zoom sessions. 100% vendor-neutral.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://csoh.org/">
+  <meta property="og:image" content="https://csoh.org/banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloud Security Office Hours (CSOH)">
+  <meta name="twitter:description"
+    content="A community for cloud security professionals with curated resources, CTF challenges, training labs, and weekly Zoom sessions.">
+  <meta name="twitter:image" content="https://csoh.org/banner.png">
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="/style.css" as="style"
+    integrity="sha384-hHmucINBFdJIi046/zq1WghRnn3rZbepGH80nHdmF/iin1gnle4GL8cZWXmlRSXc" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/style.css"
+    integrity="sha384-hHmucINBFdJIi046/zq1WghRnn3rZbepGH80nHdmF/iin1gnle4GL8cZWXmlRSXc" crossorigin="anonymous">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Cloud Security Office Hours",
+      "alternateName": "CSOH",
+      "url": "https://csoh.org/",
+      "logo": "https://csoh.org/banner.png",
+      "description": "A community for cloud security professionals with curated resources, CTF challenges, training labs, and weekly Zoom sessions. Join 2000+ members solving real-world cloud security challenges.",
+      "foundingDate": "2023-02",
+      "sameAs": [
+        "https://discord.gg/AVzAY97D8E"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Community Support",
+        "url": "https://discord.gg/AVzAY97D8E"
+      },
+      "workPerformed": [
+        "Weekly Zoom sessions with cloud security experts",
+        "Curated cloud security news and research articles",
+        "Hands-on CTF challenges and lab environments",
+        "Security certifications and training resources",
+        "Community support and peer learning"
+      ],
+      "knowsAbout": [
+        "AWS Security",
+        "Microsoft Azure Security",
+        "Google Cloud Security",
+        "Kubernetes Security",
+        "Cloud Posture Management (CSPM)",
+        "Cloud Native Application Protection (CNAPP)",
+        "Cloud Security Certifications",
+        "CTF Challenges",
+        "Cloud IAM",
+        "Cloud Compliance",
+        "Cloud Threat Detection",
+        "Zero Trust Architecture"
+      ],
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Cloud Security Resources",
+          "url": "https://csoh.org/resources.html",
+          "description": "260+ curated cloud security resources including labs, tools, and certifications"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Cloud Security News",
+          "url": "https://csoh.org/news.html",
+          "description": "120+ latest cloud security news articles from industry sources"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Sessions & Presentations",
+          "url": "https://csoh.org/sessions.html",
+          "description": "Recorded Zoom sessions and presentations from cloud security experts"
+        }
+      ]
+    }
+    </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Cloud Security Office Hours",
+      "url": "https://csoh.org/csoh",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://csoh.org/resources.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Cloud Security Office Hours - Weekly Zoom Session",
+      "description": "Weekly community gathering for cloud security professionals to discuss cloud security topics, share knowledge, and learn from each other.",
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": "https://schema.org/Friday",
+        "startTime": "07:00:00-08:00"
+      },
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://sendfox.com/CSOH"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Cloud Security Office Hours",
+        "url": "https://csoh.org/csoh"
+      },
+      "isAccessibleForFree": true
+    }
+    </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Cloud Security Office Hours (CSOH)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cloud Security Office Hours (CSOH) is a weekly community gathering for cloud security professionals that started in February 2023. We have grown to over 2000 members. Every Friday at 7am Pacific, we meet on Zoom to discuss cloud security topics, share knowledge, and learn from each other. It's completely free and vendor-neutral."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many cloud security resources does CSOH provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CSOH provides 260+ curated cloud security resources including CTF challenges for AWS, Azure, GCP, and Kubernetes; hands-on training labs; CSPM and CNAPP security tools; professional certifications; and penetration testing platforms. All resources are free and updated weekly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When are the CSOH Zoom sessions held?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CSOH Zoom sessions are held every Friday at 7:00 AM Pacific Time (PT). Sessions include presentations from industry experts, open discussions, and Q&A. All sessions are 100% free with no marketing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is CSOH free to join?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, CSOH is completely free. All resources, Zoom sessions, and community access are provided at no cost. We are vendor-neutral and do not do any marketing. The community is run by volunteers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What cloud platforms does CSOH cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CSOH covers security for all major cloud platforms including Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and Kubernetes. Resources include multi-cloud security tools, CTF challenges, and training labs for each platform."
+          }
+        }
+      ]
+    }
+    </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://csoh.org/"
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo-link">
+        <div class="logo">
+          <h1>CSOH</h1>
+          <p>Cloud Security Office Hours</p>
+        </div>
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="sessions.html">Zoom Sessions</a></li>
+          <li><a href="presentations.html">Presentations</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contribute.html">Contribute</a></li>
+          <li><a href="index.html#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="banner.png" alt="Cloud Security Office Hours Banner" width="1200" height="400" class="hero-img"
+      decoding="async">
+    <h2>Welcome to Cloud Security Office Hours</h2>
+    <p>Join our community of cloud security professionals every Friday on Zoom. Access 260 curated cloud security
+      resources including hands-on labs, CTF challenges, security tools, certifications, job search resources, and more.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://sendfox.com/CSOH" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Join Zoom
+        Sessions</a>
+      <a href="https://discord.gg/AVzAY97D8E" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Join
+        Discord</a>
+      <a href="resources.html" class="btn btn-secondary">Browse Resources</a>
+    </div>
+  </section>
+
+  <main class="container" id="main-content">
+    <section class="section" id="home">
+      <h2>What is CSOH?</h2>
+      <p>Cloud Security Office Hours (CSOH) is a weekly community gathering for cloud security professionals that
+        started in February 2023. We have grown to over 2000 members! Every Friday at 7am Pacific, we meet on Zoom to
+        discuss cloud security topics, share knowledge, and learn from each other. It's a great place to network! It's
+        completely free and we don't do any marketing!</p>
+    </section>
+
+    <section class="section" id="featured">
+      <h2>Resource Categories</h2>
+
+      <div class="resource-grid">
+        <a href="resources.html#ctf-challenges" class="card-link">
+          <div class="resource-card" data-no-preview>
+            <h3>🎯 CTF Challenges & Vulnerable Environments</h3>
+            <p>Hands-on vulnerable environments and CTF labs for AWS, Azure, GCP, and Kubernetes.</p>
+            <div class="resource-tags">
+              <span class="tag ctf">CTF</span>
+              <span class="tag lab">Hands-on</span>
+            </div>
+          </div>
+        </a>
+        <a href="resources.html#labs-training" class="card-link">
+          <div class="resource-card" data-no-preview>
+            <h3>🧪 Hands-On Labs & Training Platforms</h3>
+            <p>Interactive labs, challenge platforms, and training providers for practical cloud security skill
+              building.</p>
+            <div class="resource-tags">
+              <span class="tag lab">Labs</span>
+              <span class="tag lab">Training</span>
+            </div>
+          </div>
+        </a>
+        <a href="resources.html#security-tools" class="card-link">
+          <div class="resource-card" data-no-preview>
+            <h3>🛡️ Security Tools & Platforms</h3>
+            <p>CNAPP, CSPM, KSPM, SIEM, and other cloud security tools and platform guides.</p>
+            <div class="resource-tags">
+              <span class="tag tool">Tools</span>
+              <span class="tag">Platforms</span>
+            </div>
+          </div>
+        </a>
+        <a href="resources.html#certifications" class="card-link">
+          <div class="resource-card" data-no-preview>
+            <h3>🎓 Certifications & Professional Development</h3>
+            <p>Certification paths, study guides, and professional development resources for cloud security careers.</p>
+            <div class="resource-tags">
+              <span class="tag certification">Certification</span>
+              <span class="tag job">Career</span>
+            </div>
+          </div>
+        </a>
+        <a href="resources.html#ai-security" class="card-link">
+          <div class="resource-card" data-no-preview>
+            <h3>🤖 AI Security & LLM Protection</h3>
+            <p>Guides and tools for securing AI/LLM deployments, prompt protection, and model safety.</p>
+            <div class="resource-tags">
+              <span class="tag ai-security">AI</span>
+              <span class="tag">Security</span>
+            </div>
+          </div>
+        </a>
+        <a href="resources.html#job-search" class="card-link">
+          <div class="resource-card" data-no-preview>
+            <h3>💼 Job Search & Career Development</h3>
+            <p>Job boards, career advice, and resources to grow your cloud security career.</p>
+            <div class="resource-tags">
+              <span class="tag job">Jobs</span>
+              <span class="tag job">Career</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="community">
+      <h2>Join the Community</h2>
+      <div class="community-card">
+        <h3>Weekly Zoom Sessions</h3>
+        <p>Every Friday we meet on Zoom to discuss cloud security topics. Sessions include presentations from industry
+          experts, open discussions, and Q&A.</p>
+        <a href="https://sendfox.com/CSOH" class="btn btn-primary mt-1" target="_blank"
+          rel="noopener noreferrer">Register for Zoom Sessions</a>
+
+        <h3 class="mt-2">Discord Community</h3>
+        <p>Join our Discord server to connect with other cloud security professionals, ask questions, share resources,
+          and stay updated on upcoming sessions.</p>
+        <a href="https://discord.gg/AVzAY97D8E" class="btn btn-primary mt-1" target="_blank"
+          rel="noopener noreferrer">Join Discord Server</a>
+
+        <h3 class="mt-2">Support CSOH</h3>
+        <p>CSOH is completely free and run by volunteers. If you find value in our community and resources, consider
+          supporting us.</p>
+        <a href="https://paypal.me/cloudsec" class="btn btn-primary mt-1" target="_blank"
+          rel="noopener noreferrer">Support via PayPal</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>🤝 Contribute to CSOH</h2>
+      <p>Want to help improve our community? We welcome contributions from everyone—no coding experience needed!</p>
+
+      <div class="community-grid">
+        <div class="community-card">
+          <h3 class="community-heading">📚 Add a Resource</h3>
+          <p>Share cloud security tools, labs, certifications, or training platforms with our community.</p>
+          <a href="contribute-resources.html" class="btn btn-primary mt-1">Learn How</a>
+        </div>
+
+        <div class="community-card">
+          <h3 class="community-heading">💡 Suggest Improvements</h3>
+          <p>Improve descriptions, add news sources, report bugs, or share feature ideas.</p>
+          <a href="contribute.html" class="btn btn-primary mt-1">Contribute</a>
+        </div>
+
+        <div class="community-card">
+          <h3 class="community-heading">💬 Join the Community</h3>
+          <p>Discuss improvements, brainstorm ideas, and connect with other contributors.</p>
+          <a href="https://discord.gg/AVzAY97D8E" class="btn btn-primary mt-1" target="_blank"
+            rel="noopener noreferrer">Discord</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>About CSOH</h2>
+      <p>Cloud Security Office Hours began in February 2023 as a weekly gathering for cloud security professionals.
+        We're a vendor-neutral community focused on sharing knowledge, learning together, and advancing cloud security
+        practices.</p>
+
+      <h3>What We Offer</h3>
+      <ul class="info-list">
+        <li><strong>Weekly Zoom Sessions:</strong> Every Friday, featuring presentations
+          and open discussions</li>
+        <li><strong>Curated Resources:</strong> 260 vetted cloud security resources
+          including labs, tools, training, and career development</li>
+        <li><strong>Community Support:</strong> Discord server for ongoing discussions and
+          networking</li>
+        <li><strong>Vendor Neutral:</strong> We maintain independence and focus on what
+          works best</li>
+        <li><strong>100% Free:</strong> All resources and sessions are freely available to
+          the community</li>
+      </ul>
+
+      <h3 class="mt-2">Memorial</h3>
+      <p>We honor the memory of <a href="kevin-mitnick.html" class="memorial-link">Kevin Mitnick</a>, a
+        legendary figure in cybersecurity who inspired many in our field.</p>
+      <div class="text-center mt-2">
+        <a href="kevin-mitnick.html">
+          <img src="img/previews/free-kevin.png" alt="FREE KEVIN bumper sticker" width="400" height="300"
+            class="hero-img" loading="lazy" decoding="async">
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="resources.html">All Resources</a></li>
+          <li><a href="sessions.html">Zoom Sessions</a></li>
+          <li><a href="presentations.html">Presentations</a></li>
+          <li><a href="#about">About CSOH</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="https://discord.gg/AVzAY97D8E" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
+          <li><a href="https://sendfox.com/CSOH" target="_blank" rel="noopener noreferrer">Zoom Registration</a></li>
+          <li><a href="https://paypal.me/cloudsec" target="_blank" rel="noopener noreferrer">Support CSOH</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Resources by Category</h3>
+        <ul>
+          <li><a href="resources.html#ctf-challenges">CTF Challenges</a></li>
+          <li><a href="resources.html#security-tools">Security Tools</a></li>
+          <li><a href="resources.html#certifications">Certifications</a></li>
+          <li><a href="resources.html#kubernetes">Kubernetes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Cloud Security Office Hours is a vendor-neutral community for cloud security professionals. We meet weekly on
+          Zoom and maintain this curated collection of resources.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2023-2026 Cloud Security Office Hours. All resources are provided as-is for educational purposes.</p>
+    </div>
+  </footer>
+
+  <script src="/main.js" integrity="sha384-VaUAqRVQ58o0f0dhp0pLfb614ANkPxICJQVo7yxLMPO+t4vZqh3FGkOClf9Nja0/"
+    crossorigin="anonymous" defer></script>
+</body>
+
+</html>
