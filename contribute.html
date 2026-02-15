@@ -105,6 +105,7 @@
             <h3>📖 What You'll Learn</h3>
             <ol>
                 <li><a href="#types">Types of contributions</a></li>
+                <li><a href="#resources">Adding resources</a></li>
                 <li><a href="#news">Adding news sources</a></li>
                 <li><a href="#content">Improving content</a></li>
                 <li><a href="#reorganize">Reorganizing resources</a></li>
@@ -119,9 +120,19 @@
 
         <section id="types">
             <h2>🎯 Types of Contributions</h2>
-            <p>Here are six common ways you can help improve CSOH:</p>
+            <p>Here are seven common ways you can help improve CSOH:</p>
 
             <div class="contribution-grid">
+                <div class="contribution-type">
+                    <h4>📚 Adding Resources</h4>
+                    <p>Add tools, labs, certifications, or job resources to the catalog</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Cloud security tools, hands-on labs, certifications, job boards
+                    </div>
+                    <p><strong>Why it matters:</strong> Resources help people learn and grow in cloud security</p>
+                    <p><a href="#resources">See how →</a></p>
+                </div>
+
                 <div class="contribution-type">
                     <h4>📰 Adding News Sources</h4>
                     <p>Suggest RSS feeds we should pull news articles from</p>
@@ -186,6 +197,40 @@
                     <p><a href="#issues">See how →</a></p>
                 </div>
             </div>
+        </section>
+
+        <section id="resources">
+            <h2>📚 Adding Resources (Manual or Script)</h2>
+            <p>Want to add a new resource to the site? You have two easy options:</p>
+
+            <h3>Option A: Manual (Web-Based Guide)</h3>
+            <ol>
+                <li>Open the <a href="contribute-resources.html">Resource Contribution Guide</a></li>
+                <li>Follow the step-by-step instructions for adding a resource card</li>
+                <li>Open a pull request when done</li>
+            </ol>
+
+            <h3>Option B: Interactive Script (Fastest)</h3>
+            <p>This script asks questions, validates your URL, generates HTML, and prepares a PR:</p>
+            <div class="code-block">
+                python3 tools/submit_resource.py
+            </div>
+
+            <p>What it does for you:</p>
+            <ul>
+                <li>Collects resource name, URL, description, category, and tags</li>
+                <li>Validates URLs for safety</li>
+                <li>Generates the HTML card in the correct section</li>
+                <li>Creates a git branch and commit</li>
+                <li>Provides PR instructions</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Preview images:</strong> If you skip a preview image, a workflow will capture a screenshot
+                after you open a PR and update <code>preview-mapping.json</code> automatically.
+            </div>
+
+            <p><a href="tools/SUBMIT_RESOURCE_README.md">See the full script guide →</a></p>
         </section>
 
         <section id="news">
