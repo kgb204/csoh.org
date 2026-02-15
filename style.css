@@ -308,6 +308,25 @@ nav a:focus {
     margin: 0;
 }
 
+/* Force hide date filter containers when not in use */
+#startDateContainer,
+#endDateContainer,
+#singleDateContainer {
+    transition: all 0.2s ease;
+}
+
+#startDateContainer[style*="display: none"],
+#endDateContainer[style*="display: none"],
+#singleDateContainer[style*="display: none"] {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
 /* Resource Cards Grid */
 .resource-grid {
     display: grid;
