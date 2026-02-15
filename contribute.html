@@ -230,13 +230,32 @@
                 after you open a PR and update <code>preview-mapping.json</code> automatically.
             </div>
 
-            <p><a href="tools/SUBMIT_RESOURCE_README.md">See the full script guide →</a></p>
+            <div class="highlight-box">
+                <strong>Common errors (and quick fixes):</strong>
+                <ul class="mb-0">
+                    <li><strong>python3 not found:</strong> Install Python from python.org and reopen your terminal</li>
+                    <li><strong>git not found:</strong> Install Git from git-scm.com</li>
+                    <li><strong>Not in a git repo:</strong> Run <code>cd csoh.org</code> before the script</li>
+                    <li><strong>Working directory not clean:</strong> Commit or stash changes, then retry</li>
+                    <li><strong>URL flagged as unsafe:</strong> Use the official site or GitHub repo URL</li>
+                </ul>
+            </div>
+
+            <p><a href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/tools/SUBMIT_RESOURCE_README.md" target="_blank" rel="noopener noreferrer">See the full script guide →</a></p>
         </section>
 
         <section id="news">
             <h2>📰 Adding News Sources</h2>
             <p>News articles power our <a href="news.html">News page</a>. The more sources we have, the better articles
                 our readers see.</p>
+
+            <div class="highlight-box">
+                <strong>Fastest option:</strong> Run the interactive script below to add a feed automatically.
+                <div class="code-block">
+                    python3 tools/submit_news_source.py
+                </div>
+                <p class="mb-0"><a href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/tools/SUBMIT_NEWS_SOURCE_README.md" target="_blank" rel="noopener noreferrer">See the full script guide →</a></p>
+            </div>
 
             <h3>Step 1: Find the News Script</h3>
             <ol>
@@ -281,6 +300,17 @@
                     </li>
                     <li>Try <a href="https://www.feedly.com/" target="_blank" rel="noopener noreferrer">Feed Finder</a>
                         to discover feeds</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Common errors (and quick fixes):</strong>
+                <ul class="mb-0">
+                    <li><strong>python3 not found:</strong> Install Python from python.org and reopen your terminal</li>
+                    <li><strong>git not found:</strong> Install Git from git-scm.com</li>
+                    <li><strong>Not in a git repo:</strong> Run <code>cd csoh.org</code> before the script</li>
+                    <li><strong>Feed URL rejected:</strong> Use the RSS/Atom feed URL (not the homepage)</li>
+                    <li><strong>Working directory not clean:</strong> Commit or stash changes, then retry</li>
                 </ul>
             </div>
         </section>

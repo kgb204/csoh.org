@@ -18,9 +18,11 @@ When you add a new resource:
 4. **Screenshots Captured** - Uses Playwright to take screenshots
 5. **Images Optimized** - Resizes to 400x300px, optimizes to <150KB
 6. **Mapping Updated** - Updates `preview-mapping.json`
-7. **Committed to PR** - Automatically commits images to your PR branch
+7. **Committed to PR** - Automatically commits images to your PR branch (same-repo PRs only)
 
 **No manual work required!** The workflow handles everything.
+
+**Note:** For forked PRs, the workflow uploads the previews as artifacts but does not push commits back to the fork.
 
 ### 🔧 Manual Generation (Local Tool)
 

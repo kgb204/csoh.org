@@ -45,7 +45,20 @@ The script pulls from these trusted, non-paywalled sources:
 | CISA Current Activity | Active threats and exploits |
 | CISA Bulletins | Weekly vulnerability summaries |
 
-Want to **add a new source**? Edit the `FEEDS` list at the top of `update_news.py` and add a new entry with the feed's name and RSS/Atom URL.
+Want to **add a new source**? You have two options:
+
+1. Run `python3 tools/submit_news_source.py` (interactive, recommended)
+2. Or edit the `FEEDS` list at the top of `update_news.py` manually
+
+**Script guide:** [tools/SUBMIT_NEWS_SOURCE_README.md](tools/SUBMIT_NEWS_SOURCE_README.md)
+
+### Common Errors (Submit Script)
+
+- **`python3` not found**: Install Python from python.org and reopen your terminal
+- **`git` not found**: Install Git from git-scm.com
+- **Not in a git repo**: Run `cd csoh.org` before the script
+- **Feed URL rejected**: Use the RSS/Atom feed URL (not the homepage)
+- **Working directory not clean**: Commit or stash changes, then retry
 
 ---
 

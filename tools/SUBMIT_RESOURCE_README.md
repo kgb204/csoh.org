@@ -8,11 +8,12 @@ This tool guides you through the entire process of adding a resource:
 
 1. ✅ **Collects all required information** - Interactive prompts for name, URL, description, category, tags
 2. 🔒 **Validates URL safety** - Automatic security checks using our URL safety validator
-3. 📝 **Generates proper HTML** - Creates correctly formatted resource card
-4. 🔧 **Inserts into correct section** - Automatically finds and updates the right category
-5. 🌿 **Creates git branch** - Sets up a new branch for your changes
-6. 💾 **Commits changes** - Commits with a descriptive message
-7. 🚀 **Push and PR instructions** - Provides next steps for GitHub PR creation
+3. 🖼️ **Generates preview image (optional)** - Captures a screenshot if you choose
+4. 📝 **Generates proper HTML** - Creates correctly formatted resource card
+5. 🔧 **Inserts into correct section** - Automatically finds and updates the right category
+6. 🌿 **Creates git branch** - Sets up a new branch for your changes
+7. 💾 **Commits changes** - Commits with a descriptive message
+8. 🚀 **Push and PR instructions** - Provides next steps for GitHub PR creation
 
 ## Requirements
 
@@ -105,6 +106,18 @@ Description: Open-source AWS vulnerable-by-design environment...
 
 ✅ Does this look correct? (y/n): y
 ```
+
+#### Step 6.5: Preview Image (Optional)
+```
+🖼️  Generate preview image automatically? (y/n, default=y): y
+
+🖼️  Generating Preview Image
+This may take 10-30 seconds...
+✅ Preview generated successfully
+  Preview: img/previews/github.com-rhinosecuritylabs-cloudgoat.jpg
+```
+
+Note: For forked PRs, preview images are generated but may not be pushed back automatically.
 
 #### Step 7: Generation and Insertion
 ```

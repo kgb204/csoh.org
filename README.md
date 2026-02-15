@@ -175,12 +175,14 @@ csoh.org/
 │
 ├── tools/                      # Automation and maintenance scripts
 │   ├── submit_resource.py            # Interactive tool for submitting new resources
+│   ├── submit_news_source.py         # Interactive tool for submitting news sources
 │   ├── generate_preview.py           # Generate preview screenshots for resources
 │   ├── check_url_safety.py           # Core URL safety validator with pattern matching
 │   ├── check_existing_urls.py        # Batch scanner for chat-resources.html URLs
 │   ├── check_all_site_urls.py        # Comprehensive site-wide URL scanner
 │   ├── update_chat_titles.py         # Generate descriptive titles for chat URLs
 │   ├── SUBMIT_RESOURCE_README.md     # Interactive submission tool documentation
+│   ├── SUBMIT_NEWS_SOURCE_README.md  # News source submission tool documentation
 │   ├── GENERATE_PREVIEW_README.md    # Preview image generation documentation
 │   ├── CHECK_URL_SAFETY_README.md    # URL safety checker documentation
 │   └── CHECK_URL_SAFETY_WORKFLOW.md  # GitHub Actions workflow documentation
@@ -238,6 +240,13 @@ csoh.org/
 ### Adding a New Article to News
 
 News articles are **updated automatically** — you don't need to add them by hand. A GitHub Actions workflow runs every 12 hours, pulls articles from 22 cloud security RSS feeds, and creates a pull request with the new content. See the [How Automation Works](#-how-automation-works) section below for details, or read the full docs in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md).
+
+To **add a new news source**, either:
+
+1. Run `python3 tools/submit_news_source.py` (interactive, recommended)
+2. Or edit the `FEEDS` list at the top of `update_news.py` manually
+
+**Script guide:** [tools/SUBMIT_NEWS_SOURCE_README.md](tools/SUBMIT_NEWS_SOURCE_README.md)
 
 To **add a new news source**, edit the `FEEDS` list at the top of `update_news.py` and submit a pull request.
 
@@ -302,7 +311,7 @@ If any **unsafe URLs** are detected, the workflow **fails and blocks the merge**
 
 **What it does:** Ensures every resource has a high-quality preview image.
 
-**How it works:** When `resources.html` changes, a script (`generate_preview.py`) checks for missing or low-quality previews and captures screenshots. It updates `preview-mapping.json`, optimizes images, and commits them back to the PR or main branch.
+**How it works:** When `resources.html` changes, a script (`generate_preview.py`) checks for missing or low-quality previews and captures screenshots. It updates `preview-mapping.json`, optimizes images, and commits them back to the PR or main branch (same-repo PRs only).
 
 **Full docs:** [tools/GENERATE_PREVIEW_README.md](tools/GENERATE_PREVIEW_README.md)
 
@@ -314,7 +323,7 @@ If any **unsafe URLs** are detected, the workflow **fails and blocks the merge**
 
 ### Setup Note
 
-All workflows use a **Personal Access Token (PAT)** stored as a GitHub repo secret called `PAT_TOKEN` (because the GitHub organization restricts the default token). If workflows start failing with permission errors, the PAT may need to be rotated — see the setup instructions in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md#setup-requirements).
+Some workflows use a **Personal Access Token (PAT)** stored as a GitHub repo secret called `PAT_TOKEN` (because the GitHub organization restricts the default token). If workflows start failing with permission errors, the PAT may need to be rotated — see the setup instructions in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md#setup-requirements).
 
 ---
 
@@ -335,6 +344,7 @@ Want to help improve CSOH? We have **beginner-friendly guides** for contributing
 ### 📚 Contribution Guides
 
 - **[Interactive Resource Submission Tool](tools/SUBMIT_RESOURCE_README.md)** - Automated Python script with URL validation and PR creation
+- **[Interactive News Source Submission Tool](tools/SUBMIT_NEWS_SOURCE_README.md)** - Add RSS/Atom feeds with the interactive script
 - **[How to Add a Resource](contribute-resources.html)** - Step-by-step guide for adding cloud security resources (tools, labs, certifications, etc.)
 - **[General Contributions](contribute.html)** - Guide for all other contributions:
   - Adding news sources for our daily news automation
@@ -350,6 +360,7 @@ Want to help improve CSOH? We have **beginner-friendly guides** for contributing
 2. [Join Discord](https://discord.gg/AVzAY97D8E) - Discuss ideas with the community
 3. [Add a resource](contribute-resources.html) - Use our web-based guide (copy/paste method)
 4. [Use the submission tool](tools/SUBMIT_RESOURCE_README.md) - Interactive Python script (automated)
+5. [Add a news source](tools/SUBMIT_NEWS_SOURCE_README.md) - Interactive Python script
 
 **For developers:**
 1. Fork the repository
@@ -401,7 +412,7 @@ Want to help improve CSOH? We have **beginner-friendly guides** for contributing
 - **60+** Security tools catalogued
 - **~100+** Published presentations
 - **Weekly** Expert Zoom sessions
-- **4** Automated workflows (news, SRI, URL safety, deployment)
+- **5** Automated workflows (news, SRI, URL safety, previews, deployment)
 
 ---
 

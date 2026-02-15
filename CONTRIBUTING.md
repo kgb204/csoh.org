@@ -34,6 +34,23 @@ python3 tools/submit_resource.py
 This handles validation, HTML generation, git operations, and PR creation automatically.
 **[See documentation →](tools/SUBMIT_RESOURCE_README.md)**
 
+For **adding news sources**, use:
+
+```bash
+python3 tools/submit_news_source.py
+```
+
+This validates the feed URL, updates `update_news.py`, and prepares a PR.
+**[See documentation →](tools/SUBMIT_NEWS_SOURCE_README.md)**
+
+### 🧰 Common Errors and Fixes
+
+- **`python3` not found**: Install Python from python.org and reopen your terminal
+- **`git` not found**: Install Git from git-scm.com
+- **Not in a git repo**: Run `cd csoh.org` before the script
+- **Working directory not clean**: Commit or stash changes, then retry
+- **URL flagged as unsafe**: Use the official RSS/Atom feed URL
+
 For other contributions, continue reading the guide below.
 
 ---
@@ -57,6 +74,8 @@ For other contributions, continue reading the guide below.
 - Why you think it's good (e.g., "Excellent Kubernetes security content")
 
 **How to contribute:** [See "Adding News Sources" below](#adding-news-sources)
+
+**Quick option:** Run `python3 tools/submit_news_source.py` to add a feed interactively.
 
 ---
 
@@ -181,8 +200,8 @@ Look for this section:
 
 ```python
 FEEDS = [
-    'https://feeds.arstechnica.com/arstechnica/index',
-    'https://feeds.engadget.com/engadget',
+   {"name": "AWS Security Blog", "url": "https://aws.amazon.com/blogs/security/feed/"},
+   {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/feed/"},
     # ... more feeds
 ]
 ```
@@ -191,9 +210,9 @@ Add your new feed to the list:
 
 ```python
 FEEDS = [
-    'https://feeds.arstechnica.com/arstechnica/index',
-    'https://feeds.engadget.com/engadget',
-    'https://your-new-source.com/feed.xml',  # ← Add here
+   {"name": "AWS Security Blog", "url": "https://aws.amazon.com/blogs/security/feed/"},
+   {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/feed/"},
+   {"name": "Your Source Name", "url": "https://your-source.com/feed.xml"},  # ← Add here
 ]
 ```
 
