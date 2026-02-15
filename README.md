@@ -1,6 +1,6 @@
 # Cloud Security Office Hours (CSOH)
 
-A modern, community-driven cloud security resource hub built as a fast, responsive static website. Home to **2000+ security professionals**, **260+ curated resources**, **120+ news articles**, **554+ community-shared URLs**, and weekly expert-led Zoom sessions.
+A modern, community-driven cloud security resource hub built as a fast, responsive static community-driven website. Home to **2000+ security professionals**, **260+ curated resources**, **120+ news articles**, **554+ community-shared URLs**, and weekly expert-led Zoom sessions.
 
 [![GitHub](https://img.shields.io/badge/GitHub-CloudSecurityOfficeHours/csoh.org-blue)](https://github.com/CloudSecurityOfficeHours/csoh.org)
 [![Discord](https://img.shields.io/badge/Discord-2000%2B%20Members-5865F2)](https://discord.gg/AVzAY97D8E)
