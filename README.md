@@ -159,8 +159,15 @@ csoh.org/
 │   └── previews/               # Resource preview images
 │
 ├── update_news.py              # Python script to auto-update news articles
-├── setup_autoupdate.sh         # Setup script for dependencies
-├── UPDATE_NEWS_README.md        # News automation documentation
+├── update_sri.py               # Python script to update SRI hashes & cache-bust params
+├── calculate-sri.sh            # Shell script for manual SRI hash calculation
+├── UPDATE_NEWS_README.md       # News automation documentation
+├── UPDATE_SRI_README.md        # SRI & cache-busting documentation
+│
+├── .github/workflows/
+│   ├── update-news.yml         # Automated news updates (every 12 hours)
+│   ├── update-sri.yml          # Automated SRI hash updates (on CSS/JS changes)
+│   └── deploy to csoh.org.yml  # Automated FTP deployment (on push to main)
 │
 ├── resources-data.json         # Data export of all resources (for integrations)
 ├── preview-mapping.json        # Metadata for resource previews
@@ -199,37 +206,9 @@ csoh.org/
 
 ### Adding a New Article to News
 
-1. Open `news.html`
-2. Add new article card in the article grid (maintain date-sorted order):
+News articles are **updated automatically** — you don't need to add them by hand. A GitHub Actions workflow runs every 12 hours, pulls articles from 22 cloud security RSS feeds, and creates a pull request with the new content. See the [How Automation Works](#-how-automation-works) section below for details, or read the full docs in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md).
 
-```html
-<a href="https://article-url.com" target="_blank" class="card-link" rel="noopener noreferrer">
-    <div class="resource-card" data-category="report">
-        <h3>Article Title</h3>
-        <p class="article-date">February 10, 2026</p>
-        <p>Brief description of the article content... <span class="source">(Source Name)</span></p>
-        <div class="resource-tags">
-            <span class="tag">Cloud Security</span>
-            <span class="tag">AWS</span>
-        </div>
-    </div>
-</a>
-```
-
-**Option 2: Automated Updates (Recommended)**
-1. Run the news updater:
-   ```bash
-   python3 update_news.py
-   ```
-
-2. Set up automatic daily updates via cron (macOS/Linux):
-   ```bash
-   crontab -e
-   # Add this line (updates every day at 2 AM):
-   0 2 * * * cd /path/to/csoh.org && python3 update_news.py
-   ```
-
-3. Optional: review the feed list and settings in `update_news.py`.
+To **add a new news source**, edit the `FEEDS` list at the top of `update_news.py` and submit a pull request.
 
 ### Adding a New Zoom Session or Presentation
 
@@ -248,6 +227,43 @@ Edit the "Resource Categories" section in `index.html` to:
 - Change category descriptions
 - Modify call-to-action buttons
 - Adjust hero section messaging
+
+---
+
+## 🤖 How Automation Works
+
+This site uses three **GitHub Actions workflows** that handle routine tasks automatically. GitHub Actions is a free automation service built into GitHub — think of it as a robot that runs scripts for you whenever certain things happen in the repo.
+
+### 1. News Auto-Updates (every 12 hours)
+
+**What it does:** Keeps the [News page](https://csoh.org/news.html) fresh without anyone manually adding articles.
+
+**How it works:** Twice a day, a Python script (`update_news.py`) checks 22 cloud security news sources for new articles. It filters for relevant topics, removes duplicates, and updates `news.html`. The workflow creates a Pull Request with the changes — if only `news.html` changed, it auto-merges. Once merged, the site is automatically deployed.
+
+**Full docs:** [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md)
+
+### 2. SRI Hash & Cache-Bust Updates (on CSS/JS changes)
+
+**What it does:** Keeps the site secure and prevents visitors from seeing stale styles after updates.
+
+**How it works:** Whenever `style.css` or `main.js` is changed and pushed to `main`, a Python script (`update_sri.py`) automatically:
+- Recalculates **SRI fingerprints** — cryptographic hashes that let the browser verify the file hasn't been tampered with
+- Updates **cache-busting version tags** (`?v=abc123` in the URL) — so browsers download the fresh file instead of serving an old cached copy
+- Commits the updated HTML files and pushes them
+
+**Full docs:** [UPDATE_SRI_README.md](UPDATE_SRI_README.md)
+
+### 3. Auto-Deploy to Web Server (on push to main)
+
+**What it does:** Uploads the latest site files to the web server whenever changes land on the `main` branch.
+
+**How it works:** After any push to `main` (including auto-merged news PRs and SRI hash commits), the deploy workflow checks out the code, recalculates SRI hashes as a safety net, and uploads everything to the web server via FTP.
+
+### Setup Note
+
+All three workflows use a **Personal Access Token (PAT)** stored as a GitHub repo secret called `PAT_TOKEN` (because the GitHub organization restricts the default token). If workflows start failing with permission errors, the PAT may need to be rotated — see the setup instructions in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md#setup-requirements).
+
+---
 
 ## 🔍 SEO & Search Optimization
 
@@ -364,6 +380,6 @@ Special thanks to:
 
 ---
 
-**Last Updated**: February 10, 2026
+**Last Updated**: February 14, 2026
 
 For the latest updates and announcements, follow us on Discord!
