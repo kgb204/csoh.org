@@ -214,6 +214,9 @@ csoh.org/
 
 ### Adding a New Resource
 
+**Fastest option:** Run `python3 tools/submit_resource.py` to add a resource interactively.
+**Script guide:** [tools/SUBMIT_RESOURCE_README.md](tools/SUBMIT_RESOURCE_README.md)
+
 1. **Open `resources.html`** in your editor
 2. **Locate the appropriate section** (CTF, Labs, Tools, etc.)
 3. **Add a new resource card** before the closing `</div>` of the section:
@@ -247,8 +250,6 @@ To **add a new news source**, either:
 2. Or edit the `FEEDS` list at the top of `update_news.py` manually
 
 **Script guide:** [tools/SUBMIT_NEWS_SOURCE_README.md](tools/SUBMIT_NEWS_SOURCE_README.md)
-
-To **add a new news source**, edit the `FEEDS` list at the top of `update_news.py` and submit a pull request.
 
 ### Adding a New Zoom Session or Presentation
 
