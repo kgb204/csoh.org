@@ -1,6 +1,6 @@
 # URL Safety Check Workflow
 
-This GitHub Actions workflow automatically validates all URLs across **all HTML files** on your site whenever any HTML file is modified.
+This GitHub Actions workflow automatically validates all URLs across **all HTML files** on this site whenever any HTML file is modified.
 
 ## When It Runs
 
