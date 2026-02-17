@@ -2454,6 +2454,11 @@ footer {
     border-left-color: var(--secondary-color);
 }
 
+[data-theme="dark"] .step-box {
+    background-color: #1a2535;
+    border-color: #2a3d52;
+}
+
 [data-theme="dark"] .contribution-type .examples {
     background-color: #2a2510;
 }
