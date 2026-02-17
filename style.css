@@ -1993,13 +1993,13 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-        --primary-color: #1a2533;
+        --primary-color: #90b4d6;
         --secondary-color: #5dade2;
-        --accent-color: #e74c3c;
-        --text-color: #e0e0e0;
-        --light-bg: #121820;
-        --white: #1e2a38;
-        --border-color: #2c3e50;
+        --accent-color: #ef6b5b;
+        --text-color: #d8dee6;
+        --light-bg: #111820;
+        --white: #1a2535;
+        --border-color: #2a3d52;
         --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.4);
     }
@@ -2012,22 +2012,24 @@ footer {
 
 /* Dark mode overrides */
 [data-theme="dark"] {
-    --primary-color: #1a2533;
+    --primary-color: #90b4d6;
     --secondary-color: #5dade2;
-    --accent-color: #e74c3c;
-    --text-color: #e0e0e0;
-    --light-bg: #121820;
-    --white: #1e2a38;
-    --border-color: #2c3e50;
+    --accent-color: #ef6b5b;
+    --text-color: #d8dee6;
+    --light-bg: #111820;
+    --white: #1a2535;
+    --border-color: #2a3d52;
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
+/* --- Dark mode: base body ------------------------------------------------ */
 [data-theme="dark"] body {
     background-color: var(--light-bg);
     color: var(--text-color);
 }
 
+/* --- Dark mode: headings & titles ---------------------------------------- */
 [data-theme="dark"] .resource-card h3,
 [data-theme="dark"] .section h2,
 [data-theme="dark"] .section h3,
@@ -2036,14 +2038,75 @@ footer {
     color: var(--secondary-color);
 }
 
-[data-theme="dark"] .resource-card p,
-[data-theme="dark"] .article-date {
-    color: #aaa;
+[data-theme="dark"] .contribute-article h2 {
+    color: #8ec5e8;
+    border-bottom-color: #2a3d52;
 }
 
+[data-theme="dark"] .memorial-content h2 {
+    color: #8ec5e8;
+}
+
+[data-theme="dark"] .contribution-type h4 {
+    color: #8ec5e8;
+}
+
+/* --- Dark mode: text & descriptions -------------------------------------- */
+[data-theme="dark"] .resource-card p,
+[data-theme="dark"] .article-date {
+    color: #b0b8c4;
+}
+
+[data-theme="dark"] .resource-list a {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .resource-list .description {
+    color: #9ea8b4;
+}
+
+[data-theme="dark"] .info-box p {
+    color: #b0b8c4;
+}
+
+[data-theme="dark"] .text-muted {
+    color: #8a95a3;
+}
+
+[data-theme="dark"] .date,
+[data-theme="dark"] .memorial-subtitle {
+    color: #8a95a3;
+}
+
+[data-theme="dark"] .highlight-box strong {
+    color: #8ec5e8;
+}
+
+[data-theme="dark"] .faq-item strong {
+    color: #8ec5e8;
+}
+
+[data-theme="dark"] .link-box a {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .cta-link {
+    color: var(--secondary-color);
+}
+
+/* --- Dark mode: error pages ---------------------------------------------- */
+[data-theme="dark"] .error-code {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .error-message {
+    color: var(--text-color);
+}
+
+/* --- Dark mode: tags ----------------------------------------------------- */
 [data-theme="dark"] .tag {
-    background-color: #263545;
-    color: #ccc;
+    background-color: #1e2e3e;
+    color: #c8d0d8;
 }
 
 [data-theme="dark"] .tag.ctf { background-color: #3d2200; color: #ffb74d; }
@@ -2052,6 +2115,7 @@ footer {
 [data-theme="dark"] .tag.lab { background-color: #3b0d1e; color: #f48fb1; }
 [data-theme="dark"] .tag.new { background-color: #1b3a1b; color: #81c784; }
 
+/* --- Dark mode: buttons & filters ---------------------------------------- */
 [data-theme="dark"] .filter-btn {
     background-color: var(--white);
     border-color: var(--border-color);
@@ -2065,79 +2129,157 @@ footer {
     border-color: var(--secondary-color);
 }
 
-[data-theme="dark"] .hero {
-    background: linear-gradient(135deg, #0f1922 0%, #1a3a5c 100%);
-}
-
 [data-theme="dark"] .btn-secondary {
-    background-color: #263545;
+    background-color: #1e2e3e;
     color: var(--text-color);
 }
 
 [data-theme="dark"] .btn-secondary:hover {
-    background-color: #2c3e50;
+    background-color: #2a3d52;
+}
+
+[data-theme="dark"] .show-all-btn {
+    background-color: #1a2535;
+    border-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .show-all-btn:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+/* --- Dark mode: hero & footer -------------------------------------------- */
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #0d1520 0%, #162d48 100%);
 }
 
 [data-theme="dark"] .footer-bottom {
-    border-top-color: rgba(255, 255, 255, 0.05);
+    border-top-color: rgba(255, 255, 255, 0.08);
 }
 
 [data-theme="dark"] .source {
     color: var(--secondary-color);
 }
 
+/* --- Dark mode: breadcrumbs (both old .breadcrumb and new .breadcrumb-nav) */
 [data-theme="dark"] .breadcrumb {
-    color: #999;
+    color: #8a95a3;
 }
 
 [data-theme="dark"] .breadcrumb a {
     color: var(--secondary-color);
 }
 
+[data-theme="dark"] .breadcrumb-nav ol {
+    color: #8a95a3;
+}
+
+[data-theme="dark"] .breadcrumb-nav li + li::before {
+    color: #6a7585;
+}
+
+/* --- Dark mode: code blocks, TOC, boxes ---------------------------------- */
 [data-theme="dark"] .code-block {
-    background-color: #1a2533;
+    background-color: #141e2a;
+    border-left-color: var(--secondary-color);
+    color: #c8d0d8;
 }
 
 [data-theme="dark"] .highlight-box {
-    background-color: #1a2e3d;
+    background-color: #152535;
+    border-left-color: #3a8ec2;
 }
 
 [data-theme="dark"] .toc {
-    background-color: #1a2533;
+    background-color: #141e2a;
+    border-left-color: var(--secondary-color);
+}
+
+[data-theme="dark"] .toc h3 {
+    color: #8ec5e8;
+}
+
+[data-theme="dark"] .toc a {
+    color: var(--secondary-color);
 }
 
 [data-theme="dark"] .contribution-type,
 [data-theme="dark"] .step-box,
 [data-theme="dark"] .faq-item {
-    background-color: #1e2a38;
-    border-color: #2c3e50;
+    background-color: #1a2535;
+    border-color: #2a3d52;
 }
 
+[data-theme="dark"] .faq-item {
+    border-left-color: var(--secondary-color);
+}
+
+[data-theme="dark"] .contribution-type .examples {
+    background-color: #2a2510;
+}
+
+[data-theme="dark"] .contribution-type .have-idea {
+    background-color: #152535;
+}
+
+[data-theme="dark"] .link-box {
+    background-color: #221e0e;
+    border-left-color: #b8950a;
+}
+
+[data-theme="dark"] .tag-example {
+    background-color: #2a3d52;
+    color: #c8d0d8;
+}
+
+/* --- Dark mode: info boxes ----------------------------------------------- */
 [data-theme="dark"] .info-box--blue {
-    background-color: #1a2e3d;
+    background-color: #152535;
+    border-left-color: #3a8ec2;
 }
 
 [data-theme="dark"] .info-box--yellow {
     background-color: #2a2510;
+    border-left-color: #b8950a;
 }
 
+/* --- Dark mode: CTA section ---------------------------------------------- */
 [data-theme="dark"] .cta-section {
-    background-color: #1a2533;
+    background-color: #141e2a;
 }
 
-[data-theme="dark"] .show-all-btn {
-    background-color: #1a2533;
-    border-color: var(--secondary-color);
+/* --- Dark mode: wired card (kevin-mitnick.html) -------------------------- */
+[data-theme="dark"] .wired-card {
+    background: linear-gradient(135deg, #1a2535 0%, #1e2e3e 100%);
+    border-color: #c04015;
 }
 
-[data-theme="dark"] .show-all-btn:hover {
-    background-color: var(--secondary-color);
+[data-theme="dark"] .wired-card:hover {
+    box-shadow: 0 8px 24px rgba(200, 60, 15, 0.25);
 }
 
+[data-theme="dark"] .wired-card-label {
+    color: #e8763a;
+}
+
+[data-theme="dark"] .wired-card-title {
+    color: #d8dee6;
+}
+
+[data-theme="dark"] .wired-card-desc {
+    color: #9ea8b4;
+}
+
+/* --- Dark mode: form controls -------------------------------------------- */
 [data-theme="dark"] input[type="text"] {
-    background-color: #1e2a38;
+    background-color: #1a2535;
     color: var(--text-color);
     border-color: var(--border-color);
+}
+
+[data-theme="dark"] .category-section h3:hover {
+    background-color: #1e2e3e;
 }
 
 /* =========================================================================
@@ -2253,18 +2395,18 @@ footer {
 }
 
 [data-theme="dark"] .search-suggestions {
-    background-color: #1e2a38;
-    border-color: #2c3e50;
+    background-color: #1a2535;
+    border-color: #2a3d52;
 }
 
 [data-theme="dark"] .search-suggestion:hover,
 [data-theme="dark"] .search-suggestion.highlighted {
-    background-color: #263545;
+    background-color: #1e2e3e;
 }
 
 [data-theme="dark"] .search-suggestion .suggestion-type {
-    background-color: #263545;
-    color: #aaa;
+    background-color: #1e2e3e;
+    color: #9ea8b4;
 }
 
 /* =========================================================================
