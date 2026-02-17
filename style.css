@@ -1294,6 +1294,9 @@ footer {
     padding: 1rem;
     margin: 1.5rem 0;
     border-radius: 4px;
+    color: #1a232a;
+    font-weight: 500;
+}
 }
 
 .highlight-box strong {
@@ -1306,6 +1309,9 @@ footer {
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1.5rem 0;
+    color: #1a232a;
+    font-weight: 500;
+}
 }
 
 .contribution-type h4 {
@@ -2430,6 +2436,9 @@ footer {
 [data-theme="dark"] .highlight-box {
     background-color: #152535;
     border-left-color: #3a8ec2;
+    color: #eaf6ff;
+    font-weight: 500;
+}
 }
 
 [data-theme="dark"] .toc {
@@ -2446,8 +2455,8 @@ footer {
 }
 
 [data-theme="dark"] .contribution-type,
-[data-theme="dark"] .step-box,
-[data-theme="dark"] .faq-item {
+    color: #eaf6ff;
+    font-weight: 500;
     background-color: #1a2535;
     border-color: #2a3d52;
 }
