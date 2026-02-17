@@ -101,20 +101,23 @@ Done! Modified 0 of 12 files.
 
 ## The Workflow: `.github/workflows/site-update-deploy.yml`
 
-SRI and cache-busting are now handled as part of the unified workflow, not a separate workflow.
+SRI and cache-busting are handled as part of the unified workflow, not a separate workflow.
 
 ### Triggers
 
-- **On push to main:** Runs automatically when any relevant files are changed
-- **On pull request:** Validates and updates SRI as needed
+- **On push to main:** Runs automatically when `style.css`, `main.js`, `chat-resources.js`, `update_sri.py`, `resources.html`, `chat-resources.html`, or `chat-screenshots/**` change
 - **Manual:** Can be triggered from the GitHub Actions tab
 
 ### What it does
 
 1. Checks out the latest code
-2. Runs `python3 update_sri.py` if CSS/JS changed
-3. If any HTML files changed, commits and pushes them
-4. Deploys the site after merge
+2. Runs `python3 update_sri.py` to recalculate SRI hashes and `?v=` cache-busting params
+3. Commits and pushes updated HTML files if hashes changed
+4. Generates preview images for any new resources in `resources.html`
+5. Deploys the site via FTP in smart passes:
+   - **Pass 1:** Always — all HTML/CSS/JS and site files (skips image directories)
+   - **Pass 2:** Only when new previews were generated — uploads `img/previews/`
+   - **Pass 3:** Only when new files exist in `chat-screenshots/` — uploads `chat-screenshots/`
 
 ---
 

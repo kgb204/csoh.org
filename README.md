@@ -292,18 +292,24 @@ This site uses **GitHub Actions workflows** to automate all major site updates. 
 
 **Workflow file:** `.github/workflows/site-update-deploy.yml`
 
+**Triggers on pushes to `main` when these files change:**
+- `style.css`, `main.js`, `chat-resources.js`, `update_sri.py`
+- `resources.html`, `chat-resources.html`
+- `chat-screenshots/**` (new chat resource screenshots)
+- Manual trigger via the GitHub Actions tab
+
 **What it does:**
-- Runs on pushes to `main`, pull requests, and manual triggers
-- Validates all URLs for safety (using `check_all_site_urls.py`)
 - Updates SRI hashes and cache-busting tags if CSS/JS changed (using `update_sri.py`)
-- Generates preview images for new/changed resources (using `generate_preview.py`)
-- Deploys the site to the web server via FTP (if on `main`)
+- Generates preview images for new resources in `resources.html` (using `generate_preview.py`)
+- Deploys the site to the web server via FTP in smart passes:
+  - **Pass 1:** Always deploys all HTML/CSS/JS and other site files (excludes images)
+  - **Pass 2:** Only uploads `img/previews/` when new preview images were generated
+  - **Pass 3:** Only uploads `chat-screenshots/` when new screenshots were added
 
 **How it works:**
-1. Checks for any changes that require SRI, preview, or deploy steps
+1. Checks for any changes that require SRI updates, new previews, or new chat screenshots
 2. Runs each step in order, skipping steps if not needed
-3. Blocks unsafe URLs from being merged
-4. Only deploys after all validation and updates succeed
+3. Only deploys after all updates succeed
 
 **News updates** are still handled by a separate scheduled workflow (`update-news.yml`) that runs every 12 hours and creates a PR with new articles. Once merged, the unified workflow deploys the site.
 

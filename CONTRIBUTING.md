@@ -537,20 +537,16 @@ Before you submit, make sure:
 
 When you submit a PR, our unified workflow (`site-update-deploy.yml`) will:
 
-- ✅ **Scan all URLs** across the entire site (1,000+ URLs)
-- ⚠️ **Flag suspicious patterns** (URL shorteners, HTTP-only, etc.)
-- ❌ **Block unsafe URLs** (phishing, malware, blocklisted domains)
 - 🔒 **Update SRI hashes and cache-busting tags** if CSS/JS changed
-- 🖼️ **Generate preview images** for new/changed resources
-- 🚀 **Deploy the site** (after merge to main)
-- 📋 **Generate a report** available as a workflow artifact
+- 🖼️ **Generate preview images** for any new resources in `resources.html`
+- 🚀 **Deploy the site** after merge to main, in smart passes:
+  - Always deploys HTML/CSS/JS and other site files
+  - Only uploads `img/previews/` when new previews were generated
+  - Only uploads `chat-screenshots/` when new screenshots were added
 
 **What this means for you:**
-- If your PR adds or modifies URLs, they'll be automatically validated
-- ✅ **Safe URLs** - PR can merge immediately
-- ⚠️ **Suspicious warnings** - PR can still merge, but review the warnings
-- ❌ **Unsafe URLs** - PR will be blocked until the issue is fixed
-- SRI and preview steps are handled for you—no manual action needed
+- SRI hashes, preview images, and deploys are all handled automatically—no manual steps needed
+- If you add entries to `chat-resources.html` with new screenshots, commit the screenshots to `chat-screenshots/` and the workflow will upload them
 
 **Pro tips:**
 - Always use HTTPS when available
