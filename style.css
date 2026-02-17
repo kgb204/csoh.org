@@ -1492,11 +1492,17 @@ footer {
 
 .community-card {
     background-color: var(--white);
-    padding: 2rem;
+    padding: 1rem;
+    color: #1a232a;
+    font-weight: 600;
+    font-size: 1.05em;
     border-radius: 8px;
     box-shadow: var(--shadow);
 }
-
+    padding: 0.75rem;
+    color: #1a232a;
+    font-weight: 600;
+    font-size: 1.05em;
 .community-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1631,11 +1637,17 @@ footer {
 }
 
 .wired-card-label {
-    color: #dd4814;
+    color: #1a232a;
+    font-weight: 700;
+    font-size: 1.15em;
     font-size: 12px;
+    margin-bottom: 1rem;
+}
     font-weight: bold;
     letter-spacing: 1px;
-    margin-bottom: 4px;
+    color: #1a232a;
+    font-weight: 700;
+    font-size: 1.08em;
 }
 
 .wired-card-title {
