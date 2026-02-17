@@ -1991,6 +1991,25 @@ footer {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --primary-color: #1a2533;
+        --secondary-color: #5dade2;
+        --accent-color: #e74c3c;
+        --text-color: #e0e0e0;
+        --light-bg: #121820;
+        --white: #1e2a38;
+        --border-color: #2c3e50;
+        --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    :root:not([data-theme]) body {
+        background-color: var(--light-bg);
+        color: var(--text-color);
+    }
+}
+
 /* Dark mode overrides */
 [data-theme="dark"] {
     --primary-color: #1a2533;

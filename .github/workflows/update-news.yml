@@ -36,7 +36,7 @@ jobs:
 
           if [ -z "$files" ]; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
-            echo "only_news_html=false" >> "$GITHUB_OUTPUT"
+            echo "only_news_files=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -44,9 +44,11 @@ jobs:
 
           count="$(printf '%s\n' "$files" | sed '/^$/d' | wc -l | tr -d ' ')"
           if [ "$count" = "1" ] && [ "$files" = "news.html" ]; then
-            echo "only_news_html=true" >> "$GITHUB_OUTPUT"
+            echo "only_news_files=true" >> "$GITHUB_OUTPUT"
+          elif [ "$count" = "2" ] && printf '%s\n' "$files" | sort | grep -qx "feed.xml" && printf '%s\n' "$files" | sort | grep -qx "news.html"; then
+            echo "only_news_files=true" >> "$GITHUB_OUTPUT"
           else
-            echo "only_news_html=false" >> "$GITHUB_OUTPUT"
+            echo "only_news_files=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create Pull Request
@@ -77,8 +79,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.APPROVAL_PAT_TOKEN }}
           
-      - name: Enable PR auto-merge when only news.html changed
-        if: steps.changes.outputs.only_news_html == 'true' && steps.cpr.outputs.pull-request-number != ''
+      - name: Enable PR auto-merge when only news content files changed
+        if: steps.changes.outputs.only_news_files == 'true' && steps.cpr.outputs.pull-request-number != ''
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ secrets.PAT_TOKEN }}

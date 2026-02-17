@@ -14,7 +14,7 @@ import re
 import sys
 import urllib.request
 import xml.etree.ElementTree as ET
-from email.utils import parsedate_to_datetime
+from email.utils import format_datetime, parsedate_to_datetime
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 
@@ -227,6 +227,69 @@ def format_date(d: dt.datetime) -> Tuple[str, str]:
     return d_local.strftime("%B %d, %Y"), d_local.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def build_feed_xml(entries: List[Dict[str, str]], newest_iso: str) -> str:
+    rss = ET.Element("rss", attrib={"version": "2.0", "xmlns:atom": "http://www.w3.org/2005/Atom"})
+    channel = ET.SubElement(rss, "channel")
+
+    ET.SubElement(channel, "title").text = "CSOH - Cloud Security News"
+    ET.SubElement(channel, "link").text = "https://csoh.org/news.html"
+    ET.SubElement(channel, "description").text = (
+        "Latest cloud security news curated by Cloud Security Office Hours. "
+        "Covers AWS, Azure, GCP, Kubernetes vulnerabilities, breaches, and more."
+    )
+    ET.SubElement(channel, "language").text = "en-us"
+    ET.SubElement(channel, "managingEditor").text = "admin@csoh.org (CSOH)"
+    ET.SubElement(channel, "webMaster").text = "admin@csoh.org (CSOH)"
+
+    newest_dt = parse_date(newest_iso) or dt.datetime.now(dt.timezone.utc)
+    ET.SubElement(channel, "lastBuildDate").text = format_datetime(newest_dt)
+    ET.SubElement(channel, "ttl").text = "720"
+
+    ET.SubElement(
+        channel,
+        "atom:link",
+        attrib={
+            "href": "https://csoh.org/feed.xml",
+            "rel": "self",
+            "type": "application/rss+xml",
+        },
+    )
+
+    image = ET.SubElement(channel, "image")
+    ET.SubElement(image, "url").text = "https://csoh.org/favicon.png"
+    ET.SubElement(image, "title").text = "CSOH - Cloud Security News"
+    ET.SubElement(image, "link").text = "https://csoh.org/news.html"
+
+    for entry in entries:
+        title = entry.get("title", "").strip()
+        link = entry.get("link", "").strip()
+        if not title or not link:
+            continue
+
+        item = ET.SubElement(channel, "item")
+        ET.SubElement(item, "title").text = title
+        ET.SubElement(item, "link").text = link
+
+        summary = strip_html(entry.get("summary", ""))
+        if len(summary) > 220:
+            summary = summary[:217].rstrip() + "..."
+        ET.SubElement(item, "description").text = summary
+
+        source_name = entry.get("source", "Unknown Source")
+        ET.SubElement(item, "source", attrib={"url": link}).text = source_name
+        ET.SubElement(item, "guid", attrib={"isPermaLink": "true"}).text = link
+
+        published_dt = parse_date(entry.get("published", "")) or newest_dt
+        ET.SubElement(item, "pubDate").text = format_datetime(published_dt)
+
+        tags = build_tags(f"{title} {summary} {source_name}")
+        for tag in tags:
+            ET.SubElement(item, "category").text = tag
+
+    ET.indent(rss, space="  ")
+    return ET.tostring(rss, encoding="unicode", xml_declaration=True)
+
+
 def render_card(entry: Dict[str, str], indent: str) -> str:
     title = html.escape(entry["title"])
     link = html.escape(entry["link"])
@@ -332,6 +395,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Update news.html from RSS feeds")
     parser.add_argument("--news-file", default="news.html")
     parser.add_argument("--resources-file", default="resources.html")
+    parser.add_argument("--feed-file", default="feed.xml")
     parser.add_argument("--max-articles", type=int, default=120)
     parser.add_argument("--min-sources", type=int, default=10)
     args = parser.parse_args(argv)
@@ -358,7 +422,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     with open(args.news_file, "w", encoding="utf-8") as f:
         f.write(html_text)
 
-    print(f"Updated {args.news_file} with {len(entries)} articles from {len({e['source'] for e in entries})} sources.")
+    feed_xml = build_feed_xml(entries, newest_iso)
+    with open(args.feed_file, "w", encoding="utf-8") as f:
+        f.write(feed_xml)
+
+    print(
+        f"Updated {args.news_file} and {args.feed_file} with {len(entries)} articles "
+        f"from {len({e['source'] for e in entries})} sources."
+    )
     return 0
 
 
