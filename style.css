@@ -2008,6 +2008,34 @@ footer {
         background-color: var(--light-bg);
         color: var(--text-color);
     }
+
+    :root:not([data-theme]) header {
+        background-color: #0d1520;
+        color: #e8edf2;
+    }
+
+    :root:not([data-theme]) nav a {
+        color: #e8edf2;
+    }
+
+    :root:not([data-theme]) .hero {
+        background: linear-gradient(135deg, #0d1520 0%, #162d48 100%);
+        color: #e8edf2;
+    }
+
+    :root:not([data-theme]) footer {
+        background-color: #0d1520;
+        color: #d0d8e2;
+    }
+
+    :root:not([data-theme]) .footer-section a {
+        color: rgba(200, 215, 230, 0.85);
+    }
+
+    :root:not([data-theme]) .footer-bottom {
+        border-top-color: rgba(255, 255, 255, 0.08);
+        color: rgba(200, 215, 230, 0.6);
+    }
 }
 
 /* Dark mode overrides */
@@ -2150,12 +2178,48 @@ footer {
 }
 
 /* --- Dark mode: hero & footer -------------------------------------------- */
+[data-theme="dark"] header {
+    background-color: #0d1520;
+    color: #e8edf2;
+}
+
+[data-theme="dark"] nav a {
+    color: #e8edf2;
+}
+
 [data-theme="dark"] .hero {
     background: linear-gradient(135deg, #0d1520 0%, #162d48 100%);
+    color: #e8edf2;
+}
+
+[data-theme="dark"] .hero h2 {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .hero p {
+    color: #d0d8e2;
+}
+
+[data-theme="dark"] footer {
+    background-color: #0d1520;
+    color: #d0d8e2;
+}
+
+[data-theme="dark"] .footer-section h3 {
+    color: #e8edf2;
+}
+
+[data-theme="dark"] .footer-section a {
+    color: rgba(200, 215, 230, 0.85);
+}
+
+[data-theme="dark"] .footer-section a:hover {
+    color: #ffffff;
 }
 
 [data-theme="dark"] .footer-bottom {
     border-top-color: rgba(255, 255, 255, 0.08);
+    color: rgba(200, 215, 230, 0.6);
 }
 
 [data-theme="dark"] .source {
