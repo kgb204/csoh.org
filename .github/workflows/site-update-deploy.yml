@@ -117,12 +117,17 @@ jobs:
           FTP_PASS: ${{ secrets.FTP_PASS }}
         run: |
           LFTP_CONN="set ssl:verify-certificate no; set ftp:ssl-force true; set ftp:ssl-protect-data true; open -u ${FTP_USER},${FTP_PASS} ${FTP_HOST}"
-          echo "==> Full mirror deploy"
-          lftp -e "${LFTP_CONN}; mirror -R ./ /public_html/ --verbose=2 --parallel=2 \
+          # Pass 1: mirror everything except img/ (fast — only HTML/CSS/JS/etc.)
+          echo "==> Deploying site files..."
+          lftp -e "${LFTP_CONN}; mirror -R ./ /public_html/ --verbose=2 --parallel=4 \
             --exclude-glob .git* --exclude-glob .github/ --exclude-glob .venv/ \
             --exclude-glob __pycache__/ --exclude-glob *.sh --exclude-glob *.pyc \
             --exclude-glob *.pyo --exclude-glob README.md --exclude-glob CONTRIBUTING.md \
             --exclude-glob CONTRIBUTING_RESOURCES.md --exclude-glob UPDATE_NEWS_README.md \
             --exclude-glob UPDATE_SRI_README.md --exclude-glob LICENSE \
-            --exclude-glob .DS_Store; bye"
+            --exclude-glob .DS_Store --exclude img/; bye"
+          # Pass 2: mirror img/ separately, skipping files that haven't changed
+          echo "==> Syncing images (skipping unchanged)..."
+          lftp -e "${LFTP_CONN}; mirror -R ./img/ /public_html/img/ --parallel=4 \
+            --only-newer --exclude-glob .DS_Store; bye"
           echo "==> Deploy complete."
