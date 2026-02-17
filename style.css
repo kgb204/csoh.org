@@ -2024,33 +2024,39 @@ footer {
         color: #f5f7fa;
     }
 
-    :root:not([data-theme]) .hero {
-        background: linear-gradient(135deg, #0a1628 0%, #122a4a 100%);
-        color: #ffffff;
+    :root:not([data-theme]) .hero,
+    :root:not([data-theme]) .hero--compact {
+        background: linear-gradient(135deg, #0a1628 0%, #122a4a 100%) !important;
+        color: #ffffff !important;
     }
 
-    :root:not([data-theme]) .hero h2 {
-        color: #ffffff;
+    :root:not([data-theme]) .hero h2,
+    :root:not([data-theme]) .hero--compact h2 {
+        color: #ffffff !important;
     }
 
-    :root:not([data-theme]) .hero p {
-        color: #ffffff;
+    :root:not([data-theme]) .hero p,
+    :root:not([data-theme]) .hero--compact p {
+        color: #ffffff !important;
         opacity: 0.95;
     }
 
-    :root:not([data-theme]) .hero .btn-secondary {
-        background-color: rgba(255, 255, 255, 0.15);
-        color: #ffffff;
+    :root:not([data-theme]) .hero .btn-primary,
+    :root:not([data-theme]) .hero--compact .btn-primary {
+        color: #ffffff !important;
+    }
+
+    :root:not([data-theme]) .hero .btn-secondary,
+    :root:not([data-theme]) .hero--compact .btn-secondary {
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        color: #ffffff !important;
         border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    :root:not([data-theme]) .hero .btn-secondary:hover {
-        background-color: rgba(255, 255, 255, 0.25);
-        color: #ffffff;
-    }
-
-    :root:not([data-theme]) .btn-primary {
-        color: #ffffff;
+    :root:not([data-theme]) .hero .btn-secondary:hover,
+    :root:not([data-theme]) .hero--compact .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.25) !important;
+        color: #ffffff !important;
     }
 
     :root:not([data-theme]) footer {
@@ -2223,29 +2229,40 @@ footer {
     color: #f5f7fa;
 }
 
-[data-theme="dark"] .hero {
-    background: linear-gradient(135deg, #0a1628 0%, #122a4a 100%);
-    color: #ffffff;
+[data-theme="dark"] .hero,
+[data-theme="dark"] .hero--compact {
+    background: linear-gradient(135deg, #0a1628 0%, #122a4a 100%) !important;
+    color: #ffffff !important;
 }
 
-[data-theme="dark"] .hero h2 {
-    color: #ffffff;
+[data-theme="dark"] .hero h2,
+[data-theme="dark"] .hero--compact h2 {
+    color: #ffffff !important;
 }
 
-[data-theme="dark"] .hero p {
-    color: #ffffff;
+[data-theme="dark"] .hero p,
+[data-theme="dark"] .hero--compact p {
+    color: #ffffff !important;
     opacity: 0.95;
 }
 
-[data-theme="dark"] .hero .btn-secondary {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
+[data-theme="dark"] .hero .btn-primary,
+[data-theme="dark"] .hero--compact .btn-primary {
+    background-color: var(--accent-color);
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .hero .btn-secondary,
+[data-theme="dark"] .hero--compact .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-[data-theme="dark"] .hero .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    color: #ffffff;
+[data-theme="dark"] .hero .btn-secondary:hover,
+[data-theme="dark"] .hero--compact .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
 }
 
 [data-theme="dark"] .btn-primary {
