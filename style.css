@@ -126,16 +126,6 @@ nav a:hover {
 
 /* Header tweaks: logo layout, active link, and focus states */
 .logo {
-.hamburger {
-     display: none;
-     background: none;
-     border: none;
-     cursor: pointer;
-     padding: 0.5rem;
-     color: #fff !important;
-     font-size: 1.5rem;
-     line-height: 1;
-}
     display: flex;
     flex-direction: column;
     gap: 0.12rem;
@@ -1297,7 +1287,6 @@ footer {
     color: #1a232a;
     font-weight: 500;
 }
-}
 
 .highlight-box strong {
     color: var(--primary-color);
@@ -1311,7 +1300,6 @@ footer {
     margin: 1.5rem 0;
     color: #1a232a;
     font-weight: 500;
-}
 }
 
 .contribution-type h4 {
@@ -1499,10 +1487,7 @@ footer {
     border-radius: 8px;
     box-shadow: var(--shadow);
 }
-    padding: 0.75rem;
-    color: #1a232a;
-    font-weight: 600;
-    font-size: 1.05em;
+
 .community-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1639,15 +1624,8 @@ footer {
 .wired-card-label {
     color: #1a232a;
     font-weight: 700;
-    font-size: 1.15em;
-    font-size: 12px;
-    margin-bottom: 1rem;
-}
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #1a232a;
-    font-weight: 700;
     font-size: 1.08em;
+    letter-spacing: 1px;
 }
 
 .wired-card-title {
@@ -2451,7 +2429,6 @@ footer {
     color: #eaf6ff;
     font-weight: 500;
 }
-}
 
 [data-theme="dark"] .toc {
     background-color: #141e2a;
@@ -2466,7 +2443,7 @@ footer {
     color: var(--secondary-color);
 }
 
-[data-theme="dark"] .contribution-type,
+[data-theme="dark"] .contribution-type {
     color: #eaf6ff;
     font-weight: 500;
     background-color: #1a2535;
