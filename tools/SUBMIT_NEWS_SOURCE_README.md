@@ -42,6 +42,7 @@ Next steps:
 1. Push your branch: git push origin add-news-source-example-security-blog
 2. Create a PR: https://github.com/CloudSecurityOfficeHours/csoh.org/pulls
 3. Include source name and feed URL in the PR description
+4. After your PR is merged, the unified workflow will automatically deploy the updated site.
 ```
 
 ## Common Errors

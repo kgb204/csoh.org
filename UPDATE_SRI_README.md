@@ -26,21 +26,22 @@ Browsers **cache** (save a local copy of) CSS and JS files to make pages load fa
 
 ---
 
+
 ## How It Works Automatically
 
-Whenever someone changes `style.css` or `main.js` and pushes to the `main` branch, a **GitHub Actions workflow** automatically:
+Whenever someone changes `style.css` or `main.js` and pushes to the `main` branch (or opens a pull request), the **unified site-update-deploy.yml workflow** automatically:
 
 1. Calculates a new SHA-384 fingerprint for each file
 2. Generates a new cache-busting version tag from the file content
 3. Updates every HTML file with the new fingerprint and version tag
-4. Commits and pushes the updated HTML files
-5. The Deploy workflow then uploads everything to the web server
+4. Commits and pushes the updated HTML files (if needed)
+5. Deploys the site to the web server (after merge to main)
 
 ```
 You push a change to style.css or main.js
         |
         v
-  GitHub Actions runs update_sri.py
+  Unified workflow runs update_sri.py
         |
         v
   Script calculates new fingerprint + version tag
@@ -49,10 +50,10 @@ You push a change to style.css or main.js
   All HTML files are updated automatically
         |
         v
-  Changes committed and pushed to main
+  Changes committed and pushed to main (if needed)
         |
         v
-  Deploy workflow uploads to web server
+  Site is deployed after merge
 ```
 
 You never have to manually update fingerprints or worry about visitors seeing stale CSS/JS.
@@ -97,19 +98,23 @@ Done! Modified 0 of 12 files.
 
 ---
 
-## The Workflow: `.github/workflows/update-sri.yml`
+
+## The Workflow: `.github/workflows/site-update-deploy.yml`
+
+SRI and cache-busting are now handled as part of the unified workflow, not a separate workflow.
 
 ### Triggers
 
-- **On push to main:** Runs automatically when `style.css`, `main.js`, or `update_sri.py` are changed
-- **Manual:** You can trigger it anytime from the GitHub Actions tab
+- **On push to main:** Runs automatically when any relevant files are changed
+- **On pull request:** Validates and updates SRI as needed
+- **Manual:** Can be triggered from the GitHub Actions tab
 
 ### What it does
 
 1. Checks out the latest code
-2. Runs `python3 update_sri.py`
+2. Runs `python3 update_sri.py` if CSS/JS changed
 3. If any HTML files changed, commits and pushes them
-4. The Deploy workflow detects the new commit and uploads the site
+4. Deploys the site after merge
 
 ---
 

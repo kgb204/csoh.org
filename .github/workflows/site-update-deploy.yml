@@ -1,35 +1,116 @@
-name: Deploy site to FTP
+name: Update SRI, Generate Previews, and Deploy
+
 on:
-  workflow_run:
-    workflows: ["Update SRI Hashes"]
-    types: [completed]
-    branches: [main]
+  push:
+    branches:
+      - main
+    paths:
+      - 'resources.html'
+      - 'style.css'
+      - 'main.js'
+      - 'chat-resources.js'
+      - 'update_sri.py'
   workflow_dispatch:
-    inputs:
-      full_deploy:
-        description: 'Force full site deploy (mirror all files)'
-        required: false
-        default: false
-        type: boolean
 
 jobs:
-  deploy:
+  update-sri-and-previews:
     runs-on: ubuntu-latest
-    if: >
-      (github.event_name == 'workflow_run' &&
-      github.event.workflow_run.conclusion == 'success') ||
-      github.event_name == 'workflow_dispatch'
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          ref: main
-          fetch-depth: 2
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright Pillow
+          playwright install chromium
+
+      - name: Update SRI hashes in HTML files
+        id: sri
+        run: |
+          python3 update_sri.py
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No SRI changes to commit"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add '*.html'
+            git commit -m "chore: update SRI hashes for CSS/JS files"
+            git push
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "SRI changes committed"
+          fi
+
+      - name: Check for missing previews
+        id: check_previews
+        run: |
+          python3 tools/generate_preview.py --check > preview-check.txt || true
+          if grep -q "resources without previews" preview-check.txt; then
+            echo "missing=true" >> $GITHUB_OUTPUT
+            echo "Found resources without previews"
+          else
+            echo "missing=false" >> $GITHUB_OUTPUT
+            echo "All resources have previews"
+          fi
+          cat preview-check.txt
+
+      - name: Generate missing previews
+        if: steps.check_previews.outputs.missing == 'true'
+        run: |
+          python3 tools/generate_preview.py --batch-auto
+
+      - name: Optimize images
+        if: steps.check_previews.outputs.missing == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jpegoptim
+          find img/previews -name "*.jpg" -exec jpegoptim --strip-all --max=85 {} \;
+
+      - name: Commit and push preview images
+        if: steps.check_previews.outputs.missing == 'true'
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git"
+          git add img/previews/*.jpg || true
+          git add preview-mapping.json || true
+          if git diff --cached --quiet; then
+            echo "No preview images to commit"
+          else
+            git commit -m "Auto-generate preview images for new resources"
+            git push
+          fi
+
+      - name: Check if deploy is needed
+        id: deploy_needed
+        run: |
+          if [[ "${{ steps.sri.outputs.changed }}" == "true" || "${{ steps.check_previews.outputs.missing }}" == "true" ]]; then
+            echo "deploy=true" >> $GITHUB_OUTPUT
+          else
+            echo "deploy=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Install lftp
+        if: steps.deploy_needed.outputs.deploy == 'true'
         run: sudo apt-get update && sudo apt-get install -y lftp
+
       - name: Deploy to FTP
+        if: steps.deploy_needed.outputs.deploy == 'true'
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
         run: |
           LFTP_CONN="set ssl:verify-certificate no; set ftp:ssl-force true; set ftp:ssl-protect-data true; open -u ${FTP_USER},${FTP_PASS} ${FTP_HOST}"
-
           # --- Full deploy (manual trigger or fallback) ---
           if [ "${{ github.event.inputs.full_deploy }}" = "true" ]; then
             echo "==> Full mirror deploy requested"
@@ -42,7 +123,6 @@ jobs:
               --exclude-glob .DS_Store; bye"
             exit 0
           fi
-
           # --- Incremental deploy: upload only changed files ---
           should_exclude() {
             case "$1" in
@@ -56,12 +136,8 @@ jobs:
               *)                                     return 1 ;;
             esac
           }
-
-          # Files changed in the latest commit (added/copied/modified/renamed)
-          # For merge commits, diff against ALL parents to catch every changed file
           PARENT_COUNT=$(git cat-file -p HEAD | grep -c '^parent ' || echo "1")
           if [ "$PARENT_COUNT" -gt 1 ]; then
-            # Merge commit: collect changes from each parent
             COMMITTED=""
             for parent in $(git rev-parse HEAD^@); do
               COMMITTED=$(printf '%s\n%s' "$COMMITTED" \
@@ -71,18 +147,11 @@ jobs:
           else
             COMMITTED=$(git diff --no-renames --name-only --diff-filter=ACMR HEAD~1 HEAD 2>/dev/null || echo "")
           fi
-          # Files changed by update_sri.py (uncommitted working-tree changes)
           WORKING=$(git diff --no-renames --name-only 2>/dev/null || echo "")
-          # Files deleted in the latest commit
           DELETED=$(git diff --no-renames --name-only --diff-filter=D HEAD~1 HEAD 2>/dev/null || echo "")
-
-          # Combine changed files, deduplicate
           ALL_CHANGED=$(printf '%s\n%s' "$COMMITTED" "$WORKING" | sort -u | sed '/^$/d')
-
-          # Build lftp command script
           SCRIPT=$(mktemp)
           echo "$LFTP_CONN" > "$SCRIPT"
-
           UPLOAD_COUNT=0
           while IFS= read -r f; do
             [ -z "$f" ] && continue
@@ -96,7 +165,6 @@ jobs:
             UPLOAD_COUNT=$((UPLOAD_COUNT + 1))
             echo "  upload: $f"
           done <<< "$ALL_CHANGED"
-
           DELETE_COUNT=0
           while IFS= read -r f; do
             [ -z "$f" ] && continue
@@ -105,18 +173,11 @@ jobs:
             DELETE_COUNT=$((DELETE_COUNT + 1))
             echo "  delete: $f"
           done <<< "$DELETED"
-
           echo "bye" >> "$SCRIPT"
-
           if [ $UPLOAD_COUNT -eq 0 ] && [ $DELETE_COUNT -eq 0 ]; then
             echo "==> No files changed — nothing to deploy."
             exit 0
           fi
-
           echo "==> Deploying ${UPLOAD_COUNT} file(s), deleting ${DELETE_COUNT} file(s)"
           lftp -f "$SCRIPT"
           echo "==> Deploy complete."
-        env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_USER: ${{ secrets.FTP_USER }}
-          FTP_PASS: ${{ secrets.FTP_PASS }}

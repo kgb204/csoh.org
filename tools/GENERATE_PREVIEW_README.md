@@ -106,14 +106,14 @@ preview-mapping.json
 
 ## GitHub Actions Workflow
 
-**Location**: `.github/workflows/generate-previews.yml`
+**Location**: `.github/workflows/site-update-deploy.yml`
 
-**Triggers**:
-- Pull requests modifying `resources.html`
-- Pushes to main modifying `resources.html`
-- Manual workflow dispatch
+**How it works now:**
+- Preview image generation is handled as part of the unified workflow, not a separate workflow.
+- The workflow automatically checks for missing previews and generates them when you open a pull request or push changes.
+- No manual action is needed—just add or update resources and the workflow will handle previews, SRI, and deploy in sequence.
 
-**Steps**:
+**Steps:**
 1. Install Python and dependencies (Playwright, Pillow)
 2. Check for missing previews
 3. Generate screenshots for URLs without previews
@@ -252,21 +252,16 @@ Images are automatically optimized to ~85% quality and resized to 400x300px. If 
 
 ## Workflow Integration
 
-The preview generation integrates seamlessly with other workflows:
+Preview generation is now part of the unified automation process:
 
 ```mermaid
 graph LR
-    A[Add Resource] --> B[URL Safety Check]
-    B --> C[Generate Preview]
-    C --> D[Update Site]
-    D --> E[Deploy]
+  A[Add Resource] --> B[Unified Workflow: URL Safety, SRI, Preview, Deploy]
+  B --> C[Site Updated & Deployed]
 ```
 
 1. Resource added to `resources.html`
-2. URL safety workflow validates all URLs
-3. Preview generation workflow creates images
-4. SRI hash workflow updates integrity hashes
-5. Deploy workflow pushes to production
+2. Unified workflow validates URLs, generates previews, updates SRI, and deploys the site (after merge)
 
 ## Performance
 

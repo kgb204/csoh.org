@@ -44,7 +44,7 @@ The `check_all_site_urls.py` script scans **all HTML files** in your site (not j
 - Detailed suspicious and unsafe URL lists
 - File-by-file breakdown of issues
 
-This is automatically run by GitHub Actions on every commit that changes HTML files.
+This is automatically run by the unified site-update-deploy.yml workflow on every pull request or push that changes HTML files.
 
 ## What It Checks
 
@@ -122,8 +122,8 @@ Edit `tools/check_url_safety.py` to:
 ## Workflow
 
 1. **Collect URLs** from Zoom chat sessions
-2. **Run safety check** on all URLs
-3. **Review warnings** for suspicious URLs
+2. **Run safety check** on all URLs (automated by the unified workflow)
+3. **Review warnings** for suspicious URLs (see PR checks)
 4. **Add safe URLs** to `chat-resources.html`
 5. **Document decisions** for future reference
 
@@ -132,7 +132,7 @@ Edit `tools/check_url_safety.py` to:
 - `0` - URL is safe
 - `1` - URL is unsafe or has critical errors
 
-This makes it easy to use in scripts:
+This makes it easy to use in scripts or rely on the automated workflow:
 
 ```bash
 if python3 tools/check_url_safety.py "$url"; then

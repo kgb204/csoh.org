@@ -532,13 +532,17 @@ Before you submit, make sure:
 - ✅ **Commit message is helpful** - Clearly describe what you did
 - ✅ **You're not changing too much** - Keep each PR focused on one thing
 
-### 🛡️ Automated URL Safety Check
 
-When you submit a PR that modifies any HTML file, our automated workflow will:
+### 🛡️ Automated Site Update & Deploy Workflow
+
+When you submit a PR, our unified workflow (`site-update-deploy.yml`) will:
 
 - ✅ **Scan all URLs** across the entire site (1,000+ URLs)
 - ⚠️ **Flag suspicious patterns** (URL shorteners, HTTP-only, etc.)
 - ❌ **Block unsafe URLs** (phishing, malware, blocklisted domains)
+- 🔒 **Update SRI hashes and cache-busting tags** if CSS/JS changed
+- 🖼️ **Generate preview images** for new/changed resources
+- 🚀 **Deploy the site** (after merge to main)
 - 📋 **Generate a report** available as a workflow artifact
 
 **What this means for you:**
@@ -546,6 +550,7 @@ When you submit a PR that modifies any HTML file, our automated workflow will:
 - ✅ **Safe URLs** - PR can merge immediately
 - ⚠️ **Suspicious warnings** - PR can still merge, but review the warnings
 - ❌ **Unsafe URLs** - PR will be blocked until the issue is fixed
+- SRI and preview steps are handled for you—no manual action needed
 
 **Pro tips:**
 - Always use HTTPS when available
@@ -553,7 +558,7 @@ When you submit a PR that modifies any HTML file, our automated workflow will:
 - Avoid URL shorteners - use full destination URLs
 - Test links before submitting
 
-See [tools/CHECK_URL_SAFETY_README.md](tools/CHECK_URL_SAFETY_README.md) for full details.
+See [tools/CHECK_URL_SAFETY_README.md](tools/CHECK_URL_SAFETY_README.md), [UPDATE_SRI_README.md](UPDATE_SRI_README.md), and [tools/GENERATE_PREVIEW_README.md](tools/GENERATE_PREVIEW_README.md) for full details.
 
 ---
 

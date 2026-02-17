@@ -146,9 +146,10 @@ Your changes are ready! Here's what to do next:
 Would you like to push now? (y/n):
 ```
 
+
 ## Features
 
-### 🔒 Automatic URL Safety Validation
+### 🔒 Automatic URL Safety Validation & Unified Workflow
 
 Every URL is checked against:
 - **Suspicious patterns** - Phishing indicators, URL shorteners, malware signatures
@@ -159,6 +160,14 @@ Every URL is checked against:
 If a URL fails validation:
 - ❌ **Errors** - Blocks submission (unsafe URL detected)
 - ⚠️ **Warnings** - Prompts for confirmation (suspicious but not blocked)
+
+After you open a pull request, the **unified workflow** will automatically:
+- Validate all URLs for safety
+- Generate preview images for new/changed resources
+- Update SRI hashes and cache-busting tags if CSS/JS changed
+- Deploy the site after merge
+
+You do not need to run any SRI or preview scripts manually—just submit your resource and the workflow will handle the rest.
 
 ### 📋 Smart Category Selection
 
@@ -253,6 +262,7 @@ Want to improve this tool? Consider adding:
 - **Template validation** - Check HTML structure before insertion
 - **Duplicate detection** - Warn if similar resource exists
 
+
 ## Troubleshooting
 
 ### ImportError: No module named 'check_url_safety'
@@ -270,6 +280,11 @@ Want to improve this tool? Consider adding:
 - Use official documentation/GitHub URLs when possible
 - Avoid URL shorteners
 - Contact maintainers if you believe it's a false positive
+
+### Preview or SRI not updated after PR
+**Solution:**
+- Check the Actions tab for the `site-update-deploy.yml` workflow run and resolve any errors.
+- The workflow will handle preview and SRI updates automatically after your PR is opened or merged.
 
 ## See Also
 

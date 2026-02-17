@@ -209,11 +209,8 @@ csoh.org/
 ├── RSS_FEED_README.md          # RSS feed usage guide for subscribers
 │
 ├── .github/workflows/
-│   ├── update-news.yml         # Automated news + RSS feed updates (every 12 hours)
-│   ├── update-sri.yml          # Automated SRI hash updates (on CSS/JS changes)
-│   ├── check-url-safety.yml    # Automated URL safety validation (on HTML changes)
-│   ├── generate-previews.yml   # Automated preview image generation (on resources changes)
-│   └── deploy to csoh.org.yml  # Automated FTP deployment (on push to main)
+│   ├── update-news.yml              # Automated news + RSS feed updates (every 12 hours)
+│   └── site-update-deploy.yml       # Unified workflow: SRI, preview, URL safety, deploy
 │
 ├── resources-data.json         # Data export of all resources (for integrations)
 ├── preview-mapping.json        # Metadata for resource previews
@@ -288,58 +285,33 @@ Edit the "Resource Categories" section in `index.html` to:
 
 ## 🤖 How Automation Works
 
-This site uses five **GitHub Actions workflows** that handle routine tasks automatically. GitHub Actions is a free automation service built into GitHub — think of it as a robot that runs scripts for you whenever certain things happen in the repo.
 
-### 1. News Auto-Updates (every 12 hours)
+This site uses **GitHub Actions workflows** to automate all major site updates. Most automation is now handled by a **unified workflow** that runs all key steps in sequence, only when needed.
 
-**What it does:** Keeps the [News page](https://csoh.org/news.html) fresh without anyone manually adding articles.
+### Unified Site Update & Deploy Workflow
 
-**How it works:** Twice a day, a Python script (`update_news.py`) checks 22 cloud security news sources for new articles. It filters for relevant topics, removes duplicates, and updates `news.html`. The workflow creates a Pull Request with the changes — if only `news.html` changed, it auto-merges. Once merged, the site is automatically deployed.
+**Workflow file:** `.github/workflows/site-update-deploy.yml`
 
-**Full docs:** [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md)
+**What it does:**
+- Runs on pushes to `main`, pull requests, and manual triggers
+- Validates all URLs for safety (using `check_all_site_urls.py`)
+- Updates SRI hashes and cache-busting tags if CSS/JS changed (using `update_sri.py`)
+- Generates preview images for new/changed resources (using `generate_preview.py`)
+- Deploys the site to the web server via FTP (if on `main`)
 
-### 2. SRI Hash & Cache-Bust Updates (on CSS/JS changes)
+**How it works:**
+1. Checks for any changes that require SRI, preview, or deploy steps
+2. Runs each step in order, skipping steps if not needed
+3. Blocks unsafe URLs from being merged
+4. Only deploys after all validation and updates succeed
 
-**What it does:** Keeps the site secure and prevents visitors from seeing stale styles after updates.
+**News updates** are still handled by a separate scheduled workflow (`update-news.yml`) that runs every 12 hours and creates a PR with new articles. Once merged, the unified workflow deploys the site.
 
-**How it works:** Whenever `style.css` or `main.js` is changed and pushed to `main`, a Python script (`update_sri.py`) automatically:
-- Recalculates **SRI fingerprints** — cryptographic hashes that let the browser verify the file hasn't been tampered with
-- Updates **cache-busting version tags** (`?v=abc123` in the URL) — so browsers download the fresh file instead of serving an old cached copy
-- Commits the updated HTML files and pushes them
-
-**Full docs:** [UPDATE_SRI_README.md](UPDATE_SRI_README.md)
-
-### 3. URL Safety Validation (on any HTML file change)
-
-**What it does:** Protects the site from malicious URLs by validating all links before they go live.
-
-**How it works:** Whenever any HTML file is modified in a pull request or push, a Python script (`check_all_site_urls.py`) scans **all URLs across the entire site** (1,000+ URLs) and checks them against:
-- **Suspicious patterns** - URL shorteners, raw IP addresses, executable files, phishing indicators
-- **Blocklist** - Known malicious domains
-- **Whitelist** - Trusted domains (GitHub, AWS, Microsoft, etc.)
-- **Security best practices** - HTTPS usage, domain length, subdomain depth
-
-If any **unsafe URLs** are detected, the workflow **fails and blocks the merge**, posting a detailed report as a comment on the PR. The full safety report is uploaded as an artifact for 30 days.
-
-**Full docs:** [tools/CHECK_URL_SAFETY_README.md](tools/CHECK_URL_SAFETY_README.md) and [.github/workflows/CHECK_URL_SAFETY_WORKFLOW.md](.github/workflows/CHECK_URL_SAFETY_WORKFLOW.md)
-
-### 4. Preview Image Generation (on resources changes)
-
-**What it does:** Ensures every resource has a high-quality preview image.
-
-**How it works:** When `resources.html` changes, a script (`generate_preview.py`) checks for missing or low-quality previews and captures screenshots. It updates `preview-mapping.json`, optimizes images, and commits them back to the PR or main branch (same-repo PRs only).
-
-**Full docs:** [tools/GENERATE_PREVIEW_README.md](tools/GENERATE_PREVIEW_README.md)
-
-### 5. Auto-Deploy to Web Server (on push to main)
-
-**What it does:** Uploads the latest site files to the web server whenever changes land on the `main` branch.
-
-**How it works:** After any push to `main` (including auto-merged news PRs and SRI hash commits), the deploy workflow checks out the code, recalculates SRI hashes as a safety net, and uploads everything to the web server via FTP.
+**Full docs:** See [UPDATE_SRI_README.md](UPDATE_SRI_README.md), [tools/GENERATE_PREVIEW_README.md](tools/GENERATE_PREVIEW_README.md), [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md), and [tools/CHECK_URL_SAFETY_README.md](tools/CHECK_URL_SAFETY_README.md)
 
 ### Setup Note
 
-Some workflows use a **Personal Access Token (PAT)** stored as a GitHub repo secret called `PAT_TOKEN` (because the GitHub organization restricts the default token). If workflows start failing with permission errors, the PAT may need to be rotated — see the setup instructions in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md#setup-requirements).
+Workflows use a **Personal Access Token (PAT)** stored as a GitHub repo secret called `PAT_TOKEN`. If workflows start failing with permission errors, the PAT may need to be rotated — see setup instructions in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md#setup-requirements).
 
 ---
 
@@ -428,7 +400,7 @@ Want to help improve CSOH? We have **beginner-friendly guides** for contributing
 - **60+** Security tools catalogued
 - **~100+** Published presentations
 - **Weekly** Expert Zoom sessions
-- **5** Automated workflows (news, SRI, URL safety, previews, deployment)
+- **2** Automated workflows (news, unified site update/deploy)
 
 ---
 

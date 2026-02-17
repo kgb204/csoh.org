@@ -67,10 +67,11 @@ If you are new to GitHub or the command line, this is the easiest path. Follow t
 
 6. **When it finishes**, it will tell you exactly how to push and open a PR
 
-### 🔒 URL Safety and Preview Images
+
+### 🔒 URL Safety, SRI, and Preview Images
 
 The script checks URL safety and can optionally generate a preview image for you.
-If you skip the preview, a GitHub Actions workflow will capture a screenshot after you open a PR.
+If you skip the preview, the unified workflow will capture a screenshot and update SRI hashes after you open a PR. You do not need to run any extra scripts—just open a pull request and the automation will handle it.
 
 ### 🧰 Common Errors and Fixes
 
@@ -168,7 +169,8 @@ Tags help people find resources. Pick 2-5 tags from this list:
 
 Preview images are the small screenshot shown for each resource. They're optional—the site works without them, but they make things look nice.
 
-**Easy option:** Just skip this step! The website will automatically generate thumbnails.
+
+**Easy option:** Just skip this step! The website will automatically generate thumbnails after you open a pull request, thanks to the unified workflow.
 
 **Better option:** Provide a custom preview image:
 - Take a screenshot of the resource's homepage
@@ -217,7 +219,7 @@ Preview images are the small screenshot shown for each resource. They're optiona
 
 > **Note:** All tag colors automatically adapt to dark mode — you don't need to add any dark mode–specific styles.
 
-**Don't worry about images yet!** The site will handle that automatically. If you want to add a custom preview image, [see Step 5](#step-5-add-a-preview-image-optional).
+**Don't worry about images or SRI hashes!** The site will handle those automatically after you open a pull request. If you want to add a custom preview image, [see Step 5](#step-5-add-a-preview-image-optional).
 
 ### Step 5: Add a Preview Image (Optional)
 

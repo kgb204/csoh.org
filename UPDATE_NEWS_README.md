@@ -10,7 +10,7 @@ The [News page](https://csoh.org/news.html) is updated **automatically every 12 
 4. It then updates `news.html` with fresh article cards — title, date, summary, source name, and a link to the original article. It also regenerates `feed.xml` (the RSS feed) with the latest articles.
 5. Instead of pushing changes directly, it **creates a Pull Request** (a proposed change) so a maintainer can review it before it goes live.
 6. If the only files changed are `news.html` and `feed.xml`, the PR is **automatically merged** — no human review needed for routine news updates.
-7. Once merged, the **Deploy workflow** automatically uploads the updated site to the web server via FTP.
+7. Once merged, the **unified site-update-deploy.yml workflow** automatically uploads the updated site to the web server via FTP.
 
 **The end result:** the News page always has fresh, relevant cloud security articles without anyone lifting a finger.
 
@@ -91,7 +91,7 @@ Schedule (every 12 hours) or manual trigger
      (squash)      human review
          |
          v
-    Deploy workflow uploads to web server
+      Unified workflow uploads to web server
 ```
 
 ### Triggers
@@ -144,6 +144,7 @@ The script avoids posting the same article twice by comparing normalized URLs ag
 | Script exits with "fewer than 10 sources" | Too many feeds are down or unreachable | Usually temporary — wait for the next scheduled run |
 | No PR created | No new articles found since last run | Normal — means news is already up to date |
 | PR not auto-merging | Files other than `news.html` changed | Review the PR manually — the script may have been updated |
+| Site not deployed after merge | Unified workflow failed or was skipped | Check Actions tab for site-update-deploy.yml run and resolve any errors |
 
 ---
 
