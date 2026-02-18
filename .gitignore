@@ -7,5 +7,13 @@ __pycache__/
 .Python
 .venv/
 
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+.aws/
+.ssh/
+
 # Google verification
 google*.html
