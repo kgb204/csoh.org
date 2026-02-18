@@ -139,12 +139,13 @@ jobs:
           # Pass 1: mirror everything except img/ (fast — only HTML/CSS/JS/etc.)
           echo "==> Deploying site files..."
           lftp -e "${LFTP_CONN}; mirror -R ./ /public_html/ --verbose=2 --parallel=4 \
-            --exclude-glob .git* --exclude-glob .github/ --exclude-glob .venv/ \
-            --exclude-glob __pycache__/ --exclude-glob *.sh --exclude-glob *.pyc \
-            --exclude-glob *.pyo --exclude-glob README.md --exclude-glob CONTRIBUTING.md \
+            --exclude .git/ --exclude .github/ --exclude .venv/ --exclude __pycache__/ \
+            --exclude img/ --exclude chat-screenshots/ \
+            --exclude-glob *.sh --exclude-glob *.pyc --exclude-glob *.pyo \
+            --exclude-glob README.md --exclude-glob CONTRIBUTING.md \
             --exclude-glob CONTRIBUTING_RESOURCES.md --exclude-glob UPDATE_NEWS_README.md \
             --exclude-glob UPDATE_SRI_README.md --exclude-glob LICENSE \
-            --exclude-glob .DS_Store --exclude img/; bye"
+            --exclude-glob .DS_Store; bye"
           # Pass 2: only sync img/previews/ when new previews were generated this run
           if [[ "${{ steps.check_previews.outputs.missing }}" == "true" ]]; then
             echo "==> Syncing new preview images..."
