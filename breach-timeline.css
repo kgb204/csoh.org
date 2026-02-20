@@ -1,4 +1,4 @@
-.kc-page {
+:root {
   --bt-red:  #ef4444;
   --bt-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
   --bt-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
