@@ -7,7 +7,7 @@
     <language>en-us</language>
     <managingEditor>admin@csoh.org (CSOH)</managingEditor>
     <webMaster>admin@csoh.org (CSOH)</webMaster>
-    <lastBuildDate>Tue, 24 Feb 2026 23:57:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Feb 2026 12:53:02 +0000</lastBuildDate>
     <ttl>720</ttl>
     <atom:link href="https://csoh.org/feed.xml" rel="self" type="application/rss+xml" />
     <image>
@@ -15,6 +15,207 @@
       <title>CSOH - Cloud Security News</title>
       <link>https://csoh.org/news.html</link>
     </image>
+    <item>
+      <title>Zyxel warns of critical RCE flaw affecting over a dozen routers</title>
+      <link>https://www.bleepingcomputer.com/news/security/zyxel-warns-of-critical-rce-flaw-affecting-over-a-dozen-routers</link>
+      <description>Taiwan networking provider Zyxel has released security updates to address a critical vulnerability affecting over a dozen router models that can allow unauthenticated attackers to gain remote command execution on unpa...</description>
+      <source url="https://www.bleepingcomputer.com/news/security/zyxel-warns-of-critical-rce-flaw-affecting-over-a-dozen-routers">BleepingComputer</source>
+      <guid isPermaLink="true">https://www.bleepingcomputer.com/news/security/zyxel-warns-of-critical-rce-flaw-affecting-over-a-dozen-routers</guid>
+      <pubDate>Wed, 25 Feb 2026 07:53:02 -0500</pubDate>
+      <category>Vulnerability</category>
+    </item>
+    <item>
+      <title>Anthropic’s Remote Control feature brings Claude Code to mobile devices</title>
+      <link>https://www.helpnetsecurity.com/2026/02/25/anthropic-remote-control-claude-code-feature</link>
+      <description>Anthropic has introduced a new Claude Code feature called Remote Control, allowing developers to continue a local coding session from a phone, tablet, or any web browser. The feature is rolling out as a research previ...</description>
+      <source url="https://www.helpnetsecurity.com/2026/02/25/anthropic-remote-control-claude-code-feature">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/25/anthropic-remote-control-claude-code-feature</guid>
+      <pubDate>Wed, 25 Feb 2026 12:39:09 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Over 12 Million Users Impacted by CarGurus Data Breach</title>
+      <link>https://www.securityweek.com/over-12-million-users-impacted-by-cargurus-data-breach</link>
+      <description>Hackers claim to have stolen personally identifiable information and internal corporate data from the automotive firm. The post Over 12 Million Users Impacted by CarGurus Data Breach appeared first on SecurityWeek .</description>
+      <source url="https://www.securityweek.com/over-12-million-users-impacted-by-cargurus-data-breach">SecurityWeek</source>
+      <guid isPermaLink="true">https://www.securityweek.com/over-12-million-users-impacted-by-cargurus-data-breach</guid>
+      <pubDate>Wed, 25 Feb 2026 12:30:00 +0000</pubDate>
+      <category>Breach</category>
+    </item>
+    <item>
+      <title>Poisoning AI Training Data</title>
+      <link>https://www.schneier.com/blog/archives/2026/02/poisoning-ai-training-data.html</link>
+      <description>All it takes to poison AI training data is to create a website: I spent 20 minutes writing an article on my personal website titled “The best tech journalists at eating hot dogs.” Every word is a lie. I claimed (witho...</description>
+      <source url="https://www.schneier.com/blog/archives/2026/02/poisoning-ai-training-data.html">Schneier on Security</source>
+      <guid isPermaLink="true">https://www.schneier.com/blog/archives/2026/02/poisoning-ai-training-data.html</guid>
+      <pubDate>Wed, 25 Feb 2026 12:01:23 +0000</pubDate>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>SecurityWeek Report: 426 Cybersecurity M&amp;A Deals Announced in 2025</title>
+      <link>https://www.securityweek.com/securityweek-report-426-cybersecurity-ma-deals-announced-in-2025</link>
+      <description>SecurityWeek’s M&amp;A data indicates that today's market is more disciplined, and it seems to favor GRC, data protection, and identity. The post SecurityWeek Report: 426 Cybersecurity M&amp;A Deals Announced in 2025 appeared...</description>
+      <source url="https://www.securityweek.com/securityweek-report-426-cybersecurity-ma-deals-announced-in-2025">SecurityWeek</source>
+      <guid isPermaLink="true">https://www.securityweek.com/securityweek-report-426-cybersecurity-ma-deals-announced-in-2025</guid>
+      <pubDate>Wed, 25 Feb 2026 12:00:00 +0000</pubDate>
+      <category>Identity</category>
+    </item>
+    <item>
+      <title>'Richter Scale' Model Measures Magnitude of OT Cyber Incidents</title>
+      <link>https://www.darkreading.com/ics-ot-security/richter-scale-model-measures-cyber-incidents</link>
+      <description>ICS/OT experts have devised a scoring system for rating the severity and effects of cybersecurity events in operational technology environments.</description>
+      <source url="https://www.darkreading.com/ics-ot-security/richter-scale-model-measures-cyber-incidents">Dark Reading</source>
+      <guid isPermaLink="true">https://www.darkreading.com/ics-ot-security/richter-scale-model-measures-cyber-incidents</guid>
+      <pubDate>Wed, 25 Feb 2026 12:00:00 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>SolarWinds Serv-U hit by four critical RCE-level vulnerabilities</title>
+      <link>https://www.helpnetsecurity.com/2026/02/25/solarwinds-serv-u-vulnerabilities-cve-2025-40538-to-cve-2025-40541</link>
+      <description>SolarWinds has fixed four critical vulnerabilities in its popular Serv-U file transfer solution, which is used by businesses and organizations of all sizes. If exploited, the flaws may allow attackers to create a syst...</description>
+      <source url="https://www.helpnetsecurity.com/2026/02/25/solarwinds-serv-u-vulnerabilities-cve-2025-40538-to-cve-2025-40541">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/25/solarwinds-serv-u-vulnerabilities-cve-2025-40538-to-cve-2025-40541</guid>
+      <pubDate>Wed, 25 Feb 2026 11:55:38 +0000</pubDate>
+      <category>Vulnerability</category>
+    </item>
+    <item>
+      <title>Reddit fined $19.5 million for failing to protect children’s personal data</title>
+      <link>https://www.helpnetsecurity.com/2026/02/25/uk-reddit-children-privacy-fine</link>
+      <description>The UK’s Information Commissioner’s Office (ICO) has fined Reddit $19.5 million after finding that the company failed to use children’s personal information lawfully, exposing them to inappropriate and harmful content...</description>
+      <source url="https://www.helpnetsecurity.com/2026/02/25/uk-reddit-children-privacy-fine">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/25/uk-reddit-children-privacy-fine</guid>
+      <pubDate>Wed, 25 Feb 2026 11:38:25 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Wynn Resorts Confirms Data Breach After Hackers Remove It From Leak Site</title>
+      <link>https://www.securityweek.com/wynn-resorts-confirms-data-breach-after-hackers-remove-it-from-leak-site</link>
+      <description>The high-end casino and hotel operator has admitted that employee data was stolen by ShinyHunters. The post Wynn Resorts Confirms Data Breach After Hackers Remove It From Leak Site appeared first on SecurityWeek .</description>
+      <source url="https://www.securityweek.com/wynn-resorts-confirms-data-breach-after-hackers-remove-it-from-leak-site">SecurityWeek</source>
+      <guid isPermaLink="true">https://www.securityweek.com/wynn-resorts-confirms-data-breach-after-hackers-remove-it-from-leak-site</guid>
+      <pubDate>Wed, 25 Feb 2026 11:35:48 +0000</pubDate>
+      <category>Breach</category>
+    </item>
+    <item>
+      <title>Manual Processes Are Putting National Security at Risk</title>
+      <link>https://thehackernews.com/2026/02/manual-processes-are-putting-national.html</link>
+      <description>Why automating sensitive data transfers is now a mission-critical priority More than half of national security organizations still rely on manual processes to transfer sensitive data, according to The CYBER360: Defend...</description>
+      <source url="https://thehackernews.com/2026/02/manual-processes-are-putting-national.html">The Hacker News</source>
+      <guid isPermaLink="true">https://thehackernews.com/2026/02/manual-processes-are-putting-national.html</guid>
+      <pubDate>Wed, 25 Feb 2026 16:30:00 +0530</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Astelia Raises $35 Million for Exposure Management</title>
+      <link>https://www.securityweek.com/astelia-raises-35-million-for-exposure-management</link>
+      <description>The company will expand its AI-based analysis capabilities, grow its employee base, and scale deployments. The post Astelia Raises $35 Million for Exposure Management appeared first on SecurityWeek .</description>
+      <source url="https://www.securityweek.com/astelia-raises-35-million-for-exposure-management">SecurityWeek</source>
+      <guid isPermaLink="true">https://www.securityweek.com/astelia-raises-35-million-for-exposure-management</guid>
+      <pubDate>Wed, 25 Feb 2026 10:38:33 +0000</pubDate>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>US sanctions Russian broker for buying stolen zero-day exploits</title>
+      <link>https://www.bleepingcomputer.com/news/security/us-sanctions-russian-exploit-broker-for-buying-stolen-zero-days</link>
+      <description>The U.S. Treasury Department has sanctioned a Russian exploit broker who bought stolen hacking tools from a former executive of a U.S. defense contractor. [...]</description>
+      <source url="https://www.bleepingcomputer.com/news/security/us-sanctions-russian-exploit-broker-for-buying-stolen-zero-days">BleepingComputer</source>
+      <guid isPermaLink="true">https://www.bleepingcomputer.com/news/security/us-sanctions-russian-exploit-broker-for-buying-stolen-zero-days</guid>
+      <pubDate>Wed, 25 Feb 2026 05:31:13 -0500</pubDate>
+      <category>Vulnerability</category>
+    </item>
+    <item>
+      <title>Ex-L3Harris executive sentenced to 87 months for selling stolen cyber-exploit trade secrets</title>
+      <link>https://www.helpnetsecurity.com/2026/02/25/peter-williams-l3harris-executive-sentenced-trade-secrets-theft-russia</link>
+      <description>Peter Williams, a former executive of Trenchant, L3Harris’ cyber division, has been sentenced to 87 months in prison by a federal judge in Washington, D.C., after pleading guilty to stealing and selling sensitive cybe...</description>
+      <source url="https://www.helpnetsecurity.com/2026/02/25/peter-williams-l3harris-executive-sentenced-trade-secrets-theft-russia">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/25/peter-williams-l3harris-executive-sentenced-trade-secrets-theft-russia</guid>
+      <pubDate>Wed, 25 Feb 2026 10:15:20 +0000</pubDate>
+      <category>Vulnerability</category>
+    </item>
+    <item>
+      <title>CISA flags exploited FileZen command injection bug, patch now! (CVE-2026-25108)</title>
+      <link>https://www.helpnetsecurity.com/2026/02/25/cve-2026-25108-filezen-vulnerability-exploited</link>
+      <description>CISA has added CVE-2026-25108, an OS command injection vulnerability in Soliton Systems’ FileZen secure file transfer solution, to its Known Exploited Vulnerabilities (KEV) catalog. The vendor has confirmed active exp...</description>
+      <source url="https://www.helpnetsecurity.com/2026/02/25/cve-2026-25108-filezen-vulnerability-exploited">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/25/cve-2026-25108-filezen-vulnerability-exploited</guid>
+      <pubDate>Wed, 25 Feb 2026 10:14:59 +0000</pubDate>
+      <category>CISA</category>
+      <category>Vulnerability</category>
+    </item>
+    <item>
+      <title>Former U.S. Defense contractor executive sentenced for selling zero-day exploits to Russian broker Operation Zero</title>
+      <link>https://securityaffairs.com/188482/intelligence/former-u-s-defense-contractor-executive-sentenced-for-selling-zero-day-exploits-to-russian-broker-operation-zero.html</link>
+      <description>A former employee at U.S. defense contractor L3Harris got over 7 years in prison for selling eight zero-days to a Russian broker. Peter Williams, a 39-year-old Australian former L3Harris employee, received a prison se...</description>
+      <source url="https://securityaffairs.com/188482/intelligence/former-u-s-defense-contractor-executive-sentenced-for-selling-zero-day-exploits-to-russian-broker-operation-zero.html">Security Affairs</source>
+      <guid isPermaLink="true">https://securityaffairs.com/188482/intelligence/former-u-s-defense-contractor-executive-sentenced-for-selling-zero-day-exploits-to-russian-broker-operation-zero.html</guid>
+      <pubDate>Wed, 25 Feb 2026 10:06:10 +0000</pubDate>
+      <category>Vulnerability</category>
+    </item>
+    <item>
+      <title>Reddit Hit With $20 Million UK Data Privacy Fine Over Child Safety Failings</title>
+      <link>https://www.securityweek.com/reddit-hit-with-20-million-uk-data-privacy-fine-over-child-safety-failings</link>
+      <description>Britain’s data privacy watchdog slapped online forum Reddit on Tuesday with a fine worth nearly $20 million for failures involving children’s personal information. The post Reddit Hit With $20 Million UK Data Privacy...</description>
+      <source url="https://www.securityweek.com/reddit-hit-with-20-million-uk-data-privacy-fine-over-child-safety-failings">SecurityWeek</source>
+      <guid isPermaLink="true">https://www.securityweek.com/reddit-hit-with-20-million-uk-data-privacy-fine-over-child-safety-failings</guid>
+      <pubDate>Wed, 25 Feb 2026 10:04:16 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Apple blocks 18+ app downloads in select markets</title>
+      <link>https://www.helpnetsecurity.com/2026/02/25/apple-expands-age-verification-controls</link>
+      <description>Apple has introduced expanded age assurance tools to help developers comply with regulations taking effect in Brazil, Australia, Singapore, Utah, and Louisiana. The updates, available in beta, expand the Declared Age...</description>
+      <source url="https://www.helpnetsecurity.com/2026/02/25/apple-expands-age-verification-controls">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/25/apple-expands-age-verification-controls</guid>
+      <pubDate>Wed, 25 Feb 2026 09:52:24 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Cyber valuations climb as capital concentrates, AI security expands</title>
+      <link>https://www.helpnetsecurity.com/2026/02/25/cybersecurity-venture-funding-ai-security-expands</link>
+      <description>Venture funding in cybersecurity continued to concentrate in large private rounds at the end of 2025, driving valuations higher across stages. Data from DataTribe shows total capital invested approached $150 billion f...</description>
+      <source url="https://www.helpnetsecurity.com/2026/02/25/cybersecurity-venture-funding-ai-security-expands">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/25/cybersecurity-venture-funding-ai-security-expands</guid>
+      <pubDate>Wed, 25 Feb 2026 06:30:58 +0000</pubDate>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>Microsoft adds domain libraries and Copilot integration to the quantum development kit</title>
+      <link>https://www.helpnetsecurity.com/2026/02/25/microsoft-quantum-development-kit-qdk</link>
+      <description>The Microsoft Quantum Development Kit (QDK) is an open-source toolkit that runs on laptops and in common development environments. It includes code, simulators, libraries, and workflows that work with Visual Studio Co...</description>
+      <source url="https://www.helpnetsecurity.com/2026/02/25/microsoft-quantum-development-kit-qdk">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/25/microsoft-quantum-development-kit-qdk</guid>
+      <pubDate>Wed, 25 Feb 2026 06:00:54 +0000</pubDate>
+      <category>Azure</category>
+    </item>
+    <item>
+      <title>Airline brands become launchpads for phishing, crypto fraud</title>
+      <link>https://www.helpnetsecurity.com/2026/02/25/airline-phishing-campaigns-crypto-fraud</link>
+      <description>Airline brands sit at the center of peak travel booking cycles, loyalty programs, and high value transactions. Criminal groups continue to register thousands of lookalike domains tied to these brands, targeting travel...</description>
+      <source url="https://www.helpnetsecurity.com/2026/02/25/airline-phishing-campaigns-crypto-fraud">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/25/airline-phishing-campaigns-crypto-fraud</guid>
+      <pubDate>Wed, 25 Feb 2026 05:30:36 +0000</pubDate>
+      <category>Phishing</category>
+      <category>Scam</category>
+    </item>
+    <item>
+      <title>CISA Confirms Active Exploitation of FileZen CVE-2026-25108 Vulnerability</title>
+      <link>https://thehackernews.com/2026/02/cisa-confirms-active-exploitation-of.html</link>
+      <description>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a recently disclosed vulnerability in FileZen to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitat...</description>
+      <source url="https://thehackernews.com/2026/02/cisa-confirms-active-exploitation-of.html">The Hacker News</source>
+      <guid isPermaLink="true">https://thehackernews.com/2026/02/cisa-confirms-active-exploitation-of.html</guid>
+      <pubDate>Wed, 25 Feb 2026 10:53:00 +0530</pubDate>
+      <category>CISA</category>
+      <category>Vulnerability</category>
+    </item>
+    <item>
+      <title>Edge systems take the brunt of internet-wide exploitation attempts</title>
+      <link>https://www.helpnetsecurity.com/2026/02/25/edge-infrastructure-attacks-internet-wide-exploitation</link>
+      <description>Internet-facing VPNs, routers, and remote access services absorbed sustained exploitation attempts throughout the second half of 2025, with nearly 3 billion malicious sessions recorded over 162 days. The concentration...</description>
+      <source url="https://www.helpnetsecurity.com/2026/02/25/edge-infrastructure-attacks-internet-wide-exploitation">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/25/edge-infrastructure-attacks-internet-wide-exploitation</guid>
+      <pubDate>Wed, 25 Feb 2026 05:00:47 +0000</pubDate>
+      <category>Vulnerability</category>
+    </item>
     <item>
       <title>Phishing campaign targets freight and logistics orgs in the US, Europe</title>
       <link>https://www.bleepingcomputer.com/news/security/phishing-campaign-targets-freight-and-logistics-orgs-in-the-us-europe</link>
@@ -120,15 +321,6 @@
       <category>Scam</category>
     </item>
     <item>
-      <title>GitHub Issues Abused in Copilot Attack Leading to Repository Takeover</title>
-      <link>https://www.securityweek.com/github-issues-abused-in-copilot-attack-leading-to-repository-takeover</link>
-      <description>Attackers can inject malicious instructions in a GitHub Issue that are automatically processed by Copilot when launching a Codespace from that issue. The post GitHub Issues Abused in Copilot Attack Leading to Reposito...</description>
-      <source url="https://www.securityweek.com/github-issues-abused-in-copilot-attack-leading-to-repository-takeover">SecurityWeek</source>
-      <guid isPermaLink="true">https://www.securityweek.com/github-issues-abused-in-copilot-attack-leading-to-repository-takeover</guid>
-      <pubDate>Tue, 24 Feb 2026 12:26:53 +0000</pubDate>
-      <category>Cloud Security</category>
-    </item>
-    <item>
       <title>Is AI Good for Democracy?</title>
       <link>https://www.schneier.com/blog/archives/2026/02/is-ai-good-for-democracy.html</link>
       <description>Politicians fixate on the global race for technological supremacy between US and China. They debate geopolitical implications of chip exports, latest model releases from each country, and military applications of AI....</description>
@@ -136,17 +328,6 @@
       <guid isPermaLink="true">https://www.schneier.com/blog/archives/2026/02/is-ai-good-for-democracy.html</guid>
       <pubDate>Tue, 24 Feb 2026 12:06:13 +0000</pubDate>
       <category>AI</category>
-    </item>
-    <item>
-      <title>Taiwan Security Firm Confirms Flaw Flagged by CISA Likely Exploited by Chinese APTs</title>
-      <link>https://www.securityweek.com/taiwan-security-firm-confirms-flaw-flagged-by-cisa-likely-exploited-by-chinese-apt</link>
-      <description>The vulnerability in TeamT5 ThreatSonar Anti-Ransomware was recently added to CISA’s KEV catalog. The post Taiwan Security Firm Confirms Flaw Flagged by CISA Likely Exploited by Chinese APTs appeared first on Security...</description>
-      <source url="https://www.securityweek.com/taiwan-security-firm-confirms-flaw-flagged-by-cisa-likely-exploited-by-chinese-apt">SecurityWeek</source>
-      <guid isPermaLink="true">https://www.securityweek.com/taiwan-security-firm-confirms-flaw-flagged-by-cisa-likely-exploited-by-chinese-apt</guid>
-      <pubDate>Tue, 24 Feb 2026 12:00:51 +0000</pubDate>
-      <category>CISA</category>
-      <category>Vulnerability</category>
-      <category>Ransomware</category>
     </item>
     <item>
       <title>Identity Prioritization isn't a Backlog Problem - It's a Risk Math Problem</title>
@@ -176,16 +357,6 @@
       <category>Breach</category>
     </item>
     <item>
-      <title>Windows 365 for Agents brings managed cloud PCs to autonomous workflows</title>
-      <link>https://www.helpnetsecurity.com/2026/02/24/microsoft-windows-365-for-agents</link>
-      <description>Microsoft’s Windows 365 for Agents is a cloud platform that gives AI agents secure access to cloud PCs. It lets builders run copilots, agents, and automated workflows in Windows environments without managing infrastru...</description>
-      <source url="https://www.helpnetsecurity.com/2026/02/24/microsoft-windows-365-for-agents">Help Net Security</source>
-      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/24/microsoft-windows-365-for-agents</guid>
-      <pubDate>Tue, 24 Feb 2026 11:02:26 +0000</pubDate>
-      <category>Azure</category>
-      <category>AI</category>
-    </item>
-    <item>
       <title>North Korean Lazarus group linked to Medusa ransomware attacks</title>
       <link>https://www.bleepingcomputer.com/news/security/north-korean-lazarus-group-linked-to-medusa-ransomware-attacks</link>
       <description>North Korean state-backed hackers associated with the Lazarus threat group are targeting U.S. healthcare organizations in extortion attacks using the Medusa ransomware. [...]</description>
@@ -195,15 +366,6 @@
       <category>Ransomware</category>
     </item>
     <item>
-      <title>International operation dismantles fraud network, €400,000 seized</title>
-      <link>https://www.helpnetsecurity.com/2026/02/24/eurojust-international-action-fraudulent-call-centre-takedown</link>
-      <description>A coordinated international operation supported by Eurojust dismantled a fraudulent call centre operating from three offices and targeting citizens throughout Europe. Authorities arrested 11 suspects and seized more t...</description>
-      <source url="https://www.helpnetsecurity.com/2026/02/24/eurojust-international-action-fraudulent-call-centre-takedown">Help Net Security</source>
-      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/02/24/eurojust-international-action-fraudulent-call-centre-takedown</guid>
-      <pubDate>Tue, 24 Feb 2026 10:55:17 +0000</pubDate>
-      <category>Scam</category>
-    </item>
-    <item>
       <title>Arkanix Stealer: AI-assisted info-stealer shuts down after brief campaign</title>
       <link>https://securityaffairs.com/188431/malware/arkanix-stealer-ai-assisted-info-stealer-shuts-down-after-brief-campaign.html</link>
       <description>Arkanix Stealer surfaced in late 2025 as a short-lived info-stealer, likely built as an AI-assisted experiment and quickly abandoned. Arkanix Stealer emerged in late 2025 as a short-lived information-stealing malware...</description>
@@ -211,15 +373,6 @@
       <guid isPermaLink="true">https://securityaffairs.com/188431/malware/arkanix-stealer-ai-assisted-info-stealer-shuts-down-after-brief-campaign.html</guid>
       <pubDate>Tue, 24 Feb 2026 10:52:56 +0000</pubDate>
       <category>AI</category>
-    </item>
-    <item>
-      <title>Anonymous Fénix Members Arrested in Spain</title>
-      <link>https://www.securityweek.com/anonymous-fenix-members-arrested-in-spain</link>
-      <description>The group’s administrator and moderator were arrested last year, and two other members were arrested this month. The post Anonymous Fénix Members Arrested in Spain appeared first on SecurityWeek .</description>
-      <source url="https://www.securityweek.com/anonymous-fenix-members-arrested-in-spain">SecurityWeek</source>
-      <guid isPermaLink="true">https://www.securityweek.com/anonymous-fenix-members-arrested-in-spain</guid>
-      <pubDate>Tue, 24 Feb 2026 10:05:57 +0000</pubDate>
-      <category>Cloud Security</category>
     </item>
     <item>
       <title>Android mental health apps with 14.7M installs filled with security flaws</title>
@@ -251,41 +404,12 @@
       <category>Scam</category>
     </item>
     <item>
-      <title>Ad tech firm Optimizely confirms data breach after vishing attack</title>
-      <link>https://www.bleepingcomputer.com/news/security/ad-tech-firm-optimizely-confirms-data-breach-after-vishing-attack</link>
-      <description>New York-based ad tech company Optimizely has notified an undisclosed number of customers of a data breach after threat actors compromised some of its systems in a voice phishing attack. [...]</description>
-      <source url="https://www.bleepingcomputer.com/news/security/ad-tech-firm-optimizely-confirms-data-breach-after-vishing-attack">BleepingComputer</source>
-      <guid isPermaLink="true">https://www.bleepingcomputer.com/news/security/ad-tech-firm-optimizely-confirms-data-breach-after-vishing-attack</guid>
-      <pubDate>Mon, 23 Feb 2026 13:04:01 -0500</pubDate>
-      <category>Breach</category>
-      <category>Phishing</category>
-    </item>
-    <item>
       <title>Wormable XMRig Campaign Uses BYOVD Exploit and Time-Based Logic Bomb</title>
       <link>https://thehackernews.com/2026/02/wormable-xmrig-campaign-uses-byovd.html</link>
       <description>Cybersecurity researchers have disclosed details of a new cryptojacking campaign that uses pirated software bundles as lures to deploy a bespoke XMRig miner program on compromised hosts. "Analysis of the recovered dro...</description>
       <source url="https://thehackernews.com/2026/02/wormable-xmrig-campaign-uses-byovd.html">The Hacker News</source>
       <guid isPermaLink="true">https://thehackernews.com/2026/02/wormable-xmrig-campaign-uses-byovd.html</guid>
       <pubDate>Mon, 23 Feb 2026 23:29:00 +0530</pubDate>
-      <category>Vulnerability</category>
-    </item>
-    <item>
-      <title>Autonomous AI Agents Provide New Class of Supply Chain Attack</title>
-      <link>https://www.securityweek.com/autonomous-ai-agents-provide-new-class-of-supply-chain-attack</link>
-      <description>While this campaign targets crypto wallets and steals money, the methodology has far wider potential that could be used by other attackers. The post Autonomous AI Agents Provide New Class of Supply Chain Attack appear...</description>
-      <source url="https://www.securityweek.com/autonomous-ai-agents-provide-new-class-of-supply-chain-attack">SecurityWeek</source>
-      <guid isPermaLink="true">https://www.securityweek.com/autonomous-ai-agents-provide-new-class-of-supply-chain-attack</guid>
-      <pubDate>Mon, 23 Feb 2026 12:30:00 +0000</pubDate>
-      <category>Supply Chain</category>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>CVE-2026-1731 fuels ongoing attacks on BeyondTrust remote access products</title>
-      <link>https://securityaffairs.com/188370/hacking/cve-2026-1731-fuels-ongoing-attacks-on-beyondtrust-remote-access-products.html</link>
-      <description>Attackers are exploiting CVE-2026-1731 in BeyondTrust RS and PRA to deploy VShell, gain persistence, move laterally, and control compromised systems. Threat actors are actively exploiting a recently disclosed critical...</description>
-      <source url="https://securityaffairs.com/188370/hacking/cve-2026-1731-fuels-ongoing-attacks-on-beyondtrust-remote-access-products.html">Security Affairs</source>
-      <guid isPermaLink="true">https://securityaffairs.com/188370/hacking/cve-2026-1731-fuels-ongoing-attacks-on-beyondtrust-remote-access-products.html</guid>
-      <pubDate>Mon, 23 Feb 2026 12:09:32 +0000</pubDate>
       <category>Vulnerability</category>
     </item>
     <item>
@@ -308,16 +432,6 @@
       <category>AI</category>
     </item>
     <item>
-      <title>AI-powered campaign compromises 600 FortiGate systems worldwide</title>
-      <link>https://securityaffairs.com/188351/hacking/ai-powered-campaign-compromises-600-fortigate-systems-worldwide.html</link>
-      <description>A Russian-speaking cybercriminal used commercial generative AI tools to hack over 600 FortiGate devices across 55 countries. Amazon Threat Intelligence reports that a Russian-speaking, financially motivated threat act...</description>
-      <source url="https://securityaffairs.com/188351/hacking/ai-powered-campaign-compromises-600-fortigate-systems-worldwide.html">Security Affairs</source>
-      <guid isPermaLink="true">https://securityaffairs.com/188351/hacking/ai-powered-campaign-compromises-600-fortigate-systems-worldwide.html</guid>
-      <pubDate>Mon, 23 Feb 2026 10:39:40 +0000</pubDate>
-      <category>AWS</category>
-      <category>AI</category>
-    </item>
-    <item>
       <title>Malicious npm Packages Harvest Crypto Keys, CI Secrets, and API Tokens</title>
       <link>https://thehackernews.com/2026/02/malicious-npm-packages-harvest-crypto.html</link>
       <description>Cybersecurity researchers have disclosed what they say is an active "Shai-Hulud-like" supply chain worm campaign that has leveraged a cluster of at least 19 malicious npm packages to enable credential harvesting and c...</description>
@@ -326,15 +440,6 @@
       <pubDate>Mon, 23 Feb 2026 15:50:00 +0530</pubDate>
       <category>Supply Chain</category>
       <category>Scam</category>
-    </item>
-    <item>
-      <title>Anthropic unveils Claude Code Security to detect and fix code bugs</title>
-      <link>https://securityaffairs.com/188358/ai/anthropic-unveils-claude-code-security-to-detect-and-fix-code-bugs.html</link>
-      <description>Anthropic launches Claude Code Security, an AI tool that scans code for vulnerabilities and suggests how to address them. Anthropic has introduced Claude Code Security, a new AI-powered service designed to scan softwa...</description>
-      <source url="https://securityaffairs.com/188358/ai/anthropic-unveils-claude-code-security-to-detect-and-fix-code-bugs.html">Security Affairs</source>
-      <guid isPermaLink="true">https://securityaffairs.com/188358/ai/anthropic-unveils-claude-code-security-to-detect-and-fix-code-bugs.html</guid>
-      <pubDate>Mon, 23 Feb 2026 00:11:55 +0000</pubDate>
-      <category>AI</category>
     </item>
     <item>
       <title>Japanese-Language Phishing Emails, (Sat, Feb 21st)</title>
@@ -646,25 +751,6 @@
       <category>AI</category>
     </item>
     <item>
-      <title>Safe and Inclusive E‑Society: How Lithuania Is Bracing for AI‑Driven Cyber Fraud</title>
-      <link>https://thehackernews.com/2026/02/safe-and-inclusive-esociety-how.html</link>
-      <description>Technologies are evolving fast, reshaping economies, governance, and daily life. Yet, as innovation accelerates, so do digital risks. Technological change is no longer abstract for such a country as Lithuania, as well...</description>
-      <source url="https://thehackernews.com/2026/02/safe-and-inclusive-esociety-how.html">The Hacker News</source>
-      <guid isPermaLink="true">https://thehackernews.com/2026/02/safe-and-inclusive-esociety-how.html</guid>
-      <pubDate>Mon, 16 Feb 2026 17:25:00 +0530</pubDate>
-      <category>AI</category>
-      <category>Scam</category>
-    </item>
-    <item>
-      <title>New ZeroDayRAT Mobile Spyware Enables Real-Time Surveillance and Data Theft</title>
-      <link>https://thehackernews.com/2026/02/new-zerodayrat-mobile-spyware-enables.html</link>
-      <description>Cybersecurity researchers have disclosed details of a new mobile spyware platform dubbed ZeroDayRAT that's being advertised on Telegram as a way to grab sensitive data and facilitate real-time surveillance on Android...</description>
-      <source url="https://thehackernews.com/2026/02/new-zerodayrat-mobile-spyware-enables.html">The Hacker News</source>
-      <guid isPermaLink="true">https://thehackernews.com/2026/02/new-zerodayrat-mobile-spyware-enables.html</guid>
-      <pubDate>Mon, 16 Feb 2026 15:54:00 +0530</pubDate>
-      <category>Cloud Security</category>
-    </item>
-    <item>
       <title>Upcoming Speaking Engagements</title>
       <link>https://www.schneier.com/blog/archives/2026/02/upcoming-speaking-engagements-53.html</link>
       <description>This is a current list of where and when I am scheduled to speak: I’m speaking at Ontario Tech University in Oshawa, Ontario, Canada, at 2 PM ET on Thursday, February 26, 2026. I’m speaking at the Personal AI Summit i...</description>
@@ -730,6 +816,24 @@
       <category>Vulnerability</category>
     </item>
     <item>
+      <title>Automaker Secures the Supply Chain With Developer-Friendly Platform</title>
+      <link>https://www.darkreading.com/application-security/automaker-secures-supply-chain-developer-friendly-platform</link>
+      <description>How a platform engineering team embeds supply chain security into infrastructure without slowing developers.</description>
+      <source url="https://www.darkreading.com/application-security/automaker-secures-supply-chain-developer-friendly-platform">Dark Reading</source>
+      <guid isPermaLink="true">https://www.darkreading.com/application-security/automaker-secures-supply-chain-developer-friendly-platform</guid>
+      <pubDate>Wed, 11 Feb 2026 19:35:53 +0000</pubDate>
+      <category>Supply Chain</category>
+    </item>
+    <item>
+      <title>North Korean Hackers Use Deepfake Video Calls to Target Crypto Firms</title>
+      <link>https://www.infosecurity-magazine.com/news/north-korea-hackers-deepfake-crypto</link>
+      <description>Campaign combines stolen Telegram accounts, fake Zoom calls and ClickFix attacks to deploy infostealer malware</description>
+      <source url="https://www.infosecurity-magazine.com/news/north-korea-hackers-deepfake-crypto">Infosecurity Magazine</source>
+      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/north-korea-hackers-deepfake-crypto</guid>
+      <pubDate>Wed, 11 Feb 2026 16:35:00 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
       <title>Kimwolf Botnet Swamps Anonymity Network I2P</title>
       <link>https://krebsonsecurity.com/2026/02/kimwolf-botnet-swamps-anonymity-network-i2p</link>
       <description>For the past week, the massive "Internet of Things" (IoT) botnet known as Kimwolf has been disrupting the The Invisible Internet Project (I2P), a decentralized, encrypted communications network designed to anonymize a...</description>
@@ -737,6 +841,15 @@
       <guid isPermaLink="true">https://krebsonsecurity.com/2026/02/kimwolf-botnet-swamps-anonymity-network-i2p</guid>
       <pubDate>Wed, 11 Feb 2026 16:08:11 +0000</pubDate>
       <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>AI Rising: Do We Know Enough About the Data Populating It?</title>
+      <link>https://www.darkreading.com/data-privacy/do-we-know-enough-about-data-populating-ai</link>
+      <description>Organizations remain reluctant to address the fact that AI can dangerously expose business operations as well as personal data.</description>
+      <source url="https://www.darkreading.com/data-privacy/do-we-know-enough-about-data-populating-ai">Dark Reading</source>
+      <guid isPermaLink="true">https://www.darkreading.com/data-privacy/do-we-know-enough-about-data-populating-ai</guid>
+      <pubDate>Wed, 11 Feb 2026 14:31:47 +0000</pubDate>
+      <category>AI</category>
     </item>
     <item>
       <title>Top Cyber Industry Defenses Spike CO2 Emissions</title>
@@ -793,25 +906,6 @@
       <guid isPermaLink="true">https://www.darkreading.com/threat-intelligence/zerodayrat-brings-commercial-spyware-to-mass-market</guid>
       <pubDate>Tue, 10 Feb 2026 21:37:15 +0000</pubDate>
       <category>Scam</category>
-    </item>
-    <item>
-      <title>Microsoft Patches 6 Actively Exploited Zero-Days</title>
-      <link>https://www.darkreading.com/vulnerabilities-threats/microsoft-fixes-6-actively-exploited-zero-days</link>
-      <description>Three of those zero-days are security feature bypass flaws, which give attackers a way to slip past built-in protections in multiple Microsoft products.</description>
-      <source url="https://www.darkreading.com/vulnerabilities-threats/microsoft-fixes-6-actively-exploited-zero-days">Dark Reading</source>
-      <guid isPermaLink="true">https://www.darkreading.com/vulnerabilities-threats/microsoft-fixes-6-actively-exploited-zero-days</guid>
-      <pubDate>Tue, 10 Feb 2026 21:00:36 +0000</pubDate>
-      <category>Azure</category>
-      <category>Vulnerability</category>
-    </item>
-    <item>
-      <title>OT Attacks Get Scary With 'Living-off-the-Plant' Techniques</title>
-      <link>https://www.darkreading.com/ics-ot-security/ot-attacks-living-off-the-plant</link>
-      <description>Ironically, security by obscurity has helped prevent dangerous OT attacks in recent years. It won't be that way forever.</description>
-      <source url="https://www.darkreading.com/ics-ot-security/ot-attacks-living-off-the-plant">Dark Reading</source>
-      <guid isPermaLink="true">https://www.darkreading.com/ics-ot-security/ot-attacks-living-off-the-plant</guid>
-      <pubDate>Tue, 10 Feb 2026 16:14:29 +0000</pubDate>
-      <category>Cloud Security</category>
     </item>
     <item>
       <title>Phorpiex Phishing Delivers Low-Noise Global Group Ransomware</title>
@@ -1038,114 +1132,6 @@
       <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/global-systembc-botnet-10000</guid>
       <pubDate>Wed, 04 Feb 2026 16:15:00 +0000</pubDate>
       <category>Cloud Security</category>
-    </item>
-    <item>
-      <title>New Technical Markers Reveal Expanding ShadowSyndicate Cybercriminal Infrastructure</title>
-      <link>https://www.infosecurity-magazine.com/news/shadowsyndicate</link>
-      <description>ShadowSyndicate cluster expands with new SSH fingerprints connecting servers to other ransomware ops</description>
-      <source url="https://www.infosecurity-magazine.com/news/shadowsyndicate">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/shadowsyndicate</guid>
-      <pubDate>Wed, 04 Feb 2026 15:00:00 +0000</pubDate>
-      <category>Ransomware</category>
-    </item>
-    <item>
-      <title>AI Drives Doubling of Phishing Attacks in a Year</title>
-      <link>https://www.infosecurity-magazine.com/news/ai-double-volume-phishing-attacks</link>
-      <description>Cofense claims AI is making phishing emails more personalized and sophisticated</description>
-      <source url="https://www.infosecurity-magazine.com/news/ai-double-volume-phishing-attacks">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/ai-double-volume-phishing-attacks</guid>
-      <pubDate>Wed, 04 Feb 2026 14:00:00 +0000</pubDate>
-      <category>Phishing</category>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>Two Critical Flaws in n8n AI Workflow Automation Platform Allow Complete Takeover</title>
-      <link>https://www.infosecurity-magazine.com/news/two-critical-flaws-in-n8n-ai</link>
-      <description>Pillar Security discovered two new critical vulnerabilities in n8n that could lead to supply chain compromise, credential harvesting and complete takeover attacks</description>
-      <source url="https://www.infosecurity-magazine.com/news/two-critical-flaws-in-n8n-ai">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/two-critical-flaws-in-n8n-ai</guid>
-      <pubDate>Wed, 04 Feb 2026 13:00:00 +0000</pubDate>
-      <category>Supply Chain</category>
-      <category>AI</category>
-      <category>Scam</category>
-    </item>
-    <item>
-      <title>SolarWinds Web Help Desk Vulnerability Actively Exploited</title>
-      <link>https://www.infosecurity-magazine.com/news/solarwinds-web-help-desk</link>
-      <description>CISA has added a critical CVE in SolarWinds Web Help Desk to its KEV Catalog</description>
-      <source url="https://www.infosecurity-magazine.com/news/solarwinds-web-help-desk">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/solarwinds-web-help-desk</guid>
-      <pubDate>Wed, 04 Feb 2026 10:15:00 +0000</pubDate>
-      <category>CISA</category>
-      <category>Vulnerability</category>
-    </item>
-    <item>
-      <title>Why Smart People Fall For Phishing Attacks</title>
-      <link>https://unit42.paloaltonetworks.com/psychology-of-phishing</link>
-      <description>Why do successful phishing attacks target our psychology rather than just our software? Discover Unit 42’s latest insights on defeating social engineering and securing your digital life. The post Why Smart People Fall...</description>
-      <source url="https://unit42.paloaltonetworks.com/psychology-of-phishing">Palo Alto Networks Unit 42</source>
-      <guid isPermaLink="true">https://unit42.paloaltonetworks.com/psychology-of-phishing</guid>
-      <pubDate>Wed, 04 Feb 2026 00:00:43 +0000</pubDate>
-      <category>Phishing</category>
-      <category>Scam</category>
-    </item>
-    <item>
-      <title>Hundreds of Malicious Crypto Trading Add-Ons Found in Moltbot/OpenClaw</title>
-      <link>https://www.infosecurity-magazine.com/news/malicious-crypto-trading-skills</link>
-      <description>A security researcher found 386 malicious ‘skills’ published on ClawHub, a skill repository for the popular OpenClaw AI assistant project</description>
-      <source url="https://www.infosecurity-magazine.com/news/malicious-crypto-trading-skills">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/malicious-crypto-trading-skills</guid>
-      <pubDate>Tue, 03 Feb 2026 16:30:00 +0000</pubDate>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>DockerDash Exposes AI Supply Chain Weakness In Docker's Ask Gordon</title>
-      <link>https://www.infosecurity-magazine.com/news/dockerdash-weakness-dockers-ask</link>
-      <description>DockerDash vulnerability allows RCE and data exfiltration via unverified metadata in Ask Gordon</description>
-      <source url="https://www.infosecurity-magazine.com/news/dockerdash-weakness-dockers-ask">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/dockerdash-weakness-dockers-ask</guid>
-      <pubDate>Tue, 03 Feb 2026 15:15:00 +0000</pubDate>
-      <category>Vulnerability</category>
-      <category>Supply Chain</category>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>UK ICO Launches Investigation into X Over AI Generated Non-Consensual Sexual Imagery</title>
-      <link>https://www.infosecurity-magazine.com/news/ico-investigates-x-over-grok-ai</link>
-      <description>UK Data Protection Watchdog has “serious concerns” over data privacy on Elon Musk’s social platform</description>
-      <source url="https://www.infosecurity-magazine.com/news/ico-investigates-x-over-grok-ai">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/ico-investigates-x-over-grok-ai</guid>
-      <pubDate>Tue, 03 Feb 2026 14:47:00 +0000</pubDate>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>Researchers Warn of New “Vect” RaaS Variant</title>
-      <link>https://www.infosecurity-magazine.com/news/researchers-warn-new-vect-raas</link>
-      <description>A new ransomware-as-a-service operation dubbed “Vect” features custom malware</description>
-      <source url="https://www.infosecurity-magazine.com/news/researchers-warn-new-vect-raas">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/researchers-warn-new-vect-raas</guid>
-      <pubDate>Tue, 03 Feb 2026 14:00:00 +0000</pubDate>
-      <category>Ransomware</category>
-    </item>
-    <item>
-      <title>CISA Adds Four Known Exploited Vulnerabilities to Catalog</title>
-      <link>https://www.cisa.gov/news-events/alerts/2026/02/03/cisa-adds-four-known-exploited-vulnerabilities-catalog</link>
-      <description>CISA has added four new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog , based on evidence of active exploitation. CVE-2019-19006 Sangoma FreePBX Improper Authentication Vulnerability CVE-2021-39...</description>
-      <source url="https://www.cisa.gov/news-events/alerts/2026/02/03/cisa-adds-four-known-exploited-vulnerabilities-catalog">CISA Current Activity</source>
-      <guid isPermaLink="true">https://www.cisa.gov/news-events/alerts/2026/02/03/cisa-adds-four-known-exploited-vulnerabilities-catalog</guid>
-      <pubDate>Tue, 03 Feb 2026 12:00:00 +0000</pubDate>
-      <category>CISA</category>
-      <category>Vulnerability</category>
-    </item>
-    <item>
-      <title>New Password-Stealing Phishing Campaign Targets Corporate Dropbox Credentials</title>
-      <link>https://www.infosecurity-magazine.com/news/password-stealing-phishing-pdf</link>
-      <description>Multi-stage attack begins with fake message relating to business requests and evades detection with link hidden in a PDF</description>
-      <source url="https://www.infosecurity-magazine.com/news/password-stealing-phishing-pdf">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/password-stealing-phishing-pdf</guid>
-      <pubDate>Tue, 03 Feb 2026 10:55:00 +0000</pubDate>
-      <category>Phishing</category>
-      <category>Scam</category>
     </item>
   </channel>
 </rss>
