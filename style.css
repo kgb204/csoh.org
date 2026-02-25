@@ -872,18 +872,18 @@ footer {
     }
 
     /* Without JS: nav stays visible as fallback */
-    nav {
+    header nav {
         display: block;
         width: 100%;
         order: 3;
     }
 
     /* With JS: nav hidden until hamburger toggled */
-    /* Fix: Only hide nav if .js-enabled and not .nav-open */
-    .js-enabled nav {
+    /* Scoped to header nav so breadcrumb-nav & incident-tabs stay visible */
+    .js-enabled header nav {
         display: none;
     }
-    .js-enabled .nav-open nav {
+    .js-enabled header .nav-open nav {
         display: block;
     }
 
@@ -2042,21 +2042,21 @@ footer {
         order: 1;
     }
 
-    nav {
+    header nav {
         display: block;
         width: 100%;
         order: 3;
     }
 
-    .js-enabled nav {
+    .js-enabled header nav {
         display: none;
     }
 
-    .js-enabled .nav-open nav {
+    .js-enabled header .nav-open nav {
         display: block;
     }
 
-    nav ul {
+    header nav ul {
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -2065,7 +2065,7 @@ footer {
         overflow-x: visible;
     }
 
-    nav ul li a {
+    header nav ul li a {
         display: block;
         padding: 0.75rem 1rem;
         font-size: 0.9rem;
