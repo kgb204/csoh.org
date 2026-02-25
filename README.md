@@ -394,12 +394,15 @@ Want to help improve CSOH? We have **beginner-friendly guides** for contributing
 5. [Add a news source](tools/SUBMIT_NEWS_SOURCE_README.md) - Interactive Python script
 
 **For developers:**
+See **[DEVELOPMENT.md](DEVELOPMENT.md)** for the full local setup guide, project architecture, and testing instructions.
+
 1. Fork the repository
 2. Create a feature branch: `git checkout -b add-resource`
-3. Make changes and test locally
-4. Commit with clear messages: `git commit -m "Add AWS security labs resource"`
-5. Push to your fork: `git push origin add-resource`
-6. Create a Pull Request
+3. Run `python3 -m http.server 8091` and preview at `http://localhost:8091`
+4. Make changes and test locally (check light mode, dark mode, and mobile layout)
+5. Commit with clear messages: `git commit -m "Add AWS security labs resource"`
+6. Push to your fork: `git push origin add-resource`
+7. Create a Pull Request
 
 ### Contribution Guidelines
 
