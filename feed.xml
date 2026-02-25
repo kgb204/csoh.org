@@ -7,7 +7,7 @@
     <language>en-us</language>
     <managingEditor>admin@csoh.org (CSOH)</managingEditor>
     <webMaster>admin@csoh.org (CSOH)</webMaster>
-    <lastBuildDate>Tue, 24 Feb 2026 15:20:06 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 20:07:24 +0000</lastBuildDate>
     <ttl>720</ttl>
     <atom:link href="https://csoh.org/feed.xml" rel="self" type="application/rss+xml" />
     <image>
@@ -15,6 +15,34 @@
       <title>CSOH - Cloud Security News</title>
       <link>https://csoh.org/news.html</link>
     </image>
+    <item>
+      <title>SolarWinds patches four critical Serv-U flaws enabling root access</title>
+      <link>https://securityaffairs.com/188454/hacking/solarwinds-patches-four-critical-serv-u-flaws-enabling-root-access.html</link>
+      <description>SolarWinds addressed four critical Serv-U vulnerabilities that could let attackers gain root access to unpatched servers. SolarWinds released updates fixing four critical Serv-U vulnerabilities that allow remote code...</description>
+      <source url="https://securityaffairs.com/188454/hacking/solarwinds-patches-four-critical-serv-u-flaws-enabling-root-access.html">Security Affairs</source>
+      <guid isPermaLink="true">https://securityaffairs.com/188454/hacking/solarwinds-patches-four-critical-serv-u-flaws-enabling-root-access.html</guid>
+      <pubDate>Tue, 24 Feb 2026 20:07:24 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>How we rebuilt Next.js with AI in one week</title>
+      <link>https://blog.cloudflare.com/vinext</link>
+      <description>One engineer used AI to rebuild Next.js on Vite in a week. vinext builds up to 4x faster, produces 57% smaller bundles, and deploys to Cloudflare Workers with a single command.</description>
+      <source url="https://blog.cloudflare.com/vinext">Cloudflare Blog</source>
+      <guid isPermaLink="true">https://blog.cloudflare.com/vinext</guid>
+      <pubDate>Tue, 24 Feb 2026 20:00:00 +0000</pubDate>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>RoguePilot Flaw in GitHub Codespaces Enabled Copilot to Leak GITHUB_TOKEN</title>
+      <link>https://thehackernews.com/2026/02/roguepilot-flaw-in-github-codespaces.html</link>
+      <description>A vulnerability in GitHub Codespaces could have been exploited by bad actors to seize control of repositories by injecting malicious Copilot instructions in a GitHub issue. The artificial intelligence (AI)-driven vuln...</description>
+      <source url="https://thehackernews.com/2026/02/roguepilot-flaw-in-github-codespaces.html">The Hacker News</source>
+      <guid isPermaLink="true">https://thehackernews.com/2026/02/roguepilot-flaw-in-github-codespaces.html</guid>
+      <pubDate>Wed, 25 Feb 2026 00:22:00 +0530</pubDate>
+      <category>Vulnerability</category>
+      <category>AI</category>
+    </item>
     <item>
       <title>‘Arkanix Stealer’ Malware Disappears Shortly After Debut</title>
       <link>https://www.securityweek.com/arkanix-stealer-malware-disappears-shortly-after-debut</link>
@@ -189,6 +217,16 @@
       <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/ai-accelerates-attack-breakout</guid>
       <pubDate>Tue, 24 Feb 2026 13:00:00 +0000</pubDate>
       <category>AI</category>
+    </item>
+    <item>
+      <title>CISA Adds One Known Exploited Vulnerability to Catalog</title>
+      <link>https://www.cisa.gov/news-events/alerts/2026/02/24/cisa-adds-one-known-exploited-vulnerability-catalog</link>
+      <description>CISA has added one new vulnerability to its Known Exploited Vulnerabilities (KEV) Catalog , based on evidence of active exploitation. CVE-2026-25108 Soliton Systems K.K. FileZen OS Command Injection Vulnerability This...</description>
+      <source url="https://www.cisa.gov/news-events/alerts/2026/02/24/cisa-adds-one-known-exploited-vulnerability-catalog">CISA Current Activity</source>
+      <guid isPermaLink="true">https://www.cisa.gov/news-events/alerts/2026/02/24/cisa-adds-one-known-exploited-vulnerability-catalog</guid>
+      <pubDate>Tue, 24 Feb 2026 12:00:00 +0000</pubDate>
+      <category>CISA</category>
+      <category>Vulnerability</category>
     </item>
     <item>
       <title>Chinese AI Firms Hit Claude with Distillation Attacks, Anthropic Warns</title>
@@ -389,17 +427,6 @@
       <source url="https://thehackernews.com/2026/02/ai-assisted-threat-actor-compromises.html">The Hacker News</source>
       <guid isPermaLink="true">https://thehackernews.com/2026/02/ai-assisted-threat-actor-compromises.html</guid>
       <pubDate>Sat, 21 Feb 2026 20:19:00 +0530</pubDate>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>Amazon: AI-assisted hacker breached 600 Fortinet firewalls in 5 weeks</title>
-      <link>https://www.bleepingcomputer.com/news/security/amazon-ai-assisted-hacker-breached-600-fortigate-firewalls-in-5-weeks</link>
-      <description>Amazon is warning that a Russian-speaking hacker used multiple generative AI services as part of a campaign that breached more than 600 FortiGate firewalls across 55 countries in five weeks. [...]</description>
-      <source url="https://www.bleepingcomputer.com/news/security/amazon-ai-assisted-hacker-breached-600-fortigate-firewalls-in-5-weeks">BleepingComputer</source>
-      <guid isPermaLink="true">https://www.bleepingcomputer.com/news/security/amazon-ai-assisted-hacker-breached-600-fortigate-firewalls-in-5-weeks</guid>
-      <pubDate>Sat, 21 Feb 2026 08:50:58 -0500</pubDate>
-      <category>AWS</category>
-      <category>Breach</category>
       <category>AI</category>
     </item>
     <item>
@@ -804,15 +831,6 @@
       <category>AI</category>
     </item>
     <item>
-      <title>Fake Incident Report Used in Phishing Campaign, (Tue, Feb 17th)</title>
-      <link>https://isc.sans.edu/diary/rss/32722</link>
-      <description>This morning, I received an interesting phishing email. I&amp;#;x26;#;xe2;&amp;#;x26;#;x80;&amp;#;x26;#;x99;ve a &amp;#;x26;#;xe2;&amp;#;x26;#;x80;&amp;#;x26;#;x9c;love &amp;#;x26; hate&amp;#;x26;#;xe2;&amp;#;x26;#;x80;&amp;#;x9d; relation with such emails...</description>
-      <source url="https://isc.sans.edu/diary/rss/32722">SANS ISC</source>
-      <guid isPermaLink="true">https://isc.sans.edu/diary/rss/32722</guid>
-      <pubDate>Tue, 17 Feb 2026 07:41:46 +0000</pubDate>
-      <category>Phishing</category>
-    </item>
-    <item>
       <title>Building an AI-powered defense-in-depth security architecture for serverless microservices</title>
       <link>https://aws.amazon.com/blogs/security/building-an-ai-powered-defense-in-depth-security-architecture-for-serverless-microservices</link>
       <description>Enterprise customers face an unprecedented security landscape where sophisticated cyber threats use artificial intelligence to identify vulnerabilities, automate attacks, and evade detection at machine speed. Traditio...</description>
@@ -922,16 +940,6 @@
       <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/odido-breach-millions-dutch-telco</guid>
       <pubDate>Mon, 16 Feb 2026 09:30:00 +0000</pubDate>
       <category>Breach</category>
-    </item>
-    <item>
-      <title>Microsoft Discloses DNS-Based ClickFix Attack Using Nslookup for Malware Staging</title>
-      <link>https://thehackernews.com/2026/02/microsoft-discloses-dns-based-clickfix.html</link>
-      <description>Microsoft has disclosed details of a new version of the ClickFix social engineering tactic in which the attackers trick unsuspecting users into running commands that carry out a Domain Name System (DNS) lookup to retr...</description>
-      <source url="https://thehackernews.com/2026/02/microsoft-discloses-dns-based-clickfix.html">The Hacker News</source>
-      <guid isPermaLink="true">https://thehackernews.com/2026/02/microsoft-discloses-dns-based-clickfix.html</guid>
-      <pubDate>Sun, 15 Feb 2026 19:40:00 +0530</pubDate>
-      <category>Azure</category>
-      <category>Scam</category>
     </item>
     <item>
       <title>Munich Security Conference: Cyber Threats Lead G7 Risk Index, Disinformation Ranks Third</title>
@@ -1116,15 +1124,6 @@
       <guid isPermaLink="true">https://www.darkreading.com/data-privacy/do-we-know-enough-about-data-populating-ai</guid>
       <pubDate>Wed, 11 Feb 2026 14:31:47 +0000</pubDate>
       <category>AI</category>
-    </item>
-    <item>
-      <title>Top Cyber Industry Defenses Spike CO2 Emissions</title>
-      <link>https://www.darkreading.com/application-security/cyber-industry-defenses-co2-emissions</link>
-      <description>Organizations can improve their climate footprints by optimizing two specific cybersecurity protections, without incurring added risks.</description>
-      <source url="https://www.darkreading.com/application-security/cyber-industry-defenses-co2-emissions">Dark Reading</source>
-      <guid isPermaLink="true">https://www.darkreading.com/application-security/cyber-industry-defenses-co2-emissions</guid>
-      <pubDate>Wed, 11 Feb 2026 14:00:00 +0000</pubDate>
-      <category>Cloud Security</category>
     </item>
   </channel>
 </rss>
