@@ -1,41 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cloud Breach Kill Chains – CSOH</title>
-  <meta name="description" content="Step-by-step attack kill chains for major cloud security breaches, mapped to MITRE ATT&CK Cloud techniques. A learning resource for cloud security professionals." />
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="/style.css?v=c4a4628a" integrity="sha384-rOUXa/2ZSzMIatsy4p9hJETbFabHMotwz4pkC3NH9iq0SfBJOThn0NmgNm2Wdi2Q" />
-  <link rel="stylesheet" href="breach-timeline.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="description"
+        content="Step-by-step attack kill chains for major cloud security breaches, mapped to MITRE ATT&CK Cloud techniques. A learning resource for cloud security professionals.">
+    <meta name="keywords"
+        content="cloud breach kill chain, MITRE ATT&CK cloud, cloud security breaches, Capital One breach, SolarWinds attack, incident response, cloud attack timeline, AWS security breach, Azure security breach">
+    <title>Breach Kill Chains - Cloud Security Office Hours</title>
+
+    <link rel="canonical" href="https://csoh.org/breach-timeline.html">
+    <link rel="alternate" type="application/rss+xml" title="CSOH Cloud Security News" href="/feed.xml">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="theme-color" content="#2c3e50">
+
+    <meta property="og:title" content="Breach Kill Chains - Cloud Security Office Hours">
+    <meta property="og:description"
+        content="Step-by-step attack kill chains for major cloud security breaches, mapped to MITRE ATT&CK Cloud techniques. A learning resource for cloud security professionals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://csoh.org/breach-timeline.html">
+    <meta property="og:image" content="https://csoh.org/banner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breach Kill Chains - Cloud Security Office Hours">
+    <meta name="twitter:description"
+        content="Step-by-step attack kill chains for major cloud security breaches, mapped to MITRE ATT&CK Cloud techniques.">
+    <meta name="twitter:image" content="https://csoh.org/banner.png">
+
+    <link rel="preload" href="/style.css?v=c4a4628a" as="style"
+        integrity="sha384-rOUXa/2ZSzMIatsy4p9hJETbFabHMotwz4pkC3NH9iq0SfBJOThn0NmgNm2Wdi2Q">
+    <link rel="stylesheet" href="/style.css?v=c4a4628a"
+        integrity="sha384-rOUXa/2ZSzMIatsy4p9hJETbFabHMotwz4pkC3NH9iq0SfBJOThn0NmgNm2Wdi2Q">
+    <link rel="stylesheet" href="breach-timeline.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://csoh.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Breach Kill Chains",
+          "item": "https://csoh.org/breach-timeline.html"
+        }
+      ]
+    }
+    </script>
 </head>
+
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<header class="site-header">
-  <div class="header-content">
-    <a href="index.html" class="site-logo"><span class="logo-icon">☁️</span><span class="logo-text">CSOH</span></a>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="resources.html">Resources</a>
-      <a href="sessions.html">Zoom Sessions</a>
-      <a href="presentations.html">Presentations</a>
-      <a href="news.html">News</a>
-      <a href="breach-timeline.html" class="active">Breach Kill Chains</a>
-      <a href="contribute.html">Contribute</a>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <h1>CSOH</h1>
+                    <p>Cloud Security Office Hours</p>
+                </div>
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <button class="theme-toggle" aria-label="Switch to dark mode">🌙</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="sessions.html">Zoom Sessions</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="breach-timeline.html" class="active" aria-current="page">Breach Kill Chains</a></li>
+                    <li><a href="contribute.html">Contribute</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><span aria-current="page">Breach Kill Chains</span></li>
+        </ol>
     </nav>
-    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
-  </div>
-</header>
 
-<section class="kc-hero">
-  <h1>Cloud Breach <span>Kill Chains</span></h1>
-  <p>Real attacks. Real post-mortems. Step-by-step attack progression mapped to MITRE ATT&amp;CK Cloud — so you can understand exactly what happened, and stop it next time.</p>
-  <div class="hero-chips">
-    <span class="hero-chip chip-mitre">MITRE ATT&amp;CK Cloud Mapped</span>
-    <span class="hero-chip chip-steps">Full Attack Chain Per Incident</span>
-    <span class="hero-chip chip-src">Official Post-Mortems Sourced</span>
-  </div>
-</section>
+    <section class="hero hero--compact">
+        <img src="banner.png" alt="Cloud Security Office Hours Banner" width="1200" height="400" class="hero-img"
+            decoding="async">
+        <h2>Cloud Breach Kill Chains</h2>
+        <p>Real attacks. Real post-mortems. Step-by-step attack progression mapped to MITRE ATT&amp;CK Cloud — so you
+            can understand exactly what happened, and stop it next time.</p>
+    </section>
 
 <nav class="incident-tabs" role="tablist">
   <button class="itab active" data-panel="capital-one" data-year="2019" role="tab">Capital One 2019 <span class="itab-prov prov-aws">AWS</span></button>
@@ -47,7 +110,7 @@
   <button class="itab" data-panel="scattered-spider" data-year="2023" role="tab">Scattered Spider / MGM 2023 <span class="itab-prov prov-azure">Okta · Azure</span></button>
 </nav>
 
-<main class="kc-main kc-page">
+<main class="kc-main kc-page" id="main-content">
 
 <!-- ═══════════════ CAPITAL ONE ═══════════════ -->
 <div id="capital-one" class="incident-panel active" role="tabpanel">
@@ -1207,36 +1270,45 @@
 
 </main>
 
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-section">
-      <h4>Cloud Security Office Hours</h4>
-      <p>Free, vendor-neutral community. Fridays at 7 AM PT on Zoom.</p>
-    </div>
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="breach-timeline.html">Breach Kill Chains</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="sessions.html">Zoom Sessions</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Community</h4>
-      <ul>
-        <li><a href="/cdn-cgi/l/email-protection#7b1a1f1612153b180814135514091c">Contact</a></li>
-        <li><a href="https://github.com/CloudSecurityOfficeHours/csoh.org" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://sendfox.com/CSOH" target="_blank" rel="noopener">Zoom Registration</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2023-2026 Cloud Security Office Hours. Educational use only. All breach details sourced from public post-mortems and official disclosures.</p>
-  </div>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="resources.html">All Resources</a></li>
+                    <li><a href="sessions.html">Zoom Sessions</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="breach-timeline.html">Breach Kill Chains</a></li>
+                </ul>
+            </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/main.js?v=d68d3a13" integrity="sha384-734NBbSGqixqcF2dyK7huLjxrr/nlAgPA91owd+nKDc83LahTK1SVLslSEZmv9Wg"></script>
-<script src="breach-timeline.js"></script>
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="mailto:admin@csoh.org">Contact Us</a></li>
+                    <li><a href="https://sendfox.com/CSOH" target="_blank" rel="noopener noreferrer">Zoom
+                            Registration</a></li>
+                    <li><a href="https://paypal.me/cloudsec" target="_blank" rel="noopener noreferrer">Support CSOH</a>
+                    </li>
+                    <li><a href="/feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>About CSOH</h3>
+                <p>Vendor-neutral community for cloud security professionals. Weekly Zoom sessions and 260+ curated
+                    resources.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023-2026 Cloud Security Office Hours. All resources provided for educational purposes.</p>
+        </div>
+    </footer>
+
+    <script src="/main.js?v=d68d3a13"
+        integrity="sha384-734NBbSGqixqcF2dyK7huLjxrr/nlAgPA91owd+nKDc83LahTK1SVLslSEZmv9Wg" defer></script>
+    <script src="breach-timeline.js"></script>
 </body>
+
 </html>

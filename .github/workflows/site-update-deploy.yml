@@ -10,6 +10,8 @@ on:
       - 'style.css'
       - 'main.js'
       - 'chat-resources.js'
+      - 'breach-timeline.css'
+      - 'breach-timeline.js'
       - 'update_sri.py'
       - '.htaccess'
   workflow_dispatch:

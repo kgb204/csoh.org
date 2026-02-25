@@ -142,6 +142,46 @@ def update_html_file(html_path: Path, hashes: Dict[str, str],
 
         content = chat_script_pattern.sub(replace_chat_script, content)
 
+    # Update breach-timeline.css: SRI hash, cache-bust param, remove crossorigin
+    if 'breach-timeline.css' in hashes:
+        bt_link_pattern = re.compile(
+            r'<link\b[^>]*\bhref=(["\'])(?:\.?/)?breach-timeline\.css(?:\?[^"\']*)?(\1)[^>]*>',
+            re.IGNORECASE,
+        )
+
+        def replace_bt_style_link(match: re.Match) -> str:
+            tag = match.group(0)
+            tag = re.sub(
+                r'(href=["\'])(?:\.?/)?breach-timeline\.css(?:\?[^"\']*)?(["\'])',
+                rf'\g<1>breach-timeline.css?v={cache_busts["breach-timeline.css"]}\2',
+                tag,
+            )
+            tag = upsert_attr(tag, 'integrity', hashes['breach-timeline.css'])
+            tag = remove_attr(tag, 'crossorigin')
+            return tag
+
+        content = bt_link_pattern.sub(replace_bt_style_link, content)
+
+    # Update breach-timeline.js: SRI hash, cache-bust param, remove crossorigin
+    if 'breach-timeline.js' in hashes:
+        bt_script_pattern = re.compile(
+            r'<script\b[^>]*\bsrc=(["\'])(?:\.?/)?breach-timeline\.js(?:\?[^"\']*)?(\1)[^>]*>',
+            re.IGNORECASE,
+        )
+
+        def replace_bt_script(match: re.Match) -> str:
+            tag = match.group(0)
+            tag = re.sub(
+                r'(src=["\'])(?:\.?/)?breach-timeline\.js(?:\?[^"\']*)?(["\'])',
+                rf'\g<1>breach-timeline.js?v={cache_busts["breach-timeline.js"]}\2',
+                tag,
+            )
+            tag = upsert_attr(tag, 'integrity', hashes['breach-timeline.js'])
+            tag = remove_attr(tag, 'crossorigin')
+            return tag
+
+        content = bt_script_pattern.sub(replace_bt_script, content)
+
     # Write back if changed
     if content != original_content:
         with open(html_path, 'w', encoding='utf-8') as f:
@@ -161,6 +201,8 @@ def main():
         'style.css': repo_root / 'style.css',
         'main.js': repo_root / 'main.js',
         'chat-resources.js': repo_root / 'chat-resources.js',
+        'breach-timeline.css': repo_root / 'breach-timeline.css',
+        'breach-timeline.js': repo_root / 'breach-timeline.js',
     }
     
     # Calculate SRI hashes and cache-bust strings
