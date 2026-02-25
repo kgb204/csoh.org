@@ -860,10 +860,10 @@
       <span class="sev-badge sev-critical">Critical</span>
       <span class="prov-tag prov-purple">On-Premises / Dial-Up</span>
     </div>
-    <h2 class="inc-title">Kevin Mitnick / Novell – OSINT → Pretexting → Phone Social Engineering → Dial-Up Access → NetWare Source Code Theft</h2>
-    <p class="inc-summary">While a fugitive living under a false identity in Denver, Kevin Mitnick — the FBI's most wanted hacker — targeted Novell's technical support staff using a technique he called pretexting. By impersonating a Novell employee using authentic corporate lingo, internal knowledge, and manufactured urgency, he convinced support staff to provide credentials and system access. He then used dial-up connections to extract proprietary NetWare source code. Shawn Nunley, a Novell support analyst at the time, was directly targeted by Mitnick and later became the FBI's star witness — before becoming one of Mitnick's closest friends. This entry is notable as a foundational case study in social engineering before the term existed in mainstream security.</p>
+    <h2 class="inc-title">Kevin Mitnick / Novell – War-Dialing Recon → Voicemail Compromise → Home Call Social Engineering → Attack Foiled by Network Admin</h2>
+    <p class="inc-summary">While a fugitive living under a false identity in Denver, Kevin Mitnick — the FBI's most wanted hacker — targeted Shawn Nunley, Novell's network administrator responsible for all inbound connectivity. Mitnick first war-dialed the entire Novell facility — Shawn personally witnessed phones ringing sequentially through the office, one by one in number order, and immediately understood the significance. Mitnick also compromised the voicemail box of real Novell employee Gabe Nault, learning he was on vacation in Vail — a detail he used to craft a convincing pretext. Mitnick then called Shawn directly at home (not a tech support line), impersonating Nault and requesting policy-breaking direct inbound dial access. Shawn instantly recognised the caller as the hacker. Rather than granting access, Shawn played it cool and set a trap: he told the caller he couldn't action it from home and asked him to leave a voicemail. Mitnick did — leaving the voice print that became the only direct evidence linking him to the crimes. The attack on Novell was foiled. Mitnick never obtained dial-up access and never accessed source code. Shawn became the FBI's star witness — before later becoming one of Mitnick's closest friends.</p>
     <div class="inc-stats">
-      <div class="inc-stat"><strong>NetWare source code</strong> stolen</div>
+      <div class="inc-stat"><strong>Attack foiled</strong> — no access or source code obtained</div>
       <div class="inc-stat"><strong>2.5 years</strong> as fugitive targeting multiple companies</div>
       <div class="inc-stat"><strong>25 counts</strong> in federal indictment</div>
       <div class="inc-stat"><strong>Threat actor:</strong> Kevin Mitnick ("Condor"), FBI's Most Wanted</div>
@@ -897,101 +897,96 @@
       </div>
     </div>
 
-    <div class="phase-lbl ph-init">📞 Initial Contact — The Pretext Call</div>
+    <div class="phase-lbl ph-init">📞 Initial Contact — Voicemail Compromise &amp; Targeted Home Call</div>
     <div class="kc-step step-r">
       <div class="step-num">02</div>
       <div class="step-body">
         <div class="step-hdr">
-          <div class="step-title">Mitnick calls Novell technical support impersonating an internal employee</div>
+          <div class="step-title">Mitnick compromises Gabe Nault's voicemail box, then calls Shawn Nunley (network administrator) directly at home</div>
           <a class="mt mt-ta" href="https://attack.mitre.org/techniques/T1566/004/" target="_blank" rel="noopener">T1566.004 – Phishing: Voice</a>
           <a class="mt mt-ca" href="https://attack.mitre.org/techniques/T1656/" target="_blank" rel="noopener">T1656 – Impersonation</a>
         </div>
-        <p class="step-desc">Mitnick called Novell's technical support line — the same line customers and employees used — and presented himself as a legitimate Novell employee or developer with a plausible reason for needing help. He used real employee names, correct internal terminology, and manufactured urgency to make the call feel routine. Shawn Nunley, a support analyst, took the call.</p>
+        <p class="step-desc">Mitnick did not call a tech support line. He first compromised the voicemail box of Gabe Nault, a real Novell employee, learning Nault was on vacation in Vail — a detail he embedded in his pretext to sound authentic. He then called Shawn Nunley — Novell's network administrator responsible for the entire network's inbound connectivity — directly at home, after hours. The call was precisely targeted: Shawn was the specific person who controlled the dial-up access Mitnick wanted. Mitnick impersonated Nault, claiming he was in Vail working on a top-secret project called Snowbird and needed emergency direct inbound dial access — a policy exception only someone in Shawn's role could grant.</p>
         <div class="step-code">
-          <span class="hl">Impersonation type:</span> Internal Novell employee / developer<br>
-          <span class="hl">Technique used:</span> Pretexting — a fully constructed scenario with backstory, urgency, and technical credibility<br>
-          <span class="hl">Location:</span> Mitnick was calling from Denver, living as "Eric Weiss" under a fabricated identity<br>
-
+          <span class="hl">Impersonation target:</span> Gabe Nault (real Novell employee — voicemail compromised to harvest pretext details)<br>
+          <span class="hl">Call recipient:</span> Shawn Nunley — network administrator, not a tech support analyst<br>
+          <span class="hl">Channel:</span> Direct call to Shawn's home phone, not Novell's tech support line<br>
+          <span class="hl">Requested access:</span> Direct inbound dial (policy-breaking exception to the secure dial-back system)<br>
+          <span class="hl">Mitnick's location:</span> Calling from Denver, living as "Eric Weiss" under a fabricated identity<br>
         </div>
-        <div class="step-tags"><span class="stag">Vishing</span><span class="stag">Impersonation</span><span class="stag">Pretexting</span><span class="stag">T1566.004</span><span class="stag">T1656</span></div>
+        <div class="step-tags"><span class="stag">Vishing</span><span class="stag">Impersonation</span><span class="stag">Pretexting</span><span class="stag">Voicemail Compromise</span><span class="stag">T1566.004</span><span class="stag">T1656</span></div>
       </div>
     </div>
 
-    <div class="phase-lbl ph-cred">🎭 Trust Building — The Human Exploit</div>
+    <div class="phase-lbl ph-cred">🎭 Social Engineering Attempt — Pretext Deployed</div>
     <div class="kc-step step-y">
       <div class="step-num">03</div>
       <div class="step-body">
         <div class="step-hdr">
-          <div class="step-title">Mitnick establishes rapport and credibility through technical knowledge and urgency</div>
+          <div class="step-title">Mitnick deploys a carefully researched pretext — but Shawn already suspects the caller</div>
           <a class="mt mt-ca" href="https://attack.mitre.org/techniques/T1656/" target="_blank" rel="noopener">T1656 – Impersonation</a>
         </div>
-        <p class="step-desc">Mitnick's genius was not technical — it was psychological. He assessed his target's willingness to cooperate in the first few seconds, adapting his approach in real time. He used Novell-specific technical language that only an insider would know, referenced real internal projects or colleagues, and framed his request as urgent but routine — something that needed to be resolved quickly to avoid a bigger problem. This is the core of social engineering: making the target feel that compliance is the safe, helpful, professional response.</p>
+        <p class="step-desc">Mitnick's pretext was technically impressive: he impersonated Gabe Nault, cited the real Snowbird project, mentioned Nault's vacation in Vail (which matched Nault's actual voicemail greeting), and framed his request as an urgent business need. However, Shawn was already primed to be suspicious. He had been in the office watching phones ring sequentially, one by one in number order — the classic signature of war-dialing. He knew there was a persistent attacker probing the facility. When the call came, something felt immediately wrong. The pretext was good. Shawn's situational awareness was better.</p>
         <div class="step-code">
-          <span class="hl">Psychological levers used:</span> Authority (internal employee), urgency (time pressure), likeability (charm), reciprocity (asking a reasonable favour)<br>
+          <span class="hl">Pretext elements:</span> Real employee name (Nault), real project (Snowbird), real vacation detail (Vail) lifted from compromised voicemail<br>
+          <span class="hl">Request:</span> Direct inbound dial access — a policy exception requiring manager approval<br>
+          <span class="hl">Why Shawn was suspicious:</span> He had witnessed war-dialing in the office; he instantly recognised the call as the threat actor<br>
           <span class="hl">Mitnick on reading targets:</span> "I'm always on the watch for signs that give me a read on how cooperative a person is"<br>
-          <span class="hl">Why support staff were vulnerable:</span> Helping people quickly was their job — suspicion felt like being unhelpful<br>
-
         </div>
-        <div class="step-tags"><span class="stag">Social Engineering</span><span class="stag">Pretexting</span><span class="stag">Authority Bias</span><span class="stag">Urgency</span><span class="stag">Human Exploit</span></div>
+        <div class="step-tags"><span class="stag">Social Engineering</span><span class="stag">Pretexting</span><span class="stag">Authority Bias</span><span class="stag">Urgency</span><span class="stag">Defender Awareness</span></div>
       </div>
     </div>
 
-    <div class="phase-lbl ph-exec">🔑 Credential Access — Information Elicitation</div>
+    <div class="phase-lbl ph-exec">🪤 Defender Response — Shawn Sets the Trap</div>
     <div class="kc-step step-o">
       <div class="step-num">04</div>
       <div class="step-body">
         <div class="step-hdr">
-          <div class="step-title">Mitnick elicits credentials, dial-up numbers, or system access details from support staff</div>
-          <a class="mt mt-ca" href="https://attack.mitre.org/techniques/T1589/001/" target="_blank" rel="noopener">T1589.001 – Credentials</a>
-          <a class="mt mt-ca" href="https://attack.mitre.org/techniques/T1598/" target="_blank" rel="noopener">T1598 – Phishing for Information</a>
+          <div class="step-title">Shawn plays it cool — denies the access request and asks the caller to leave a voicemail</div>
         </div>
-        <p class="step-desc">Once trust was established, Mitnick steered the conversation toward his actual goal — obtaining credentials, a dial-up number, or system access that would let him connect to Novell's internal network remotely. The request was framed as something mundane: a password reset, a need for a dial-in number to work remotely, or a request to verify account details. The target had no reason to suspect anything unusual.</p>
+        <p class="step-desc">Rather than granting the policy-breaking dial-up access or confronting the caller, Shawn played it completely cool. He told the caller (Mitnick posing as Nault) that he couldn't action the request from home and would have to do it in the morning from the office. To ensure he wouldn't "forget," he asked the caller to leave him a voicemail. This was the trap. Shawn had no intention of granting access — he wanted Mitnick to leave his voice on record. Mitnick agreed. The call ended.</p>
         <div class="step-code">
-          <span class="hl">Documented outcome:</span> Mitnick obtained access credentials or dial-up access to Novell internal systems<br>
-          <span class="hl">Federal indictment:</span> Mitnick and DePayne "stole and copied proprietary computer software from Novell" including NetWare source code<br>
-
+          <span class="hl">Access granted:</span> None — request denied under the cover of "can't do it from home"<br>
+          <span class="hl">Trap set:</span> Shawn asked Mitnick to leave a voicemail — creating a voice print record<br>
+          <span class="hl">Why it worked:</span> Mitnick had no reason to suspect Shawn was suspicious; the excuse was plausible<br>
         </div>
-        <div class="step-tags"><span class="stag">Credential Elicitation</span><span class="stag">Dial-Up Access</span><span class="stag">T1589.001</span><span class="stag">T1598</span></div>
+        <div class="step-tags"><span class="stag">Defender Action</span><span class="stag">Trap Set</span><span class="stag">Social Engineering Reversed</span><span class="stag">Access Denied</span></div>
       </div>
     </div>
 
-    <div class="phase-lbl ph-priv">💻 System Access — Dial-Up Intrusion</div>
+    <div class="phase-lbl ph-priv">🎙️ Mitnick Falls for the Trap — Voice Print Evidence Created</div>
     <div class="kc-step step-p">
       <div class="step-num">05</div>
       <div class="step-body">
         <div class="step-hdr">
-          <div class="step-title">Mitnick dials into Novell's network using obtained credentials — from a cloned cell phone</div>
-          <a class="mt mt-ta" href="https://attack.mitre.org/techniques/T1078/" target="_blank" rel="noopener">T1078 – Valid Accounts</a>
-          <a class="mt mt-de" href="https://attack.mitre.org/techniques/T1036/" target="_blank" rel="noopener">T1036 – Masquerading</a>
+          <div class="step-title">Mitnick leaves the voicemail — the only direct evidence linking him to the crimes</div>
         </div>
-        <p class="step-desc">Using the credentials or dial-up access obtained from the call, Mitnick connected to Novell's internal systems remotely from his Denver apartment — at night, while working a day job at a law firm under a false identity. To hide his location from both the FBI and the phone company, he used cloned cellular phones, cycling through cloned numbers to avoid detection through call records.</p>
+        <p class="step-desc">Mitnick left the voicemail as requested. The next morning Shawn arrived at work, found the message, and immediately recorded it onto a cassette tape for safekeeping. That recording became the primary — and only direct — evidence in the federal case against Mitnick. Everything else in the prosecution was circumstantial. A keystroke cannot be cross-examined; a voice can. Mitnick, for all his skill at manipulating people, had been outmanoeuvred by the one person he called who was already looking for him.</p>
         <div class="step-code">
-          <span class="hl">Connection method:</span> Dial-up modem (pre-internet era remote access)<br>
-          <span class="hl">Credentials used:</span> Obtained via social engineering call to support staff<br>
-          <span class="hl">Location obfuscation:</span> Cloned cellular phones — using stolen ESN/MIN pairs to masquerade as other subscribers<br>
-          <span class="hl">When:</span> Nights, while working as "Eric Weiss" at a Denver law firm during the day<br>
+          <span class="hl">Evidence created:</span> Voice print on Novell voicemail system<br>
+          <span class="hl">Preserved by:</span> Shawn immediately transferred it to cassette tape<br>
+          <span class="hl">Legal significance:</span> The only direct evidence linking Mitnick to the crimes — all other evidence was circumstantial<br>
+          <span class="hl">Mitnick's error:</span> He called the one person at Novell who already suspected there was a persistent threat actor<br>
         </div>
-        <div class="step-tags"><span class="stag">Dial-Up</span><span class="stag">Cloned Cell Phone</span><span class="stag">Valid Credentials</span><span class="stag">T1078</span><span class="stag">False Identity</span></div>
+        <div class="step-tags"><span class="stag">Evidence</span><span class="stag">Voice Print</span><span class="stag">Trap Triggered</span><span class="stag">Attack Foiled</span></div>
       </div>
     </div>
 
-    <div class="phase-lbl ph-exfil">📤 Exfiltration — NetWare Source Code</div>
+    <div class="phase-lbl ph-exfil">🚫 Attack Outcome — Access Denied, No Source Code Obtained</div>
     <div class="kc-step step-c">
       <div class="step-num">06</div>
       <div class="step-body">
         <div class="step-hdr">
-          <div class="step-title">Proprietary Novell NetWare source code copied and exfiltrated</div>
-          <a class="mt mt-ef" href="https://attack.mitre.org/techniques/T1048/" target="_blank" rel="noopener">T1048 – Exfiltration Over Alternative Protocol</a>
-          <a class="mt mt-co" href="https://attack.mitre.org/techniques/T1213/" target="_blank" rel="noopener">T1213 – Data from Information Repositories</a>
+          <div class="step-title">Mitnick never obtained dial-up access to Novell's network and never accessed source code</div>
         </div>
-        <p class="step-desc">With authenticated access to Novell's internal systems, Mitnick copied proprietary NetWare source code — some of the most valuable intellectual property the company owned. The federal indictment confirmed that Mitnick and co-conspirator Lewis DePayne stole and copied this software. Mitnick's motivation, as he repeatedly stated, was not financial — it was intellectual curiosity and the challenge of accessing systems that were supposed to be inaccessible.</p>
+        <p class="step-desc">The social engineering attack on Novell failed. Shawn never granted dial-up access, and Mitnick never connected to Novell's internal network through this attack vector. No source code was accessed or exfiltrated as a result of this incident. Mitnick's wider fugitive activities — involving multiple other targets — eventually led to his arrest on February 15, 1995, in Raleigh, North Carolina, with cloned cellular phones and false identification. The Novell voicemail that Shawn preserved was the key piece of direct evidence in the prosecution.</p>
         <div class="step-code">
-          <span class="hl">Data stolen:</span> Proprietary Novell NetWare source code (confirmed in 25-count federal indictment)<br>
-          <span class="hl">Co-conspirator:</span> Lewis DePayne (charged alongside Mitnick)<br>
-          <span class="hl">Motivation:</span> Intellectual curiosity — Mitnick: "simple crimes of trespass... I wanted to know how these systems worked"<br>
-          <span class="hl">No financial use:</span> No evidence source code was ever sold or used commercially<br>
+          <span class="hl">Access obtained:</span> None<br>
+          <span class="hl">Source code stolen:</span> None — the attack on Novell was foiled before any access was granted<br>
+          <span class="hl">Arrest:</span> February 15, 1995 — Raleigh, North Carolina<br>
+          <span class="hl">Key evidence:</span> The voicemail Shawn preserved — the only direct evidence in the case<br>
         </div>
-        <div class="step-tags"><span class="stag">Source Code Theft</span><span class="stag">NetWare</span><span class="stag">T1048</span><span class="stag">Intellectual Property</span><span class="stag">No Financial Motive</span></div>
+        <div class="step-tags"><span class="stag">Attack Foiled</span><span class="stag">No Access</span><span class="stag">FBI Arrest 1995</span><span class="stag">Defender Win</span></div>
       </div>
     </div>
 
@@ -999,28 +994,28 @@
     <div class="kc-step step-g">
       <div class="step-num">07</div>
       <div class="step-body">
-        <div class="step-hdr"><div class="step-title">FBI investigation — Shawn Nunley becomes star witness, then Mitnick's closest friend</div></div>
-        <p class="step-desc">The FBI built their case against Mitnick in part through witness testimony from support staff he had targeted. Shawn Nunley, who had taken Mitnick's call at Novell, became the government's star witness. But the story didn't end there — Shawn grew disillusioned with the government's handling of the case, contacted Mitnick's defence team, and ultimately became one of Mitnick's dearest friends. It's one of the most extraordinary victim-to-friend trajectories in the history of computer crime.</p>
+        <div class="step-hdr"><div class="step-title">FBI investigation — the voicemail Shawn preserved becomes the only direct evidence; Shawn becomes star witness, then Mitnick's closest friend</div></div>
+        <p class="step-desc">The cassette recording Shawn made of Mitnick's voicemail became the cornerstone of the federal case — the only piece of direct evidence linking Mitnick's voice to the crimes. Shawn worked closely with prosecutors for five years as the government's star witness. But he grew increasingly disillusioned: Mitnick had been held for years without bail and without access to evidence, and a prosecutor explicitly told Shawn they were "sending a message to other would-be hackers" — in other words, due process was being sacrificed for deterrence. Shawn parted ways with the DOJ, contacted Mitnick's defence team, and ultimately helped bring the case to a resolution. After Mitnick was released, the two met face-to-face at RSA. They became lifelong friends. It remains one of the most extraordinary adversary-to-friend trajectories in the history of computer crime.</p>
         <div class="step-code">
+          <span class="hl">Key evidence:</span> Voicemail recording Shawn preserved on cassette — the only direct evidence in the case<br>
           <span class="hl">Arrest:</span> February 15, 1995 — Raleigh, North Carolina apartment<br>
           <span class="hl">Found with:</span> Cloned cellular phones, 100+ cloned phone codes, multiple pieces of false identification<br>
           <span class="hl">Sentence:</span> 46 months + 22 months for supervised release violation (5 years total, including 8 months solitary)<br>
-          <span class="hl">Shawn Nunley:</span> FBI star witness → disillusioned with prosecution → contacted defence → lifelong friend of Mitnick<br>
-
+          <span class="hl">Shawn Nunley:</span> Set the trap → preserved the evidence → FBI star witness → disillusioned with prosecution → contacted defence → lifelong friend of Mitnick<br>
         </div>
-        <div class="step-tags"><span class="stag">FBI Arrest 1995</span><span class="stag">Star Witness</span><span class="stag">False Identity Unravelled</span><span class="stag">Cloned Phones</span></div>
+        <div class="step-tags"><span class="stag">FBI Arrest 1995</span><span class="stag">Star Witness</span><span class="stag">Voicemail Evidence</span><span class="stag">Due Process Concerns</span><span class="stag">Defender Vindicated</span></div>
       </div>
     </div>
 
     <div class="def-box">
-      <h3>🛡 How to Defend Against This Chain</h3>
+      <h3>🛡 Lessons from This Chain</h3>
       <div class="def-items">
-        <div class="def-item"><strong>Implement a call-back verification procedure for any credential or access request by phone.</strong> Never provide passwords, dial-up numbers, or system access to an inbound caller — regardless of how convincing they sound. Hang up and call back on a number you independently verify from your internal directory.</div>
-        <div class="def-item"><strong>Train support staff to recognise the three pressure levers: authority, urgency, and likeability.</strong> Mitnick used all three in every call. When someone is very charming, very knowledgeable, and very urgent all at once — that combination itself is a red flag. Slow down, verify, never let urgency override procedure.</div>
-        <div class="def-item"><strong>Restrict what information support staff can provide and to whom.</strong> Credentials, dial-up numbers, and system access details should never be distributed by phone without a formal verification workflow. The support desk should have a written procedure and authority to refuse without penalty.</div>
-        <div class="def-item"><strong>Monitor dial-up and remote access connections for unusual times or locations.</strong> Mitnick connected at night from Denver. Anomalous remote access — unusual hours, unknown caller ID, high volume of data transferred — should trigger a review.</div>
-        <div class="def-item"><strong>Security awareness training is not optional — it is the primary control against social engineering.</strong> Technical controls stopped none of Mitnick's Novell attack. The only defence was a human one. Regular training that uses realistic scenarios — not just policy documents — is the difference between a staff member who pauses and verifies and one who helps an attacker.</div>
-        <div class="def-item"><strong>This attack still works today.</strong> Vishing (voice phishing) remains one of the top two attack vectors in 2024. The tools have changed — attackers now use AI voice cloning, LinkedIn for OSINT, and SMS as a follow-up — but the psychology is identical to what Mitnick did in 1994. The defence is also identical: verify independently, never let urgency override process.</div>
+        <div class="def-item"><strong>Situational awareness is the most powerful defence against social engineering.</strong> Shawn was already aware that someone was war-dialing the facility. That context made him immediately suspicious when the after-hours call came. Defenders who stay informed about active threats — even low-level ones like sequential phone ringing — are far harder to fool. Share threat intelligence broadly inside the organisation, even if it seems minor.</div>
+        <div class="def-item"><strong>When in doubt, don't deny — delay and gather evidence.</strong> Rather than confronting the caller or outright refusing, Shawn bought time and created evidence by asking for a voicemail. This turned the attacker's own call against him. When you suspect something is wrong but aren't certain, stalling while preserving a record is often more valuable than immediate refusal.</div>
+        <div class="def-item"><strong>Implement a call-back verification procedure for any credential or access request by phone.</strong> Never provide passwords, dial-up numbers, or system access to an inbound caller — regardless of how convincing they sound. Verify identity by calling back on a number sourced independently from your internal directory — never the number the caller provides.</div>
+        <div class="def-item"><strong>Train all staff — not just support teams — to recognise the pressure levers: authority, urgency, and likeability.</strong> Mitnick used all three. Anyone who controls access (network admins, IT ops, facilities) is a target, not just help-desk analysts. When someone is charming, knowledgeable, and urgent all at once, that combination is a red flag. Slow down and verify.</div>
+        <div class="def-item"><strong>Protect voicemail boxes — they are an OSINT goldmine.</strong> Mitnick compromised Gabe Nault's voicemail to harvest his vacation details, then used those details to impersonate him convincingly. Voicemail greetings routinely disclose travel plans, project names, colleague contacts, and absence periods. Treat voicemail as sensitive infrastructure.</div>
+        <div class="def-item"><strong>This attack still works today.</strong> Vishing (voice phishing) remains one of the top attack vectors. The tools have changed — attackers now use AI voice cloning, LinkedIn for OSINT, and SMS as a follow-up — but the psychology is identical to what Mitnick used in 1994. The defence is also identical: verify independently, never let urgency override process, and preserve any suspicious communications as evidence.</div>
       </div>
     </div>
 
