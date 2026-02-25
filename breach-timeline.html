@@ -937,20 +937,22 @@
       </div>
     </div>
 
-    <div class="phase-lbl ph-exec">🪤 Defender Response — Shawn Sets the Trap</div>
+    <div class="phase-lbl ph-exec">🪤 Defender Response — Two Traps, One That Worked</div>
     <div class="kc-step step-o">
       <div class="step-num">04</div>
       <div class="step-body">
         <div class="step-hdr">
-          <div class="step-title">Shawn plays it cool — denies the access request and asks the caller to leave a voicemail</div>
+          <div class="step-title">Shawn plays it cool — deploys an 800-number trap (which Mitnick defeats), then falls back to a voicemail request (which succeeds)</div>
         </div>
-        <p class="step-desc">Rather than granting the policy-breaking dial-up access or confronting the caller, Shawn played it completely cool. He told the caller (Mitnick posing as Nault) that he couldn't action the request from home and would have to do it in the morning from the office. To ensure he wouldn't "forget," he asked the caller to leave him a voicemail. This was the trap. Shawn had no intention of granting access — he wanted Mitnick to leave his voice on record. Mitnick agreed. The call ended.</p>
+        <p class="step-desc">Shawn's counter-intelligence was sophisticated. He had reserved a special AT&T toll-free number — <strong>1-800-37-TCP/IP</strong> — that had never been used for anything, specifically so he could assign it as a trap in exactly this kind of situation. He gave Mitnick this number as the dial-up access he had "requested," knowing that toll-free 800 numbers log the originating caller's phone number. If Mitnick called it, Shawn would know exactly where he was calling from.</p>
+        <p class="step-desc">Mitnick defeated this trap. Because he had illicit access to AT&T's internal phone systems, he simply looked up what Direct Inward Dialing (DID) number the 800 number routed to — and never called it. The 800 trap failed. Shawn then deployed a simpler fallback: he told the caller he couldn't action the request from home anyway and would do it in the morning, but in case he forgot — please leave a voicemail. Mitnick agreed. The call ended.</p>
         <div class="step-code">
+          <span class="hl">Trap #1 (failed):</span> Reserved 800 number 1-800-37-TCP/IP — would log Mitnick's originating call location<br>
+          <span class="hl">Why trap #1 failed:</span> Mitnick had AT&T internal system access; he looked up the DID behind the 800 number and never used it<br>
+          <span class="hl">Trap #2 (succeeded):</span> Shawn asked Mitnick to leave a voicemail, recording his voice<br>
           <span class="hl">Access granted:</span> None — request denied under the cover of "can't do it from home"<br>
-          <span class="hl">Trap set:</span> Shawn asked Mitnick to leave a voicemail — creating a voice print record<br>
-          <span class="hl">Why it worked:</span> Mitnick had no reason to suspect Shawn was suspicious; the excuse was plausible<br>
         </div>
-        <div class="step-tags"><span class="stag">Defender Action</span><span class="stag">Trap Set</span><span class="stag">Social Engineering Reversed</span><span class="stag">Access Denied</span></div>
+        <div class="step-tags"><span class="stag">Defender Action</span><span class="stag">800-Number Trap</span><span class="stag">Voicemail Trap</span><span class="stag">Mitnick Counters First Trap</span><span class="stag">AT&T Internal Access</span></div>
       </div>
     </div>
 
@@ -1001,7 +1003,8 @@
           <span class="hl">Arrest:</span> February 15, 1995 — Raleigh, North Carolina apartment<br>
           <span class="hl">Found with:</span> Cloned cellular phones, 100+ cloned phone codes, multiple pieces of false identification<br>
           <span class="hl">Sentence:</span> 46 months + 22 months for supervised release violation (5 years total, including 8 months solitary)<br>
-          <span class="hl">Shawn Nunley:</span> Set the trap → preserved the evidence → FBI star witness → disillusioned with prosecution → contacted defence → lifelong friend of Mitnick<br>
+          <span class="hl">Prosecutors:</span> Christopher Painter and Ken McGuire (DOJ)<br>
+          <span class="hl">Shawn Nunley:</span> Set the traps → preserved the evidence → FBI star witness → disillusioned with prosecution → contacted defence → lifelong friend of Mitnick<br>
         </div>
         <div class="step-tags"><span class="stag">FBI Arrest 1995</span><span class="stag">Star Witness</span><span class="stag">Voicemail Evidence</span><span class="stag">Due Process Concerns</span><span class="stag">Defender Vindicated</span></div>
       </div>
