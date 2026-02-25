@@ -18,5 +18,5 @@ timeout = 30
 max_retries = 3
 max_concurrency = 10
 
-# Skip email addresses (mailto: links)
-exclude_mail = true
+# Mail addresses are excluded by default in lychee v0.21+.
+# To opt in, set include_mail = true.

@@ -32,7 +32,6 @@ jobs:
             --timeout 30
             --max-retries 3
             --max-concurrency 10
-            --exclude-mail
             --exclude 'linkedin\.com'
             --exclude 'web\.archive\.org/web/\d+'
             --exclude 'localhost'
