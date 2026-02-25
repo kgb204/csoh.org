@@ -1,6 +1,6 @@
 # Cloud Security Office Hours (CSOH)
 
-A modern, community-driven cloud security resource hub built as a fast, responsive static community-driven website. Home to **2000+ security professionals**, **260+ curated resources**, **120+ news articles**, **554+ community-shared URLs**, and weekly expert-led Zoom sessions.
+A modern, community-driven cloud security resource hub built as a fast, responsive static website. Home to **2000+ security professionals**, **260+ curated resources**, **120+ news articles**, **554+ community-shared URLs**, and weekly expert-led Zoom sessions.
 
 [![GitHub](https://img.shields.io/badge/GitHub-CloudSecurityOfficeHours/csoh.org-blue)](https://github.com/CloudSecurityOfficeHours/csoh.org)
 [![Discord](https://img.shields.io/badge/Discord-2000%2B%20Members-5865F2)](https://discord.gg/AVzAY97D8E)
@@ -12,7 +12,7 @@ A modern, community-driven cloud security resource hub built as a fast, responsi
 
 Cloud Security Office Hours is a **vendor-neutral, free community** dedicated to advancing cloud security education and collaboration. Founded in February 2023, CSOH has grown to 2000+ members worldwide, providing:
 
-- **Weekly Expert Zoom Sessions** - Every Friday at 7:00 AM PT with industry experts
+- **Weekly Expert Zoom Sessions** - Every Friday at 7am PT with industry experts
 - **260+ Curated Resources** - CTF challenges, hands-on labs, security tools, certifications
 - **120+ News Articles** - Daily cloud security news from reputable sources
 - **RSS Feed** - Subscribe at [csoh.org/feed.xml](https://csoh.org/feed.xml) for automatic news updates
@@ -99,7 +99,7 @@ Community-shared resources from weekly Zoom sessions:
 
 ### 📅 Zoom Sessions (`sessions.html`)
 Information about weekly community gatherings:
-- **When:** Every Friday at 7:00 AM Pacific Time
+- **When:** Every Friday at 7am PT
 - **Format:** Expert presentations + open discussion + Q&A
 - **Cost:** Completely free
 - **Registration Link:** https://sendfox.com/CSOH
@@ -246,8 +246,12 @@ csoh.org/
 ├── RSS_FEED_README.md          # RSS feed usage guide for subscribers
 │
 ├── .github/workflows/
-│   ├── update-news.yml              # Automated news + RSS feed updates (every 12 hours)
-│   └── site-update-deploy.yml       # Unified workflow: SRI, preview, URL safety, deploy
+│   ├── update-news.yml              # Automated news + RSS feed updates (every 3 hours)
+│   ├── site-update-deploy.yml       # Unified workflow: SRI, preview, deploy
+│   ├── check-url-safety.yml         # URL safety validation on PRs
+│   ├── validate-html.yml            # HTML5 validation on PRs
+│   ├── check-broken-links.yml       # Broken link checker (PRs + weekly)
+│   └── lighthouse.yml               # Performance, accessibility, SEO audits
 │
 ├── resources-data.json         # Data export of all resources (for integrations)
 ├── preview-mapping.json        # Metadata for resource previews
@@ -291,7 +295,7 @@ csoh.org/
 
 ### Adding a New Article to News
 
-News articles are **updated automatically** — you don't need to add them by hand. A GitHub Actions workflow runs every 12 hours, pulls articles from 22 cloud security RSS feeds, and creates a pull request with the new content. See the [How Automation Works](#-how-automation-works) section below for details, or read the full docs in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md).
+News articles are **updated automatically** — you don't need to add them by hand. A GitHub Actions workflow runs every 3 hours, pulls articles from 22 cloud security RSS feeds, and creates a pull request with the new content. See the [How Automation Works](#-how-automation-works) section below for details, or read the full docs in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md).
 
 To **add a new news source**, either:
 
@@ -348,7 +352,7 @@ This site uses **GitHub Actions workflows** to automate all major site updates. 
 2. Runs each step in order, skipping steps if not needed
 3. Only deploys after all updates succeed
 
-**News updates** are still handled by a separate scheduled workflow (`update-news.yml`) that runs every 12 hours and creates a PR with new articles. Once merged, the unified workflow deploys the site.
+**News updates** are still handled by a separate scheduled workflow (`update-news.yml`) that runs every 3 hours and creates a PR with new articles. Once merged, the unified workflow deploys the site.
 
 **Full docs:** See [UPDATE_SRI_README.md](UPDATE_SRI_README.md), [tools/GENERATE_PREVIEW_README.md](tools/GENERATE_PREVIEW_README.md), [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md), and [tools/CHECK_URL_SAFETY_README.md](tools/CHECK_URL_SAFETY_README.md)
 
@@ -418,7 +422,7 @@ See **[DEVELOPMENT.md](DEVELOPMENT.md)** for the full local setup guide, project
 
 ### Join the Community
 - **Discord**: https://discord.gg/AVzAY97D8E - 2000+ members, real-time discussions
-- **Zoom Sessions**: https://sendfox.com/CSOH - Fridays at 7:00 AM PT
+- **Zoom Sessions**: https://sendfox.com/CSOH - Fridays at 7am PT
 - **GitHub**: https://github.com/CloudSecurityOfficeHours/csoh.org
 
 ### Need Help?
@@ -446,7 +450,7 @@ See **[DEVELOPMENT.md](DEVELOPMENT.md)** for the full local setup guide, project
 - **60+** Security tools catalogued
 - **~100+** Published presentations
 - **Weekly** Expert Zoom sessions
-- **2** Automated workflows (news, unified site update/deploy)
+- **6** Automated workflows (news, deploy, URL safety, HTML validation, link checker, Lighthouse)
 
 ---
 
@@ -477,7 +481,7 @@ Special thanks to:
 
 1. **Start with Resources**: Browse [CTF Challenges](resources.html#ctf-challenges) and [Labs](resources.html#labs-training)
 2. **Get Certified**: Explore [Certifications](resources.html#certifications) path for your cloud platform
-3. **Join Community**: Register for [Weekly Zoom Sessions](sessions.html) (Fridays 7 AM PT)
+3. **Join Community**: Register for [Weekly Zoom Sessions](sessions.html) (Fridays 7am PT)
 4. **Stay Updated**: Check [News](news.html) daily for latest threats and updates
 5. **Subscribe to RSS**: Add our [RSS feed](https://csoh.org/feed.xml) to your reader — see [RSS_FEED_README.md](RSS_FEED_README.md) for setup
 6. **Network**: Join [Discord](https://discord.gg/AVzAY97D8E) for real-time discussions
