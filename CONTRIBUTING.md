@@ -2,6 +2,19 @@
 
 Welcome! This guide covers **any change you want to suggest** to the CSOH website — whether it's adding news sources, improving descriptions, fixing typos, or redesigning the homepage. You don't need to be a developer.
 
+> **🎉 First time contributing?** Start here — pick whichever feels easiest:
+>
+> | What you want to do | Easiest way | Time |
+> |---------------------|-------------|------|
+> | **Suggest a resource** | [Open a Resource Suggestion issue](https://github.com/CloudSecurityOfficeHours/csoh.org/issues/new?template=resource_suggestion.yml) (just fill out a form) | 2 min |
+> | **Report a bug** | [Open a Bug Report issue](https://github.com/CloudSecurityOfficeHours/csoh.org/issues/new?template=bug_report.yml) (just fill out a form) | 2 min |
+> | **Suggest a feature** | [Open a Feature Request issue](https://github.com/CloudSecurityOfficeHours/csoh.org/issues/new?template=feature_request.yml) (just fill out a form) | 2 min |
+> | **Add a resource yourself** | Run `python3 tools/submit_resource.py` ([guide](tools/SUBMIT_RESOURCE_README.md)) | 10 min |
+> | **Fix a typo or content** | Edit the file on GitHub ([walkthrough below](#editing-content--descriptions)) | 5 min |
+> | **Set up local development** | Follow the [Local Development Guide](DEVELOPMENT.md) | 5 min |
+>
+> No coding experience needed for the first three!
+
 **Common contributions:**
 - 📰 **News Sources** - Add feeds so we get better articles
 - 📝 **Content Changes** - Improve descriptions, fix typos, update information
@@ -637,10 +650,11 @@ Contributors get:
 
 ## 📞 Need Help?
 
+- **Community chat** → [Discord server](https://discord.gg/AVzAY97D8E) (fastest for questions)
 - **GitHub questions** → Ask in [GitHub Discussions](https://github.com/CloudSecurityOfficeHours/csoh.org/discussions)
-- **Community support** → [Discord server](https://discord.gg/AVzAY97D8E)
 - **Security issues** → Email security@csoh.org
 - **Want to contribute resources?** → Check [CONTRIBUTING_RESOURCES.md](CONTRIBUTING_RESOURCES.md)
+- **Want to set up local development?** → Check [DEVELOPMENT.md](DEVELOPMENT.md)
 
 ---
 

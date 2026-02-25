@@ -1,0 +1,53 @@
+name: "Feature Request"
+description: "Suggest a new feature or improvement for the site"
+title: "Feature: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea that would make CSOH better? We'd love to hear it!
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What's your idea?
+      description: Describe what you'd like to see on the site
+      placeholder: "e.g., Add a 'recently added' section to the resources page so people can see what's new"
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would this help the community?
+      description: Explain how this would benefit cloud security professionals
+      placeholder: "e.g., Many community members ask about new resources in Zoom sessions. A 'recently added' section would make it easy to find them."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area of the site?
+      description: Where would this feature live?
+      options:
+        - Resources page
+        - News page
+        - Homepage
+        - Sessions page
+        - Presentations page
+        - Breach Kill Chains
+        - Navigation / Layout
+        - New page entirely
+        - Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or mockups
+      description: Optional. Link to examples on other sites, paste a rough sketch, or describe how you imagine it working.
+    validations:
+      required: false

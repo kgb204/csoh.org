@@ -1,0 +1,105 @@
+name: "New Kill Chain Request"
+description: "Nominate a cloud breach with a good post-mortem for a kill chain entry"
+title: "Kill chain request: "
+labels: ["kill-chain", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Nominate a cloud security breach for a kill chain entry! The key requirement is a **quality post-mortem or official disclosure** with enough technical detail to map the attack steps.
+
+        Want to write the kill chain yourself? Read the [Kill Chain Contribution Guide](https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/CONTRIBUTING_KILL_CHAINS.md).
+
+  - type: input
+    id: incident-name
+    attributes:
+      label: Incident name
+      placeholder: "e.g., Okta Support System Breach"
+    validations:
+      required: true
+
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: "e.g., 2023"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: cloud-providers
+    attributes:
+      label: Cloud provider(s) involved
+      options:
+        - label: AWS
+        - label: Azure
+        - label: GCP
+        - label: GitHub
+        - label: Other / Multi-cloud
+
+  - type: dropdown
+    id: threat-actor
+    attributes:
+      label: Threat actor type
+      options:
+        - Nation state
+        - Ransomware group
+        - Insider threat
+        - Hacktivist
+        - Unknown / Unattributed
+    validations:
+      required: false
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does this deserve a kill chain?
+      description: 2-3 sentences on what makes this incident instructive for cloud security practitioners
+      placeholder: "What did the attacker do that was novel, interesting, or commonly repeated?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Post-mortem / primary sources
+      description: |
+        Paste the URLs of the best available sources. Good sources include official vendor post-mortems, MSRC blogs, AWS Security Blog, Wiz/Mandiant/CrowdStrike research, CISA advisories, court documents.
+        News articles alone are NOT sufficient — we need technical detail.
+      placeholder: |
+        - Official post-mortem: https://...
+        - Security research: https://...
+        - CISA advisory: https://...
+    validations:
+      required: true
+
+  - type: textarea
+    id: attack-steps
+    attributes:
+      label: Known attack steps (fill in what you know)
+      description: You don't need to complete this fully — even a rough outline helps someone pick this up
+      placeholder: |
+        1. Initial access via ...
+        2. Lateral movement to ...
+        3. Data exfiltration from ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: mitre
+    attributes:
+      label: MITRE ATT&CK techniques (if known)
+      description: "List any techniques you've identified. Format: T1234.001 - Technique Name"
+      placeholder: |
+        - T1078.004 - Valid Accounts: Cloud Accounts
+        - T1530 - Data from Cloud Storage
+    validations:
+      required: false
+
+  - type: textarea
+    id: discussion
+    attributes:
+      label: Additional context
+      description: Was this covered in a Friday Zoom session? Any other context that would help?
+    validations:
+      required: false

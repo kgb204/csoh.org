@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "💬 Ask a Question on Discord"
+    url: "https://discord.gg/AVzAY97D8E"
+    about: "Join our Discord community for real-time help and discussion"
+  - name: "📧 Email the Team"
+    url: "mailto:admin@csoh.org"
+    about: "For private questions or security concerns"
+  - name: "📚 Contribute a Resource (Step-by-Step Guide)"
+    url: "https://csoh.org/contribute-resources.html"
+    about: "Follow our beginner-friendly guide to add a resource yourself"

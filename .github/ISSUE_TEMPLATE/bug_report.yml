@@ -1,0 +1,113 @@
+name: "Bug Report"
+description: "Report a broken link, display issue, or other problem on the site"
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Fill out the form below and we'll look into it.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong?
+      description: Describe the problem. What did you see?
+      placeholder: "e.g., The link to CloudGoat returns a 404 error"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: page
+    attributes:
+      label: Which page?
+      description: Where did you see the problem?
+      options:
+        - Homepage (index.html)
+        - Resources (resources.html)
+        - News (news.html)
+        - Sessions (sessions.html)
+        - Presentations (presentations.html)
+        - Breach Kill Chains (breach-timeline.html)
+        - Chat Resources (chat-resources.html)
+        - Contribute (contribute.html)
+        - Contribute Resources (contribute-resources.html)
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL (if applicable)
+      description: Paste the full URL if you have it
+      placeholder: "https://csoh.org/resources.html"
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened instead?
+      placeholder: "The link should go to https://github.com/RhinoSecurityLabs/cloudgoat"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we see the problem?
+      placeholder: |
+        1. Go to resources.html
+        2. Click on the CloudGoat link
+        3. See 404 error
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Paste a screenshot if it helps explain the problem (drag and drop an image here)
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: Which browser are you using?
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+    validations:
+      required: false
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      description: What device are you using?
+      options:
+        - Desktop / Laptop
+        - Phone
+        - Tablet
+    validations:
+      required: false
+
+  - type: dropdown
+    id: dark-mode
+    attributes:
+      label: Dark mode?
+      description: Were you using dark mode when you saw the issue?
+      options:
+        - "No (light mode)"
+        - "Yes (dark mode)"
+        - Not sure
+    validations:
+      required: false

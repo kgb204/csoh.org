@@ -128,6 +128,7 @@
                 <li><a href="#workflows">Automated workflows</a></li>
                 <li><a href="#pull-request">Creating pull requests</a></li>
                 <li><a href="#faq">FAQ</a></li>
+                <li><a href="#developers">For developers</a></li>
             </ol>
             <p class="mb-0"><strong>⏱️ Time needed:</strong> 5-20 minutes depending on what you're
                 contributing</p>
@@ -484,7 +485,7 @@
                 <li><strong>Preview Image Generation:</strong> Captures screenshots for new resources and updates
                     <code>preview-mapping.json</code>.</li>
                 <li><strong>SRI Hash & Cache-Bust:</strong> Recalculates integrity hashes when CSS/JS changes.</li>
-                <li><strong>News Auto-Updates:</strong> Pulls new articles every 12 hours and opens a PR.</li>
+                <li><strong>News Auto-Updates:</strong> Pulls new articles every 3 hours and opens a PR.</li>
                 <li><strong>Auto-Deploy:</strong> Pushes the site to the server when changes land on main.</li>
             </ul>
 
@@ -688,15 +689,32 @@
                 section—helps our community grow.</p>
         </section>
 
+        <section id="developers">
+            <h2>🛠️ For Developers</h2>
+            <p>Want to preview changes locally before submitting a PR? Our <a
+                    href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/DEVELOPMENT.md" target="_blank"
+                    rel="noopener noreferrer">Local Development Guide</a> gets you up and running in 3 commands:</p>
+            <div class="code-block">
+                git clone https://github.com/CloudSecurityOfficeHours/csoh.org.git
+                cd csoh.org
+                python3 -m http.server 8091
+            </div>
+            <p>No Node.js, no build tools, no package manager. The site is pure HTML/CSS/JS.</p>
+        </section>
+
         <section id="help">
             <h2>📞 Need Help?</h2>
             <div class="link-box">
                 <ul>
+                    <li><a href="https://discord.gg/AVzAY97D8E" target="_blank" rel="noopener noreferrer">💬 Join our
+                            Discord community</a></li>
                     <li><a href="mailto:admin@csoh.org">📧 Email us at admin@csoh.org</a></li>
-                    <li><a href="sessions.html">💬 Join our Friday Zoom session</a></li>
+                    <li><a href="sessions.html">📅 Join our Friday Zoom session</a></li>
                     <li><a href="https://github.com/CloudSecurityOfficeHours/csoh.org/discussions" target="_blank"
                             rel="noopener noreferrer">💭 Ask in GitHub Discussions</a></li>
                     <li><a href="contribute-resources.html">📚 Learn how to add resources</a></li>
+                    <li><a href="https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/DEVELOPMENT.md"
+                            target="_blank" rel="noopener noreferrer">🛠️ Local Development Guide</a></li>
                     <li><a href="https://github.com/CloudSecurityOfficeHours/csoh.org" target="_blank"
                             rel="noopener noreferrer">🍴 View the GitHub repository</a></li>
                 </ul>

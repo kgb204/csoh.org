@@ -1,0 +1,92 @@
+name: "Resource Suggestion"
+description: "Suggest a cloud security resource to add to the site"
+title: "Resource: "
+labels: ["resource", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a resource! Fill out the form below and we'll review it.
+        You can also add resources yourself using our [interactive script](https://github.com/CloudSecurityOfficeHours/csoh.org/blob/main/tools/SUBMIT_RESOURCE_README.md) or [web guide](https://csoh.org/contribute-resources.html).
+
+  - type: input
+    id: name
+    attributes:
+      label: Resource name
+      description: The name of the tool, lab, certification, etc.
+      placeholder: "e.g., CloudGoat"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Link to the resource (use HTTPS when available)
+      placeholder: "https://github.com/RhinoSecurityLabs/cloudgoat"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which section does this belong in?
+      options:
+        - CTF Challenges & Vulnerable Environments
+        - Hands-On Labs & Training Platforms
+        - Security Tools & Platforms
+        - Certifications & Professional Development
+        - AI Security Resources
+        - Job Search Resources
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Why add this?
+      description: 1-2 sentences on why this is useful for cloud security professionals
+      placeholder: "Intentionally vulnerable AWS environment with 10+ attack scenarios for practicing IAM exploitation and privilege escalation."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tags
+    attributes:
+      label: Tags
+      description: Select all tags that apply to this resource
+      options:
+        - label: AWS
+        - label: Azure
+        - label: GCP
+        - label: Kubernetes
+        - label: Multi-Cloud
+        - label: CTF
+        - label: Labs & Training
+        - label: Tool
+        - label: Certification
+        - label: Job Search
+        - label: AI Security
+        - label: Free
+        - label: Paid
+        - label: Open Source
+        - label: Penetration Testing
+        - label: Vulnerability Testing
+        - label: Cloud Scanning
+        - label: IAM
+        - label: DevSecOps
+        - label: Compliance
+        - label: Secrets Management
+
+  - type: dropdown
+    id: affiliation
+    attributes:
+      label: Are you affiliated with this resource?
+      description: Transparency is welcome! Self-submissions are accepted if the resource is genuinely useful.
+      options:
+        - "No, I'm just a user/fan"
+        - "Yes, I created or work on this"
+    validations:
+      required: true
