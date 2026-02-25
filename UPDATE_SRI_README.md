@@ -105,7 +105,7 @@ SRI and cache-busting are handled as part of the unified workflow, not a separat
 
 ### Triggers
 
-- **On push to main:** Runs automatically when `style.css`, `main.js`, `chat-resources.js`, `update_sri.py`, `resources.html`, `chat-resources.html`, or `chat-screenshots/**` change
+- **On push to main:** Runs automatically when any `*.html` file, `style.css`, `main.js`, `chat-resources.js`, `breach-timeline.css`, `breach-timeline.js`, `update_sri.py`, `.htaccess`, or `chat-screenshots/**` change
 - **Manual:** Can be triggered from the GitHub Actions tab
 
 ### What it does
@@ -115,7 +115,7 @@ SRI and cache-busting are handled as part of the unified workflow, not a separat
 3. Commits and pushes updated HTML files if hashes changed
 4. Generates preview images for any new resources in `resources.html`
 5. Deploys the site via FTP in smart passes:
-   - **Pass 1:** Always — all HTML/CSS/JS and site files (skips image directories)
+   - **Pass 1:** When deploy is triggered — all HTML/CSS/JS and site files (skips image directories)
    - **Pass 2:** Only when new previews were generated — uploads `img/previews/`
    - **Pass 3:** Only when new files exist in `chat-screenshots/` — uploads `chat-screenshots/`
 
@@ -123,10 +123,10 @@ SRI and cache-busting are handled as part of the unified workflow, not a separat
 
 ## Manual Hash Calculation
 
-If you just want to check a file's hash without running the full script, there's also a shell script:
+If you just want to check a file's hash without running the full script:
 
 ```bash
-./calculate-sri.sh main.js style.css
+openssl dgst -sha384 -binary style.css | openssl base64 -A
 ```
 
 ---

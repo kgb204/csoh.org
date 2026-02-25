@@ -172,4 +172,4 @@ That's normal — feed URLs are meant to be opened in a feed reader, not a brows
 
 ## About Cloud Security Office Hours
 
-[Cloud Security Office Hours](https://csoh.org) is a vendor-neutral community for cloud security professionals. We meet weekly on Zoom and maintain a curated collection of 260+ security resources. Join us at [csoh.org](https://csoh.org).
+[Cloud Security Office Hours](https://csoh.org) is a vendor-neutral community for cloud security professionals. We meet weekly on Zoom and maintain a curated collection of 200+ security resources. Join us at [csoh.org](https://csoh.org).

@@ -74,7 +74,7 @@ The site is a **static HTML website** with no build step or framework. Each page
 ```
 csoh.org/
 ├── index.html              # Homepage
-├── resources.html          # 260+ curated resources (largest page)
+├── resources.html          # 200+ curated resources (largest page)
 ├── news.html               # Auto-generated news articles
 ├── chat-resources.html     # Community-shared URLs from Zoom chat
 ├── sessions.html           # Weekly Zoom session info

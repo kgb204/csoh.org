@@ -267,7 +267,7 @@ graph LR
 
 - **Single preview**: 5-20 seconds
 - **Batch (10 URLs)**: 1-3 minutes
-- **Full site scan**: 5-10 minutes (260+ resources)
+- **Full site scan**: 5-10 minutes (200+ resources)
 
 The workflow only generates missing previews, not all images every time.
 

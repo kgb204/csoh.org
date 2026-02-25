@@ -240,7 +240,6 @@ csoh.org/
 │
 ├── update_news.py              # Python script to auto-update news articles + RSS feed
 ├── update_sri.py               # Python script to update SRI hashes & cache-bust params
-├── calculate-sri.sh            # Shell script for manual SRI hash calculation
 ├── UPDATE_NEWS_README.md       # News automation documentation
 ├── UPDATE_SRI_README.md        # SRI & cache-busting documentation
 ├── RSS_FEED_README.md          # RSS feed usage guide for subscribers

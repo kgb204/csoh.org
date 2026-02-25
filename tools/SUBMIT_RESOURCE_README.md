@@ -187,7 +187,7 @@ Select from 20+ tags organized by:
 - **Platform Tags** - AWS, Azure, GCP, Kubernetes, Multi-Cloud
 - **Resource Type** - CTF, Labs, Tools, Certifications, Job Search
 - **Security Focus** - Penetration Testing, DevSecOps, IAM, Compliance, AI Security
-- **Other** - NEW 2025, Free, Paid, Open Source
+- **Other** - NEW 2026, Free, Paid, Open Source
 
 ### 🌿 Git Integration
 

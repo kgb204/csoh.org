@@ -44,7 +44,7 @@ The `check_all_site_urls.py` script scans **all HTML files** in your site (not j
 - Detailed suspicious and unsafe URL lists
 - File-by-file breakdown of issues
 
-This is automatically run by the unified site-update-deploy.yml workflow on every pull request or push that changes HTML files.
+This is automatically run by the `check-url-safety.yml` workflow on every pull request or push that changes HTML files.
 
 ## What It Checks
 

@@ -163,7 +163,7 @@ Tags help people find resources. Pick 2-5 tags from this list:
 
 **Security Focus:** `Vulnerability Testing` • `Penetration Testing` • `Cloud Scanning` • `Secrets Management` • `Compliance` • `AI Security` • `IAM` • `DevSecOps`
 
-**Other:** `NEW 2025` • `Free` • `Paid` • `Open Source`
+**Other:** `NEW 2026` • `Free` • `Paid` • `Open Source`
 
 ### Step 3: Get a Preview Image (Optional)
 
