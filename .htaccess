@@ -169,6 +169,11 @@ ServerSignature Off
     ExpiresByType application/javascript "access plus 1 year"
     ExpiresByType text/javascript "access plus 1 year"
 
+    # XML feeds (RSS, sitemap) - short cache, revalidate often
+    ExpiresByType application/xml "access plus 1 hour"
+    ExpiresByType application/rss+xml "access plus 1 hour"
+    ExpiresByType text/xml "access plus 1 hour"
+
     # Images - long cache
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"

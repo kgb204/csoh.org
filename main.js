@@ -506,6 +506,20 @@ function updateVisibleCount() {
     if (countElement) {
         countElement.textContent = visibleCount;
     }
+
+    // Show/hide "no results" message
+    const noResults = document.getElementById('noResults');
+    if (noResults) {
+        noResults.style.display = visibleCount === 0 ? '' : 'none';
+    }
+
+    // Announce to screen readers
+    const announce = document.getElementById('searchAnnounce');
+    if (announce) {
+        announce.textContent = visibleCount === 0
+            ? 'No resources match your search.'
+            : 'Showing ' + visibleCount + ' resource' + (visibleCount !== 1 ? 's' : '') + '.';
+    }
 }
 
 // =========================================================================
