@@ -1,0 +1,81 @@
+name: Check Broken Links
+
+on:
+  pull_request:
+    paths:
+      - '**.html'
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+  schedule:
+    # Weekly on Mondays at 06:00 UTC to catch external link rot
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4.3.1
+
+      - name: Check for broken links
+        uses: lycheeverse/lychee-action@a8c4c7cb88f0c7386610c35eb25108e448569cb0  # v2.7.0
+        with:
+          args: >-
+            --verbose
+            --no-progress
+            --accept 200,204,301,302,308
+            --timeout 30
+            --max-retries 3
+            --max-concurrency 10
+            --exclude-mail
+            --exclude 'linkedin\.com'
+            --exclude 'web\.archive\.org/web/\d+'
+            --exclude 'localhost'
+            --exclude 'sendfox\.com'
+            --glob-ignore-case
+            './*.html'
+          output: ./lychee-report.md
+          format: markdown
+          fail: true
+
+      - name: Upload link check report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
+        with:
+          name: broken-links-report
+          path: ./lychee-report.md
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Comment on PR with broken links
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b  # v7.1.0
+        with:
+          script: |
+            const fs = require('fs');
+            let report = '';
+            try {
+              report = fs.readFileSync('./lychee-report.md', 'utf8');
+            } catch (e) {
+              report = 'Error reading link check report';
+            }
+
+            if (report.length > 60000) {
+              report = report.substring(0, 60000) + '\n\n...(truncated, see artifacts for full report)';
+            }
+
+            let comment = `## :warning: Broken Links Detected\n\n`;
+            comment += report;
+            comment += `\n\n---\nFull report available in workflow artifacts.`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

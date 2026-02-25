@@ -1,0 +1,67 @@
+name: Validate HTML
+
+on:
+  pull_request:
+    paths:
+      - '**.html'
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+  workflow_dispatch:
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4.3.1
+
+      - name: Validate HTML5
+        uses: Cyb3r-Jak3/html5validator-action@443b108eb8e134b63a1f8a8ba0c942d552608ed7  # master 2025-09-19
+        with:
+          root: .
+          extra: '--ignore-re "google.*\.html"'
+
+      - name: Upload validation log
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
+        with:
+          name: html-validation-log
+          path: log.log
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Comment on PR with validation results
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b  # v7.1.0
+        with:
+          script: |
+            const fs = require('fs');
+            let log = '';
+            try {
+              log = fs.readFileSync('log.log', 'utf8');
+            } catch (e) {
+              log = 'Error reading validation log';
+            }
+
+            const lines = log.split('\n');
+            const trimmed = lines.length > 50
+              ? '...(truncated)\n' + lines.slice(-50).join('\n')
+              : log;
+
+            const errorCount = (log.match(/error:/gi) || []).length;
+
+            let comment = `## :x: HTML Validation Failed\n\n`;
+            comment += `Found **${errorCount} validation error(s)** in HTML files.\n\n`;
+            comment += `\`\`\`\n${trimmed}\n\`\`\`\n\n`;
+            comment += `Fix the errors above and push again. Full log in workflow artifacts.`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

@@ -126,7 +126,36 @@ ServerSignature Off
 </IfModule>
 
 # ---------------------------------------------------------------------------
-# 5. STATIC ASSET CACHING
+# 5. COMPRESSION (gzip/deflate for smaller transfer sizes)
+# ---------------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+    # Compress text-based content (HTML, CSS, JS, JSON, XML, SVG, fonts)
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+
+    # Skip already-compressed formats
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|ico|zip|gz|bz2|rar|pdf|woff2)$ no-gzip
+
+    # Inform caches that response varies by Accept-Encoding
+    Header append Vary Accept-Encoding
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# 6. STATIC ASSET CACHING
 # ---------------------------------------------------------------------------
 
 <IfModule mod_expires.c>
@@ -150,13 +179,13 @@ ServerSignature Off
 </IfModule>
 
 # ---------------------------------------------------------------------------
-# 6. DISABLE DIRECTORY LISTING
+# 7. DISABLE DIRECTORY LISTING
 # ---------------------------------------------------------------------------
 
 Options -Indexes
 
 # ---------------------------------------------------------------------------
-# 7. CUSTOM ERROR PAGES (optional - create these files if desired)
+# 8. CUSTOM ERROR PAGES (optional - create these files if desired)
 # ---------------------------------------------------------------------------
 
 ErrorDocument 403 /403.html

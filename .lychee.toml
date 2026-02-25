@@ -1,0 +1,22 @@
+# .lychee.toml - Configuration for lychee link checker
+# Used by both CI and local runs: lychee ./*.html
+
+# Exclude patterns that block automated checks
+exclude = [
+  "linkedin\\.com",                # LinkedIn blocks bots with 999 status
+  "web\\.archive\\.org/web/\\d+",  # Archive.org rate-limits aggressively
+  "sendfox\\.com",                 # Newsletter signup, auth-walled
+  "localhost",
+  "127\\.0\\.0\\.1",
+]
+
+# Accept common redirect status codes
+accept = [200, 204, 301, 302, 308]
+
+# Reasonable timeouts for external sites
+timeout = 30
+max_retries = 3
+max_concurrency = 10
+
+# Skip email addresses (mailto: links)
+exclude_mail = true
