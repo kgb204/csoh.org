@@ -6,7 +6,7 @@ An interactive Python script that makes it easy to submit new resources to CSOH.
 
 This tool guides you through the entire process of adding a resource:
 
-1. ✅ **Collects all required information** - Interactive prompts for name, URL, description, category, tags
+1. ✅ **Collects all required information** - Interactive prompts for name, URL, description, tooltip, category, tags
 2. 🔒 **Validates URL safety** - Automatic security checks using our URL safety validator
 3. 🖼️ **Generates preview image (optional)** - Captures a screenshot if you choose
 4. 📝 **Generates proper HTML** - Creates correctly formatted resource card
@@ -54,11 +54,20 @@ URL: https://github.com/RhinoSecurityLabs/cloudgoat
 
 #### Step 3: Description
 ```
-Description: Open-source AWS vulnerable-by-design environment for practicing 
+Description: Open-source AWS vulnerable-by-design environment for practicing
 cloud security penetration testing and incident response.
 ```
 
-#### Step 4: Category
+#### Step 4: Extended Tooltip Description
+```
+Tooltip description (press Enter to skip):
+CloudGoat deploys real AWS resources with intentional misconfigurations you
+exploit using the AWS CLI and console. Scenarios cover IAM privilege
+escalation, Lambda abuse, and S3 data exfiltration. Requires an AWS account
+with admin access — all resources are cleaned up with a single destroy command.
+```
+
+#### Step 5: Category
 ```
 Select the main category:
   1. CTF Challenges & Vulnerable Environments
@@ -71,7 +80,7 @@ Select the main category:
 Your selection: 1
 ```
 
-#### Step 5: Tags
+#### Step 6: Tags
 ```
 Available Tags (select relevant ones):
 
@@ -94,7 +103,7 @@ Available Tags (select relevant ones):
   Your selection: 1,6,7
 ```
 
-#### Step 6: Review
+#### Step 7: Review
 ```
 📋 Review Your Submission
 
@@ -107,7 +116,7 @@ Description: Open-source AWS vulnerable-by-design environment...
 ✅ Does this look correct? (y/n): y
 ```
 
-#### Step 6.5: Preview Image (Optional)
+#### Step 7.5: Preview Image (Optional)
 ```
 🖼️  Generate preview image automatically? (y/n, default=y): y
 
@@ -119,20 +128,20 @@ This may take 10-30 seconds...
 
 Note: For forked PRs, preview images are generated but may not be pushed back automatically.
 
-#### Step 7: Generation and Insertion
+#### Step 8: Generation and Insertion
 ```
 📝 Generating and Inserting HTML
 ✅ Successfully updated resources.html!
 ```
 
-#### Step 8: Git Operations
+#### Step 9: Git Operations
 ```
 📝 Creating git branch: add-cloudgoat
 ✅ Created branch: add-cloudgoat
 ✅ Committed changes
 ```
 
-#### Step 9: Push and PR
+#### Step 10: Push and PR
 ```
 Your changes are ready! Here's what to do next:
 

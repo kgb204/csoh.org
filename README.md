@@ -275,7 +275,7 @@ csoh.org/
 
 ```html
 <a href="https://resource-url.com" target="_blank" class="card-link" rel="noopener noreferrer">
-    <div class="resource-card">
+    <div class="resource-card" data-tooltip="Extended 2-3 sentence description shown on hover. Cover what makes it unique, who benefits most, and prerequisites or cost.">
         <img src="img/previews/resource-url.com.jpg" alt="Preview" class="resource-preview">
         <h3>Resource Name</h3>
         <p>Brief description of what this resource offers and why it's valuable for cloud security professionals.</p>

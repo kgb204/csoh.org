@@ -2824,4 +2824,43 @@ footer {
     }
 }
 
+/* =========================================================================
+   RESOURCE CARD TOOLTIPS
+   ========================================================================= */
+
+.resource-tooltip {
+    position: fixed;
+    z-index: 9000;
+    max-width: 360px;
+    width: max-content;
+    padding: 0.75rem 1rem;
+    background-color: var(--white);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.resource-tooltip.visible {
+    opacity: 1;
+}
+
+[data-theme="dark"] .resource-tooltip {
+    background-color: #1c2530;
+    color: #e8ecf2;
+    border-color: #30445a;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .resource-tooltip {
+        display: none !important;
+    }
+}
+
 /* end of stylesheet - v2 */

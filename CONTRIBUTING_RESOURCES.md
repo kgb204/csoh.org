@@ -28,7 +28,7 @@ python3 tools/submit_resource.py
 ```
 
 This interactive tool:
-- ✅ Prompts you for all required information
+- ✅ Prompts you for all required information (including hover tooltip)
 - ✅ Validates URLs automatically
 - ✅ Generates proper HTML
 - ✅ Creates git branch and commits
@@ -61,6 +61,7 @@ If you are new to GitHub or the command line, this is the easiest path. Follow t
   - Resource name
   - URL
   - Description
+  - Tooltip (extended hover description — optional)
   - Category
   - Tags
   - Confirmation
@@ -190,7 +191,7 @@ Preview images are the small screenshot shown for each resource. They're optiona
 
 ```html
 <a href="PASTE_YOUR_URL_HERE" class="card-link" target="_blank">
-    <div class="resource-card">
+    <div class="resource-card" data-tooltip="Extended 2-3 sentence description that appears on hover. Cover what makes it unique, who benefits most, and any prerequisites or cost info.">
         <h3>Your Resource Name</h3>
         <p>Your resource description goes here. Keep it to 1-2 sentences explaining what it does and why it's useful.</p>
         <div class="resource-tags">
@@ -204,6 +205,7 @@ Preview images are the small screenshot shown for each resource. They're optiona
 
 **What to change:**
 - `PASTE_YOUR_URL_HERE` → Your resource's URL
+- `data-tooltip="..."` → A richer 2-3 sentence description shown on hover (what makes it unique, who benefits, prerequisites). Use `&quot;` for quotes and `&amp;` for ampersands inside the attribute. Optional — you can remove the attribute if you don't have one.
 - `Your Resource Name` → The actual name
 - `Your resource description...` → What you wrote in Step 1
 - The `<span class="tag">` lines → Your tags

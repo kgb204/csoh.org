@@ -79,6 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPreviewMap().then(() => {
         addPreviewImagesToCards();
     });
+
+    // Tooltip on hover for resource cards with data-tooltip
+    initTooltips();
     
     // Show All Articles button
     const showAllBtn = document.getElementById('showAllBtn');
@@ -732,4 +735,71 @@ function initShareButtons() {
     });
 }
 
+// =========================================================================
+// RESOURCE CARD TOOLTIPS
+// =========================================================================
 
+function initTooltips() {
+    // Skip on touch devices — no hover available
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+
+    var tooltip = document.createElement('div');
+    tooltip.className = 'resource-tooltip';
+    tooltip.setAttribute('role', 'tooltip');
+    tooltip.id = 'resourceTooltip';
+    document.body.appendChild(tooltip);
+
+    var showTimeout = null;
+    var currentCard = null;
+
+    var container = document.getElementById('main-content');
+    if (!container) return;
+
+    container.addEventListener('mouseover', function (e) {
+        var card = e.target.closest('.resource-card[data-tooltip]');
+        if (!card || card === currentCard) return;
+
+        currentCard = card;
+        clearTimeout(showTimeout);
+
+        showTimeout = setTimeout(function () {
+            tooltip.textContent = card.dataset.tooltip;
+            card.setAttribute('aria-describedby', 'resourceTooltip');
+            tooltip.classList.add('visible');
+        }, 300);
+    });
+
+    container.addEventListener('mousemove', function (e) {
+        if (!tooltip.classList.contains('visible') && !showTimeout) return;
+
+        var pad = 12;
+        var edge = 8;
+        var tw = tooltip.offsetWidth || 360;
+        var th = tooltip.offsetHeight || 60;
+
+        var x = e.clientX + pad;
+        var y = e.clientY + pad;
+
+        if (x + tw > window.innerWidth - edge) x = e.clientX - tw - pad;
+        if (y + th > window.innerHeight - edge) y = e.clientY - th - pad;
+        x = Math.max(edge, x);
+        y = Math.max(edge, y);
+
+        tooltip.style.left = x + 'px';
+        tooltip.style.top = y + 'px';
+    });
+
+    container.addEventListener('mouseout', function (e) {
+        var card = e.target.closest('.resource-card[data-tooltip]');
+        if (!card) return;
+
+        var related = e.relatedTarget;
+        if (related && card.contains(related)) return;
+
+        clearTimeout(showTimeout);
+        showTimeout = null;
+        currentCard = null;
+        tooltip.classList.remove('visible');
+        card.removeAttribute('aria-describedby');
+    });
+}

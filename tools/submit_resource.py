@@ -159,12 +159,17 @@ def select_tags():
         except (ValueError, IndexError):
             print("  ❌ Invalid selection. Please use numbers separated by commas.\n")
 
-def create_resource_html(name, url, description, tags):
+def create_resource_html(name, url, description, tags, tooltip=''):
     """Generate the HTML for a resource card."""
     tags_html = '\n            '.join([f'<span class="tag">{tag}</span>' for tag in tags])
-    
+
+    tooltip_attr = ''
+    if tooltip:
+        escaped = tooltip.replace('&', '&amp;').replace('"', '&quot;')
+        tooltip_attr = f' data-tooltip="{escaped}"'
+
     html = f'''    <a href="{url}" target="_blank" class="card-link" rel="noopener noreferrer">
-        <div class="resource-card">
+        <div class="resource-card"{tooltip_attr}>
             <h3>{name}</h3>
             <p>{description}</p>
             <div class="resource-tags">
@@ -172,7 +177,7 @@ def create_resource_html(name, url, description, tags):
             </div>
         </div>
     </a>'''
-    
+
     return html
 
 def find_category_section(html_content, category_id):
@@ -257,7 +262,7 @@ def main():
     print("This tool will help you add a new resource to CSOH.org")
     print("It will:")
     print("  ✅ Validate your URL for security")
-    print("  ✅ Generate the proper HTML")
+    print("  ✅ Generate the proper HTML (with hover tooltip)")
     print("  ✅ Create a git branch and commit")
     print("  ✅ Provide instructions for creating a PR")
     
@@ -319,31 +324,39 @@ def main():
     print("Explain what it is and why it's useful for cloud security professionals")
     description = get_input("Description")
     
-    # Step 4: Select category
-    print_section("Step 4: Category")
+    # Step 4: Extended Tooltip Description
+    print_section("Step 4: Extended Tooltip Description")
+    print("Write 2-3 sentences that appear when someone hovers over the card.")
+    print("Cover what makes it unique, who benefits most, and any prerequisites.")
+    print("(Press Enter to skip — you can always add one later)")
+    tooltip = get_input("Tooltip description", required=False)
+
+    # Step 5: Select category
+    print_section("Step 5: Category")
     category_id, category_name = select_from_list(
         "Select the main category for this resource:",
         CATEGORIES
     )
-    
-    # Step 5: Select tags
-    print_section("Step 5: Tags")
+
+    # Step 6: Select tags
+    print_section("Step 6: Tags")
     tags = select_tags()
     
-    # Step 6: Review
+    # Step 7: Review
     print_section("📋 Review Your Submission")
     print(f"Name:        {name}")
     print(f"URL:         {url}")
     print(f"Category:    {category_name}")
     print(f"Tags:        {', '.join(tags)}")
     print(f"Description: {description}")
+    print(f"Tooltip:     {tooltip if tooltip else '(none)'}")
     
     confirm = input("\n✅ Does this look correct? (y/n): ").strip().lower()
     if confirm != 'y':
         print("\n⛔ Submission cancelled.")
         return 0
     
-    # Step 6.5: Generate preview image (optional)
+    # Step 7.5: Generate preview image (optional)
     preview_path = None
     generate_preview_prompt = input("\n🖼️  Generate preview image automatically? (y/n, default=y): ").strip().lower()
     
@@ -375,10 +388,10 @@ def main():
         print("\n⏭️  Skipping preview generation")
         print("   Preview will be auto-generated later by GitHub Actions")
     
-    # Step 7: Generate HTML and update file
-    print_section("Step 7: Generating and Inserting HTML")
-    
-    resource_html = create_resource_html(name, url, description, tags)
+    # Step 8: Generate HTML and update file
+    print_section("Step 8: Generating and Inserting HTML")
+
+    resource_html = create_resource_html(name, url, description, tags, tooltip)
     print("Generated HTML:")
     print(resource_html)
     
@@ -421,8 +434,8 @@ def main():
     
     print("✅ Successfully updated resources.html!")
     
-    # Step 8: Create git branch and commit
-    print_section("Step 8: Creating Git Branch and Commit")
+    # Step 9: Create git branch and commit
+    print_section("Step 9: Creating Git Branch and Commit")
     
     success, branch_name = create_branch_and_commit(name)
     if not success:
@@ -434,8 +447,8 @@ def main():
     print(f"✅ Created branch: {branch_name}")
     print(f"✅ Committed changes")
     
-    # Step 9: Push and create PR
-    print_section("Step 9: Next Steps - Create Pull Request")
+    # Step 10: Push and create PR
+    print_section("Step 10: Next Steps - Create Pull Request")
     
     print("Your changes are ready! Here's what to do next:\n")
     print(f"1. Push your branch to GitHub:")

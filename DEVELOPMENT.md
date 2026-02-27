@@ -102,6 +102,15 @@ csoh.org/
 - JS: Toggle button in `main.js` sets `data-theme` attribute on the `<html>` element
 - Preference is saved to `localStorage`
 
+**Hover Tooltips** (resources.html)
+- Each `.resource-card` has a `data-tooltip` attribute with an extended 2-3 sentence description
+- A single reusable `<div class="resource-tooltip">` is appended to `<body>` by `initTooltips()` in `main.js`
+- Event delegation on `#main-content` (mouseover/mousemove/mouseout) with a 300ms show delay
+- Tooltip positions near the cursor and flips direction when close to viewport edges
+- Hidden on touch devices via `@media (hover: none) and (pointer: coarse)`
+- Dark mode styled via `[data-theme="dark"] .resource-tooltip`
+- Tooltip text is NOT included in search/filter — only `data-tooltip` attribute, not visible DOM text
+
 **Search & Filtering** (resources.html)
 - `main.js` reads resource cards from the DOM
 - Filters by text input (title, description, tags) and category buttons
