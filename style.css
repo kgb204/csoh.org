@@ -2263,6 +2263,11 @@ footer {
     --shadow-lg: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* --- Dark mode: hamburger menu ------------------------------------------- */
+[data-theme="dark"] .hamburger {
+    color: #ffffff;
+}
+
 /* --- Dark mode: base body ------------------------------------------------ */
 [data-theme="dark"] body {
     background-color: var(--light-bg);
