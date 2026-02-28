@@ -52,7 +52,7 @@ jobs:
             './*.html'
           output: ./lychee-report.md
           format: markdown
-          fail: true
+          fail: false
 
       - name: Upload link check report
         if: always()
@@ -63,8 +63,18 @@ jobs:
           retention-days: 30
           if-no-files-found: warn
 
+      - name: Check for broken links in report
+        id: report
+        if: github.event_name == 'pull_request'
+        run: |
+          if [ -f ./lychee-report.md ] && grep -qE '\[Errors\]' ./lychee-report.md; then
+            echo "has_errors=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_errors=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Comment on PR with broken links
-        if: failure() && github.event_name == 'pull_request'
+        if: steps.report.outputs.has_errors == 'true' && github.event_name == 'pull_request'
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b  # v7.1.0
         with:
           script: |
