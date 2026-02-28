@@ -1596,6 +1596,13 @@ footer {
     font-size: 1.05em;
     border-radius: 8px;
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.community-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .community-grid {
