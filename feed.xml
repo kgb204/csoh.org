@@ -532,13 +532,13 @@
       <category>Scam</category>
     </item>
     <item>
-      <title>Another day, another malicious JPEG, (Mon, Feb 23rd)</title>
-      <link>https://isc.sans.edu/diary/rss/32738</link>
-      <description>In his last two diaries, Xavier discussed recent malware campaigns that download JPEG files with embedded malicious payload[1,2]. At that point in time, I've not come across the malicious â€œMSI imageâ€ myself, but wh...</description>
-      <source url="https://isc.sans.edu/diary/rss/32738">SANS ISC</source>
-      <guid isPermaLink="true">https://isc.sans.edu/diary/rss/32738</guid>
-      <pubDate>Mon, 23 Feb 2026 14:26:39 +0000</pubDate>
-      <category>Cloud Security</category>
+      <title>Open Redirects: A Forgotten Vulnerability&amp;#x3f;, (Tue, Feb 24th)</title>
+      <link>https://isc.sans.edu/diary/rss/32742</link>
+      <description>In 2010, OWASP added "Unvalidated Redirects and Forwards" to its Top 10 list and merged it into "Sensitive Data Exposure" in 2013 [owasp1] [owasp2]. Open redirects are often overlooked, and their impact is not always...</description>
+      <source url="https://isc.sans.edu/diary/rss/32742">SANS ISC</source>
+      <guid isPermaLink="true">https://isc.sans.edu/diary/rss/32742</guid>
+      <pubDate>Tue, 24 Feb 2026 18:04:01 +0000</pubDate>
+      <category>Vulnerability</category>
     </item>
     <item>
       <title>⚡ Weekly Recap: Double-Tap Skimmers, PromptSpy AI, 30Tbps DDoS, Docker Malware &amp; More</title>
