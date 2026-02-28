@@ -290,6 +290,33 @@ def build_feed_xml(entries: List[Dict[str, str]], newest_iso: str) -> str:
     return ET.tostring(rss, encoding="unicode", xml_declaration=True)
 
 
+# Map source display names → slugs (must match img/news-banners/{slug}.jpg)
+SOURCE_SLUGS = {
+    "AWS Security Blog": "aws-security-blog",
+    "Google Cloud Blog": "google-cloud-blog",
+    "Microsoft MSRC": "microsoft-msrc",
+    "Cloudflare Blog": "cloudflare-blog",
+    "SANS ISC": "sans-isc",
+    "BleepingComputer": "bleepingcomputer",
+    "The Hacker News": "thehackernews",
+    "SecurityWeek": "securityweek",
+    "KrebsOnSecurity": "krebsonsecurity",
+    "Dark Reading": "darkreading",
+    "Help Net Security": "helpnetsecurity",
+    "Infosecurity Magazine": "infosecurity-magazine",
+    "Security Affairs": "securityaffairs",
+    "Schneier on Security": "schneier",
+    "The Register - Security": "theregister",
+    "The Register - Cloud": "theregister",
+    "Google Online Security": "google-online-security",
+    "CrowdStrike Blog": "crowdstrike",
+    "Palo Alto Networks Unit 42": "unit42",
+    "CISA Alerts": "cisa",
+    "CISA Current Activity": "cisa",
+    "CISA Bulletins": "cisa",
+}
+
+
 def render_card(entry: Dict[str, str], indent: str) -> str:
     title = html.escape(entry["title"])
     link = html.escape(entry["link"])
@@ -311,12 +338,23 @@ def render_card(entry: Dict[str, str], indent: str) -> str:
 
     category = classify_category(f"{entry['title']} {summary}")
     tags = build_tags(f"{entry['title']} {summary} {entry['source']}")
+    source_slug = SOURCE_SLUGS.get(entry["source"], "")
 
     tag_spans = "\n".join([f"{indent}            <span class=\"tag\">{html.escape(t)}</span>" for t in tags])
 
+    source_attr = f' data-source="{source_slug}"' if source_slug else ""
+    banner_img = ""
+    if source_slug:
+        banner_img = (
+            f"{indent}        <img src=\"img/news-banners/{source_slug}.jpg\" "
+            f"alt=\"{html.escape(entry['source'])}\" "
+            f"class=\"resource-preview\" loading=\"lazy\">\n"
+        )
+
     return (
         f"{indent}<a href=\"{link}\" class=\"card-link\" target=\"_blank\" rel=\"noopener noreferrer\">\n"
-        f"{indent}    <div class=\"resource-card\" data-category=\"{category}\"{tooltip_attr}>\n"
+        f"{indent}    <div class=\"resource-card\" data-category=\"{category}\"{source_attr}{tooltip_attr}>\n"
+        f"{banner_img}"
         f"{indent}        <h3>{title}</h3>\n"
         f"{indent}        <p class=\"article-date\">{date_text}</p>\n"
         f"{indent}        <p>{html.escape(summary)} <span class=\"source\">({html.escape(entry['source'])})</span></p>\n"

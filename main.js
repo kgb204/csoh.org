@@ -239,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     // Initialize dynamic tag filters and visible count on load
+    if (typeof generateSourceFilters === 'function') generateSourceFilters();
     if (typeof generateTagFilters === 'function') generateTagFilters();
     if (typeof updateVisibleCount === 'function') updateVisibleCount();
 });
@@ -316,6 +317,86 @@ function generateTagFilters() {
     renderTags(false);
 }
 
+// Friendly display names for news source slugs
+var SOURCE_DISPLAY_NAMES = {
+    "aws-security-blog": "AWS Security",
+    "google-cloud-blog": "Google Cloud",
+    "microsoft-msrc": "Microsoft MSRC",
+    "cloudflare-blog": "Cloudflare",
+    "sans-isc": "SANS ISC",
+    "bleepingcomputer": "BleepingComputer",
+    "thehackernews": "The Hacker News",
+    "securityweek": "SecurityWeek",
+    "krebsonsecurity": "KrebsOnSecurity",
+    "darkreading": "Dark Reading",
+    "helpnetsecurity": "Help Net Security",
+    "infosecurity-magazine": "Infosecurity Mag",
+    "securityaffairs": "Security Affairs",
+    "schneier": "Schneier",
+    "theregister": "The Register",
+    "google-online-security": "Google Security",
+    "crowdstrike": "CrowdStrike",
+    "unit42": "Unit 42",
+    "cisa": "CISA"
+};
+
+// Generate source filter buttons dynamically from data-source attributes
+function generateSourceFilters() {
+    var container = document.getElementById('sourceFiltersContainer');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // Count articles per source
+    var cards = document.querySelectorAll('.resource-card[data-source]');
+    var counts = {};
+    cards.forEach(function (card) {
+        var src = card.dataset.source;
+        if (src) counts[src] = (counts[src] || 0) + 1;
+    });
+
+    // Sort by count descending, then alphabetically
+    var sorted = Object.keys(counts).sort(function (a, b) {
+        var diff = counts[b] - counts[a];
+        return diff !== 0 ? diff : a.localeCompare(b);
+    });
+
+    if (sorted.length === 0) return;
+
+    var label = document.createElement('h4');
+    label.textContent = 'Filter by Source:';
+    label.style.cssText = 'clear:both;width:100%;margin:0 0 0.5rem;font-size:0.9rem;color:#666;text-align:left;';
+    container.appendChild(label);
+
+    sorted.forEach(function (slug) {
+        var btn = document.createElement('button');
+        btn.className = 'filter-btn source-filter';
+        btn.dataset.source = slug;
+        var name = SOURCE_DISPLAY_NAMES[slug] || slug;
+        btn.textContent = name + ' (' + counts[slug] + ')';
+        btn.title = counts[slug] + ' articles from ' + name;
+        btn.addEventListener('click', function () {
+            // Clear all filter buttons (tags + sources)
+            document.querySelectorAll('.filter-btn').forEach(function (b) {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
+            this.classList.add('active');
+            this.setAttribute('aria-pressed', 'true');
+            filterBySource(slug);
+        });
+        container.appendChild(btn);
+    });
+}
+
+// Filter cards by data-source attribute
+function filterBySource(slug) {
+    var cards = document.querySelectorAll('.resource-card');
+    cards.forEach(function (card) {
+        getToggleTarget(card).style.display = card.dataset.source === slug ? '' : 'none';
+    });
+    if (typeof updateVisibleCount === 'function') updateVisibleCount();
+}
+
 let previewMap = {};
 
 function loadPreviewMap() {
@@ -367,8 +448,9 @@ function addIconsToCards() {
     const cards = document.querySelectorAll('.resource-card');
     
     cards.forEach(card => {
-        // Check if icon already exists
+        // Skip if icon already exists or card has a banner/preview image
         if (card.querySelector('.resource-card-icon')) return;
+        if (card.querySelector('.resource-preview')) return;
         
         const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
         const title = card.querySelector('h3').textContent.toLowerCase();
