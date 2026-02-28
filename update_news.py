@@ -320,9 +320,9 @@ SOURCE_SLUGS = {
 
 
 def render_card(entry: Dict[str, str], indent: str) -> str:
-    title = html.escape(entry["title"])
-    link = html.escape(entry["link"])
-    full_summary = strip_html(entry.get("summary", ""))
+    title = html.escape(html.unescape(entry["title"]))
+    link = html.escape(html.unescape(entry["link"]))
+    full_summary = strip_html(html.unescape(entry.get("summary", "")))
     summary = full_summary
     if len(summary) > 180:
         summary = summary[:177].rstrip() + "..."
