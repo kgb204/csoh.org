@@ -528,7 +528,7 @@ git push origin add-news-sources
 ```
 
 **Learning resources:**
-- [Git Basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+- [Git Basics](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 - [GitHub Git Cheat Sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
 
 ---
@@ -651,7 +651,7 @@ Contributors get:
 ## 📞 Need Help?
 
 - **Community chat** → [Discord server](https://discord.gg/AVzAY97D8E) (fastest for questions)
-- **GitHub questions** → Ask in [GitHub Discussions](https://github.com/CloudSecurityOfficeHours/csoh.org/discussions)
+- **GitHub questions** → Ask in [GitHub Issues](https://github.com/CloudSecurityOfficeHours/csoh.org/issues)
 - **Security issues** → Email security@csoh.org
 - **Want to contribute resources?** → Check [CONTRIBUTING_RESOURCES.md](CONTRIBUTING_RESOURCES.md)
 - **Want to set up local development?** → Check [DEVELOPMENT.md](DEVELOPMENT.md)
