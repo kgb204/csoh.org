@@ -205,7 +205,11 @@ jobs:
           else
             echo "==> No new previews to sync, skipping."
           fi
-          # Pass 3: only sync chat-screenshots/ when new ones were added this run
+          # Pass 3: always sync news source banners (small, static set of ~19 images)
+          echo "==> Syncing news banners..."
+          lftp -e "${LFTP_CONN}; mirror -R ./img/news-banners/ /public_html/img/news-banners/ --verbose=2 --parallel=4 \
+            --exclude-glob .DS_Store; bye"
+          # Pass 4: only sync chat-screenshots/ when new ones were added this run
           if [[ "${{ steps.check_chat_screenshots.outputs.new }}" == "true" ]]; then
             echo "==> Syncing new chat-screenshots..."
             lftp -e "${LFTP_CONN}; mirror -R ./chat-screenshots/ /public_html/chat-screenshots/ --verbose=2 --parallel=4 \
