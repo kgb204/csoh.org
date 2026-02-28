@@ -11,7 +11,7 @@ Welcome! This guide covers **any change you want to suggest** to the CSOH websit
 > | **Suggest a feature** | [Open a Feature Request issue](https://github.com/CloudSecurityOfficeHours/csoh.org/issues/new?template=feature_request.yml) (just fill out a form) | 2 min |
 > | **Add a resource yourself** | Run `python3 tools/submit_resource.py` ([guide](tools/SUBMIT_RESOURCE_README.md)) | 10 min |
 > | **Fix a typo or content** | Edit the file on GitHub ([walkthrough below](#editing-content--descriptions)) | 5 min |
-> | **Set up local development** | Follow the [Local Development Guide](DEVELOPMENT.md) | 5 min |
+> | **Set up local development** | Follow the [Local Development Guide](DEVELOPMENT.md) | 10-15 min |
 >
 > No coding experience needed for the first three!
 

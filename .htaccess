@@ -76,16 +76,8 @@ ServerSignature Off
 
 # EXCEPTION: Allow specific JSON files that the site JS needs to load
 # (preview-mapping.json is loaded by main.js for card previews)
-# (resources-data.json contains the resource data)
 # If main.js fetches these via JS, they need to be accessible.
-# Comment these out if they're bundled into the JS or not needed:
 <Files "preview-mapping.json">
-    <IfModule mod_authz_core.c>
-        Require all granted
-    </IfModule>
-</Files>
-
-<Files "resources-data.json">
     <IfModule mod_authz_core.c>
         Require all granted
     </IfModule>

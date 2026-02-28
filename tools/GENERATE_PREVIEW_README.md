@@ -200,7 +200,7 @@ python3 tools/generate_preview.py "https://example.com" custom-name.jpg
 
 ### Fallback
 If no dependencies installed:
-- Uses screenshot.guru API (free, no auth)
+- Uses thum.io API (free, no auth)
 - Creates placeholder images if API fails
 
 ## Customization

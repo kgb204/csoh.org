@@ -63,7 +63,7 @@ The `.htaccess` and `nginx.conf` block direct access to sensitive files:
 | `.*-report\.txt$` | 403 | Internal URL safety report files |
 | `\.(bak\|config\|sh\|sql\|log\|ini)$` | 403 | Backups, configs, scripts, logs |
 
-**Exceptions:** `preview-mapping.json` and `resources-data.json` are explicitly allowed because the site's JavaScript needs to fetch them.
+**Exceptions:** `preview-mapping.json` is explicitly allowed because the site's JavaScript needs to fetch it.
 
 Directory listing is disabled globally (`Options -Indexes` / `autoindex off`).
 

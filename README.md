@@ -1,6 +1,6 @@
 # Cloud Security Office Hours (CSOH)
 
-A modern, community-driven cloud security resource hub built as a fast, responsive static website. Home to **2000+ security professionals**, **260+ curated resources**, **120+ news articles**, **554+ community-shared URLs**, and weekly expert-led Zoom sessions.
+A modern, community-driven cloud security resource hub built as a fast, responsive static website. Home to **2000+ security professionals**, **200+ curated resources**, **120+ news articles**, **554+ community-shared URLs**, and weekly expert-led Zoom sessions.
 
 [![GitHub](https://img.shields.io/badge/GitHub-CloudSecurityOfficeHours/csoh.org-blue)](https://github.com/CloudSecurityOfficeHours/csoh.org)
 [![Discord](https://img.shields.io/badge/Discord-2000%2B%20Members-5865F2)](https://discord.gg/AVzAY97D8E)
@@ -13,14 +13,29 @@ A modern, community-driven cloud security resource hub built as a fast, responsi
 Cloud Security Office Hours is a **vendor-neutral, free community** dedicated to advancing cloud security education and collaboration. Founded in February 2023, CSOH has grown to 2000+ members worldwide, providing:
 
 - **Weekly Expert Zoom Sessions** - Every Friday at 7am PT with industry experts
-- **260+ Curated Resources** - CTF challenges, hands-on labs, security tools, certifications
-- **120+ News Articles** - Daily cloud security news from reputable sources
+- **200+ Curated Resources** - CTF challenges, hands-on labs, security tools, certifications
+- **120+ News Articles** - Cloud security news updated every 3 hours from 22 RSS feeds
 - **RSS Feed** - Subscribe at [csoh.org/feed.xml](https://csoh.org/feed.xml) for automatic news updates
 - **554+ Community-Shared URLs** - Secure, validated links from Zoom chat sessions
 - **Active Discord Community** - Real-time discussions, peer learning, mentorship
 - **Dark Mode** - Toggle between light and dark themes, with automatic OS preference detection
 - **Automated Security Validation** - All URLs checked for malicious patterns before publication
 - **Vendor Neutral** - Completely free, open, community-run initiative
+
+---
+
+## 🎓 Getting Started
+
+**New to cloud security?** Cloud security is the practice of protecting data, applications, and infrastructure hosted in cloud environments like AWS, Azure, and Google Cloud. As organizations move to the cloud, securing these environments has become one of the fastest-growing and most in-demand areas in cybersecurity.
+
+Here's our recommended learning path:
+
+1. **Start with Resources**: Browse [CTF Challenges](resources.html#ctf-challenges) and [Labs](resources.html#labs-training) for hands-on practice
+2. **Get Certified**: Explore [Certifications](resources.html#certifications) path for your cloud platform
+3. **Join Community**: Register for [Weekly Zoom Sessions](sessions.html) (Fridays 7am PT)
+4. **Stay Updated**: Check [News](news.html) for latest threats and updates
+5. **Subscribe to RSS**: Add our [RSS feed](https://csoh.org/feed.xml) to your reader — see [RSS_FEED_README.md](RSS_FEED_README.md) for setup
+6. **Network**: Join [Discord](https://discord.gg/AVzAY97D8E) for real-time discussions
 
 ---
 
@@ -35,11 +50,11 @@ Central hub featuring:
 - Testimonials and member count (2000+)
 
 ### 📚 Resources (`resources.html`)
-Comprehensive catalog of **260+ cloud security resources** organized by 6 categories:
+Comprehensive catalog of **200+ cloud security resources** organized by 6 categories:
 
 #### 🎯 CTF Challenges & Vulnerable Environments
-- **CloudGoat** - Open-source, AWS vulnerable environments by Ermetic
-- **AWSGoat** - Vulnerable AWS stack from Appthreat
+- **CloudGoat** - Open-source, AWS vulnerable environments by Rhino Security Labs
+- **AWSGoat** - Vulnerable AWS stack from INE (formerly AppSecEngineer)
 - **Kubernetes Goat** - K8s containerized application with intentional vulnerabilities
 - **AIGoat** - AI/ML vulnerable applications
 - **Blue Team Labs** - Hands-on security scenarios
@@ -84,9 +99,9 @@ Comprehensive catalog of **260+ cloud security resources** organized by 6 catego
 
 #### 📰 Cloud Security News (120+ Articles)
 - **Latest articles** sorted by publication date (newest first)
-- **Multi-source aggregation** - Ars Technica, TechCrunch, SecurityWeek, KrebsOnSecurity, Mandiant, CrowdStrike, AWS Security Blog, Microsoft MSRC, SANS ISC, The Register, BleepingComputer, Dark Reading, and more
+- **Multi-source aggregation** - SecurityWeek, KrebsOnSecurity, CrowdStrike, AWS Security Blog, Microsoft MSRC, SANS ISC, The Register, BleepingComputer, Dark Reading, Palo Alto Unit 42, CISA, and more
 - **Searchable & filterable** by source, topic, date
-- **Auto-updated daily** via Python news aggregation script
+- **Auto-updated every 3 hours** via Python news aggregation script
 - **Rich snippet optimization** for featured search results
 
 ### 💬 Chat Resources (`chat-resources.html`)
@@ -122,11 +137,13 @@ A community-maintained library of **step-by-step cloud breach reconstructions**,
 
 | Incident | Year | Provider | Key Techniques |
 |---|---|---|---|
+| Mitnick / Novell | 1994 | On-Prem | Social engineering, pretexting, credential theft |
 | Capital One | 2019 | AWS | T1190, T1552.005, T1619, T1530 |
+| SolarWinds | 2020 | Azure AD / AWS | T1195.002, T1071.004, T1606.002, T1114.002 |
 | Uber | 2022 | AWS / GCP | T1078, T1621, T1552.001, T1078.004 |
 | Storm-0558 | 2023 | Azure | T1078, T1552, T1606.001, T1114.002 |
-| SolarWinds | 2020 | Azure AD / AWS | T1195.002, T1071.004, T1606.002, T1114.002 |
 | Microsoft SAS Leak | 2023 | Azure | T1552.004, T1530 |
+| Scattered Spider / MGM | 2023 | Okta / Azure | T1598, T1078, T1484, T1486 |
 
 ### How to contribute a kill chain
 
@@ -156,13 +173,13 @@ This is intentionally high-bar. A small number of deeply researched entries is m
 ### ⚡ Performance & Security
 - **Pure Static HTML** - No database, server-side code, or backend dependencies
 - **Instant Load Times** - Optimized CSS/JS, no external frameworks
-- **Zero Vulnerabilities** - No SQL injection, XSS, or code execution risks
+- **Minimal Attack Surface** - No database, no server-side code, no user sessions — eliminates entire vulnerability classes
 - **Automated URL Safety Checks** - All URLs validated for phishing, malware, and suspicious patterns
 - **CI/CD Security Validation** - GitHub Actions workflow blocks unsafe URLs before merge
 - **1,000+ URLs Validated** - Comprehensive site-wide security scanning
 - **Automated Preview Images** - Screenshots generated when new resources are added
 - **CDN Ready** - Deploy anywhere (GitHub Pages, Vercel, AWS S3, etc.)
-- **100% Uptime** - Simple file hosting = maximum reliability
+- **Near-Zero Downtime** - Simple static file hosting for maximum reliability
 
 ### 🌙 Dark Mode
 - **One-Click Toggle** - 🌙/☀️ button in the header on every page
@@ -203,7 +220,7 @@ This is intentionally high-bar. A small number of deeply researched entries is m
 ```
 csoh.org/
 ├── index.html                  # Homepage with hero section & category overview
-├── resources.html              # Main resource directory (260+ resources in 6 categories)
+├── resources.html              # Main resource directory (200+ resources in 6 categories)
 ├── news.html                   # Cloud security news (120+ articles)
 ├── chat-resources.html         # Community-shared URLs from Zoom sessions (554+ URLs)
 ├── sessions.html               # Weekly Zoom session information
@@ -252,7 +269,6 @@ csoh.org/
 │   ├── check-broken-links.yml       # Broken link checker (PRs + weekly)
 │   └── lighthouse.yml               # Performance, accessibility, SEO audits
 │
-├── resources-data.json         # Data export of all resources (for integrations)
 ├── preview-mapping.json        # Metadata for resource previews
 │
 ├── .gitignore                  # Git exclusion rules
@@ -381,7 +397,7 @@ Want to help improve CSOH? We have **beginner-friendly guides** for contributing
 - **[Interactive News Source Submission Tool](tools/SUBMIT_NEWS_SOURCE_README.md)** - Add RSS/Atom feeds with the interactive script
 - **[How to Add a Resource](contribute-resources.html)** - Step-by-step guide for adding cloud security resources (tools, labs, certifications, etc.)
 - **[General Contributions](contribute.html)** - Guide for all other contributions:
-  - Adding news sources for our daily news automation
+  - Adding news sources for our automated news aggregation
   - Improving descriptions and content
   - Suggesting resource reorganization
   - Reporting bugs or broken links
@@ -440,9 +456,9 @@ See **[DEVELOPMENT.md](DEVELOPMENT.md)** for the full local setup guide, project
 ## 📋 Stats & Impact
 
 - **2000+** Community members
-- **260+** Curated resources
+- **200+** Curated resources
 - **554+** Community-shared URLs (from Zoom chat sessions)
-- **120+** News articles (auto-updated daily)
+- **120+** News articles (auto-updated every 3 hours)
 - **1,000+** URLs validated for security
 - **6** Resource categories
 - **50+** Training platforms
@@ -474,19 +490,6 @@ Special thanks to:
 
 ---
 
-## 🎓 Getting Started
-
-**New to cloud security?** Here's our recommended learning path:
-
-1. **Start with Resources**: Browse [CTF Challenges](resources.html#ctf-challenges) and [Labs](resources.html#labs-training)
-2. **Get Certified**: Explore [Certifications](resources.html#certifications) path for your cloud platform
-3. **Join Community**: Register for [Weekly Zoom Sessions](sessions.html) (Fridays 7am PT)
-4. **Stay Updated**: Check [News](news.html) daily for latest threats and updates
-5. **Subscribe to RSS**: Add our [RSS feed](https://csoh.org/feed.xml) to your reader — see [RSS_FEED_README.md](RSS_FEED_README.md) for setup
-6. **Network**: Join [Discord](https://discord.gg/AVzAY97D8E) for real-time discussions
-
----
-
-**Last Updated**: February 24, 2026
+**Last Updated**: February 28, 2026
 
 For the latest updates and announcements, follow us on Discord!
