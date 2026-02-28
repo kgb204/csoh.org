@@ -4,11 +4,6 @@ on:
   pull_request:
     paths:
       - '**.html'
-  push:
-    branches:
-      - main
-    paths:
-      - '**.html'
   schedule:
     # Weekly on Mondays at 06:00 UTC to catch external link rot
     - cron: '0 6 * * 1'

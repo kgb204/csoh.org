@@ -4,11 +4,9 @@ on:
   pull_request:
     paths:
       - '**.html'
-  push:
-    branches:
-      - main
-    paths:
-      - '**.html'
+  schedule:
+    # Weekly on Mondays at 06:30 UTC
+    - cron: '30 6 * * 1'
   workflow_dispatch:
 
 jobs:
