@@ -293,9 +293,18 @@ def build_feed_xml(entries: List[Dict[str, str]], newest_iso: str) -> str:
 def render_card(entry: Dict[str, str], indent: str) -> str:
     title = html.escape(entry["title"])
     link = html.escape(entry["link"])
-    summary = strip_html(entry.get("summary", ""))
+    full_summary = strip_html(entry.get("summary", ""))
+    summary = full_summary
     if len(summary) > 180:
         summary = summary[:177].rstrip() + "..."
+
+    # Build tooltip from the full summary when it's longer than the card text
+    tooltip_attr = ""
+    if len(full_summary) > 180:
+        tooltip_text = full_summary[:400].rstrip()
+        if len(full_summary) > 400:
+            tooltip_text += "..."
+        tooltip_attr = f' data-tooltip="{html.escape(tooltip_text, quote=True)}"'
 
     published_dt = parse_date(entry.get("published", "")) or dt.datetime.now(dt.timezone.utc)
     date_text, _ = format_date(published_dt)
@@ -307,7 +316,7 @@ def render_card(entry: Dict[str, str], indent: str) -> str:
 
     return (
         f"{indent}<a href=\"{link}\" class=\"card-link\" target=\"_blank\" rel=\"noopener noreferrer\">\n"
-        f"{indent}    <div class=\"resource-card\" data-category=\"{category}\">\n"
+        f"{indent}    <div class=\"resource-card\" data-category=\"{category}\"{tooltip_attr}>\n"
         f"{indent}        <h3>{title}</h3>\n"
         f"{indent}        <p class=\"article-date\">{date_text}</p>\n"
         f"{indent}        <p>{html.escape(summary)} <span class=\"source\">({html.escape(entry['source'])})</span></p>\n"
