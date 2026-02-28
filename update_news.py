@@ -97,6 +97,8 @@ def strip_html(text: str) -> str:
     text = re.sub(r"<[^>]+>", " ", text)
     text = html.unescape(text)
     text = re.sub(r"\s+", " ", text).strip()
+    # Remove HTML5-forbidden code points (C0 except TAB/LF/CR, DEL, C1 except U+0085)
+    text = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f\x80-\x84\x86-\x9f]", "", text)
     return text
 
 
