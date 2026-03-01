@@ -13,9 +13,22 @@ import html
 import re
 import sys
 import urllib.request
-import xml.etree.ElementTree as ET
 from email.utils import format_datetime, parsedate_to_datetime
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
+
+# Use defusedxml to protect against XML entity expansion attacks (billion
+# laughs / DoS) when parsing untrusted external RSS/Atom feeds.
+try:
+    import defusedxml.ElementTree as ET
+except ImportError:  # pragma: no cover
+    import xml.etree.ElementTree as ET  # type: ignore[no-redef]
+    import warnings
+    warnings.warn(
+        "defusedxml is not installed. Parsing untrusted XML without entity-"
+        "expansion protection. Install defusedxml: pip install defusedxml",
+        RuntimeWarning,
+        stacklevel=1,
+    )
 
 
 FEEDS = [

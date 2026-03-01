@@ -25,6 +25,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install dependencies
+        run: pip install defusedxml
+
       - name: Update news.html from feeds
         run: python3 update_news.py
 
