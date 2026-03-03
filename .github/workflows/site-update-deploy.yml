@@ -117,10 +117,20 @@ jobs:
             echo "No new chat-screenshots"
           fi
 
+      - name: Check if HTML content changed
+        id: html_changed
+        run: |
+          ORIG_SHA="${{ steps.original_sha.outputs.sha }}"
+          if git diff --name-only "${ORIG_SHA}^" "${ORIG_SHA}" -- '*.html' | grep -q .; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Check if deploy is needed
         id: deploy_needed
         run: |
-          if [[ "${{ steps.sri.outputs.changed }}" == "true" || "${{ steps.check_previews.outputs.missing }}" == "true" || "${{ steps.check_chat_screenshots.outputs.new }}" == "true" || "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+          if [[ "${{ steps.sri.outputs.changed }}" == "true" || "${{ steps.check_previews.outputs.missing }}" == "true" || "${{ steps.check_chat_screenshots.outputs.new }}" == "true" || "${{ steps.html_changed.outputs.changed }}" == "true" || "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             echo "deploy=true" >> $GITHUB_OUTPUT
           else
             echo "deploy=false" >> $GITHUB_OUTPUT
