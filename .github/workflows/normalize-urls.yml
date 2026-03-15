@@ -1,0 +1,69 @@
+name: Normalize URLs
+
+on:
+  schedule:
+    # Monthly on the 1st at 08:00 UTC
+    - cron: '0 8 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  normalize-urls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405  # v6.2.0
+        with:
+          python-version: '3.x'
+
+      - name: Run URL normalizer
+        run: |
+          cd tools && python3 normalize_urls.py --apply 2>&1 | tee ../normalize-report.txt
+          cd ..
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0  # v8.1.0
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          commit-message: 'chore: normalize redirecting URLs'
+          title: 'chore: Normalize redirecting URLs'
+          body: |
+            This PR was automatically created by the **Normalize URLs** workflow.
+
+            The URL normalizer scanned all HTML files and:
+            - Stripped tracking parameters (utm_*, fbclid, gclid, etc.)
+            - Upgraded HTTP links to HTTPS
+            - Resolved redirecting URLs to their final destinations
+
+            **Review the changes carefully** — especially any cross-domain redirects.
+
+            Full report is available in the workflow artifacts.
+          branch: normalize-urls
+          delete-branch: true
+          labels: automated, content
+
+      - name: Auto approve
+        if: steps.cpr.outputs.pull-request-number != ''
+        run: gh pr review --approve "${{ steps.cpr.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.APPROVAL_PAT_TOKEN }}
+
+      - name: Upload normalization report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f  # v7.0.0
+        with:
+          name: url-normalization-report
+          path: normalize-report.txt
+          retention-days: 30
+          if-no-files-found: warn
