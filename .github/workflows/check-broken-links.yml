@@ -27,28 +27,7 @@ jobs:
           args: >-
             --verbose
             --no-progress
-            --accept 200,202,204,301,302,308
-            --timeout 30
-            --max-retries 3
             --max-concurrency 5
-            --root-dir .
-            --exclude 'linkedin\.com'
-            --exclude 'web\.archive\.org/web/\d+'
-            --exclude 'localhost'
-            --exclude 'sendfox\.com'
-            --exclude 'reddit\.com'
-            --exclude 'instagram\.com'
-            --exclude 'darkreading\.com'
-            --exclude 'nytimes\.com'
-            --exclude 'udemy\.com'
-            --exclude 'bleepingcomputer\.com'
-            --exclude 'dl\.acm\.org'
-            --exclude 'substack\.com'
-            --exclude 'washingtontimes\.com'
-            --exclude 'imdb\.com'
-            --exclude 'blog\.appsecco\.com'
-            --exclude 'meco\.org'
-            --exclude 'help\.otter\.ai'
             --glob-ignore-case
             './*.html'
           output: ./lychee-report.md
