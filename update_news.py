@@ -162,6 +162,25 @@ def normalize_url(url: str) -> str:
     return url.rstrip("/")
 
 
+def resolve_url(url: str, timeout: int = 10) -> str:
+    """Follow redirects and return the final destination URL."""
+    req = urllib.request.Request(
+        url,
+        method="HEAD",
+        headers={
+            "User-Agent": "Mozilla/5.0 (CSOH News Bot; +https://csoh.org)",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            final = resp.url
+            if final and final != url:
+                return final
+    except Exception:
+        pass
+    return url
+
+
 def extract_links(html_text: str) -> List[str]:
     return re.findall(r"href=\"(https?://[^\"]+)\"", html_text, flags=re.IGNORECASE)
 
@@ -414,7 +433,10 @@ def build_entries(news_path: str, resources_path: str, max_articles: int, min_so
             norm = normalize_url(item["link"])
             if norm in existing:
                 continue
-            item["link"] = norm
+            resolved = normalize_url(resolve_url(norm))
+            if resolved in existing:
+                continue
+            item["link"] = resolved
             collected.append(item)
 
     if not collected:
