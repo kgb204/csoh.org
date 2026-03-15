@@ -347,8 +347,8 @@ def extract_urls_from_resources_html():
     with open(resources_file, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Find all resource card URLs
-    pattern = r'<a href="([^"]+)" target="_blank" class="card-link"'
+    # Find all resource card URLs (class and target can appear in either order)
+    pattern = r'<a\s+href="([^"]+)"[^>]*class="card-link"'
     urls = re.findall(pattern, content)
     
     # Filter to only those without previews
