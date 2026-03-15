@@ -2487,6 +2487,10 @@ footer {
     color: #f5f7fa;
 }
 
+[data-theme="dark"] .hamburger {
+    color: #f5f7fa;
+}
+
 [data-theme="dark"] .hero,
 [data-theme="dark"] .hero--compact {
     background: linear-gradient(135deg, #0a1628 0%, #122a4a 100%) !important;
