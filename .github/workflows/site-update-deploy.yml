@@ -142,6 +142,7 @@ jobs:
         uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411  # v2.8.0
         continue-on-error: true
         with:
+          lycheerc: .lychee.toml
           args: >-
             --no-progress
             --max-concurrency 5
