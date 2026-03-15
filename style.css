@@ -2250,6 +2250,14 @@ footer {
         color: var(--text-color);
     }
 
+    :root:not([data-theme]) body a {
+        color: #6fc3ff;
+    }
+
+    :root:not([data-theme]) body a:hover {
+        color: #9dd5ff;
+    }
+
     :root:not([data-theme]) header {
         background-color: #0b1018;
         color: #f5f7fa;
@@ -2332,6 +2340,14 @@ footer {
 [data-theme="dark"] body {
     background-color: var(--light-bg);
     color: var(--text-color);
+}
+
+[data-theme="dark"] body a {
+    color: #6fc3ff;
+}
+
+[data-theme="dark"] body a:hover {
+    color: #9dd5ff;
 }
 
 /* --- Dark mode: headings & titles ---------------------------------------- */
