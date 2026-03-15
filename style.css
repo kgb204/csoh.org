@@ -1177,6 +1177,15 @@ footer {
         padding: 1rem;
     }
 
+    .reader-card {
+        padding-top: 0;
+    }
+
+    .reader-preview {
+        margin: 0 -1rem;
+        width: calc(100% + 2rem);
+    }
+
     .toc {
         padding: 1rem;
     }
@@ -1410,6 +1419,21 @@ footer {
     margin: 1.5rem 0;
     color: #1a232a;
     font-weight: 500;
+}
+
+.reader-card {
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.reader-preview {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+    margin: 0 -1.5rem;
+    width: calc(100% + 3rem);
+    margin-bottom: 1rem;
 }
 
 .contribution-type h4 {
