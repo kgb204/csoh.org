@@ -74,7 +74,7 @@ jobs:
           labels: automated, content
           
       - name: Auto approve
-        if: steps.cpr.outputs.pull-request-operation == 'created'
+        if: steps.cpr.outputs.pull-request-number != ''
         run: gh pr review --approve "${{ steps.cpr.outputs.pull-request-number }}"
         env:
           GH_TOKEN: ${{ secrets.APPROVAL_PAT_TOKEN }}
