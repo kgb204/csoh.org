@@ -8,6 +8,22 @@ exclude = [
   "sendfox\\.com",                 # Newsletter signup, auth-walled
   "localhost",
   "127\\.0\\.0\\.1",
+  "community\\.sap\\.com",        # SAP community blocks bots (403)
+  "medium\\.com",                  # Medium blocks bots (403)
+  "nexos\\.ai",                    # Blocks bots (403)
+  "openai\\.com",                  # Blocks bots (403)
+  "securitytrails\\.com",          # Blocks bots (403)
+  "training\\.cloudsecurityalliance\\.org",  # Blocks bots (403)
+  "fiverr\\.com",                  # Blocks bots (403)
+  "glassdoor\\.com",               # Blocks bots (403)
+  "indeed\\.com",                  # Blocks bots (403)
+  "mdpi\\.com",                    # Blocks bots (403)
+  "rsaconference\\.com",           # Blocks bots (403)
+  "shodan\\.io",                   # Blocks bots (403)
+  "upwork\\.com",                  # Blocks bots (403)
+  "uber\\.com",                    # Blocks bots (406)
+  "zoomeye\\.org",                 # Blocks bots (521)
+  "gitconnected\\.com",            # SSL certificate issues
 ]
 
 # Accept common redirect status codes
