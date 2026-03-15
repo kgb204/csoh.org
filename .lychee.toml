@@ -37,8 +37,11 @@ exclude = [
   "upwork\\.com",                  # Blocks bots (403)
   "washingtontimes\\.com",         # Blocks bots (403)
   "zoomeye\\.org",                 # Blocks bots (521)
+  "blackhat\\.com",                # Blocks bots (403)
   "gitconnected\\.com",            # SSL certificate issues
   "jobs\\.sap\\.com",              # Timeout-prone (behind WAF)
+  "programs\\.com",                # Timeout-prone
+  "trustoncloud\\.com",            # Timeout-prone
 ]
 
 # Accept common redirect status codes
