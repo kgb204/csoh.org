@@ -148,6 +148,7 @@ jobs:
             --timeout 30
             --max-retries 3
             --max-concurrency 5
+            --root-dir .
             --exclude 'linkedin\.com'
             --exclude 'web\.archive\.org/web/\d+'
             --exclude 'localhost'

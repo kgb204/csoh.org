@@ -24,10 +24,14 @@ exclude = [
   "uber\\.com",                    # Blocks bots (406)
   "zoomeye\\.org",                 # Blocks bots (521)
   "gitconnected\\.com",            # SSL certificate issues
+  "jobs\\.sap\\.com",              # Timeout-prone (behind WAF)
 ]
 
 # Accept common redirect status codes
 accept = [200, 204, 301, 302, 308]
+
+# Resolve root-relative links (e.g. /favicon.png) against the repo root
+root_dir = "."
 
 # Reasonable timeouts for external sites
 timeout = 30
