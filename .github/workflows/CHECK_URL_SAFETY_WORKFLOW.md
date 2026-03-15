@@ -6,7 +6,7 @@ This GitHub Actions workflow automatically validates all URLs across **all HTML 
 
 The workflow triggers on:
 - **Pull Requests** that modify any `.html` file
-- **Pushes to main** that modify any `.html` file
+- **Weekly schedule** — every Monday at 06:30 UTC
 - **Manual trigger** via workflow_dispatch
 
 ## What It Does
@@ -86,6 +86,6 @@ To adjust what URLs are flagged, edit:
 
 This workflow ensures that:
 - No unsafe URLs slip through in PRs for **any page** on your site
-- The main branch always has validated URLs across all HTML files
+- Weekly scans catch URLs that may have gone bad since they were added
 - Security issues are caught before deployment
 - New pages automatically get URL validation

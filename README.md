@@ -245,6 +245,7 @@ csoh.org/
 │   ├── submit_resource.py            # Interactive tool for submitting new resources
 │   ├── submit_news_source.py         # Interactive tool for submitting news sources
 │   ├── generate_preview.py           # Generate preview screenshots for resources
+│   ├── normalize_urls.py             # URL normalizer (tracking params, HTTPS, redirects)
 │   ├── check_url_safety.py           # Core URL safety validator with pattern matching
 │   ├── check_existing_urls.py        # Batch scanner for chat-resources.html URLs
 │   ├── check_all_site_urls.py        # Comprehensive site-wide URL scanner
@@ -263,11 +264,11 @@ csoh.org/
 │
 ├── .github/workflows/
 │   ├── update-news.yml              # Automated news + RSS feed updates (every 3 hours)
-│   ├── site-update-deploy.yml       # Unified workflow: SRI, preview, deploy
-│   ├── check-url-safety.yml         # URL safety validation on PRs
-│   ├── validate-html.yml            # HTML5 validation on PRs
-│   ├── check-broken-links.yml       # Broken link checker (PRs + weekly)
-│   └── lighthouse.yml               # Performance, accessibility, SEO audits
+│   ├── site-update-deploy.yml       # Unified workflow: SRI, URL normalization, preview, deploy
+│   ├── check-url-safety.yml         # URL safety validation on PRs + weekly
+│   ├── normalize-urls.yml           # Monthly URL normalization (tracking params, redirects)
+│   ├── validate-html.yml            # HTML5 validation on PRs + weekly
+│   └── check-broken-links.yml       # Broken link checker (PRs + weekly)
 │
 ├── preview-mapping.json        # Metadata for resource previews
 │
@@ -356,18 +357,34 @@ This site uses **GitHub Actions workflows** to automate all major site updates. 
 
 **What it does:**
 - Updates SRI hashes and cache-busting tags if CSS/JS changed (using `update_sri.py`)
+- Normalizes URLs — strips tracking parameters, upgrades HTTP to HTTPS, resolves redirects (using `normalize_urls.py`)
 - Generates preview images for new resources in `resources.html` (using `generate_preview.py`)
+- Checks for broken links (non-blocking warning)
 - Deploys the site to the web server via FTP in smart passes:
   - **Pass 1:** Always deploys all HTML/CSS/JS and other site files (excludes images)
   - **Pass 2:** Only uploads `img/previews/` when new preview images were generated
-  - **Pass 3:** Only uploads `chat-screenshots/` when new screenshots were added
+  - **Pass 3:** Always syncs news source banner images
+  - **Pass 4:** Only uploads `chat-screenshots/` when new screenshots were added
 
 **How it works:**
-1. Checks for any changes that require SRI updates, new previews, or new chat screenshots
+1. Checks for any changes that require SRI updates, URL normalization, new previews, or new chat screenshots
 2. Runs each step in order, skipping steps if not needed
 3. Only deploys after all updates succeed
 
 **News updates** are still handled by a separate scheduled workflow (`update-news.yml`) that runs every 3 hours and creates a PR with new articles. Once merged, the unified workflow deploys the site.
+
+### Standalone URL Normalization Workflow
+
+**Workflow file:** `.github/workflows/normalize-urls.yml`
+
+In addition to the URL normalization that runs as part of every deploy, a **standalone monthly workflow** performs a deeper pass across all HTML files:
+
+- **Schedule:** Monthly on the 1st at 08:00 UTC (also available via manual trigger)
+- **What it does:**
+  - Strips tracking parameters (`utm_*`, `fbclid`, `gclid`, `msclkid`, etc.)
+  - Upgrades HTTP links to HTTPS
+  - Resolves redirecting URLs to their final destinations
+- **Output:** Creates a PR with a detailed report of all changes, auto-approved for review
 
 **Full docs:** See [UPDATE_SRI_README.md](UPDATE_SRI_README.md), [tools/GENERATE_PREVIEW_README.md](tools/GENERATE_PREVIEW_README.md), [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md), and [tools/CHECK_URL_SAFETY_README.md](tools/CHECK_URL_SAFETY_README.md)
 
@@ -465,7 +482,7 @@ See **[DEVELOPMENT.md](DEVELOPMENT.md)** for the full local setup guide, project
 - **60+** Security tools catalogued
 - **~100+** Published presentations
 - **Weekly** Expert Zoom sessions
-- **6** Automated workflows (news, deploy, URL safety, HTML validation, link checker, Lighthouse)
+- **6** Automated workflows (news, deploy, URL safety, URL normalization, HTML validation, link checker)
 
 ---
 

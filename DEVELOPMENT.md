@@ -89,8 +89,8 @@ csoh.org/
 ├── breach-timeline.css     # Breach timeline page specific styles
 ├── breach-timeline.js      # Breach timeline page specific JS
 │
-├── tools/                  # Python automation scripts
-├── .github/workflows/      # CI/CD pipelines
+├── tools/                  # Python automation scripts (URL safety, normalization, previews)
+├── .github/workflows/      # CI/CD pipelines (6 workflows)
 └── update_news.py          # News aggregation from 22 RSS feeds
 ```
 
@@ -163,6 +163,12 @@ python3 tools/check_all_site_urls.py
 
 # Validate a specific resource URL
 python3 tools/check_url_safety.py "https://example.com/resource"
+
+# Normalize URLs (strip tracking params, upgrade HTTP, resolve redirects)
+# Dry run (preview changes):
+python3 tools/normalize_urls.py
+# Apply changes:
+python3 tools/normalize_urls.py --apply
 ```
 
 ---
@@ -216,6 +222,8 @@ See [CONTRIBUTING_KILL_CHAINS.md](CONTRIBUTING_KILL_CHAINS.md) for the full proc
 | `news.html` | News article display | **Don't edit** -- auto-generated |
 | `feed.xml` | RSS feed | **Don't edit** -- auto-generated |
 | `update_news.py` | News feed aggregation script | Adding/removing RSS sources |
+| `tools/normalize_urls.py` | URL normalizer (tracking params, HTTPS upgrade, redirects) | **Don't edit** -- runs in CI |
+| `tools/check_all_site_urls.py` | Site-wide URL safety scanner | Running local safety audits |
 | `update_sri.py` | SRI hash generator | **Don't edit** -- runs in CI |
 | `.htaccess` | Apache server config (security headers, caching, compression) | Server configuration changes |
 | `nginx.conf` | Nginx server config (Docker deployments) | Server configuration changes |

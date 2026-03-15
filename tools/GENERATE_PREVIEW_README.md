@@ -113,13 +113,14 @@ preview-mapping.json
 - The workflow automatically checks for missing previews and generates them when you open a pull request or push changes.
 - No manual action is needed—just add or update resources and the workflow will handle previews, SRI, and deploy in sequence.
 
-**Steps:**
-1. Install Python and dependencies (Playwright, Pillow)
-2. Check for missing previews
-3. Generate screenshots for URLs without previews
-4. Optimize images with jpegoptim
-5. Commit and push to PR branch or main
-6. Comment on PR with summary
+**Steps (within the unified workflow):**
+1. Update SRI hashes and cache-busting tags
+2. Normalize URLs (strip tracking params, resolve redirects)
+3. Install Python and dependencies (Playwright, Pillow)
+4. Check for missing previews
+5. Generate screenshots for URLs without previews
+6. Optimize images with jpegoptim
+7. Commit and push to PR branch or main
 
 **Environment**:
 - Ubuntu latest
@@ -256,12 +257,12 @@ Preview generation is now part of the unified automation process:
 
 ```mermaid
 graph LR
-  A[Add Resource] --> B[Unified Workflow: URL Safety, SRI, Preview, Deploy]
+  A[Add Resource] --> B[Unified Workflow: SRI, URL Normalization, Preview, Deploy]
   B --> C[Site Updated & Deployed]
 ```
 
 1. Resource added to `resources.html`
-2. Unified workflow validates URLs, generates previews, updates SRI, and deploys the site (after merge)
+2. Unified workflow updates SRI hashes, normalizes URLs, generates previews, checks for broken links, and deploys the site (after merge)
 
 ## Performance
 

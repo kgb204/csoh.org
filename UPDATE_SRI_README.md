@@ -113,11 +113,14 @@ SRI and cache-busting are handled as part of the unified workflow, not a separat
 1. Checks out the latest code
 2. Runs `python3 update_sri.py` to recalculate SRI hashes and `?v=` cache-busting params
 3. Commits and pushes updated HTML files if hashes changed
-4. Generates preview images for any new resources in `resources.html`
-5. Deploys the site via FTP in smart passes:
+4. Normalizes URLs — strips tracking parameters, upgrades HTTP to HTTPS, resolves redirects (using `normalize_urls.py`)
+5. Generates preview images for any new resources in `resources.html`
+6. Checks for broken links (non-blocking warning)
+7. Deploys the site via FTP in smart passes:
    - **Pass 1:** When deploy is triggered — all HTML/CSS/JS and site files (skips image directories)
    - **Pass 2:** Only when new previews were generated — uploads `img/previews/`
-   - **Pass 3:** Only when new files exist in `chat-screenshots/` — uploads `chat-screenshots/`
+   - **Pass 3:** Always syncs news source banner images (`img/news-banners/`)
+   - **Pass 4:** Only when new files exist in `chat-screenshots/` — uploads `chat-screenshots/`
 
 ---
 
@@ -185,9 +188,11 @@ Current pinned versions:
 
 | Action | SHA | Version |
 |--------|-----|---------|
-| `actions/checkout` | `34e11487...` | v4.3.1 |
-| `actions/setup-python` | `a26af69b...` | v5.6.0 |
-| `actions/upload-artifact` | `ea165f8d...` | v4.6.2 |
-| `actions/github-script` | `f28e40c7...` | v7.1.0 |
-| `peter-evans/create-pull-request` | `c5a78066...` | v6.1.0 |
+| `actions/checkout` | `de0fac2e...` | v6.0.2 |
+| `actions/setup-python` | `a309ff8b...` | v6.2.0 |
+| `actions/upload-artifact` | `bbbca2dd...` | v7.0.0 |
+| `actions/github-script` | `ed597411...` | v8.0.0 |
+| `peter-evans/create-pull-request` | `c0f553fe...` | v8.1.0 |
 | `peter-evans/enable-pull-request-automerge` | `a660677d...` | v3.0.0 |
+| `lycheeverse/lychee-action` | `8646ba30...` | v2.8.0 |
+| `Cyb3r-Jak3/html5validator-action` | `443b108e...` | master (2025-09-19) |
