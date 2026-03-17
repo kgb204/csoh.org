@@ -39,7 +39,9 @@ TRACKING_PARAMS = {
     'hsa_cam', 'hsa_grp', 'hsa_mt', 'hsa_src', 'hsa_ad', 'hsa_acc',
     'hsa_net', 'hsa_ver', 'hsa_la', 'hsa_ol', 'hsa_kw', 'hsa_tgt',
     # Misc
-    'ref', 'ref_src', 'ref_url', 'rdt',
+    'ref', 'ref_', 'ref_src', 'ref_url', 'rdt',
+    # Amazon
+    'social_share', 'titlesource', 'bestformat',
     # Beehiiv
     '_bhlid',
 }
@@ -138,6 +140,12 @@ def is_meaningful_redirect(original, resolved):
     if (o._replace(scheme='') == r._replace(scheme='')):
         return False
 
+    # Skip bot-verification / challenge redirects (not real destinations)
+    bot_challenge_markers = ('__verifybrowser', '__challenge', 'captcha',
+                             '_bot_check')
+    if any(marker in r.path.lower() for marker in bot_challenge_markers):
+        return False
+
     # All other redirects are meaningful — including trailing-slash
     # and www-prefix differences, which are real HTTP 301s that cost
     # an extra round-trip for every visitor.
@@ -233,6 +241,8 @@ def build_replacement_map(all_unique, skip_resolve=False, timeout=10,
                 pass
 
             if is_meaningful_redirect(cleaned_url, resolved):
+                # Strip tracking params from the resolved URL too
+                resolved = strip_tracking_params(resolved)
                 categories['redirect_resolved'].append(
                     (original_url, cleaned_url, resolved))
                 replacements[original_url] = resolved

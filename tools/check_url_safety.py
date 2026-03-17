@@ -81,7 +81,13 @@ def resolve_url(url: str, timeout: int = 5) -> Tuple[str, Optional[str]]:
     Uses HEAD first; falls back to GET if HEAD gets 405 Method Not Allowed.
     """
     headers = {
-        "User-Agent": "Mozilla/5.0 (CSOH URL Safety Checker; +https://csoh.org)",
+        "User-Agent": (
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/131.0.0.0 Safari/537.36"
+        ),
+        "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
     }
     for method in ("HEAD", "GET"):
         req = urllib.request.Request(url, method=method, headers=headers)
@@ -92,8 +98,13 @@ def resolve_url(url: str, timeout: int = 5) -> Tuple[str, Optional[str]]:
                     return final, None
                 return url, None
         except urllib.error.HTTPError as e:
-            if e.code == 405 and method == "HEAD":
-                continue  # Try GET
+            if method == "HEAD" and (e.code == 405 or e.code >= 400):
+                continue  # HEAD is unreliable on many hosts; try GET
+            # 308 Permanent Redirect — follow it via the Location header
+            if e.code == 308:
+                location = e.headers.get("Location")
+                if location:
+                    return location, None
             return url, f"HTTP {e.code}"
         except Exception as e:
             return url, str(e)
