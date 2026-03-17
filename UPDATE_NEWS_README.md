@@ -5,7 +5,7 @@
 The [News page](https://csoh.org/news.html) is updated **automatically every 3 hours** — no one has to manually add articles. The script also generates an **RSS feed** (`feed.xml`) so subscribers get updates automatically. Here's how it works in plain English:
 
 1. **GitHub Actions** (a free automation service built into GitHub) runs a Python script on a schedule — every 3 hours.
-2. The script visits **22 cloud security news sources** and checks for new articles using something called **RSS feeds**. An RSS feed is like a news wire — it's a machine-readable list of recent articles that a website publishes so other tools can easily pull in headlines, dates, and summaries.
+2. The script visits **32 cloud security news sources** and checks for new articles using something called **RSS feeds**. An RSS feed is like a news wire — it's a machine-readable list of recent articles that a website publishes so other tools can easily pull in headlines, dates, and summaries.
 3. The script filters those articles for **cloud security topics** (looking for keywords like "AWS", "Azure", "Kubernetes", "vulnerability", "breach", etc.) and throws out duplicates.
 4. It then updates `news.html` with fresh article cards — title, date, summary, source name, and a link to the original article. It also regenerates `feed.xml` (the RSS feed) with the latest articles.
 5. Instead of pushing changes directly, it **creates a Pull Request** (a proposed change) so a maintainer can review it before it goes live.
@@ -16,9 +16,11 @@ The [News page](https://csoh.org/news.html) is updated **automatically every 3 h
 
 ---
 
-## News Sources (22 feeds)
+## News Sources (32 feeds)
 
 The script pulls from these trusted, non-paywalled sources:
+
+### General Security News
 
 | Source | What It Covers |
 |--------|---------------|
@@ -39,11 +41,31 @@ The script pulls from these trusted, non-paywalled sources:
 | Schneier on Security | Security commentary by Bruce Schneier |
 | The Register - Security | IT security news |
 | The Register - Cloud | Cloud infrastructure news |
-| CrowdStrike Blog | Threat intelligence and research |
-| Palo Alto Networks Unit 42 | Threat research and analysis |
 | CISA Alerts | US government cybersecurity alerts |
 | CISA Current Activity | Active threats and exploits |
 | CISA Bulletins | Weekly vulnerability summaries |
+
+### Cloud Security Research
+
+| Source | What It Covers |
+|--------|---------------|
+| Wiz Blog | Cloud vulnerability research and misconfiguration deep-dives |
+| Orca Security Blog | Cloud vulnerabilities, lateral movement, secret exposure |
+| Aqua Security Blog | Container and Kubernetes security, cloud-native threats |
+| Sysdig Blog | Runtime threat detection, Kubernetes security |
+| Datadog Security Labs | Cloud infrastructure threats, supply chain attacks |
+
+### Threat Intelligence / Research
+
+| Source | What It Covers |
+|--------|---------------|
+| CrowdStrike Blog | Threat intelligence and research |
+| Palo Alto Networks Unit 42 | Threat research and analysis |
+| Google Threat Intelligence | APT campaigns, nation-state actors (Mandiant) |
+| Cisco Talos | Malware analysis, vulnerability disclosures |
+| SentinelLabs | Malware reversing, APT tracking |
+| Elastic Security Labs | Detection engineering, rootkit analysis |
+| FortiGuard Labs | Zero-day disclosures, active exploitation alerts |
 
 Want to **add a new source**? You have two options:
 
