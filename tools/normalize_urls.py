@@ -59,6 +59,7 @@ BOT_BLOCKED_DOMAINS = [
     'udemy.com', 'upwork.com', 'washingtontimes.com', 'zoomeye.org',
     'blackhat.com', 'euvd.enisa.europa.eu', 'gitconnected.com',
     'jobs.sap.com', 'programs.com', 'trustoncloud.com',
+    'careersinaudit.com',
 ]
 
 # Extend shortener list with Amazon short links
