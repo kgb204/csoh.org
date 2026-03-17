@@ -40,6 +40,18 @@ SOURCES = {
     "crowdstrike":            "https://www.crowdstrike.com/blog/",
     "unit42":                 "https://unit42.paloaltonetworks.com/",
     "cisa":                   "https://www.cisa.gov/",
+    # Cloud Security Research
+    "wiz":                    "https://www.wiz.io/blog",
+    "orca-security":          "https://orca.security/resources/blog/",
+    "aqua-security":          "https://blog.aquasec.com/",
+    "sysdig":                 "https://sysdig.com/blog/",
+    "datadog-security-labs":  "https://securitylabs.datadoghq.com/",
+    # Threat Intelligence / Research
+    "google-threat-intelligence": "https://cloud.google.com/blog/topics/threat-intelligence",
+    "cisco-talos":            "https://blog.talosintelligence.com/",
+    "sentinellabs":           "https://www.sentinelone.com/labs/",
+    "elastic-security-labs":  "https://www.elastic.co/security-labs",
+    "fortiguard-labs":        "https://www.fortiguard.com/",
 }
 
 VIEWPORT_W = 1280

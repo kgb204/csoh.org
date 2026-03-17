@@ -348,6 +348,18 @@ SOURCE_SLUGS = {
     "CISA Alerts": "cisa",
     "CISA Current Activity": "cisa",
     "CISA Bulletins": "cisa",
+    # Cloud Security Research
+    "Wiz Blog": "wiz",
+    "Orca Security Blog": "orca-security",
+    "Aqua Security Blog": "aqua-security",
+    "Sysdig Blog": "sysdig",
+    "Datadog Security Labs": "datadog-security-labs",
+    # Threat Intelligence / Research
+    "Google Threat Intelligence": "google-threat-intelligence",
+    "Cisco Talos": "cisco-talos",
+    "SentinelLabs": "sentinellabs",
+    "Elastic Security Labs": "elastic-security-labs",
+    "FortiGuard Labs": "fortiguard-labs",
 }
 
 
