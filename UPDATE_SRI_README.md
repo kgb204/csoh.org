@@ -113,10 +113,11 @@ SRI and cache-busting are handled as part of the unified workflow, not a separat
 1. Checks out the latest code
 2. Runs `python3 update_sri.py` to recalculate SRI hashes and `?v=` cache-busting params
 3. Commits and pushes updated HTML files if hashes changed
-4. Normalizes URLs — strips tracking parameters, upgrades HTTP to HTTPS, resolves redirects (using `normalize_urls.py`)
-5. Generates preview images for any new resources in `resources.html`
-6. Checks for broken links (non-blocking warning)
-7. Deploys the site via FTP in smart passes:
+4. Checks URL safety — blocks deploy if unsafe URLs are detected (using `check_all_site_urls.py`)
+5. Normalizes URLs — strips tracking parameters, upgrades HTTP to HTTPS, resolves redirects (using `normalize_urls.py`)
+6. Generates preview images for any new resources in `resources.html`
+7. Checks for broken links (non-blocking warning)
+8. Deploys the site via FTP in smart passes:
    - **Pass 1:** When deploy is triggered — all HTML/CSS/JS and site files (skips image directories)
    - **Pass 2:** Only when new previews were generated — uploads `img/previews/`
    - **Pass 3:** Always syncs news source banner images (`img/news-banners/`)

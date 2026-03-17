@@ -551,6 +551,7 @@ Before you submit, make sure:
 When you submit a PR, our unified workflow (`site-update-deploy.yml`) will:
 
 - 🔒 **Update SRI hashes and cache-busting tags** if CSS/JS changed
+- 🛡️ **Check URL safety** — blocks deploy if unsafe URLs are detected
 - 🔗 **Normalize URLs** — strip tracking parameters, upgrade HTTP to HTTPS, resolve redirects
 - 🖼️ **Generate preview images** for any new resources in `resources.html`
 - 🔍 **Check for broken links** (non-blocking warning)
@@ -561,7 +562,7 @@ When you submit a PR, our unified workflow (`site-update-deploy.yml`) will:
   - Only uploads `chat-screenshots/` when new screenshots were added
 
 **What this means for you:**
-- SRI hashes, URL normalization, preview images, and deploys are all handled automatically—no manual steps needed
+- SRI hashes, URL safety checks, URL normalization, preview images, and deploys are all handled automatically—no manual steps needed
 - If you add entries to `chat-resources.html` with new screenshots, commit the screenshots to `chat-screenshots/` and the workflow will upload them
 
 **Pro tips:**

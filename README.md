@@ -14,7 +14,7 @@ Cloud Security Office Hours is a **vendor-neutral, free community** dedicated to
 
 - **Weekly Expert Zoom Sessions** - Every Friday at 7am PT with industry experts
 - **200+ Curated Resources** - CTF challenges, hands-on labs, security tools, certifications
-- **120+ News Articles** - Cloud security news updated every 3 hours from 22 RSS feeds
+- **120+ News Articles** - Cloud security news updated every 3 hours from 32 RSS feeds
 - **RSS Feed** - Subscribe at [csoh.org/feed.xml](https://csoh.org/feed.xml) for automatic news updates
 - **554+ Community-Shared URLs** - Secure, validated links from Zoom chat sessions
 - **Active Discord Community** - Real-time discussions, peer learning, mentorship
@@ -311,7 +311,7 @@ csoh.org/
 
 ### Adding a New Article to News
 
-News articles are **updated automatically** — you don't need to add them by hand. A GitHub Actions workflow runs every 3 hours, pulls articles from 22 cloud security RSS feeds, and creates a pull request with the new content. See the [How Automation Works](#-how-automation-works) section below for details, or read the full docs in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md).
+News articles are **updated automatically** — you don't need to add them by hand. A GitHub Actions workflow runs every 3 hours, pulls articles from 32 cloud security RSS feeds, and creates a pull request with the new content. See the [How Automation Works](#-how-automation-works) section below for details, or read the full docs in [UPDATE_NEWS_README.md](UPDATE_NEWS_README.md).
 
 To **add a new news source**, either:
 
@@ -357,6 +357,7 @@ This site uses **GitHub Actions workflows** to automate all major site updates. 
 
 **What it does:**
 - Updates SRI hashes and cache-busting tags if CSS/JS changed (using `update_sri.py`)
+- Checks URL safety — blocks deploy if unsafe URLs are detected (using `check_all_site_urls.py`)
 - Normalizes URLs — strips tracking parameters, upgrades HTTP to HTTPS, resolves redirects (using `normalize_urls.py`)
 - Generates preview images for new resources in `resources.html` (using `generate_preview.py`)
 - Checks for broken links (non-blocking warning)
@@ -368,8 +369,8 @@ This site uses **GitHub Actions workflows** to automate all major site updates. 
 
 **How it works:**
 1. Checks for any changes that require SRI updates, URL normalization, new previews, or new chat screenshots
-2. Runs each step in order, skipping steps if not needed
-3. Only deploys after all updates succeed
+2. Runs each step in order: SRI → URL safety → URL normalization → previews → link check → deploy
+3. URL safety check and normalization must pass before previews are generated or the site is deployed
 
 **News updates** are still handled by a separate scheduled workflow (`update-news.yml`) that runs every 3 hours and creates a PR with new articles. Once merged, the unified workflow deploys the site.
 
@@ -381,6 +382,7 @@ In addition to the URL normalization that runs as part of every deploy, a **stan
 
 - **Schedule:** Monthly on the 1st at 08:00 UTC (also available via manual trigger)
 - **What it does:**
+  - Checks URL safety first — blocks normalization if unsafe URLs are found
   - Strips tracking parameters (`utm_*`, `fbclid`, `gclid`, `msclkid`, etc.)
   - Upgrades HTTP links to HTTPS
   - Resolves redirecting URLs to their final destinations

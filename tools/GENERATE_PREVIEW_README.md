@@ -115,12 +115,13 @@ preview-mapping.json
 
 **Steps (within the unified workflow):**
 1. Update SRI hashes and cache-busting tags
-2. Normalize URLs (strip tracking params, resolve redirects)
-3. Install Python and dependencies (Playwright, Pillow)
-4. Check for missing previews
-5. Generate screenshots for URLs without previews
-6. Optimize images with jpegoptim
-7. Commit and push to PR branch or main
+2. Check URL safety (blocks if unsafe URLs detected)
+3. Normalize URLs (strip tracking params, resolve redirects)
+4. Install Python and dependencies (Playwright, Pillow)
+5. Check for missing previews
+6. Generate screenshots for URLs without previews
+7. Optimize images with jpegoptim
+8. Commit and push to PR branch or main
 
 **Environment**:
 - Ubuntu latest
