@@ -41,13 +41,25 @@ FEEDS = [
     {"name": "CISA Alerts", "url": "https://www.cisa.gov/uscert/ncas/alerts.xml"},
     {"name": "CISA Current Activity", "url": "https://www.cisa.gov/uscert/ncas/current-activity.xml"},
     {"name": "CISA Bulletins", "url": "https://www.cisa.gov/uscert/ncas/bulletins.xml"},
+    # Cloud Security Research
+    {"name": "Wiz Blog", "url": "https://www.wiz.io/feed/rss.xml"},
+    {"name": "Orca Security Blog", "url": "https://orca.security/resources/blog/feed/"},
+    {"name": "Aqua Security Blog", "url": "https://blog.aquasec.com/rss.xml"},
+    {"name": "Sysdig Blog", "url": "https://sysdig.com/feed/"},
+    {"name": "Datadog Security Labs", "url": "https://securitylabs.datadoghq.com/rss/feed.xml"},
+    # Threat Intelligence / Research
+    {"name": "Google Threat Intelligence", "url": "https://cloudblog.withgoogle.com/topics/threat-intelligence/rss/"},
+    {"name": "Cisco Talos", "url": "https://blog.talosintelligence.com/feed/"},
+    {"name": "SentinelLabs", "url": "https://www.sentinelone.com/labs/feed/"},
+    {"name": "Elastic Security Labs", "url": "https://www.elastic.co/security-labs/rss/feed.xml"},
+    {"name": "FortiGuard Labs", "url": "https://filestore.fortinet.com/fortiguard/rss/threatsignal.xml"},
 ]
 
 KEYWORDS = {
     "cloud", "aws", "azure", "gcp", "google cloud", "kubernetes", "k8s",
     "iam", "identity", "zero trust", "container", "supply chain",
     "ransomware", "breach", "data leak", "vulnerability", "cve", "exploit",
-    "malware", "phishing", "botnet", "security", "patch", "incident",
+    "malware", "phishing", "botnet", "security", "patch", "incident", "threat", "research",
     "ai", "llm", "genai", "machine learning", "ml",
     "job", "jobs", "hiring", "career", "layoff", "salary",
     "scam", "fraud", "social engineering", "credential", "identity theft",
@@ -75,6 +87,7 @@ TAG_KEYWORDS = {
     "AI": ["ai", "llm", "genai", "machine learning", "ml"],
     "Jobs": ["job", "jobs", "hiring", "career", "layoff", "salary"],
     "Scam": ["scam", "fraud", "social engineering", "credential"],
+    "Threat Research": ["threat research", "threat intelligence", "threat actor", "apt", "campaign"],
 }
 
 
