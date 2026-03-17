@@ -138,23 +138,9 @@ def is_meaningful_redirect(original, resolved):
     if (o._replace(scheme='') == r._replace(scheme='')):
         return False
 
-    # Ignore trailing-slash-only differences
-    o_path = o.path.rstrip('/')
-    r_path = r.path.rstrip('/')
-    o_norm = o._replace(scheme=o.scheme.lower(), path=o_path,
-                        netloc=o.netloc.lower())
-    r_norm = r._replace(scheme=r.scheme.lower(), path=r_path,
-                        netloc=r.netloc.lower())
-
-    # Ignore www prefix differences
-    o_host = o_norm.netloc.removeprefix('www.')
-    r_host = r_norm.netloc.removeprefix('www.')
-
-    if (o_host == r_host
-            and o_norm.path.lower() == r_norm.path.lower()
-            and o_norm.query == r_norm.query):
-        return False
-
+    # All other redirects are meaningful — including trailing-slash
+    # and www-prefix differences, which are real HTTP 301s that cost
+    # an extra round-trip for every visitor.
     return True
 
 
