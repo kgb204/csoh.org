@@ -7,7 +7,7 @@
     <language>en-us</language>
     <managingEditor>admin@csoh.org (CSOH)</managingEditor>
     <webMaster>admin@csoh.org (CSOH)</webMaster>
-    <lastBuildDate>Sun, 15 Mar 2026 14:21:20 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 22:00:57 +0000</lastBuildDate>
     <ttl>720</ttl>
     <atom:link href="https://csoh.org/feed.xml" rel="self" type="application/rss+xml" />
     <image>
@@ -15,6 +15,256 @@
       <title>CSOH - Cloud Security News</title>
       <link>https://csoh.org/news.html</link>
     </image>
+    <item>
+      <title>Boggy Serpens Threat Assessment</title>
+      <link>https://unit42.paloaltonetworks.com/boggy-serpens-threat-assessment</link>
+      <description>Iranian threat group Boggy Serpens' cyberespionage evolves with AI-enhanced malware and refined social engineering. Unit 42 details their persistent targeting. The post Boggy Serpens Threat Assessment appeared first o...</description>
+      <source url="https://unit42.paloaltonetworks.com/boggy-serpens-threat-assessment">Palo Alto Networks Unit 42</source>
+      <guid isPermaLink="true">https://unit42.paloaltonetworks.com/boggy-serpens-threat-assessment</guid>
+      <pubDate>Mon, 16 Mar 2026 22:00:57 +0000</pubDate>
+      <category>AI</category>
+      <category>Scam</category>
+    </item>
+    <item>
+      <title>U.S. CISA adds a flaw in Wing FTP Server to its Known Exploited Vulnerabilities catalog</title>
+      <link>https://securityaffairs.com/189530/security/u-s-cisa-adds-a-flaw-in-wing-ftp-server-to-its-known-exploited-vulnerabilities-catalog.html</link>
+      <description>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) adds a flaw in Wing FTP Server to its Known Exploited Vulnerabilities catalog. The U.S. Cybersecurity and Infrastructure Security Agency (CISA) added a...</description>
+      <source url="https://securityaffairs.com/189530/security/u-s-cisa-adds-a-flaw-in-wing-ftp-server-to-its-known-exploited-vulnerabilities-catalog.html">Security Affairs</source>
+      <guid isPermaLink="true">https://securityaffairs.com/189530/security/u-s-cisa-adds-a-flaw-in-wing-ftp-server-to-its-known-exploited-vulnerabilities-catalog.html</guid>
+      <pubDate>Mon, 16 Mar 2026 21:08:53 +0000</pubDate>
+      <category>CISA</category>
+      <category>Vulnerability</category>
+    </item>
+    <item>
+      <title>Russia-linked APT uses DRILLAPP backdoor to spy on Ukrainian targets</title>
+      <link>https://securityaffairs.com/189519/malware/russia-linked-apt-uses-drillapp-backdoor-to-spy-on-ukrainian-targets.html</link>
+      <description>Russia-linked threat actors target Ukrainian entities with DRILLAPP backdoor and use Edge debugging for stealth. A new DRILLAPP backdoor campaign targets Ukrainian organizations, abusing Microsoft Edge debugging to ev...</description>
+      <source url="https://securityaffairs.com/189519/malware/russia-linked-apt-uses-drillapp-backdoor-to-spy-on-ukrainian-targets.html">Security Affairs</source>
+      <guid isPermaLink="true">https://securityaffairs.com/189519/malware/russia-linked-apt-uses-drillapp-backdoor-to-spy-on-ukrainian-targets.html</guid>
+      <pubDate>Mon, 16 Mar 2026 20:32:41 +0000</pubDate>
+      <category>Azure</category>
+    </item>
+    <item>
+      <title>GlassWorm Malware Evolves to Hide in Dependencies</title>
+      <link>https://www.darkreading.com/application-security/glassworm-malware-evolves-hide-dependencies</link>
+      <description>Researchers have identified dozens of malicious GlassWorm extensions that come with new evasion techniques.</description>
+      <source url="https://www.darkreading.com/application-security/glassworm-malware-evolves-hide-dependencies">Dark Reading</source>
+      <guid isPermaLink="true">https://www.darkreading.com/application-security/glassworm-malware-evolves-hide-dependencies</guid>
+      <pubDate>Mon, 16 Mar 2026 20:30:04 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Inside Olympic Cybersecurity: Lessons From Paris 2024 to Milan Cortina 2026</title>
+      <link>https://www.darkreading.com/threat-intelligence/olympic-cybersecurity-paris-2024-milan-2026</link>
+      <description>Discover how Franz Regul, former CISO for the Paris 2024 Olympics, tackled unique cybersecurity challenges to protect the Olympics from evolving threats.</description>
+      <source url="https://www.darkreading.com/threat-intelligence/olympic-cybersecurity-paris-2024-milan-2026">Dark Reading</source>
+      <guid isPermaLink="true">https://www.darkreading.com/threat-intelligence/olympic-cybersecurity-paris-2024-milan-2026</guid>
+      <pubDate>Mon, 16 Mar 2026 20:28:19 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>GlassWorm Attack Uses Stolen GitHub Tokens to Force-Push Malware Into Python Repos</title>
+      <link>https://thehackernews.com/2026/03/glassworm-attack-uses-stolen-github.html</link>
+      <description>The GlassWorm malware campaign is being used to fuel an ongoing attack that leverages the stolen GitHub tokens to inject malware into hundreds of Python repositories. "The attack targets Python projects — including Dj...</description>
+      <source url="https://thehackernews.com/2026/03/glassworm-attack-uses-stolen-github.html">The Hacker News</source>
+      <guid isPermaLink="true">https://thehackernews.com/2026/03/glassworm-attack-uses-stolen-github.html</guid>
+      <pubDate>Tue, 17 Mar 2026 01:07:00 +0530</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Stryker attack wiped tens of thousands of devices, no malware needed</title>
+      <link>https://www.bleepingcomputer.com/news/security/stryker-attack-wiped-tens-of-thousands-of-devices-no-malware-needed</link>
+      <description>Last week's cyberattack on medical technology giant Stryker was limited to its internal Microsoft environment and remotely wiped tens of thousands of employee devices. [...]</description>
+      <source url="https://www.bleepingcomputer.com/news/security/stryker-attack-wiped-tens-of-thousands-of-devices-no-malware-needed">BleepingComputer</source>
+      <guid isPermaLink="true">https://www.bleepingcomputer.com/news/security/stryker-attack-wiped-tens-of-thousands-of-devices-no-malware-needed</guid>
+      <pubDate>Mon, 16 Mar 2026 15:17:20 -0400</pubDate>
+      <category>Azure</category>
+    </item>
+    <item>
+      <title>Iranian Cyber Threat Evolution: From MBR Wipers to Identity Weaponization</title>
+      <link>https://unit42.paloaltonetworks.com/evolution-of-iran-cyber-threats</link>
+      <description>The evolution of Iranian cyber operations in broad context: from custom wiper malware to misuse of legitimate admin tools and more. The post Iranian Cyber Threat Evolution: From MBR Wipers to Identity Weaponization ap...</description>
+      <source url="https://unit42.paloaltonetworks.com/evolution-of-iran-cyber-threats">Palo Alto Networks Unit 42</source>
+      <guid isPermaLink="true">https://unit42.paloaltonetworks.com/evolution-of-iran-cyber-threats</guid>
+      <pubDate>Mon, 16 Mar 2026 19:15:43 +0000</pubDate>
+      <category>Identity</category>
+    </item>
+    <item>
+      <title>Standing up for the open Internet: why we appealed Italy’s "Piracy Shield" fine</title>
+      <link>https://blog.cloudflare.com/standing-up-for-the-open-internet</link>
+      <description>Cloudflare is appealing a €14 million fine from Italian regulators over "Piracy Shield," a system that forces providers to block content without oversight. We are challenging this framework to protect the Internet fro...</description>
+      <source url="https://blog.cloudflare.com/standing-up-for-the-open-internet">Cloudflare Blog</source>
+      <guid isPermaLink="true">https://blog.cloudflare.com/standing-up-for-the-open-internet</guid>
+      <pubDate>Mon, 16 Mar 2026 19:00:00 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Oracle EBS Hack: Only 4 Corporate Giants Still Silent on Potential Impact</title>
+      <link>https://www.securityweek.com/oracle-ebs-hack-only-4-corporate-giants-still-silent-on-potential-impact</link>
+      <description>Broadcom, Bechtel, Estée Lauder, and Abbott Technologies are the only major companies that have yet to issue a public statement. The post Oracle EBS Hack: Only 4 Corporate Giants Still Silent on Potential Impact appea...</description>
+      <source url="https://www.securityweek.com/oracle-ebs-hack-only-4-corporate-giants-still-silent-on-potential-impact">SecurityWeek</source>
+      <guid isPermaLink="true">https://www.securityweek.com/oracle-ebs-hack-only-4-corporate-giants-still-silent-on-potential-impact</guid>
+      <pubDate>Mon, 16 Mar 2026 15:44:37 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>FBI launches inquiry into Steam games spreading malware</title>
+      <link>https://securityaffairs.com/189515/cyber-crime/fbi-launches-inquiry-into-steam-games-spreading-malware.html</link>
+      <description>The FBI is asking gamers who installed malware-infected Steam games between May 2024 and January 2026 to come forward as part of an ongoing investigation. The FBI is seeking gamers who downloaded Steam games later fou...</description>
+      <source url="https://securityaffairs.com/189515/cyber-crime/fbi-launches-inquiry-into-steam-games-spreading-malware.html">Security Affairs</source>
+      <guid isPermaLink="true">https://securityaffairs.com/189515/cyber-crime/fbi-launches-inquiry-into-steam-games-spreading-malware.html</guid>
+      <pubDate>Mon, 16 Mar 2026 15:16:09 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Researchers Warn of Global Surge in Fake Shipment Tracking Scams</title>
+      <link>https://www.infosecurity-magazine.com/news/global-surge-fake-shipment</link>
+      <description>Some of these campaigns are linked to Darcula, a Chinese-language phishing-as-a-service platform</description>
+      <source url="https://www.infosecurity-magazine.com/news/global-surge-fake-shipment">Infosecurity Magazine</source>
+      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/global-surge-fake-shipment</guid>
+      <pubDate>Mon, 16 Mar 2026 14:45:00 +0000</pubDate>
+      <category>Phishing</category>
+      <category>Scam</category>
+    </item>
+    <item>
+      <title>Security Firm Executive Targeted in Sophisticated Phishing Attack</title>
+      <link>https://www.securityweek.com/security-firm-executive-targeted-in-sophisticated-phishing-attack</link>
+      <description>The attackers used a DKIM-signed phishing email, trusted redirect infrastructure, compromised servers, and Cloudflare-protected phishing pages. The post Security Firm Executive Targeted in Sophisticated Phishing Attac...</description>
+      <source url="https://www.securityweek.com/security-firm-executive-targeted-in-sophisticated-phishing-attack">SecurityWeek</source>
+      <guid isPermaLink="true">https://www.securityweek.com/security-firm-executive-targeted-in-sophisticated-phishing-attack</guid>
+      <pubDate>Mon, 16 Mar 2026 14:39:52 +0000</pubDate>
+      <category>Phishing</category>
+    </item>
+    <item>
+      <title>Stellar Cyber 6.4.0 reduces alert noise and speeds investigations with Autonomous SOC capabilities</title>
+      <link>https://www.helpnetsecurity.com/2026/03/16/stellar-cyber-autonomous-soc-capabilities</link>
+      <description>Stellar Cyber has announced he general availability of version 6.4.0 of its platform. With this release, Stellar Cyber delivers new Autonomous SOC capabilities designed to reduce alert noise, accelerate investigations...</description>
+      <source url="https://www.helpnetsecurity.com/2026/03/16/stellar-cyber-autonomous-soc-capabilities">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/03/16/stellar-cyber-autonomous-soc-capabilities</guid>
+      <pubDate>Mon, 16 Mar 2026 14:39:43 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>NinjaOne Vulnerability Management enables real-time detection and autonomous patching</title>
+      <link>https://www.helpnetsecurity.com/2026/03/16/ninjaone-vulnerability-management</link>
+      <description>NinjaOne has unveiled NinjaOne Vulnerability Management, a new solution that helps IT teams identify, prioritize, and remediate vulnerabilities faster, without relying on periodic scans from security teams that often...</description>
+      <source url="https://www.helpnetsecurity.com/2026/03/16/ninjaone-vulnerability-management">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/03/16/ninjaone-vulnerability-management</guid>
+      <pubDate>Mon, 16 Mar 2026 14:23:53 +0000</pubDate>
+      <category>Vulnerability</category>
+    </item>
+    <item>
+      <title>⚡ Weekly Recap: Chrome 0-Days, Router Botnets, AWS Breach, Rogue AI Agents &amp; More</title>
+      <link>https://thehackernews.com/2026/03/weekly-recap-chrome-0-days-router.html</link>
+      <description>Some weeks in security feel normal. Then you read a few tabs and get that immediate “ah, great, we’re doing this now” feeling. This week has that energy. Fresh messes, old problems getting sharper, and research that s...</description>
+      <source url="https://thehackernews.com/2026/03/weekly-recap-chrome-0-days-router.html">The Hacker News</source>
+      <guid isPermaLink="true">https://thehackernews.com/2026/03/weekly-recap-chrome-0-days-router.html</guid>
+      <pubDate>Mon, 16 Mar 2026 19:47:00 +0530</pubDate>
+      <category>AWS</category>
+      <category>Breach</category>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>Orca Platform enhancements use AI to cut cloud alert noise</title>
+      <link>https://www.helpnetsecurity.com/2026/03/16/orca-security-platform-enhancements</link>
+      <description>Orca Security has announced major enhancements to the Orca Platform, introducing new AI-powered security agents, real-time detection of AI usage across cloud environments, remediation-focused workflows, and code reach...</description>
+      <source url="https://www.helpnetsecurity.com/2026/03/16/orca-security-platform-enhancements">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/03/16/orca-security-platform-enhancements</guid>
+      <pubDate>Mon, 16 Mar 2026 14:12:12 +0000</pubDate>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>Attackers Abuse LiveChat to Phish Credit Card, Personal Data</title>
+      <link>https://www.darkreading.com/threat-intelligence/attackers-livechat-phish-credit-card-personal-data</link>
+      <description>A social engineering campaign impersonating PayPal and Amazon uses customer support interactions to acquire sensitive info.</description>
+      <source url="https://www.darkreading.com/threat-intelligence/attackers-livechat-phish-credit-card-personal-data">Dark Reading</source>
+      <guid isPermaLink="true">https://www.darkreading.com/threat-intelligence/attackers-livechat-phish-credit-card-personal-data</guid>
+      <pubDate>Mon, 16 Mar 2026 14:10:47 +0000</pubDate>
+      <category>AWS</category>
+      <category>Scam</category>
+    </item>
+    <item>
+      <title>Shadow AI is everywhere. Here’s how to find and secure it.</title>
+      <link>https://www.bleepingcomputer.com/news/security/shadow-ai-is-everywhere-heres-how-to-find-and-secure-it</link>
+      <description>Shadow AI is quietly spreading across SaaS environments as employees adopt new AI tools without IT oversight. Nudge Security explains how security teams can discover AI apps, monitor usage, and govern risky AI activit...</description>
+      <source url="https://www.bleepingcomputer.com/news/security/shadow-ai-is-everywhere-heres-how-to-find-and-secure-it">BleepingComputer</source>
+      <guid isPermaLink="true">https://www.bleepingcomputer.com/news/security/shadow-ai-is-everywhere-heres-how-to-find-and-secure-it</guid>
+      <pubDate>Mon, 16 Mar 2026 10:01:11 -0400</pubDate>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>CrackArmor Flaws Expose Linux Systems to Privilege Escalation</title>
+      <link>https://www.infosecurity-magazine.com/news/crackarmor-linux-privilege</link>
+      <description>CrackArmor AppArmor flaws let local Linux users gain root, break containers and enable DoS attacks</description>
+      <source url="https://www.infosecurity-magazine.com/news/crackarmor-linux-privilege">Infosecurity Magazine</source>
+      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/crackarmor-linux-privilege</guid>
+      <pubDate>Mon, 16 Mar 2026 14:00:00 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Hackers tried to breach Poland’s nuclear research centre</title>
+      <link>https://www.helpnetsecurity.com/2026/03/16/poland-nuclear-research-centre-cyberattack</link>
+      <description>Poland’s National Centre for Nuclear Research (NCBJ) thwarted a cyberattack targeting its IT infrastructure. The attempted intrusion was detected and blocked before attackers could compromise systems or disrupt operat...</description>
+      <source url="https://www.helpnetsecurity.com/2026/03/16/poland-nuclear-research-centre-cyberattack">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/03/16/poland-nuclear-research-centre-cyberattack</guid>
+      <pubDate>Mon, 16 Mar 2026 09:46:25 +0000</pubDate>
+      <category>Breach</category>
+    </item>
+    <item>
+      <title>Possible New Result in Quantum Factorization</title>
+      <link>https://www.schneier.com/blog/archives/2026/03/possible-new-result-in-quantum-factorization.html</link>
+      <description>I’m skeptical about—and not qualified to review—this new result in factorization with a quantum computer, but if it’s true it’s a theoretical improvement in the speed of factoring large numbers with a quantum computer.</description>
+      <source url="https://www.schneier.com/blog/archives/2026/03/possible-new-result-in-quantum-factorization.html">Schneier on Security</source>
+      <guid isPermaLink="true">https://www.schneier.com/blog/archives/2026/03/possible-new-result-in-quantum-factorization.html</guid>
+      <pubDate>Mon, 16 Mar 2026 09:46:09 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>KEEQuant advances chip-scale QKD for telecom, data centers, and critical infrastructure</title>
+      <link>https://www.helpnetsecurity.com/2026/03/16/keequant-chip-scale-qkd-technology</link>
+      <description>KEEQuant has announced its commercial chip-scale QKD technology, marking an advance in quantum-secure communications. The system replaces bulky optical assemblies with photonic integration, lowering the cost and compl...</description>
+      <source url="https://www.helpnetsecurity.com/2026/03/16/keequant-chip-scale-qkd-technology">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/03/16/keequant-chip-scale-qkd-technology</guid>
+      <pubDate>Mon, 16 Mar 2026 09:30:27 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>Hacking Attempt Reported at Poland’s Nuclear Research Center</title>
+      <link>https://www.securityweek.com/hack-attempt-reported-at-polands-nuclear-research-center</link>
+      <description>Initial evidence indicates Iran may be behind the attack, but officials admitted it could be a false flag. The post Hacking Attempt Reported at Poland’s Nuclear Research Center appeared first on SecurityWeek .</description>
+      <source url="https://www.securityweek.com/hack-attempt-reported-at-polands-nuclear-research-center">SecurityWeek</source>
+      <guid isPermaLink="true">https://www.securityweek.com/hack-attempt-reported-at-polands-nuclear-research-center</guid>
+      <pubDate>Mon, 16 Mar 2026 08:56:04 +0000</pubDate>
+      <category>Cloud Security</category>
+    </item>
+    <item>
+      <title>45,000 malicious IP addresses taken down, 94 suspects arrested</title>
+      <link>https://www.helpnetsecurity.com/2026/03/16/interpol-operation-synergia-iii-cybercrime-infrastructure-takedown</link>
+      <description>An international law enforcement operation has taken down more than 45,000 malicious IP addresses and servers linked to phishing, malware, and ransomware activity. The action was carried out as part of Operation Syner...</description>
+      <source url="https://www.helpnetsecurity.com/2026/03/16/interpol-operation-synergia-iii-cybercrime-infrastructure-takedown">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/03/16/interpol-operation-synergia-iii-cybercrime-infrastructure-takedown</guid>
+      <pubDate>Mon, 16 Mar 2026 08:33:23 +0000</pubDate>
+      <category>Ransomware</category>
+      <category>Phishing</category>
+    </item>
+    <item>
+      <title>JSOC IT’s AUTOPSY platform puts security stacks under live API verification</title>
+      <link>https://www.helpnetsecurity.com/2026/03/16/jsoc-it-autopsy</link>
+      <description>JSOC IT has announced the launch of AUTOPSY, a security verification platform that investigates an organization’s security stack through live API integrations before a breach occurs, rather than after one forces the c...</description>
+      <source url="https://www.helpnetsecurity.com/2026/03/16/jsoc-it-autopsy">Help Net Security</source>
+      <guid isPermaLink="true">https://www.helpnetsecurity.com/2026/03/16/jsoc-it-autopsy</guid>
+      <pubDate>Mon, 16 Mar 2026 08:24:39 +0000</pubDate>
+      <category>Breach</category>
+    </item>
+    <item>
+      <title>Unprivileged users could exploit AppArmor bugs to gain root access</title>
+      <link>https://securityaffairs.com/189487/hacking/unprivileged-users-could-exploit-apparmor-bugs-to-gain-root-access.html</link>
+      <description>Researchers found nine “CrackArmor” flaws in Linux AppArmor that could let unprivileged users bypass protections, gain root privileges, and weaken container isolation. Qualys researchers disclosed nine vulnerabilities...</description>
+      <source url="https://securityaffairs.com/189487/hacking/unprivileged-users-could-exploit-apparmor-bugs-to-gain-root-access.html">Security Affairs</source>
+      <guid isPermaLink="true">https://securityaffairs.com/189487/hacking/unprivileged-users-could-exploit-apparmor-bugs-to-gain-root-access.html</guid>
+      <pubDate>Mon, 16 Mar 2026 08:05:09 +0000</pubDate>
+      <category>Vulnerability</category>
+    </item>
     <item>
       <title>SECURITY AFFAIRS MALWARE NEWSLETTER ROUND 88</title>
       <link>https://securityaffairs.com/189459/breaking-news/security-affairs-malware-newsletter-round-88.html</link>
@@ -366,15 +616,6 @@
       <category>Cloud Security</category>
     </item>
     <item>
-      <title>Multi-Stage VOID#GEIST Malware Delivering XWorm, AsyncRAT, and Xeno RAT</title>
-      <link>https://thehackernews.com/2026/03/multi-stage-voidgeist-malware.html</link>
-      <description>Cybersecurity researchers have disclosed details of a multi-stage malware campaign that uses batch scripts as a pathway to deliver various encrypted remote access trojan (RATs) payloads that correspond to XWorm, Async...</description>
-      <source url="https://thehackernews.com/2026/03/multi-stage-voidgeist-malware.html">The Hacker News</source>
-      <guid isPermaLink="true">https://thehackernews.com/2026/03/multi-stage-voidgeist-malware.html</guid>
-      <pubDate>Fri, 06 Mar 2026 20:03:00 +0530</pubDate>
-      <category>Cloud Security</category>
-    </item>
-    <item>
       <title>From the endpoint to the prompt: a unified data security vision in Cloudflare One</title>
       <link>https://blog.cloudflare.com/unified-data-security</link>
       <description>Cloudflare One unifies data security from endpoint to prompt: RDP clipboard controls, operation-mapped logs, on-device DLP, and Microsoft 365 Copilot scanning via API CASB.</description>
@@ -402,15 +643,6 @@
       <category>Cloud Security</category>
     </item>
     <item>
-      <title>Claude Used to Hack Mexican Government</title>
-      <link>https://www.schneier.com/blog/archives/2026/03/claude-used-to-hack-mexican-government.html</link>
-      <description>An unknown hacker used Anthropic’s LLM to hack the Mexican government: The unknown Claude user wrote Spanish-language prompts for the chatbot to act as an elite hacker, finding vulnerabilities in government networks,...</description>
-      <source url="https://www.schneier.com/blog/archives/2026/03/claude-used-to-hack-mexican-government.html">Schneier on Security</source>
-      <guid isPermaLink="true">https://www.schneier.com/blog/archives/2026/03/claude-used-to-hack-mexican-government.html</guid>
-      <pubDate>Fri, 06 Mar 2026 11:53:27 +0000</pubDate>
-      <category>AI</category>
-    </item>
-    <item>
       <title>An Investigation Into Years of Undetected Operations Targeting High-Value Sectors</title>
       <link>https://unit42.paloaltonetworks.com/cl-unk-1068-targets-critical-sectors</link>
       <description>In-depth analysis of threat activity we call CL-UNK-1068. We discuss their toolset, including tunneling, reconnaissance and credential theft. The post An Investigation Into Years of Undetected Operations Targeting Hig...</description>
@@ -418,35 +650,6 @@
       <guid isPermaLink="true">https://unit42.paloaltonetworks.com/cl-unk-1068-targets-critical-sectors</guid>
       <pubDate>Fri, 06 Mar 2026 11:00:35 +0000</pubDate>
       <category>Scam</category>
-    </item>
-    <item>
-      <title>The MSP Guide to Using AI-Powered Risk Management to Scale Cybersecurity</title>
-      <link>https://thehackernews.com/2026/03/the-msp-guide-to-using-ai-powered-risk.html</link>
-      <description>Scaling cybersecurity services as an MSP or MSSP requires technical expertise and a business model that delivers measurable value at scale. Risk-based cybersecurity is the foundation of that model. When done right, it...</description>
-      <source url="https://thehackernews.com/2026/03/the-msp-guide-to-using-ai-powered-risk.html">The Hacker News</source>
-      <guid isPermaLink="true">https://thehackernews.com/2026/03/the-msp-guide-to-using-ai-powered-risk.html</guid>
-      <pubDate>Fri, 06 Mar 2026 16:00:00 +0530</pubDate>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>Microsoft Reveals ClickFix Campaign Using Windows Terminal to Deploy Lumma Stealer</title>
-      <link>https://thehackernews.com/2026/03/microsoft-reveals-clickfix-campaign.html</link>
-      <description>Microsoft on Thursday disclosed details of a new widespread ClickFix social engineering campaign that has leveraged the Windows Terminal app as a way to activate a sophisticated attack chain and deploy the Lumma Steal...</description>
-      <source url="https://thehackernews.com/2026/03/microsoft-reveals-clickfix-campaign.html">The Hacker News</source>
-      <guid isPermaLink="true">https://thehackernews.com/2026/03/microsoft-reveals-clickfix-campaign.html</guid>
-      <pubDate>Fri, 06 Mar 2026 12:14:00 +0530</pubDate>
-      <category>Azure</category>
-      <category>Scam</category>
-    </item>
-    <item>
-      <title>Hikvision and Rockwell Automation CVSS 9.8 Flaws Added to CISA KEV Catalog</title>
-      <link>https://thehackernews.com/2026/03/hikvision-and-rockwell-automation-cvss.html</link>
-      <description>The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Hikvision and Rockwell Automation products to its Known Exploited Vulnerabilities (KEV) catalog, citing e...</description>
-      <source url="https://thehackernews.com/2026/03/hikvision-and-rockwell-automation-cvss.html">The Hacker News</source>
-      <guid isPermaLink="true">https://thehackernews.com/2026/03/hikvision-and-rockwell-automation-cvss.html</guid>
-      <pubDate>Fri, 06 Mar 2026 12:00:00 +0530</pubDate>
-      <category>CISA</category>
-      <category>Vulnerability</category>
     </item>
     <item>
       <title>Nation-State Actor Embraces AI Malware Assembly Line</title>
@@ -778,15 +981,6 @@
       <category>AI</category>
     </item>
     <item>
-      <title>Introducing the 2026 Cloudflare Threat Report</title>
-      <link>https://blog.cloudflare.com/2026-threat-report</link>
-      <description>There has been a fundamental shift toward industrialized cyber threats, highlighted by a record 31.4 Tbps DDoS attack and sophisticated session token theft. Our new report examines how nation-states and criminal actor...</description>
-      <source url="https://blog.cloudflare.com/2026-threat-report">Cloudflare Blog</source>
-      <guid isPermaLink="true">https://blog.cloudflare.com/2026-threat-report</guid>
-      <pubDate>Tue, 03 Mar 2026 14:00:00 +0000</pubDate>
-      <category>Cloud Security</category>
-    </item>
-    <item>
       <title>Half of US CISOs Work the Equivalent of a Six-Day Week</title>
       <link>https://www.infosecurity-magazine.com/news/half-us-cisos-work-equivalent</link>
       <description>Seemplicity finds US security leaders work 11 or more extra hours per week</description>
@@ -855,25 +1049,6 @@
       <category>Phishing</category>
     </item>
     <item>
-      <title>Critical OpenClaw Vulnerability Exposes AI Agent Risks</title>
-      <link>https://www.darkreading.com/application-security/critical-openclaw-vulnerability-ai-agent-risks</link>
-      <description>The now-patched flaw is the latest in a growing string of security issues associated with the viral AI tool, which has seen rapid adoption among developers.</description>
-      <source url="https://www.darkreading.com/application-security/critical-openclaw-vulnerability-ai-agent-risks">Dark Reading</source>
-      <guid isPermaLink="true">https://www.darkreading.com/application-security/critical-openclaw-vulnerability-ai-agent-risks</guid>
-      <pubDate>Mon, 02 Mar 2026 22:34:36 +0000</pubDate>
-      <category>Vulnerability</category>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>The Tug-of-War Over Firewall Backlogs in the AI-Driven Development Era</title>
-      <link>https://www.darkreading.com/cloud-security/tug-of-war-firewall-backlogs-ai-driven-development</link>
-      <description>Speed and security are historically clashing priorities, but with AI and automation, it's increasingly important that application developers and security teams get on the same page.</description>
-      <source url="https://www.darkreading.com/cloud-security/tug-of-war-firewall-backlogs-ai-driven-development">Dark Reading</source>
-      <guid isPermaLink="true">https://www.darkreading.com/cloud-security/tug-of-war-firewall-backlogs-ai-driven-development</guid>
-      <pubDate>Mon, 02 Mar 2026 21:32:04 +0000</pubDate>
-      <category>AI</category>
-    </item>
-    <item>
       <title>Understanding IAM for Managed AWS MCP Servers</title>
       <link>https://aws.amazon.com/blogs/security/understanding-iam-for-managed-aws-mcp-servers</link>
       <description>As AI agents become part of your development workflows on Amazon Web Services (AWS), you want them to work with your existing AWS Identity and Access Management (IAM) permissions, not force you to build a separate per...</description>
@@ -892,15 +1067,6 @@
       <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/iran-cyber-attacks-global-google</guid>
       <pubDate>Mon, 02 Mar 2026 15:45:00 +0000</pubDate>
       <category>Ransomware</category>
-    </item>
-    <item>
-      <title>Quantum-Resistant Data Diode Secures Sensitive Data on Edge Devices, Critical Systems</title>
-      <link>https://www.darkreading.com/ics-ot-security/quantum-resistant-data-diode-secures-sensitive-data-on-edge-devices-critical-systems</link>
-      <description>Forward Edge-AI's new Isidore Quantum is a compact, low-power hardware device designed to defend sensitive operational technology endpoints against future quantum attacks.</description>
-      <source url="https://www.darkreading.com/ics-ot-security/quantum-resistant-data-diode-secures-sensitive-data-on-edge-devices-critical-systems">Dark Reading</source>
-      <guid isPermaLink="true">https://www.darkreading.com/ics-ot-security/quantum-resistant-data-diode-secures-sensitive-data-on-edge-devices-critical-systems</guid>
-      <pubDate>Mon, 02 Mar 2026 12:55:27 +0000</pubDate>
-      <category>AI</category>
     </item>
     <item>
       <title>ClawJacked Bug Enables Covert AI Agent Hijacking</title>
@@ -956,177 +1122,6 @@
       <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/north-korea-apt37-expands-toolkit</guid>
       <pubDate>Fri, 27 Feb 2026 14:15:00 +0000</pubDate>
       <category>Breach</category>
-    </item>
-    <item>
-      <title>UK Vulnerability Monitoring Service Cuts Unresolved Security Flaws by 75%</title>
-      <link>https://www.infosecurity-magazine.com/news/uk-vuln-monitoring-service-cuts</link>
-      <description>The UK government says its new Vulnerability Monitoring Service has cut unresolved security flaws by 75% and reduced cyber-attack fix times from nearly two months to just over a week</description>
-      <source url="https://www.infosecurity-magazine.com/news/uk-vuln-monitoring-service-cuts">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/uk-vuln-monitoring-service-cuts</guid>
-      <pubDate>Fri, 27 Feb 2026 11:45:00 +0000</pubDate>
-      <category>Vulnerability</category>
-    </item>
-    <item>
-      <title>‘Project Compass’ Cracks Down on ‘The Com’: 30 Members of Notorious Cybercrime Gang Arrested</title>
-      <link>https://www.infosecurity-magazine.com/news/project-compass-com-arrests</link>
-      <description>International law enforcement operation led by Europol targets network of teenagers and young adults involved in ransomware attacks, extortion and other crimes</description>
-      <source url="https://www.infosecurity-magazine.com/news/project-compass-com-arrests">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/project-compass-com-arrests</guid>
-      <pubDate>Fri, 27 Feb 2026 11:00:00 +0000</pubDate>
-      <category>Ransomware</category>
-    </item>
-    <item>
-      <title>AWS successfully completed its first surveillance audit for ISO 42001:2023 with no findings</title>
-      <link>https://aws.amazon.com/blogs/security/aws-successfully-completed-its-first-surveillance-audit-for-iso-420012023-with-no-findings</link>
-      <description>In November 2024, Amazon Web Services (AWS) was the first major cloud service provider to announce the ISO/IEC 42001 accredited certification for AI services, covering: Amazon Bedrock, Amazon Q Business, Amazon Textra...</description>
-      <source url="https://aws.amazon.com/blogs/security/aws-successfully-completed-its-first-surveillance-audit-for-iso-420012023-with-no-findings">AWS Security Blog</source>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/security/aws-successfully-completed-its-first-surveillance-audit-for-iso-420012023-with-no-findings</guid>
-      <pubDate>Thu, 26 Feb 2026 22:45:04 +0000</pubDate>
-      <category>AWS</category>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>Inside AWS Security Agent: A multi-agent architecture for automated penetration testing</title>
-      <link>https://aws.amazon.com/blogs/security/inside-aws-security-agent-a-multi-agent-architecture-for-automated-penetration-testing</link>
-      <description>AI agents have traditionally faced three core limitations: they can’t retain learned information or operate autonomously beyond short periods, and they require constant supervision. AWS addresses these limitations wit...</description>
-      <source url="https://aws.amazon.com/blogs/security/inside-aws-security-agent-a-multi-agent-architecture-for-automated-penetration-testing">AWS Security Blog</source>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/security/inside-aws-security-agent-a-multi-agent-architecture-for-automated-penetration-testing</guid>
-      <pubDate>Thu, 26 Feb 2026 22:11:46 +0000</pubDate>
-      <category>AWS</category>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>Aeternum Botnet Shifts Command Control to Polygon Blockchain</title>
-      <link>https://www.infosecurity-magazine.com/news/aeternum-botnet-c2-polygon</link>
-      <description>New botnet Aeternum shifted C2 operations to Polygon blockchain, complicating takedown efforts</description>
-      <source url="https://www.infosecurity-magazine.com/news/aeternum-botnet-c2-polygon">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/aeternum-botnet-c2-polygon</guid>
-      <pubDate>Thu, 26 Feb 2026 16:00:00 +0000</pubDate>
-      <category>Cloud Security</category>
-    </item>
-    <item>
-      <title>Darktrace Flags 32 Million Phishing Emails in 2025 as Identity Attacks Intensify</title>
-      <link>https://www.infosecurity-magazine.com/news/32m-phishing-emails-detected-2025</link>
-      <description>2025 saw 32M phishing emails, with identity threats surpassing vulnerabilities</description>
-      <source url="https://www.infosecurity-magazine.com/news/32m-phishing-emails-detected-2025">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/32m-phishing-emails-detected-2025</guid>
-      <pubDate>Thu, 26 Feb 2026 15:00:00 +0000</pubDate>
-      <category>Phishing</category>
-      <category>Identity</category>
-    </item>
-    <item>
-      <title>Exploitable Vulnerabilities Present in 87% of Organizations</title>
-      <link>https://www.infosecurity-magazine.com/news/exploitable-vulnerabilities-in-87</link>
-      <description>Datadog report reveals two-fifths of services are affected by exploitable bugs</description>
-      <source url="https://www.infosecurity-magazine.com/news/exploitable-vulnerabilities-in-87">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/exploitable-vulnerabilities-in-87</guid>
-      <pubDate>Thu, 26 Feb 2026 14:00:00 +0000</pubDate>
-      <category>Vulnerability</category>
-    </item>
-    <item>
-      <title>Global Cyber Agencies Urge Immediate Patching of Cisco SD-WAN Zero Day</title>
-      <link>https://www.infosecurity-magazine.com/news/immediate-patch-cisco-catalyst</link>
-      <description>The US and allies are urging Cisco Catalyst SD-WAN customers to hunt for signs of exploitation</description>
-      <source url="https://www.infosecurity-magazine.com/news/immediate-patch-cisco-catalyst">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/immediate-patch-cisco-catalyst</guid>
-      <pubDate>Thu, 26 Feb 2026 09:30:00 +0000</pubDate>
-      <category>Vulnerability</category>
-    </item>
-    <item>
-      <title>CrowdStrike FalconID Brings Phishing-Resistant MFA to Falcon Next-Gen Identity Security</title>
-      <link>https://www.crowdstrike.com/en-us/blog/crowdstrike-falcon-id-brings-phishing-resistant-mfa-to-falcon-next-gen-identity-security</link>
-      <description />
-      <source url="https://www.crowdstrike.com/en-us/blog/crowdstrike-falcon-id-brings-phishing-resistant-mfa-to-falcon-next-gen-identity-security">CrowdStrike Blog</source>
-      <guid isPermaLink="true">https://www.crowdstrike.com/en-us/blog/crowdstrike-falcon-id-brings-phishing-resistant-mfa-to-falcon-next-gen-identity-security</guid>
-      <pubDate>Thu, 26 Feb 2026 00:00:00 -0600</pubDate>
-      <category>Phishing</category>
-      <category>Identity</category>
-    </item>
-    <item>
-      <title>44% Surge in App Exploits as AI Speeds Up Cyber-Attacks, IBM Finds</title>
-      <link>https://www.infosecurity-magazine.com/news/app-exploits-surge-ai-speeds</link>
-      <description>IBM's 2026 X-Force report reveals 44% rise in cyber-attacks on public apps, driven by AI and flaws</description>
-      <source url="https://www.infosecurity-magazine.com/news/app-exploits-surge-ai-speeds">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/app-exploits-surge-ai-speeds</guid>
-      <pubDate>Wed, 25 Feb 2026 14:30:00 +0000</pubDate>
-      <category>Vulnerability</category>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>CISA Adds Two Known Exploited Vulnerabilities to Catalog</title>
-      <link>https://www.cisa.gov/news-events/alerts/2026/02/25/cisa-adds-two-known-exploited-vulnerabilities-catalog</link>
-      <description>CISA has added two new vulnerabilities to its Known Exploited Vulnerabilities (KEV) Catalog , based on evidence of active exploitation. CVE-2022-20775 Cisco Catalyst SD-WAN Path Traversal Vulnerability CVE-2026-20127...</description>
-      <source url="https://www.cisa.gov/news-events/alerts/2026/02/25/cisa-adds-two-known-exploited-vulnerabilities-catalog">CISA Current Activity</source>
-      <guid isPermaLink="true">https://www.cisa.gov/news-events/alerts/2026/02/25/cisa-adds-two-known-exploited-vulnerabilities-catalog</guid>
-      <pubDate>Wed, 25 Feb 2026 12:00:00 +0000</pubDate>
-      <category>CISA</category>
-      <category>Vulnerability</category>
-    </item>
-    <item>
-      <title>CISA and Partners Release Guidance for Ongoing Global Exploitation of Cisco SD-WAN Systems</title>
-      <link>https://www.cisa.gov/news-events/alerts/2026/02/25/cisa-and-partners-release-guidance-ongoing-global-exploitation-cisco-sd-wan-systems</link>
-      <description>The purpose of this Alert is to provide resources for organizations with Cisco Software-Defined Wide-Area Networking (SD-WAN) systems, including Federal Civilian Executive Branch (FCEB) agencies, to address ongoing ex...</description>
-      <source url="https://www.cisa.gov/news-events/alerts/2026/02/25/cisa-and-partners-release-guidance-ongoing-global-exploitation-cisco-sd-wan-systems">CISA Current Activity</source>
-      <guid isPermaLink="true">https://www.cisa.gov/news-events/alerts/2026/02/25/cisa-and-partners-release-guidance-ongoing-global-exploitation-cisco-sd-wan-systems</guid>
-      <pubDate>Wed, 25 Feb 2026 12:00:00 +0000</pubDate>
-      <category>CISA</category>
-      <category>Vulnerability</category>
-    </item>
-    <item>
-      <title>Cost of Insider Incidents Surges 20% to Nearly $20m</title>
-      <link>https://www.infosecurity-magazine.com/news/cost-of-insider-incidents-surges</link>
-      <description>DTEX claims insider incidents cost $19.5m in 2025, with employee negligence most expensive</description>
-      <source url="https://www.infosecurity-magazine.com/news/cost-of-insider-incidents-surges">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/cost-of-insider-incidents-surges</guid>
-      <pubDate>Tue, 24 Feb 2026 17:00:00 +0000</pubDate>
-      <category>Cloud Security</category>
-    </item>
-    <item>
-      <title>Multifaceted Phishing Scheme Deceives Bitpanda Customers</title>
-      <link>https://www.infosecurity-magazine.com/news/bitpanda-mfa-phishing-scheme</link>
-      <description>Phishing attack mimicking Bitpanda targets users, harvesting credentials and personal information</description>
-      <source url="https://www.infosecurity-magazine.com/news/bitpanda-mfa-phishing-scheme">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/bitpanda-mfa-phishing-scheme</guid>
-      <pubDate>Tue, 24 Feb 2026 16:05:00 +0000</pubDate>
-      <category>Phishing</category>
-      <category>Scam</category>
-    </item>
-    <item>
-      <title>North Korean Lazarus Group Expands Ransomware Activity With Medusa</title>
-      <link>https://www.infosecurity-magazine.com/news/north-korean-lazarus-group-medusa</link>
-      <description>Ransomware Medusa linked to North Korean hackers targets US healthcare amid ongoing attacks</description>
-      <source url="https://www.infosecurity-magazine.com/news/north-korean-lazarus-group-medusa">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/north-korean-lazarus-group-medusa</guid>
-      <pubDate>Tue, 24 Feb 2026 14:30:00 +0000</pubDate>
-      <category>Ransomware</category>
-    </item>
-    <item>
-      <title>Bring the Fight to the Edge: Turning Time Into an Advantage in OT Security</title>
-      <link>https://unit42.paloaltonetworks.com/ot-edge-security</link>
-      <description>Unit 42 research reveals most OT attacks begin in IT. Learn how edge-driven defense stops threats early and turns dwell time into advantage. The post Bring the Fight to the Edge: Turning Time Into an Advantage in OT S...</description>
-      <source url="https://unit42.paloaltonetworks.com/ot-edge-security">Palo Alto Networks Unit 42</source>
-      <guid isPermaLink="true">https://unit42.paloaltonetworks.com/ot-edge-security</guid>
-      <pubDate>Tue, 24 Feb 2026 14:00:40 +0000</pubDate>
-      <category>Cloud Security</category>
-    </item>
-    <item>
-      <title>AI Accelerates Attacker Breakout Time to Just Four Minutes</title>
-      <link>https://www.infosecurity-magazine.com/news/ai-accelerates-attack-breakout</link>
-      <description>ReliaQuest claims AI has reduced breakout and exfiltration time to under 10 minutes</description>
-      <source url="https://www.infosecurity-magazine.com/news/ai-accelerates-attack-breakout">Infosecurity Magazine</source>
-      <guid isPermaLink="true">https://www.infosecurity-magazine.com/news/ai-accelerates-attack-breakout</guid>
-      <pubDate>Tue, 24 Feb 2026 13:00:00 +0000</pubDate>
-      <category>AI</category>
-    </item>
-    <item>
-      <title>CISA Adds One Known Exploited Vulnerability to Catalog</title>
-      <link>https://www.cisa.gov/news-events/alerts/2026/02/24/cisa-adds-one-known-exploited-vulnerability-catalog</link>
-      <description>CISA has added one new vulnerability to its Known Exploited Vulnerabilities (KEV) Catalog , based on evidence of active exploitation. CVE-2026-25108 Soliton Systems K.K. FileZen OS Command Injection Vulnerability This...</description>
-      <source url="https://www.cisa.gov/news-events/alerts/2026/02/24/cisa-adds-one-known-exploited-vulnerability-catalog">CISA Current Activity</source>
-      <guid isPermaLink="true">https://www.cisa.gov/news-events/alerts/2026/02/24/cisa-adds-one-known-exploited-vulnerability-catalog</guid>
-      <pubDate>Tue, 24 Feb 2026 12:00:00 +0000</pubDate>
-      <category>CISA</category>
-      <category>Vulnerability</category>
     </item>
   </channel>
 </rss>
