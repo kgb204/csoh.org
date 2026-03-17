@@ -63,6 +63,28 @@ jobs:
             echo "SRI changes committed"
           fi
 
+      - name: Check URL safety (must pass before normalization)
+        id: url_safety
+        run: |
+          python3 tools/check_all_site_urls.py > url-safety-report.txt 2>&1 || true
+          cat url-safety-report.txt
+          if grep -q "❌ UNSAFE" url-safety-report.txt; then
+            echo "::error::Unsafe URLs detected — blocking normalization and deploy"
+            echo "safe=false" >> $GITHUB_OUTPUT
+            exit 1
+          else
+            echo "safe=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload safety report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f  # v7.0.0
+        with:
+          name: deploy-url-safety-report
+          path: url-safety-report.txt
+          retention-days: 30
+          if-no-files-found: warn
+
       - name: Normalize URLs (strip tracking params, resolve redirects)
         id: normalize
         run: |

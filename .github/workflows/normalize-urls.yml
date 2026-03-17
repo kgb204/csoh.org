@@ -26,6 +26,24 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Check URL safety (must pass before normalization)
+        run: |
+          python3 tools/check_all_site_urls.py > url-safety-report.txt 2>&1 || true
+          cat url-safety-report.txt
+          if grep -q "❌ UNSAFE" url-safety-report.txt; then
+            echo "::error::Unsafe URLs detected — blocking normalization"
+            exit 1
+          fi
+
+      - name: Upload safety report
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f  # v7.0.0
+        with:
+          name: normalize-url-safety-report
+          path: url-safety-report.txt
+          retention-days: 30
+          if-no-files-found: warn
+
       - name: Run URL normalizer
         run: |
           cd tools && python3 normalize_urls.py --apply 2>&1 | tee ../normalize-report.txt
