@@ -35,12 +35,10 @@ These incidents have solid post-mortems and haven't been added yet. Pick one up!
 | Incident | Year | Provider | Good Source |
 |---|---|---|---|
 | Okta Support System Breach | 2023 | Okta / AWS | [Okta security advisory](https://sec.okta.com/harfiles) |
-| Snowflake Credential Stuffing Campaign | 2024 | Snowflake | [Mandiant report](https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion) |
 | 3CX Supply Chain (Lazarus) | 2023 | AWS CloudFront | [Mandiant analysis](https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise) |
 | CircleCI Secrets Breach | 2023 | CI/CD | [CircleCI post-mortem](https://circleci.com/blog/january-4-2023-security-alert/) |
 | Toyota Connected Car Data Exposure | 2023 | GCP | [Toyota statement](https://global.toyota/en/newsroom/corporate/39174380.html) |
 | Twilio / Authy SMS Phishing | 2022 | AWS | [Twilio post-mortem](https://www.twilio.com/blog/august-2022-social-engineering-attack) |
-| LastPass Breach (DevOps Engineer) | 2022–2023 | AWS S3 | [LastPass disclosure](https://blog.lastpass.com/posts/2023/03/security-incident-update-recommended-actions) |
 
 ---
 
