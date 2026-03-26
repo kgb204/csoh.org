@@ -63,6 +63,7 @@ KEYWORDS = {
     "ai", "llm", "genai", "machine learning", "ml",
     "job", "jobs", "hiring", "career", "layoff", "salary",
     "scam", "fraud", "social engineering", "credential", "identity theft",
+    "siem", "ssrf", "misconfiguration", "saml", "oauth", "infostealer",
 }
 
 CATEGORY_KEYWORDS = {
