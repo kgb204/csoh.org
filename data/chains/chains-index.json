@@ -1,0 +1,95 @@
+{
+  "description": "Index of breach kill chain scenarios for the Blast Radius Visualizer (/blast-radius.html). Add a new entry here plus a scenario JSON file in this directory and the visualizer picks it up automatically — no code changes required. See data/chains/README.md for the schema.",
+  "scenarios": [
+    {
+      "id": "mitnick-novell",
+      "title": "Kevin Mitnick / Novell (1994)",
+      "subtitle": "OSINT → Pretexting → Phone Social Engineering → Dial-Up Access → NetWare Source Code Theft",
+      "provider": "On-Prem",
+      "year": "1994",
+      "file": "data/chains/mitnick-novell.json",
+      "page": "breaches/mitnick-novell.html"
+    },
+    {
+      "id": "capital-one",
+      "title": "Capital One (2019)",
+      "subtitle": "SSRF → IMDSv1 → Over-Privileged IAM Role → 106M Record S3 Exfiltration",
+      "provider": "AWS",
+      "year": "2019",
+      "file": "data/chains/capital-one.json",
+      "page": "breaches/capital-one.html"
+    },
+    {
+      "id": "solarwinds",
+      "title": "SolarWinds / SUNBURST (2020)",
+      "subtitle": "Build System Compromise → SUNBURST Backdoor → Golden SAML → US Government Espionage",
+      "provider": "Azure AD",
+      "year": "2020",
+      "file": "data/chains/solarwinds.json",
+      "page": "breaches/solarwinds.html"
+    },
+    {
+      "id": "uber",
+      "title": "Uber (2022)",
+      "subtitle": "Dark Web Creds → MFA Push Fatigue → Hardcoded PAM Secret → Full AWS/GCP Admin",
+      "provider": "AWS",
+      "year": "2022",
+      "file": "data/chains/uber.json",
+      "page": "breaches/uber.html"
+    },
+    {
+      "id": "lastpass",
+      "title": "LastPass (2022)",
+      "subtitle": "Dev Env Breach → DevOps Home PC (Plex Exploit) → Keylogger → AWS S3 Vault Backup Exfil",
+      "provider": "AWS",
+      "year": "2022",
+      "file": "data/chains/lastpass.json",
+      "page": "breaches/lastpass.html"
+    },
+    {
+      "id": "storm-0558",
+      "title": "Storm-0558 / Microsoft (2023)",
+      "subtitle": "Crash Dump → Stolen MSA Signing Key → Forged Tokens → Government Email Espionage",
+      "provider": "Azure",
+      "year": "2023",
+      "file": "data/chains/storm-0558.json",
+      "page": "breaches/storm-0558.html"
+    },
+    {
+      "id": "microsoft-sas-leak",
+      "title": "Microsoft AI Research SAS Token (2023)",
+      "subtitle": "Over-Permissioned Token → Public GitHub → 38TB Internal Data Exposed for 3 Years",
+      "provider": "Azure",
+      "year": "2023",
+      "file": "data/chains/microsoft-sas-leak.json",
+      "page": "breaches/microsoft-sas-leak.html"
+    },
+    {
+      "id": "scattered-spider-mgm",
+      "title": "Scattered Spider / MGM Resorts (2023)",
+      "subtitle": "LinkedIn OSINT → Vishing Help Desk → Okta Super Admin → 100 ESXi Servers Encrypted",
+      "provider": "Okta / Azure AD",
+      "year": "2023",
+      "file": "data/chains/scattered-spider-mgm.json",
+      "page": "breaches/scattered-spider-mgm.html"
+    },
+    {
+      "id": "snowflake-unc5537",
+      "title": "UNC5537 / Snowflake (2024)",
+      "subtitle": "Infostealer Creds → No MFA → SHOW TABLES → Bulk Exfil → 100+ Orgs Extorted",
+      "provider": "Snowflake",
+      "year": "2024",
+      "file": "data/chains/snowflake-unc5537.json",
+      "page": "breaches/snowflake-unc5537.html"
+    },
+    {
+      "id": "promptware",
+      "title": "Promptware / Gemini (2024–2026)",
+      "subtitle": "Indirect Prompt Injection → Context Poisoning → Persistence → C2 → Covert Camera Livestream",
+      "provider": "AI / SaaS",
+      "year": "2024",
+      "file": "data/chains/promptware.json",
+      "page": "breaches/promptware.html"
+    }
+  ]
+}
