@@ -1,0 +1,65 @@
+{
+  "id": "log4shell",
+  "title": "Log4Shell (2021)",
+  "description": "A logging library that interpreted its own input turned any logged string into an unauthenticated JNDI request to an attacker server \u2014 RCE almost everywhere, and nobody could inventory where.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Mass scanners (all actors)",
+      "type": "attacker"
+    },
+    {
+      "id": "logstring",
+      "label": "Crafted value in any logged field",
+      "type": "service"
+    },
+    {
+      "id": "jndi",
+      "label": "JNDI lookup to attacker server",
+      "type": "network"
+    },
+    {
+      "id": "rce",
+      "label": "Unauthenticated RCE",
+      "type": "compute"
+    },
+    {
+      "id": "transitive",
+      "label": "Log4j as a transitive dependency everywhere",
+      "type": "service"
+    },
+    {
+      "id": "impact",
+      "label": "Cryptominers, botnets, ransomware, state actors",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "logstring",
+      "tech": "T1190 \u2013 Exploit Public-Facing Application"
+    },
+    {
+      "source": "logstring",
+      "target": "jndi",
+      "tech": "T1190 \u2013 Exploit Public-Facing Application"
+    },
+    {
+      "source": "jndi",
+      "target": "rce",
+      "tech": "T1059 \u2013 Command and Scripting Interpreter"
+    },
+    {
+      "source": "rce",
+      "target": "transitive",
+      "tech": "T1195.001 \u2013 Compromise Software Dependencies"
+    },
+    {
+      "source": "transitive",
+      "target": "impact",
+      "tech": "T1195.001 \u2013 Compromise Software Dependencies"
+    }
+  ]
+}

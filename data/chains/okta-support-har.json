@@ -1,0 +1,65 @@
+{
+  "id": "okta-support-har",
+  "title": "Okta Support System (2023)",
+  "description": "A service-account credential synced to a personal Google profile reached the support case system, where HAR files full of live session tokens let attackers hijack customer sessions.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Threat actor",
+      "type": "attacker"
+    },
+    {
+      "id": "gprofile",
+      "label": "Personal Google profile sync (managed laptop)",
+      "type": "endpoint"
+    },
+    {
+      "id": "svcacct",
+      "label": "Okta support service account",
+      "type": "credential"
+    },
+    {
+      "id": "cases",
+      "label": "Support case management system",
+      "type": "service"
+    },
+    {
+      "id": "har",
+      "label": "HAR files with live session tokens",
+      "type": "data"
+    },
+    {
+      "id": "hijack",
+      "label": "Customer Okta sessions hijacked (5 customers)",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "gprofile",
+      "tech": "T1555.003 \u2013 Credentials from Web Browsers"
+    },
+    {
+      "source": "gprofile",
+      "target": "svcacct",
+      "tech": "T1078 \u2013 Valid Accounts"
+    },
+    {
+      "source": "svcacct",
+      "target": "cases",
+      "tech": "T1213 \u2013 Data from Information Repositories"
+    },
+    {
+      "source": "cases",
+      "target": "har",
+      "tech": "T1539 \u2013 Steal Web Session Cookie"
+    },
+    {
+      "source": "har",
+      "target": "hijack",
+      "tech": "T1550.004 \u2013 Web Session Cookie"
+    }
+  ]
+}

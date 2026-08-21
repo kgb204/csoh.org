@@ -1,0 +1,25 @@
+{
+  "id": "mitnick-novell",
+  "title": "Kevin Mitnick / Novell (1994)",
+  "description": "Pure social engineering: OSINT-built pretexts and phone calls to Novell support staff yielded credentials, dial-up access, and NetWare source code.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    { "id": "attacker", "label": "Kevin Mitnick (fugitive, cloned cell phone)", "type": "attacker" },
+    { "id": "org-intel", "label": "Org structure, names & internal lingo (OSINT)", "type": "data" },
+    { "id": "support-staff", "label": "Novell technical support staff", "type": "identity" },
+    { "id": "credentials", "label": "Elicited credentials & dial-up numbers", "type": "credential" },
+    { "id": "dialup", "label": "Dial-up modem access", "type": "network" },
+    { "id": "novell-network", "label": "Novell internal network", "type": "network" },
+    { "id": "netware-source", "label": "NetWare proprietary source code", "type": "data" },
+    { "id": "theft", "label": "Source code exfiltrated · FBI investigation", "type": "impact" }
+  ],
+  "links": [
+    { "source": "attacker", "target": "org-intel", "tech": "T1591 – Gather Victim Org Information" },
+    { "source": "org-intel", "target": "support-staff", "tech": "T1566.004 – Phishing: Voice (pretext calls)" },
+    { "source": "support-staff", "target": "credentials", "tech": "T1598 – Phishing for Information" },
+    { "source": "credentials", "target": "dialup", "tech": "T1078 – Valid Accounts" },
+    { "source": "dialup", "target": "novell-network", "tech": "T1078 – Valid Accounts (masqueraded as employee)" },
+    { "source": "novell-network", "target": "netware-source", "tech": "T1213 – Data from Information Repositories" },
+    { "source": "netware-source", "target": "theft", "tech": "T1048 – Exfiltration Over Alternative Protocol" }
+  ]
+}

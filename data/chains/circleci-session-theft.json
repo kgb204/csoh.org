@@ -1,0 +1,75 @@
+{
+  "id": "circleci-session-theft",
+  "title": "CircleCI (2022\u20132023)",
+  "description": "Malware on an engineer's laptop stole a live 2FA-backed SSO session cookie, giving production access and forcing every customer to rotate every secret on the platform.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Threat actor",
+      "type": "attacker"
+    },
+    {
+      "id": "laptop",
+      "label": "Engineer laptop \u2014 infostealer",
+      "type": "endpoint"
+    },
+    {
+      "id": "cookie",
+      "label": "Live 2FA-backed SSO session cookie",
+      "type": "credential"
+    },
+    {
+      "id": "engineer",
+      "label": "Impersonated engineer",
+      "type": "identity"
+    },
+    {
+      "id": "prod",
+      "label": "Production systems",
+      "type": "compute"
+    },
+    {
+      "id": "secrets",
+      "label": "Customer env vars, API keys, tokens",
+      "type": "data"
+    },
+    {
+      "id": "impact",
+      "label": "Every customer secret assumed compromised",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "laptop",
+      "tech": "T1204.002 \u2013 User Execution: Malicious File"
+    },
+    {
+      "source": "laptop",
+      "target": "cookie",
+      "tech": "T1539 \u2013 Steal Web Session Cookie"
+    },
+    {
+      "source": "cookie",
+      "target": "engineer",
+      "tech": "T1550.004 \u2013 Web Session Cookie"
+    },
+    {
+      "source": "engineer",
+      "target": "prod",
+      "tech": "T1078 \u2013 Valid Accounts"
+    },
+    {
+      "source": "prod",
+      "target": "secrets",
+      "tech": "T1552.007 \u2013 Unsecured Credentials: Container API"
+    },
+    {
+      "source": "secrets",
+      "target": "impact",
+      "tech": "T1552 \u2013 Unsecured Credentials"
+    }
+  ]
+}

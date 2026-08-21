@@ -1,0 +1,75 @@
+{
+  "id": "shai-hulud-npm-worm",
+  "title": "Shai-Hulud (2025)",
+  "description": "npm phishing seeded a self-replicating worm that ran TruffleHog against developer machines, republished across 500+ packages, and committed harvested secrets to public repos.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Threat actor",
+      "type": "attacker"
+    },
+    {
+      "id": "phish",
+      "label": "npm phishing (fake MFA page)",
+      "type": "network"
+    },
+    {
+      "id": "token",
+      "label": "Maintainer npm token",
+      "type": "credential"
+    },
+    {
+      "id": "trufflehog",
+      "label": "TruffleHog sweep of dev machine",
+      "type": "compute"
+    },
+    {
+      "id": "worm",
+      "label": "Self-replication across 500+ packages",
+      "type": "service"
+    },
+    {
+      "id": "secrets",
+      "label": "Harvested credentials",
+      "type": "data"
+    },
+    {
+      "id": "public",
+      "label": "Secrets committed to public 'Shai-Hulud' repos",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "phish",
+      "tech": "T1566.002 \u2013 Spearphishing Link"
+    },
+    {
+      "source": "phish",
+      "target": "token",
+      "tech": "T1111 \u2013 Multi-Factor Authentication Interception"
+    },
+    {
+      "source": "token",
+      "target": "trufflehog",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "trufflehog",
+      "target": "worm",
+      "tech": "T1059.007 \u2013 JavaScript"
+    },
+    {
+      "source": "worm",
+      "target": "secrets",
+      "tech": "T1552.001 \u2013 Credentials in Files"
+    },
+    {
+      "source": "secrets",
+      "target": "public",
+      "tech": "T1105 \u2013 Ingress Tool Transfer"
+    }
+  ]
+}

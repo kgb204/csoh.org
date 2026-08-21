@@ -1,0 +1,85 @@
+{
+  "id": "megalodon-github-actions",
+  "title": "Megalodon (2026)",
+  "description": "Infostealer-harvested GitHub credentials drove 5,718 automated commits in six hours, injecting Actions workflows that stole CI secrets and OIDC tokens across 5,561 repositories.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Megalodon operator",
+      "type": "attacker"
+    },
+    {
+      "id": "stealercreds",
+      "label": "Infostealer GitHub credentials",
+      "type": "credential"
+    },
+    {
+      "id": "throwaway",
+      "label": "Throwaway GitHub accounts (write access)",
+      "type": "identity"
+    },
+    {
+      "id": "workflows",
+      "label": "Injected 'SysDiag'/'Optimize-Build' workflows",
+      "type": "compute"
+    },
+    {
+      "id": "payload",
+      "label": "Base64 bash payload in the runner",
+      "type": "compute"
+    },
+    {
+      "id": "secrets",
+      "label": "Cloud metadata, CI vars, OIDC tokens",
+      "type": "credential"
+    },
+    {
+      "id": "c2",
+      "label": "C2 at 216.126.225[.]129:8443",
+      "type": "network"
+    },
+    {
+      "id": "npm",
+      "label": "Poisoned @tiledesk/tiledesk-server on npm",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "stealercreds",
+      "tech": "T1555.003 \u2013 Credentials from Web Browsers"
+    },
+    {
+      "source": "stealercreds",
+      "target": "throwaway",
+      "tech": "T1078 \u2013 Valid Accounts"
+    },
+    {
+      "source": "throwaway",
+      "target": "workflows",
+      "tech": "T1036 \u2013 Masquerading"
+    },
+    {
+      "source": "workflows",
+      "target": "payload",
+      "tech": "T1053 \u2013 Scheduled Task/Job"
+    },
+    {
+      "source": "payload",
+      "target": "secrets",
+      "tech": "T1552.005 \u2013 Cloud Instance Metadata API"
+    },
+    {
+      "source": "secrets",
+      "target": "c2",
+      "tech": "T1059.004 \u2013 Command and Scripting Interpreter: Unix Shell"
+    },
+    {
+      "source": "secrets",
+      "target": "npm",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    }
+  ]
+}

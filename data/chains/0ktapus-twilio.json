@@ -1,0 +1,85 @@
+{
+  "id": "0ktapus-twilio",
+  "title": "0ktapus / Twilio (2022)",
+  "description": "SMS phishing with lookalike Okta pages captured credentials and live OTPs, relayed in real time to breach 130+ organizations \u2014 but a FIDO2 hardware key stopped it at Cloudflare.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "0ktapus operator",
+      "type": "attacker"
+    },
+    {
+      "id": "phish",
+      "label": "SMS lure + lookalike Okta page",
+      "type": "network"
+    },
+    {
+      "id": "creds",
+      "label": "Captured username, password + live OTP",
+      "type": "credential"
+    },
+    {
+      "id": "relay",
+      "label": "Real-time relay to genuine Okta login",
+      "type": "service"
+    },
+    {
+      "id": "orgs",
+      "label": "9,931 accounts \u00b7 130+ organizations",
+      "type": "identity"
+    },
+    {
+      "id": "twilio",
+      "label": "Twilio internal + customer data",
+      "type": "service"
+    },
+    {
+      "id": "signal",
+      "label": "Signal user data (via Twilio)",
+      "type": "data"
+    },
+    {
+      "id": "cloudflare",
+      "label": "Cloudflare employees \u2014 FIDO2 blocked it",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "phish",
+      "tech": "T1566.003 \u2013 Spearphishing via Service"
+    },
+    {
+      "source": "phish",
+      "target": "creds",
+      "tech": "T1056.003 \u2013 Web Portal Capture"
+    },
+    {
+      "source": "creds",
+      "target": "relay",
+      "tech": "T1111 \u2013 Multi-Factor Authentication Interception"
+    },
+    {
+      "source": "relay",
+      "target": "orgs",
+      "tech": "T1656 \u2013 Impersonation"
+    },
+    {
+      "source": "orgs",
+      "target": "twilio",
+      "tech": "T1078 \u2013 Valid Accounts"
+    },
+    {
+      "source": "twilio",
+      "target": "signal",
+      "tech": "T1199 \u2013 Trusted Relationship"
+    },
+    {
+      "source": "phish",
+      "target": "cloudflare",
+      "tech": "T1566.003 \u2013 Spearphishing via Service (FIDO2 held)"
+    }
+  ]
+}

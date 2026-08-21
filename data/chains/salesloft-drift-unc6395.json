@@ -1,0 +1,75 @@
+{
+  "id": "salesloft-drift-unc6395",
+  "title": "Salesloft Drift / UNC6395 (2025)",
+  "description": "A GitHub compromise led to the Drift AWS environment and stolen OAuth tokens, then bulk SOQL exfiltration and secret-mining across 700+ organizations.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "UNC6395",
+      "type": "attacker"
+    },
+    {
+      "id": "github",
+      "label": "Salesloft GitHub",
+      "type": "storage"
+    },
+    {
+      "id": "driftaws",
+      "label": "Drift AWS environment",
+      "type": "compute"
+    },
+    {
+      "id": "oauth",
+      "label": "Customer Drift OAuth tokens",
+      "type": "credential"
+    },
+    {
+      "id": "salesforce",
+      "label": "Victim Salesforce / Workspace tenants",
+      "type": "service"
+    },
+    {
+      "id": "soql",
+      "label": "Bulk SOQL / Bulk API exports",
+      "type": "data"
+    },
+    {
+      "id": "mining",
+      "label": "Secret-mining \u2192 downstream cloud compromise",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "github",
+      "tech": "T1552 \u2013 Unsecured Credentials"
+    },
+    {
+      "source": "github",
+      "target": "driftaws",
+      "tech": "T1199 \u2013 Trusted Relationship"
+    },
+    {
+      "source": "driftaws",
+      "target": "oauth",
+      "tech": "T1528 \u2013 Steal Application Access Token"
+    },
+    {
+      "source": "oauth",
+      "target": "salesforce",
+      "tech": "T1078.004 \u2013 Cloud Accounts"
+    },
+    {
+      "source": "salesforce",
+      "target": "soql",
+      "tech": "T1530 \u2013 Data from Cloud Storage"
+    },
+    {
+      "source": "soql",
+      "target": "mining",
+      "tech": "T1552 \u2013 Unsecured Credentials"
+    }
+  ]
+}

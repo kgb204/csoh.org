@@ -1,0 +1,65 @@
+{
+  "id": "event-stream-npm",
+  "title": "event-stream (2018)",
+  "description": "A volunteer offered to maintain an abandoned npm package, got publish rights, and slipped an encrypted payload into a new dependency that stole from one Bitcoin wallet app.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Volunteer 'maintainer'",
+      "type": "attacker"
+    },
+    {
+      "id": "publish",
+      "label": "Handed publish rights",
+      "type": "identity"
+    },
+    {
+      "id": "dep",
+      "label": "Malicious new dependency (flatmap-stream)",
+      "type": "service"
+    },
+    {
+      "id": "payload",
+      "label": "Encrypted, description-keyed payload",
+      "type": "credential"
+    },
+    {
+      "id": "copay",
+      "label": "Copay Bitcoin wallet build",
+      "type": "compute"
+    },
+    {
+      "id": "theft",
+      "label": "Wallet keys for 100+ BTC / 1000+ BCH",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "publish",
+      "tech": "T1656 \u2013 Impersonation"
+    },
+    {
+      "source": "publish",
+      "target": "dep",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "dep",
+      "target": "payload",
+      "tech": "T1195.001 \u2013 Compromise Software Dependencies"
+    },
+    {
+      "source": "payload",
+      "target": "copay",
+      "tech": "T1027 \u2013 Obfuscated Files or Information"
+    },
+    {
+      "source": "copay",
+      "target": "theft",
+      "tech": "T1657 \u2013 Financial Theft"
+    }
+  ]
+}

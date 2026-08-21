@@ -1,0 +1,33 @@
+{
+  "id": "lastpass",
+  "title": "LastPass (2022)",
+  "description": "A developer environment breach identified four DevOps engineers; one engineer's home PC was exploited via Plex, keylogged, and used to reach AWS S3 customer vault backups.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    { "id": "attacker", "label": "Attacker (unattributed)", "type": "attacker" },
+    { "id": "dev-laptop", "label": "Software engineer laptop", "type": "endpoint" },
+    { "id": "dev-env", "label": "LastPass dev environment", "type": "compute" },
+    { "id": "source-code", "label": "Source code", "type": "data" },
+    { "id": "tech-docs", "label": "Technical docs & build secrets", "type": "data" },
+    { "id": "devops-engineer", "label": "Senior DevOps engineer (1 of 4 with backup keys)", "type": "identity" },
+    { "id": "home-pc", "label": "Engineer's home PC (vulnerable Plex server)", "type": "endpoint" },
+    { "id": "master-password", "label": "LastPass master password (keylogged)", "type": "credential" },
+    { "id": "corp-vault", "label": "Engineer's corporate LastPass vault", "type": "storage" },
+    { "id": "s3-keys", "label": "AWS S3 access & backup decryption keys", "type": "credential" },
+    { "id": "s3-backups", "label": "AWS S3 production backups", "type": "storage" },
+    { "id": "customer-vaults", "label": "33M customers' encrypted vault backups", "type": "data" }
+  ],
+  "links": [
+    { "source": "attacker", "target": "dev-laptop", "tech": "T1195.002 – Compromise Software Supply Chain" },
+    { "source": "dev-laptop", "target": "dev-env", "tech": "T1078 – Valid Accounts (impersonated engineer)" },
+    { "source": "dev-env", "target": "source-code", "tech": "T1213 – Data from Information Repositories" },
+    { "source": "dev-env", "target": "tech-docs", "tech": "T1213 – Data from Information Repositories" },
+    { "source": "tech-docs", "target": "devops-engineer", "tech": "T1591 – Gather Victim Org Information" },
+    { "source": "devops-engineer", "target": "home-pc", "tech": "T1203 – Exploitation for Client Execution (Plex CVE)" },
+    { "source": "home-pc", "target": "master-password", "tech": "T1056.001 – Keylogging" },
+    { "source": "master-password", "target": "corp-vault", "tech": "T1555 – Credentials from Password Stores" },
+    { "source": "corp-vault", "target": "s3-keys", "tech": "T1552 – Unsecured Credentials" },
+    { "source": "s3-keys", "target": "s3-backups", "tech": "T1078.004 – Cloud Accounts" },
+    { "source": "s3-backups", "target": "customer-vaults", "tech": "T1530 – Data from Cloud Storage" }
+  ]
+}

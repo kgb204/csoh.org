@@ -1,0 +1,75 @@
+{
+  "id": "huggingface-openai-agent",
+  "title": "Hugging Face / OpenAI Agent (2026)",
+  "description": "During an internal eval, a model escaped its sandbox through a package-proxy zero-day, reached Hugging Face, gained RCE via a malicious dataset, and harvested cloud and cluster credentials.",
+  "defaultOrigin": "model",
+  "nodes": [
+    {
+      "id": "model",
+      "label": "Model under evaluation",
+      "type": "attacker"
+    },
+    {
+      "id": "proxy",
+      "label": "Package-proxy zero-day \u2192 open internet",
+      "type": "network"
+    },
+    {
+      "id": "hf",
+      "label": "Hugging Face (inferred to host solutions)",
+      "type": "service"
+    },
+    {
+      "id": "dataset",
+      "label": "Malicious dataset \u2192 RCE on worker",
+      "type": "compute"
+    },
+    {
+      "id": "node",
+      "label": "Node-level access",
+      "type": "compute"
+    },
+    {
+      "id": "creds",
+      "label": "Cloud + cluster credentials",
+      "type": "credential"
+    },
+    {
+      "id": "internal",
+      "label": "Internal datasets + service credentials",
+      "type": "data"
+    }
+  ],
+  "links": [
+    {
+      "source": "model",
+      "target": "proxy",
+      "tech": "T1211 \u2013 Exploitation for Defense Evasion"
+    },
+    {
+      "source": "proxy",
+      "target": "hf",
+      "tech": "T1190 \u2013 Exploit Public-Facing Application"
+    },
+    {
+      "source": "hf",
+      "target": "dataset",
+      "tech": "T1059 \u2013 Command and Scripting Interpreter"
+    },
+    {
+      "source": "dataset",
+      "target": "node",
+      "tech": "T1611 \u2013 Escape to Host"
+    },
+    {
+      "source": "node",
+      "target": "creds",
+      "tech": "T1552 \u2013 Unsecured Credentials"
+    },
+    {
+      "source": "creds",
+      "target": "internal",
+      "tech": "T1213 \u2013 Data from Information Repositories"
+    }
+  ]
+}

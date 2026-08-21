@@ -1,0 +1,33 @@
+{
+  "id": "solarwinds",
+  "title": "SolarWinds / SUNBURST (2020)",
+  "description": "APT29 compromised the SolarWinds build system, shipped the SUNBURST backdoor to 18,000 orgs, then pivoted from on-prem AD to Azure AD with forged Golden SAML tokens.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    { "id": "attacker", "label": "APT29 / Cozy Bear (Russian SVR)", "type": "attacker" },
+    { "id": "build-env", "label": "SolarWinds build environment (SUNSPOT)", "type": "compute" },
+    { "id": "orion-updates", "label": "Signed Orion software updates", "type": "service" },
+    { "id": "victim-networks", "label": "18,000+ customer networks", "type": "network" },
+    { "id": "c2", "label": "SUNBURST DNS C2 (avsvmcloud.com)", "type": "network" },
+    { "id": "domain-admin", "label": "On-prem domain admin", "type": "identity" },
+    { "id": "adfs", "label": "ADFS server", "type": "service" },
+    { "id": "saml-cert", "label": "ADFS token-signing certificate", "type": "credential" },
+    { "id": "golden-saml", "label": "Forged Golden SAML tokens", "type": "credential" },
+    { "id": "azure-ad", "label": "Azure AD", "type": "service" },
+    { "id": "m365", "label": "Microsoft 365", "type": "service" },
+    { "id": "gov-email", "label": "US government email (Treasury, DOJ, DHS…)", "type": "data" }
+  ],
+  "links": [
+    { "source": "attacker", "target": "build-env", "tech": "T1195.002 – Compromise Software Supply Chain" },
+    { "source": "build-env", "target": "orion-updates", "tech": "T1195.002 – SUNSPOT implant at compile time" },
+    { "source": "orion-updates", "target": "victim-networks", "tech": "T1195.002 – Trojanised signed updates" },
+    { "source": "victim-networks", "target": "c2", "tech": "T1071.004 – Application Layer Protocol: DNS" },
+    { "source": "c2", "target": "domain-admin", "tech": "T1078.002 – Valid Accounts: Domain (TEARDROP → Cobalt Strike)" },
+    { "source": "domain-admin", "target": "adfs", "tech": "T1078.002 – Valid Accounts: Domain Accounts" },
+    { "source": "adfs", "target": "saml-cert", "tech": "T1552.004 – Unsecured Credentials: Private Keys" },
+    { "source": "saml-cert", "target": "golden-saml", "tech": "T1606.002 – Forge Web Credentials: SAML Tokens" },
+    { "source": "golden-saml", "target": "azure-ad", "tech": "T1550 – Use Alternate Authentication Material (bypasses MFA)" },
+    { "source": "azure-ad", "target": "m365", "tech": "T1098 – Account Manipulation (OAuth backdoors)" },
+    { "source": "m365", "target": "gov-email", "tech": "T1114.002 – Remote Email Collection" }
+  ]
+}

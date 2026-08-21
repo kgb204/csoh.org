@@ -1,0 +1,65 @@
+{
+  "id": "oracle-ebs-cl0p",
+  "title": "Oracle E-Business Suite / Cl0p (2025)",
+  "description": "An unauthenticated XSLT-injection zero-day gave server-side RCE on Oracle EBS, silently exfiltrating HR, payroll and financial data for two months before executive email extortion.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Cl0p",
+      "type": "attacker"
+    },
+    {
+      "id": "zeroday",
+      "label": "EBS zero-day (sold ~$70k dark web)",
+      "type": "credential"
+    },
+    {
+      "id": "xslt",
+      "label": "Unauthenticated XSLT injection",
+      "type": "service"
+    },
+    {
+      "id": "rce",
+      "label": "Server-side RCE (ScriptEngine)",
+      "type": "compute"
+    },
+    {
+      "id": "ebsdata",
+      "label": "Payroll, HR, financials, contracts",
+      "type": "data"
+    },
+    {
+      "id": "extort",
+      "label": "Executive email extortion",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "zeroday",
+      "tech": "T1588.006 \u2013 Obtain Capabilities: Vulnerabilities"
+    },
+    {
+      "source": "zeroday",
+      "target": "xslt",
+      "tech": "T1190 \u2013 Exploit Public-Facing Application"
+    },
+    {
+      "source": "xslt",
+      "target": "rce",
+      "tech": "T1059 \u2013 Command and Scripting Interpreter"
+    },
+    {
+      "source": "rce",
+      "target": "ebsdata",
+      "tech": "T1213 \u2013 Data from Information Repositories"
+    },
+    {
+      "source": "ebsdata",
+      "target": "extort",
+      "tech": "T1657 \u2013 Financial Theft"
+    }
+  ]
+}

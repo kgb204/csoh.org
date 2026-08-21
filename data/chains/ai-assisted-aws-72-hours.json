@@ -1,0 +1,95 @@
+{
+  "id": "ai-assisted-aws-72-hours",
+  "title": "Suspected AI-Assisted AWS Compromise (2026)",
+  "description": "A leaked AWS key drove a machine-speed sweep: secrets harvested, multi-account persistence planted, CI/CD abused, RDS exfiltrated, and infrastructure held for extortion in 72 hours.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Actor (machine-speed tooling)",
+      "type": "attacker"
+    },
+    {
+      "id": "appkey",
+      "label": "AWS access key from public app",
+      "type": "credential"
+    },
+    {
+      "id": "recon",
+      "label": "Permission + infrastructure enumeration",
+      "type": "service"
+    },
+    {
+      "id": "secrets",
+      "label": "Secrets from S3, Parameter Store, Secrets Manager",
+      "type": "credential"
+    },
+    {
+      "id": "persist",
+      "label": "New IAM users, reverse shells, redeploy hooks",
+      "type": "compute"
+    },
+    {
+      "id": "cicd",
+      "label": "GitHub + Bitbucket runners abused",
+      "type": "compute"
+    },
+    {
+      "id": "multi",
+      "label": "4 accounts' keys used in the same second",
+      "type": "identity"
+    },
+    {
+      "id": "rds",
+      "label": "Dozens of RDS databases queried",
+      "type": "storage"
+    },
+    {
+      "id": "extort",
+      "label": "S3 denied, ECS scaled to zero, queues purged",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "appkey",
+      "tech": "T1078 \u2013 Valid Accounts"
+    },
+    {
+      "source": "appkey",
+      "target": "recon",
+      "tech": "T1580 \u2013 Cloud Infrastructure Discovery"
+    },
+    {
+      "source": "recon",
+      "target": "secrets",
+      "tech": "T1552 \u2013 Unsecured Credentials"
+    },
+    {
+      "source": "secrets",
+      "target": "persist",
+      "tech": "T1136.003 \u2013 Create Account: Cloud Account"
+    },
+    {
+      "source": "persist",
+      "target": "cicd",
+      "tech": "T1677 \u2013 Poisoned Pipeline Execution"
+    },
+    {
+      "source": "cicd",
+      "target": "multi",
+      "tech": "T1078.004 \u2013 Cloud Accounts"
+    },
+    {
+      "source": "multi",
+      "target": "rds",
+      "tech": "T1213 \u2013 Data from Information Repositories"
+    },
+    {
+      "source": "rds",
+      "target": "extort",
+      "tech": "T1578 \u2013 Modify Cloud Compute Infrastructure"
+    }
+  ]
+}

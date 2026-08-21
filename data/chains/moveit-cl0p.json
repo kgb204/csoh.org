@@ -1,0 +1,65 @@
+{
+  "id": "moveit-cl0p",
+  "title": "MOVEit Transfer / Cl0p (2023)",
+  "description": "A SQL-injection zero-day in internet-facing managed file transfer software dropped the LEMURLOOT web shell for mass data theft \u2014 2,600+ organizations extorted.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Cl0p",
+      "type": "attacker"
+    },
+    {
+      "id": "moveit",
+      "label": "Internet-facing MOVEit Transfer",
+      "type": "service"
+    },
+    {
+      "id": "sqli",
+      "label": "SQL injection (CVE-2023-34362)",
+      "type": "credential"
+    },
+    {
+      "id": "webshell",
+      "label": "LEMURLOOT web shell",
+      "type": "compute"
+    },
+    {
+      "id": "db",
+      "label": "MOVEit database contents",
+      "type": "storage"
+    },
+    {
+      "id": "impact",
+      "label": "2,600+ orgs \u00b7 77M people extorted",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "moveit",
+      "tech": "T1594 \u2013 Search Victim-Owned Websites"
+    },
+    {
+      "source": "moveit",
+      "target": "sqli",
+      "tech": "T1190 \u2013 Exploit Public-Facing Application"
+    },
+    {
+      "source": "sqli",
+      "target": "webshell",
+      "tech": "T1505.003 \u2013 Server Software Component: Web Shell"
+    },
+    {
+      "source": "webshell",
+      "target": "db",
+      "tech": "T1213 \u2013 Data from Information Repositories"
+    },
+    {
+      "source": "db",
+      "target": "impact",
+      "tech": "T1657 \u2013 Financial Theft"
+    }
+  ]
+}

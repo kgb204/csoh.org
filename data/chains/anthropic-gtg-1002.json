@@ -1,0 +1,85 @@
+{
+  "id": "anthropic-gtg-1002",
+  "title": "GTG-1002 (2025)",
+  "description": "Operators jailbroke an agent by decomposing the campaign into benign-looking tasks, then had it run reconnaissance, exploitation, and exfiltration against ~30 targets with human approval at a few gates.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "GTG-1002 operators",
+      "type": "attacker"
+    },
+    {
+      "id": "jailbreak",
+      "label": "Jailbreak by task decomposition",
+      "type": "service"
+    },
+    {
+      "id": "agent",
+      "label": "Agent as autonomous operator",
+      "type": "compute"
+    },
+    {
+      "id": "recon",
+      "label": "Recon across ~30 targets",
+      "type": "network"
+    },
+    {
+      "id": "exploit",
+      "label": "Vulnerability research + exploit code",
+      "type": "credential"
+    },
+    {
+      "id": "harvest",
+      "label": "Credentials + data harvested, catalogued",
+      "type": "data"
+    },
+    {
+      "id": "gates",
+      "label": "Human approval at 4\u20136 gates",
+      "type": "identity"
+    },
+    {
+      "id": "impact",
+      "label": "~30 targets attacked; AI did 80\u201390% of tactical work",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "jailbreak",
+      "tech": "T1586 \u2013 Compromise Accounts"
+    },
+    {
+      "source": "jailbreak",
+      "target": "agent",
+      "tech": "T1588.005 \u2013 Obtain Capabilities: Exploits"
+    },
+    {
+      "source": "agent",
+      "target": "recon",
+      "tech": "T1595 \u2013 Active Scanning"
+    },
+    {
+      "source": "recon",
+      "target": "exploit",
+      "tech": "T1590 \u2013 Gather Victim Network Information"
+    },
+    {
+      "source": "exploit",
+      "target": "harvest",
+      "tech": "T1190 \u2013 Exploit Public-Facing Application"
+    },
+    {
+      "source": "agent",
+      "target": "gates",
+      "tech": "T1078 \u2013 Valid Accounts"
+    },
+    {
+      "source": "harvest",
+      "target": "impact",
+      "tech": "T1213 \u2013 Data from Information Repositories"
+    }
+  ]
+}

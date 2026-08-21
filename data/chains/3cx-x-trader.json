@@ -1,0 +1,75 @@
+{
+  "id": "3cx-x-trader",
+  "title": "3CX / X_TRADER (2023)",
+  "description": "A trojanized trading app on an employee's personal PC yielded 3CX credentials, VPN access, and both build environments \u2014 shipping a signed, backdoored softphone to hundreds of thousands of customers.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "UNC4736",
+      "type": "attacker"
+    },
+    {
+      "id": "xtrader",
+      "label": "Trojanized X_TRADER app (personal PC)",
+      "type": "endpoint"
+    },
+    {
+      "id": "creds",
+      "label": "Employee 3CX corporate credentials",
+      "type": "credential"
+    },
+    {
+      "id": "vpn",
+      "label": "3CX corporate VPN",
+      "type": "network"
+    },
+    {
+      "id": "build",
+      "label": "Windows + macOS build environments",
+      "type": "compute"
+    },
+    {
+      "id": "signed",
+      "label": "Signed trojanized 3CXDesktopApp",
+      "type": "service"
+    },
+    {
+      "id": "customers",
+      "label": "Hundreds of thousands of customers",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "xtrader",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "xtrader",
+      "target": "creds",
+      "tech": "T1204.002 \u2013 User Execution: Malicious File"
+    },
+    {
+      "source": "creds",
+      "target": "vpn",
+      "tech": "T1133 \u2013 External Remote Services"
+    },
+    {
+      "source": "vpn",
+      "target": "build",
+      "tech": "T1555 \u2013 Credentials from Password Stores"
+    },
+    {
+      "source": "build",
+      "target": "signed",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "signed",
+      "target": "customers",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    }
+  ]
+}

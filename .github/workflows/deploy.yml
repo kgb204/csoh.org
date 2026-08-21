@@ -72,6 +72,9 @@ on:
       - 'chat-resources.js'
       - 'breach-timeline.css'
       - 'breach-timeline.js'
+      - 'blast-radius.css'
+      - 'blast-radius.js'
+      - 'blast-radius-graph.js'
       - 'meetings.js'
       - 'glossary.js'
       - '404.js'
@@ -79,6 +82,8 @@ on:
       - 'search-init.js'
       - 'search-synonyms.json'
       - 'vendor/**'
+      # --- Blast Radius Visualizer scenario data (/data/chains/*.json)
+      - 'data/**'
       # --- feeds, crawler files, and other machine-readable endpoints
       - 'feed.xml'
       - 'recaps.xml'

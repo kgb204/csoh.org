@@ -1,0 +1,32 @@
+{
+  "id": "promptware",
+  "title": "Promptware / Gemini (2024–2026)",
+  "description": "An indirect prompt injection hidden in a calendar invite poisons an AI assistant's context, persists in workspace memory, beacons a C2 server, and pivots into connected apps.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    { "id": "attacker", "label": "Attacker (researcher-demonstrated)", "type": "attacker" },
+    { "id": "calendar-invite", "label": "Poisoned Google Calendar invite title", "type": "data" },
+    { "id": "assistant", "label": "Gemini assistant (victim's session)", "type": "service" },
+    { "id": "workspace-memory", "label": "Long-term workspace memory", "type": "storage" },
+    { "id": "c2-server", "label": "Attacker C2 server (prompt-layer beacon)", "type": "network" },
+    { "id": "connected-apps", "label": "Connected app inventory & user memories", "type": "data" },
+    { "id": "zoom", "label": "Zoom (agent-controlled)", "type": "service" },
+    { "id": "google-home", "label": "Google Home devices", "type": "service" },
+    { "id": "email-contacts", "label": "Victim's contacts (self-replication)", "type": "identity" },
+    { "id": "camera-stream", "label": "Covert camera livestream", "type": "data" },
+    { "id": "surveillance", "label": "Victim surveilled in their own home", "type": "impact" }
+  ],
+  "links": [
+    { "source": "attacker", "target": "calendar-invite", "tech": "T1566 – Phishing (indirect prompt injection)" },
+    { "source": "calendar-invite", "target": "assistant", "tech": "T1548 – Abuse Elevation Control Mechanism (delayed tool invocation)" },
+    { "source": "assistant", "target": "connected-apps", "tech": "T1082 – System Information Discovery" },
+    { "source": "assistant", "target": "workspace-memory", "tech": "T1546 – Event Triggered Execution (context re-injection)" },
+    { "source": "assistant", "target": "c2-server", "tech": "T1071.001 – Application Layer Protocol: Web" },
+    { "source": "workspace-memory", "target": "assistant", "tech": "T1546 – Event Triggered Execution (persistence loop)" },
+    { "source": "assistant", "target": "zoom", "tech": "T1534 – Internal Spearphishing (agent pivot)" },
+    { "source": "assistant", "target": "google-home", "tech": "T1534 – Internal Spearphishing (agent pivot)" },
+    { "source": "assistant", "target": "email-contacts", "tech": "T1534 – Internal Spearphishing (self-replication)" },
+    { "source": "zoom", "target": "camera-stream", "tech": "T1125 – Video Capture" },
+    { "source": "camera-stream", "target": "surveillance", "tech": "T1125 – Video Capture" }
+  ]
+}

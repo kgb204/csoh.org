@@ -40,6 +40,13 @@ ASSETS: List[Tuple[str, str, str]] = [
     # needs no remote script origin. Re-vendor that file and rerun this
     # script to pick up upstream updates.
     ('vendor/goatcounter-count.js', 'script', 'src'),
+    # Blast Radius Visualizer (/blast-radius.html): its stylesheet, the
+    # reusable D3 graph component, the page controller, and D3 itself
+    # (vendored first-party for the same CSP reason as above).
+    ('blast-radius.css', 'link', 'href'),
+    ('blast-radius-graph.js', 'script', 'src'),
+    ('blast-radius.js', 'script', 'src'),
+    ('vendor/d3.v7.min.js', 'script', 'src'),
 ]
 
 

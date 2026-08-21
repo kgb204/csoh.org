@@ -1,0 +1,75 @@
+{
+  "id": "vercel-context-ai-oauth",
+  "title": "Vercel / Context.ai (2026)",
+  "description": "Infostealer at a vendor compromised its OAuth app, took over a connected Google Workspace account, and reached plaintext environment variables across customer projects.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Threat actor",
+      "type": "attacker"
+    },
+    {
+      "id": "lumma",
+      "label": "Lumma Stealer at Context.ai employee",
+      "type": "endpoint"
+    },
+    {
+      "id": "ctxaws",
+      "label": "Context.ai AWS environment",
+      "type": "compute"
+    },
+    {
+      "id": "oauthapp",
+      "label": "Over-permissioned OAuth app",
+      "type": "credential"
+    },
+    {
+      "id": "workspace",
+      "label": "Vercel employee Google Workspace",
+      "type": "identity"
+    },
+    {
+      "id": "vercel",
+      "label": "Vercel account + env-var interface",
+      "type": "service"
+    },
+    {
+      "id": "envvars",
+      "label": "Env vars across customer projects",
+      "type": "data"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "lumma",
+      "tech": "T1204.002 \u2013 User Execution: Malicious File"
+    },
+    {
+      "source": "lumma",
+      "target": "ctxaws",
+      "tech": "T1555.003 \u2013 Credentials from Web Browsers"
+    },
+    {
+      "source": "ctxaws",
+      "target": "oauthapp",
+      "tech": "T1528 \u2013 Steal Application Access Token"
+    },
+    {
+      "source": "oauthapp",
+      "target": "workspace",
+      "tech": "T1078.004 \u2013 Cloud Accounts"
+    },
+    {
+      "source": "workspace",
+      "target": "vercel",
+      "tech": "T1550.001 \u2013 Application Access Token"
+    },
+    {
+      "source": "vercel",
+      "target": "envvars",
+      "tech": "T1552 \u2013 Unsecured Credentials"
+    }
+  ]
+}

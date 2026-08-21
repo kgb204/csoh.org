@@ -1,0 +1,75 @@
+{
+  "id": "chaosdb-cosmos",
+  "title": "ChaosDB / Azure Cosmos DB (2021)",
+  "description": "A notebook feature in a managed database allowed local privilege escalation and firewall rewrites, reaching the Cosmos DB backend and full admin over other tenants' databases.",
+  "defaultOrigin": "researcher",
+  "nodes": [
+    {
+      "id": "researcher",
+      "label": "Wiz researchers",
+      "type": "attacker"
+    },
+    {
+      "id": "notebook",
+      "label": "Embedded Jupyter Notebook (code exec)",
+      "type": "compute"
+    },
+    {
+      "id": "privesc",
+      "label": "Local privilege escalation",
+      "type": "credential"
+    },
+    {
+      "id": "firewall",
+      "label": "Firewall rules rewritten",
+      "type": "network"
+    },
+    {
+      "id": "backend",
+      "label": "Cosmos DB backend",
+      "type": "service"
+    },
+    {
+      "id": "tenants",
+      "label": "Other tenants' credentials + databases",
+      "type": "data"
+    },
+    {
+      "id": "impact",
+      "label": "Thousands of Azure customers exposed",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "researcher",
+      "target": "notebook",
+      "tech": "T1580 \u2013 Cloud Infrastructure Discovery"
+    },
+    {
+      "source": "notebook",
+      "target": "privesc",
+      "tech": "T1611 \u2013 Escape to Host"
+    },
+    {
+      "source": "privesc",
+      "target": "firewall",
+      "tech": "T1562.007 \u2013 Disable or Modify Cloud Firewall"
+    },
+    {
+      "source": "firewall",
+      "target": "backend",
+      "tech": "T1133 \u2013 External Remote Services"
+    },
+    {
+      "source": "backend",
+      "target": "tenants",
+      "tech": "T1552 \u2013 Unsecured Credentials"
+    },
+    {
+      "source": "tenants",
+      "target": "impact",
+      "tech": "T1530 \u2013 Data from Cloud Storage"
+    }
+  ]
+}

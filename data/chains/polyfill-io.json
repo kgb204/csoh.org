@@ -1,0 +1,65 @@
+{
+  "id": "polyfill-io",
+  "title": "Polyfill.io (2024)",
+  "description": "The polyfill.io domain was sold; every site still loading its script handed over its users, receiving conditional mobile redirects to scam sites.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Funnull (new domain owner)",
+      "type": "attacker"
+    },
+    {
+      "id": "domain",
+      "label": "polyfill.io domain + GitHub account",
+      "type": "service"
+    },
+    {
+      "id": "script",
+      "label": "Attacker-served JavaScript",
+      "type": "credential"
+    },
+    {
+      "id": "sites",
+      "label": "490,000+ embedding websites",
+      "type": "service"
+    },
+    {
+      "id": "users",
+      "label": "Mobile users (conditional payload)",
+      "type": "identity"
+    },
+    {
+      "id": "scam",
+      "label": "Redirects to scam sites",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "domain",
+      "tech": "T1583.001 \u2013 Acquire Infrastructure: Domains"
+    },
+    {
+      "source": "domain",
+      "target": "script",
+      "tech": "T1059.007 \u2013 JavaScript"
+    },
+    {
+      "source": "script",
+      "target": "sites",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "sites",
+      "target": "users",
+      "tech": "T1497 \u2013 Virtualization/Sandbox Evasion"
+    },
+    {
+      "source": "users",
+      "target": "scam",
+      "tech": "T1027 \u2013 Obfuscated Files or Information"
+    }
+  ]
+}

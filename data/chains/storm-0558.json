@@ -1,0 +1,29 @@
+{
+  "id": "storm-0558",
+  "title": "Storm-0558 / Microsoft (2023)",
+  "description": "A consumer MSA signing key recovered from a crash dump let a Chinese espionage actor forge tokens that Exchange Online accepted as enterprise credentials, exposing ~25 organisations' email.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    { "id": "attacker", "label": "Storm-0558 (Chinese espionage actor)", "type": "attacker" },
+    { "id": "engineer", "label": "Microsoft engineer account", "type": "identity" },
+    { "id": "debug-env", "label": "Engineering debug environment", "type": "compute" },
+    { "id": "crash-dump", "label": "2021 crash dump", "type": "data" },
+    { "id": "msa-key", "label": "Consumer MSA signing key", "type": "credential" },
+    { "id": "forged-tokens", "label": "Forged authentication tokens", "type": "credential" },
+    { "id": "exchange-online", "label": "Exchange Online (GetAccessTokenForResource bug)", "type": "service" },
+    { "id": "owa-api", "label": "OWA REST API", "type": "service" },
+    { "id": "gov-email", "label": "~25 orgs' mailboxes (State & Commerce Depts)", "type": "data" },
+    { "id": "espionage", "label": "60K State Dept emails exfiltrated", "type": "impact" }
+  ],
+  "links": [
+    { "source": "attacker", "target": "engineer", "tech": "T1078 – Valid Accounts (compromised corporate account)" },
+    { "source": "engineer", "target": "debug-env", "tech": "T1078 – Valid Accounts" },
+    { "source": "debug-env", "target": "crash-dump", "tech": "T1213 – Data from Information Repositories" },
+    { "source": "crash-dump", "target": "msa-key", "tech": "T1552 – Unsecured Credentials (key in crash dump)" },
+    { "source": "msa-key", "target": "forged-tokens", "tech": "T1606.001 – Forge Web Credentials: Web Cookies/Tokens" },
+    { "source": "forged-tokens", "target": "exchange-online", "tech": "T1212 – Exploitation for Credential Access (SDK validation bug)" },
+    { "source": "exchange-online", "target": "owa-api", "tech": "T1114.002 – Remote Email Collection" },
+    { "source": "owa-api", "target": "gov-email", "tech": "T1114.002 – Remote Email Collection" },
+    { "source": "gov-email", "target": "espionage", "tech": "T1114.002 – Remote Email Collection" }
+  ]
+}

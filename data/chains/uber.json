@@ -1,0 +1,33 @@
+{
+  "id": "uber",
+  "title": "Uber (2022)",
+  "description": "Purchased contractor VPN credentials plus MFA push fatigue led to an internal share, a hardcoded PAM admin secret, and admin access to nearly every Uber system.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    { "id": "attacker", "label": "Attacker (Lapsus$-affiliated teen)", "type": "attacker" },
+    { "id": "stealer-creds", "label": "Dark web infostealer credentials", "type": "credential" },
+    { "id": "contractor", "label": "Uber contractor account", "type": "identity" },
+    { "id": "vpn", "label": "Corporate VPN", "type": "network" },
+    { "id": "net-share", "label": "Internal network share", "type": "storage" },
+    { "id": "pam-script", "label": "PowerShell script with hardcoded PAM creds", "type": "credential" },
+    { "id": "thycotic", "label": "Thycotic PAM (all secrets)", "type": "service" },
+    { "id": "aws", "label": "AWS admin console", "type": "compute" },
+    { "id": "gcp", "label": "Google Cloud admin console", "type": "compute" },
+    { "id": "vsphere", "label": "vSphere", "type": "compute" },
+    { "id": "slack", "label": "Uber Slack", "type": "service" },
+    { "id": "hackerone", "label": "HackerOne bug bounty reports", "type": "data" }
+  ],
+  "links": [
+    { "source": "attacker", "target": "stealer-creds", "tech": "T1078 – Valid Accounts (purchased infostealer logs)" },
+    { "source": "stealer-creds", "target": "contractor", "tech": "T1621 – MFA Request Generation (push fatigue + WhatsApp pretext)" },
+    { "source": "contractor", "target": "vpn", "tech": "T1078 – Valid Accounts" },
+    { "source": "vpn", "target": "net-share", "tech": "T1046 – Network Service Discovery" },
+    { "source": "net-share", "target": "pam-script", "tech": "T1552.001 – Credentials in Files" },
+    { "source": "pam-script", "target": "thycotic", "tech": "T1078 – Valid Accounts (PAM admin)" },
+    { "source": "thycotic", "target": "aws", "tech": "T1078.004 – Cloud Accounts" },
+    { "source": "thycotic", "target": "gcp", "tech": "T1078.004 – Cloud Accounts" },
+    { "source": "thycotic", "target": "vsphere", "tech": "T1078 – Valid Accounts" },
+    { "source": "thycotic", "target": "slack", "tech": "T1078 – Valid Accounts" },
+    { "source": "thycotic", "target": "hackerone", "tech": "T1213 – Data from Information Repositories" }
+  ]
+}

@@ -1,0 +1,195 @@
+/* ============================================================================
+   Blast Radius Visualizer — blueprint-schematic force graph
+   Paired with blast-radius-graph.js (reusable component) and blast-radius.js
+   (page controller). Light-mode defaults first, dark overrides after, matching
+   breach-timeline.css conventions ([data-theme="dark"] + prefers-color-scheme).
+   ============================================================================ */
+
+:root {
+  --br-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+  --br-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Blueprint surface — light mode reads as pale blueprint paper */
+  --br-surface: #eef2f8;
+  --br-surface-2: #ffffff;
+  --br-grid: rgba(37, 99, 235, 0.09);
+  --br-ink: #1e293b;
+  --br-ink-dim: #64748b;
+  --br-border: #cbd5e1;
+  --br-accent: #2563eb;
+
+  /* Hop distance ramp (origin → far). Shared by nodes, edges and legend. */
+  --hop-0: #ef4444;
+  --hop-1: #f97316;
+  --hop-2: #f59e0b;
+  --hop-3: #a855f7;
+  --hop-4: #6366f1;
+  --hop-5: #0891b2;
+  --hop-far: #0e7490;
+}
+
+/* ---- Layout ------------------------------------------------------------- */
+.br-wrap { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+
+.br-controls {
+  display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end;
+  margin: 1.5rem 0 1rem;
+}
+.br-field { display: flex; flex-direction: column; gap: .35rem; }
+.br-field label {
+  font-family: var(--br-mono); font-size: .68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em; color: var(--br-ink-dim);
+}
+.br-select {
+  font-family: var(--br-sans); font-size: .9rem; padding: .5rem .7rem;
+  border: 1px solid var(--br-border); border-radius: 6px;
+  background: var(--br-surface-2); color: var(--br-ink); min-width: 260px;
+  max-width: 100%;
+}
+.br-select:focus-visible { outline: 2px solid var(--br-accent); outline-offset: 1px; }
+
+.br-btn {
+  font-family: var(--br-mono); font-size: .78rem; font-weight: 600;
+  padding: .55rem .9rem; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--br-border); background: var(--br-surface-2);
+  color: var(--br-ink); transition: background .15s, border-color .15s, color .15s;
+}
+.br-btn:hover { border-color: var(--br-accent); color: var(--br-accent); }
+.br-btn:focus-visible { outline: 2px solid var(--br-accent); outline-offset: 1px; }
+
+.br-scenario-desc {
+  font-size: .9rem; line-height: 1.65; color: var(--br-ink-dim);
+  margin: 0 0 1rem; max-width: 820px;
+}
+.br-scenario-desc a { color: var(--br-accent); }
+
+/* ---- Graph canvas ------------------------------------------------------- */
+.br-stage {
+  position: relative;
+  border: 1px solid var(--br-border); border-radius: 10px;
+  background-color: var(--br-surface);
+  background-image:
+    linear-gradient(var(--br-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--br-grid) 1px, transparent 1px);
+  background-size: 26px 26px;
+  overflow: hidden;
+}
+.br-svg { display: block; width: 100%; height: 560px; touch-action: none; }
+@media (max-width: 640px) { .br-svg { height: 460px; } }
+
+.br-empty {
+  position: absolute; inset: 0; display: flex; align-items: center;
+  justify-content: center; text-align: center; padding: 2rem;
+  font-family: var(--br-mono); font-size: .85rem; color: var(--br-ink-dim);
+}
+
+/* Node + edge primitives (most colour is set inline by the JS from the ramp) */
+.br-link { stroke: var(--br-border); stroke-opacity: .5; transition: stroke .2s, stroke-opacity .2s, stroke-width .2s; }
+.br-link.reachable { stroke-opacity: .95; }
+.br-link.dimmed { stroke-opacity: .12; }
+
+.br-node { cursor: pointer; }
+.br-node circle {
+  stroke: var(--br-surface-2); stroke-width: 2px;
+  transition: fill .2s, stroke .2s, r .2s;
+}
+.br-node.dimmed { opacity: .28; }
+.br-node.origin circle { stroke: var(--br-ink); stroke-width: 3px; }
+.br-node.selected circle { stroke: var(--br-ink); stroke-width: 3px; }
+.br-node:focus-visible { outline: none; }
+.br-node:focus-visible circle { stroke: var(--br-accent); stroke-width: 3.5px; }
+
+.br-node-label {
+  font-family: var(--br-mono); font-size: 10.5px; font-weight: 600;
+  fill: var(--br-ink); pointer-events: none;
+  paint-order: stroke; stroke: var(--br-surface); stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.br-node.dimmed .br-node-label { opacity: .35; }
+
+/* Type glyph inside node (single char) */
+.br-node-glyph {
+  font-family: var(--br-mono); font-size: 11px; font-weight: 700;
+  fill: #fff; text-anchor: middle; dominant-baseline: central;
+  pointer-events: none;
+}
+
+/* Edge technique tooltip */
+.br-tooltip {
+  position: absolute; z-index: 5; pointer-events: none;
+  font-family: var(--br-mono); font-size: .72rem; line-height: 1.4;
+  background: #0f172a; color: #e2e8f0; border: 1px solid #334155;
+  padding: .4rem .55rem; border-radius: 5px; max-width: 260px;
+  opacity: 0; transition: opacity .12s; box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+.br-tooltip.show { opacity: 1; }
+.br-tooltip .br-tt-tech { color: #fbbf24; }
+
+/* ---- Legend + readout --------------------------------------------------- */
+.br-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 0; }
+@media (max-width: 760px) { .br-panels { grid-template-columns: 1fr; } }
+
+.br-panel {
+  border: 1px solid var(--br-border); border-radius: 8px;
+  background: var(--br-surface-2); padding: 1rem 1.1rem;
+}
+.br-panel h3 {
+  font-family: var(--br-mono); font-size: .72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em; color: var(--br-ink-dim);
+  margin: 0 0 .7rem;
+}
+
+.br-hoplist { display: flex; flex-direction: column; gap: .3rem; }
+.br-hoprow { display: flex; align-items: center; gap: .55rem; font-size: .8rem; color: var(--br-ink); }
+.br-hoprow.zero { color: var(--br-ink-dim); }
+.br-swatch { width: 13px; height: 13px; border-radius: 3px; flex: none; }
+.br-hoprow .br-hopcount { margin-left: auto; font-family: var(--br-mono); font-size: .74rem; color: var(--br-ink-dim); }
+
+.br-typelegend { display: flex; flex-wrap: wrap; gap: .45rem .8rem; }
+.br-typeitem { display: flex; align-items: center; gap: .35rem; font-size: .74rem; color: var(--br-ink-dim); }
+.br-typedot { width: 14px; height: 14px; border-radius: 50%; flex: none; border: 1.5px solid var(--br-surface-2); }
+
+.br-readout { font-size: .85rem; line-height: 1.6; color: var(--br-ink); }
+.br-readout strong { color: var(--br-ink); }
+.br-readout .br-origin-name { color: var(--hop-0); font-weight: 700; }
+.br-readout .br-metric { font-family: var(--br-mono); }
+
+.br-hint {
+  font-family: var(--br-mono); font-size: .72rem; color: var(--br-ink-dim);
+  margin: .8rem 0 0;
+}
+
+.br-a11y-list { margin: .6rem 0 0; padding-left: 1.1rem; font-size: .82rem; line-height: 1.6; color: var(--br-ink); }
+.br-a11y-list li::marker { color: var(--br-accent); }
+
+/* ---- Dark mode: explicit toggle ---------------------------------------- */
+[data-theme="dark"] {
+  --br-surface: #080d18;
+  --br-surface-2: #0f172a;
+  --br-grid: rgba(56, 189, 248, 0.08);
+  --br-ink: #e2e8f0;
+  --br-ink-dim: #94a3b8;
+  --br-border: #1e293b;
+  --br-accent: #38bdf8;
+}
+[data-theme="dark"] .br-node circle { stroke: #0b1220; }
+[data-theme="dark"] .br-node-label { stroke: #080d18; fill: #e2e8f0; }
+
+/* ---- Dark mode: auto (prefers-color-scheme) ----------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --br-surface: #080d18;
+    --br-surface-2: #0f172a;
+    --br-grid: rgba(56, 189, 248, 0.08);
+    --br-ink: #e2e8f0;
+    --br-ink-dim: #94a3b8;
+    --br-border: #1e293b;
+    --br-accent: #38bdf8;
+  }
+  :root:not([data-theme]) .br-node circle { stroke: #0b1220; }
+  :root:not([data-theme]) .br-node-label { stroke: #080d18; fill: #e2e8f0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .br-link, .br-node circle { transition: none; }
+}

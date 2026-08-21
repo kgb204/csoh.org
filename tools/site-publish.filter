@@ -21,6 +21,12 @@
 + /preview-mapping.json
 + /meetings-search-index.json
 + /search-index.json
+# Blast Radius Visualizer scenario data (see nginx.conf `location ^~
+# /data/chains/`). The `+` dir rules let rsync descend; the JSON files under
+# them ship, everything else stays governed by the rules below.
++ /data/
++ /data/chains/
++ /data/chains/*.json
 - *.json
 
 # --- Hidden files/dirs (nginx: `location ~ /\.` -> 403) ---

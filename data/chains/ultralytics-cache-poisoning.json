@@ -1,0 +1,65 @@
+{
+  "id": "ultralytics-cache-poisoning",
+  "title": "Ultralytics (2024)",
+  "description": "A fork branch name as shell injection poisoned the Actions cache, publishing a malicious build through Trusted Publishing \u2014 running XMRig, then abusing a forgotten token.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Threat actor",
+      "type": "attacker"
+    },
+    {
+      "id": "branchinj",
+      "label": "Fork branch name \u2192 shell injection",
+      "type": "compute"
+    },
+    {
+      "id": "cache",
+      "label": "Poisoned Actions cache",
+      "type": "compute"
+    },
+    {
+      "id": "trusted",
+      "label": "Malicious build via Trusted Publishing",
+      "type": "service"
+    },
+    {
+      "id": "token",
+      "label": "Forgotten unrevoked PyPI token",
+      "type": "credential"
+    },
+    {
+      "id": "xmrig",
+      "label": "XMRig miner on GPU/training hosts",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "branchinj",
+      "tech": "T1059.004 \u2013 Command and Scripting Interpreter: Unix Shell"
+    },
+    {
+      "source": "branchinj",
+      "target": "cache",
+      "tech": "T1190 \u2013 Exploit Public-Facing Application"
+    },
+    {
+      "source": "cache",
+      "target": "trusted",
+      "tech": "T1195.001 \u2013 Compromise Software Dependencies and Development Tools"
+    },
+    {
+      "source": "trusted",
+      "target": "token",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "token",
+      "target": "xmrig",
+      "tech": "T1496 \u2013 Resource Hijacking"
+    }
+  ]
+}
