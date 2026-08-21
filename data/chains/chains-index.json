@@ -2,6 +2,14 @@
   "description": "Index of breach kill chain scenarios for the Blast Radius Visualizer (/blast-radius.html). Add a new entry here plus a scenario JSON file in this directory and the visualizer picks it up automatically \u2014 no code changes required. See data/chains/README.md for the schema.",
   "scenarios": [
     {
+      "id": "asset-blast-map",
+      "title": "Cross-Incident Asset Map",
+      "subtitle": "Every kill chain at once \u2014 what a compromised asset class actually reaches",
+      "provider": "All 45 breaches",
+      "year": "0000",
+      "file": "data/chains/asset-blast-map.json"
+    },
+    {
       "id": "mitnick-novell",
       "title": "Kevin Mitnick / Novell (1994)",
       "subtitle": "OSINT \u2192 Pretexting \u2192 Phone Social Engineering \u2192 Dial-Up Access \u2192 NetWare Source Code Theft",
