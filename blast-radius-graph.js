@@ -42,10 +42,11 @@
     network:    { glyph: '⇄', fill: '#14b8a6' }, // arrows
     storage:    { glyph: '◓', fill: '#0891b2' }, // cylinder-ish
     data:       { glyph: '◈', fill: '#10b981' }, // diamond
-    impact:     { glyph: '✹', fill: '#dc2626' }  // burst
+    impact:     { glyph: '✹', fill: '#dc2626' }, // burst
+    control:    { glyph: '⛨', fill: '#059669' }  // shield — a defensive measure, not an asset
   };
   var TYPE_ORDER = ['attacker', 'identity', 'endpoint', 'credential', 'service',
-    'compute', 'network', 'storage', 'data', 'impact'];
+    'compute', 'network', 'storage', 'data', 'impact', 'control'];
   var DEFAULT_TYPE = { glyph: '●', fill: '#94a3b8' };
 
   function typeMeta(type) {

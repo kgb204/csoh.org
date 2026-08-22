@@ -1,18 +1,18 @@
 {
-  "description": "Index of breach kill chain scenarios for the Blast Radius Visualizer (/blast-radius.html). Add a new entry here plus a scenario JSON file in this directory and the visualizer picks it up automatically \u2014 no code changes required. See data/chains/README.md for the schema.",
+  "description": "Index of breach kill chain scenarios for the Blast Radius Visualizer (/blast-radius.html). Add a new entry here plus a scenario JSON file in this directory and the visualizer picks it up automatically — no code changes required. See data/chains/README.md for the schema.",
   "scenarios": [
     {
-      "id": "asset-blast-map",
-      "title": "Cross-Incident Asset Map",
-      "subtitle": "Every kill chain at once \u2014 what a compromised asset class actually reaches",
+      "id": "controls-coverage",
+      "title": "Control Coverage Map",
+      "subtitle": "Which single defensive control would have stopped the most real breaches — read backwards from all 45 kill chains' own “How to Defend” sections",
       "provider": "All 45 breaches",
       "year": "0000",
-      "file": "data/chains/asset-blast-map.json"
+      "file": "data/chains/controls-coverage.json"
     },
     {
       "id": "mitnick-novell",
       "title": "Kevin Mitnick / Novell (1994)",
-      "subtitle": "OSINT \u2192 Pretexting \u2192 Phone Social Engineering \u2192 Dial-Up Access \u2192 NetWare Source Code Theft",
+      "subtitle": "OSINT → Pretexting → Phone Social Engineering → Dial-Up Access → NetWare Source Code Theft",
       "provider": "On-Prem",
       "year": "1994",
       "file": "data/chains/mitnick-novell.json",
@@ -30,7 +30,7 @@
     {
       "id": "capital-one",
       "title": "Capital One (2019)",
-      "subtitle": "SSRF \u2192 IMDSv1 \u2192 Over-Privileged IAM Role \u2192 106M Record S3 Exfiltration",
+      "subtitle": "SSRF → IMDSv1 → Over-Privileged IAM Role → 106M Record S3 Exfiltration",
       "provider": "AWS",
       "year": "2019",
       "file": "data/chains/capital-one.json",
@@ -39,7 +39,7 @@
     {
       "id": "solarwinds",
       "title": "SolarWinds / SUNBURST (2020)",
-      "subtitle": "Build System Compromise \u2192 SUNBURST Backdoor \u2192 Golden SAML \u2192 US Government Espionage",
+      "subtitle": "Build System Compromise → SUNBURST Backdoor → Golden SAML → US Government Espionage",
       "provider": "Azure AD",
       "year": "2020",
       "file": "data/chains/solarwinds.json",
@@ -57,7 +57,7 @@
     {
       "id": "codecov-bash-uploader",
       "title": "Codecov Bash Uploader (2021)",
-      "subtitle": "A credential leaked by a Docker build let an attacker add one line to a script thousands of CI jobs curl \u2014 exfiltrating two months of CI environment variables.",
+      "subtitle": "A credential leaked by a Docker build let an attacker add one line to a script thousands of CI jobs curl — exfiltrating two months of CI environment variables.",
       "provider": "Cloud",
       "year": "2021",
       "file": "data/chains/codecov-bash-uploader.json",
@@ -66,7 +66,7 @@
     {
       "id": "kaseya-vsa-revil",
       "title": "Kaseya VSA / REvil (2021)",
-      "subtitle": "An authentication bypass in an internet-facing RMM server let REvil push ransomware as a software update \u2014 encrypting ~1,500 businesses through their IT providers.",
+      "subtitle": "An authentication bypass in an internet-facing RMM server let REvil push ransomware as a software update — encrypting ~1,500 businesses through their IT providers.",
       "provider": "MSP / RMM",
       "year": "2021",
       "file": "data/chains/kaseya-vsa-revil.json",
@@ -75,7 +75,7 @@
     {
       "id": "log4shell",
       "title": "Log4Shell (2021)",
-      "subtitle": "A logging library that interpreted its own input turned any logged string into an unauthenticated JNDI request to an attacker server \u2014 RCE almost everywhere, and nobody could inventory where.",
+      "subtitle": "A logging library that interpreted its own input turned any logged string into an unauthenticated JNDI request to an attacker server — RCE almost everywhere, and nobody could inventory where.",
       "provider": "Transitive Dependency",
       "year": "2021",
       "file": "data/chains/log4shell.json",
@@ -83,8 +83,8 @@
     },
     {
       "id": "xz-utils-backdoor",
-      "title": "XZ Utils (2021\u20132024)",
-      "subtitle": "A two-year social campaign made 'Jia Tan' the maintainer, shipping a backdoor only in release tarballs that hooked sshd for pre-auth RCE \u2014 caught by a 500ms latency regression.",
+      "title": "XZ Utils (2021–2024)",
+      "subtitle": "A two-year social campaign made 'Jia Tan' the maintainer, shipping a backdoor only in release tarballs that hooked sshd for pre-auth RCE — caught by a 500ms latency regression.",
       "provider": "Open Source",
       "year": "2021",
       "file": "data/chains/xz-utils-backdoor.json",
@@ -93,7 +93,7 @@
     {
       "id": "0ktapus-twilio",
       "title": "0ktapus / Twilio (2022)",
-      "subtitle": "SMS phishing with lookalike Okta pages captured credentials and live OTPs, relayed in real time to breach 130+ organizations \u2014 but a FIDO2 hardware key stopped it at Cloudflare.",
+      "subtitle": "SMS phishing with lookalike Okta pages captured credentials and live OTPs, relayed in real time to breach 130+ organizations — but a FIDO2 hardware key stopped it at Cloudflare.",
       "provider": "Cloud",
       "year": "2022",
       "file": "data/chains/0ktapus-twilio.json",
@@ -101,7 +101,7 @@
     },
     {
       "id": "circleci-session-theft",
-      "title": "CircleCI (2022\u20132023)",
+      "title": "CircleCI (2022–2023)",
       "subtitle": "Malware on an engineer's laptop stole a live 2FA-backed SSO session cookie, giving production access and forcing every customer to rotate every secret on the platform.",
       "provider": "Cloud",
       "year": "2022",
@@ -111,7 +111,7 @@
     {
       "id": "lastpass",
       "title": "LastPass (2022)",
-      "subtitle": "Dev Env Breach \u2192 DevOps Home PC (Plex Exploit) \u2192 Keylogger \u2192 AWS S3 Vault Backup Exfil",
+      "subtitle": "Dev Env Breach → DevOps Home PC (Plex Exploit) → Keylogger → AWS S3 Vault Backup Exfil",
       "provider": "AWS",
       "year": "2022",
       "file": "data/chains/lastpass.json",
@@ -120,7 +120,7 @@
     {
       "id": "okta-lapsus-sitel",
       "title": "Okta / LAPSUS$ (2022)",
-      "subtitle": "A subcontractor's support engineer laptop gave LAPSUS$ five days inside Okta's support tooling \u2014 password-reset powers exposing up to 366 customers.",
+      "subtitle": "A subcontractor's support engineer laptop gave LAPSUS$ five days inside Okta's support tooling — password-reset powers exposing up to 366 customers.",
       "provider": "Cloud",
       "year": "2022",
       "file": "data/chains/okta-lapsus-sitel.json",
@@ -129,7 +129,7 @@
     {
       "id": "uber",
       "title": "Uber (2022)",
-      "subtitle": "Dark Web Creds \u2192 MFA Push Fatigue \u2192 Hardcoded PAM Secret \u2192 Full AWS/GCP Admin",
+      "subtitle": "Dark Web Creds → MFA Push Fatigue → Hardcoded PAM Secret → Full AWS/GCP Admin",
       "provider": "AWS",
       "year": "2022",
       "file": "data/chains/uber.json",
@@ -138,7 +138,7 @@
     {
       "id": "3cx-x-trader",
       "title": "3CX / X_TRADER (2023)",
-      "subtitle": "A trojanized trading app on an employee's personal PC yielded 3CX credentials, VPN access, and both build environments \u2014 shipping a signed, backdoored softphone to hundreds of thousands of customers.",
+      "subtitle": "A trojanized trading app on an employee's personal PC yielded 3CX credentials, VPN access, and both build environments — shipping a signed, backdoored softphone to hundreds of thousands of customers.",
       "provider": "Cascading Supply Chain",
       "year": "2023",
       "file": "data/chains/3cx-x-trader.json",
@@ -147,7 +147,7 @@
     {
       "id": "moveit-cl0p",
       "title": "MOVEit Transfer / Cl0p (2023)",
-      "subtitle": "A SQL-injection zero-day in internet-facing managed file transfer software dropped the LEMURLOOT web shell for mass data theft \u2014 2,600+ organizations extorted.",
+      "subtitle": "A SQL-injection zero-day in internet-facing managed file transfer software dropped the LEMURLOOT web shell for mass data theft — 2,600+ organizations extorted.",
       "provider": "Managed File Transfer",
       "year": "2023",
       "file": "data/chains/moveit-cl0p.json",
@@ -156,7 +156,7 @@
     {
       "id": "microsoft-sas-leak",
       "title": "Microsoft AI Research SAS Token (2023)",
-      "subtitle": "Over-Permissioned Token \u2192 Public GitHub \u2192 38TB Internal Data Exposed for 3 Years",
+      "subtitle": "Over-Permissioned Token → Public GitHub → 38TB Internal Data Exposed for 3 Years",
       "provider": "Azure",
       "year": "2023",
       "file": "data/chains/microsoft-sas-leak.json",
@@ -164,8 +164,8 @@
     },
     {
       "id": "midnight-blizzard-microsoft",
-      "title": "Midnight Blizzard / Microsoft (2023\u20132024)",
-      "subtitle": "A password spray on a forgotten test tenant reached a legacy OAuth app with production rights, exposing executive email \u2014 and secrets in that email led to source code.",
+      "title": "Midnight Blizzard / Microsoft (2023–2024)",
+      "subtitle": "A password spray on a forgotten test tenant reached a legacy OAuth app with production rights, exposing executive email — and secrets in that email led to source code.",
       "provider": "Microsoft 365 / Entra",
       "year": "2023",
       "file": "data/chains/midnight-blizzard-microsoft.json",
@@ -183,7 +183,7 @@
     {
       "id": "scattered-spider-mgm",
       "title": "Scattered Spider / MGM Resorts (2023)",
-      "subtitle": "LinkedIn OSINT \u2192 Vishing Help Desk \u2192 Okta Super Admin \u2192 100 ESXi Servers Encrypted",
+      "subtitle": "LinkedIn OSINT → Vishing Help Desk → Okta Super Admin → 100 ESXi Servers Encrypted",
       "provider": "Okta / Azure AD",
       "year": "2023",
       "file": "data/chains/scattered-spider-mgm.json",
@@ -192,7 +192,7 @@
     {
       "id": "storm-0558",
       "title": "Storm-0558 / Microsoft (2023)",
-      "subtitle": "Crash Dump \u2192 Stolen MSA Signing Key \u2192 Forged Tokens \u2192 Government Email Espionage",
+      "subtitle": "Crash Dump → Stolen MSA Signing Key → Forged Tokens → Government Email Espionage",
       "provider": "Azure",
       "year": "2023",
       "file": "data/chains/storm-0558.json",
@@ -201,7 +201,7 @@
     {
       "id": "change-healthcare-alphv",
       "title": "Change Healthcare / ALPHV (2024)",
-      "subtitle": "Stolen credentials on a Citrix portal with no MFA gave nine days of lateral movement before ransomware \u2014 disrupting a third of US healthcare transactions.",
+      "subtitle": "Stolen credentials on a Citrix portal with no MFA gave nine days of lateral movement before ransomware — disrupting a third of US healthcare transactions.",
       "provider": "Healthcare Infrastructure",
       "year": "2024",
       "file": "data/chains/change-healthcare-alphv.json",
@@ -218,8 +218,8 @@
     },
     {
       "id": "promptware",
-      "title": "Promptware / Gemini (2024\u20132026)",
-      "subtitle": "Indirect Prompt Injection \u2192 Context Poisoning \u2192 Persistence \u2192 C2 \u2192 Covert Camera Livestream",
+      "title": "Promptware / Gemini (2024–2026)",
+      "subtitle": "Indirect Prompt Injection → Context Poisoning → Persistence → C2 → Covert Camera Livestream",
       "provider": "AI / SaaS",
       "year": "2024",
       "file": "data/chains/promptware.json",
@@ -228,7 +228,7 @@
     {
       "id": "snowflake-unc5537",
       "title": "UNC5537 / Snowflake (2024)",
-      "subtitle": "Infostealer Creds \u2192 No MFA \u2192 SHOW TABLES \u2192 Bulk Exfil \u2192 100+ Orgs Extorted",
+      "subtitle": "Infostealer Creds → No MFA → SHOW TABLES → Bulk Exfil → 100+ Orgs Extorted",
       "provider": "Snowflake",
       "year": "2024",
       "file": "data/chains/snowflake-unc5537.json",
@@ -237,7 +237,7 @@
     {
       "id": "ultralytics-cache-poisoning",
       "title": "Ultralytics (2024)",
-      "subtitle": "A fork branch name as shell injection poisoned the Actions cache, publishing a malicious build through Trusted Publishing \u2014 running XMRig, then abusing a forgotten token.",
+      "subtitle": "A fork branch name as shell injection poisoned the Actions cache, publishing a malicious build through Trusted Publishing — running XMRig, then abusing a forgotten token.",
       "provider": "Cloud",
       "year": "2024",
       "file": "data/chains/ultralytics-cache-poisoning.json",
@@ -246,7 +246,7 @@
     {
       "id": "codefinger-s3",
       "title": "Codefinger / S3 Ransomware (2025)",
-      "subtitle": "Stolen AWS keys authenticated to the victim account, enumerated buckets, and re-encrypted objects with an attacker-held SSE-C key \u2014 with a 7-day deletion timer and a Bitcoin ransom.",
+      "subtitle": "Stolen AWS keys authenticated to the victim account, enumerated buckets, and re-encrypted objects with an attacker-held SSE-C key — with a 7-day deletion timer and a Bitcoin ransom.",
       "provider": "AWS",
       "year": "2025",
       "file": "data/chains/codefinger-s3.json",
@@ -255,7 +255,7 @@
     {
       "id": "entra-id-actor-token",
       "title": "Entra ID Actor Token (2025)",
-      "subtitle": "An undocumented service-to-service Actor token, requested from any attacker-controlled tenant, forged an unsigned impersonation JWT that legacy Azure AD Graph accepted \u2014 Global Admin in any tenant, unlogged.",
+      "subtitle": "An undocumented service-to-service Actor token, requested from any attacker-controlled tenant, forged an unsigned impersonation JWT that legacy Azure AD Graph accepted — Global Admin in any tenant, unlogged.",
       "provider": "Cloud",
       "year": "2025",
       "file": "data/chains/entra-id-actor-token.json",
@@ -309,7 +309,7 @@
     {
       "id": "sharepoint-toolshell",
       "title": "SharePoint 'ToolShell' (2025)",
-      "subtitle": "Unauthenticated deserialization at ToolPane.aspx gave a web shell and MachineKey theft \u2014 forging __VIEWSTATE forever and, at some victims, Warlock ransomware.",
+      "subtitle": "Unauthenticated deserialization at ToolPane.aspx gave a web shell and MachineKey theft — forging __VIEWSTATE forever and, at some victims, Warlock ransomware.",
       "provider": "On-Prem SharePoint",
       "year": "2025",
       "file": "data/chains/sharepoint-toolshell.json",
@@ -336,7 +336,7 @@
     {
       "id": "tj-actions-changed-files",
       "title": "tj-actions/changed-files (2025)",
-      "subtitle": "A stolen PAT retagged an action to a malicious commit that dumped runner memory into public build logs \u2014 exposing secrets across 23,000+ repositories.",
+      "subtitle": "A stolen PAT retagged an action to a malicious commit that dumped runner memory into public build logs — exposing secrets across 23,000+ repositories.",
       "provider": "GitHub Actions",
       "year": "2025",
       "file": "data/chains/tj-actions-changed-files.json",
@@ -372,7 +372,7 @@
     {
       "id": "mini-shai-hulud-tanstack",
       "title": "Mini Shai-Hulud / TanStack (2026)",
-      "subtitle": "A pwn-request poisoned the Actions cache, stole the OIDC token from runner memory, and published npm packages with valid SLSA provenance \u2014 worming across 150+ packages.",
+      "subtitle": "A pwn-request poisoned the Actions cache, stole the OIDC token from runner memory, and published npm packages with valid SLSA provenance — worming across 150+ packages.",
       "provider": "Cloud",
       "year": "2026",
       "file": "data/chains/mini-shai-hulud-tanstack.json",
@@ -408,7 +408,7 @@
     {
       "id": "vimeo-anodot-shinyhunters",
       "title": "Vimeo / Anodot (2026)",
-      "subtitle": "Stolen analytics-vendor tokens gave direct Snowflake and BigQuery access with no interactive login \u2014 119,000 records exfiltrated and extorted, without touching Vimeo's perimeter.",
+      "subtitle": "Stolen analytics-vendor tokens gave direct Snowflake and BigQuery access with no interactive login — 119,000 records exfiltrated and extorted, without touching Vimeo's perimeter.",
       "provider": "Snowflake / BigQuery",
       "year": "2026",
       "file": "data/chains/vimeo-anodot-shinyhunters.json",

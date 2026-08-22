@@ -133,21 +133,39 @@
   // ---- Panels ------------------------------------------------------------
   function renderReadout(originNode, result) {
     if (!originNode) return;
-    var total = currentScenario.nodes.length;
     var reached = result.reached.size;                 // includes origin
     var downstream = reached - 1;
-    var pct = total > 1 ? Math.round((downstream / (total - 1)) * 100) : 0;
+    var isControl = originNode.type === 'control';
 
     var html = 'Origin: <span class="br-origin-name">' + escapeHtml(originNode.label) +
       '</span> <span class="br-metric">(' + escapeHtml(originNode.type || 'node') + ')</span>. ';
 
-    if (downstream === 0) {
-      html += 'Nothing downstream — this is a terminal node in the chain.';
+    if (isControl) {
+      // Coverage-map framing: a control's "blast radius" is the incidents it
+      // would have prevented, not assets it endangers — the denominator is
+      // incidents in the scenario, not every other node.
+      var incidentCount = currentScenario.nodes.filter(function (n) {
+        return n.type === 'impact';
+      }).length;
+      var pctCov = incidentCount > 0 ? Math.round((downstream / incidentCount) * 100) : 0;
+      if (downstream === 0) {
+        html += 'Not linked to a prevented incident in this scenario.';
+      } else {
+        html += 'Would have stopped <strong class="br-metric">' + downstream +
+          '</strong> of ' + incidentCount + ' real breaches in this library (<span class="br-metric">' +
+          pctCov + '%</span>).';
+      }
     } else {
-      html += 'Compromise here reaches <strong class="br-metric">' + downstream +
-        '</strong> of ' + (total - 1) + ' other assets (<span class="br-metric">' +
-        pct + '%</span> of the graph), across <strong class="br-metric">' +
-        result.maxHop + '</strong> hop' + (result.maxHop === 1 ? '' : 's') + '.';
+      var total = currentScenario.nodes.length;
+      var pct = total > 1 ? Math.round((downstream / (total - 1)) * 100) : 0;
+      if (downstream === 0) {
+        html += 'Nothing downstream — this is a terminal node in the chain.';
+      } else {
+        html += 'Compromise here reaches <strong class="br-metric">' + downstream +
+          '</strong> of ' + (total - 1) + ' other assets (<span class="br-metric">' +
+          pct + '%</span> of the graph), across <strong class="br-metric">' +
+          result.maxHop + '</strong> hop' + (result.maxHop === 1 ? '' : 's') + '.';
+      }
     }
     els.readout.innerHTML = html;
   }

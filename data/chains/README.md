@@ -70,6 +70,7 @@ is compromised.
 | `storage`    | buckets, vaults, repos, file shares                       |
 | `data`       | records, source code, email, anything exfiltratable       |
 | `impact`     | the terminal blast — ransomware, extortion, exposure      |
+| `control`    | a defensive measure — used only in coverage-style scenarios (see below), never mixed into an attack-path chain |
 
 An unknown type still renders (neutral grey) but prefer the vocabulary above so the
 legend stays truthful.
@@ -77,3 +78,18 @@ legend stays truthful.
 Keep graphs between roughly 7 and 15 nodes — enough to show branching, small enough to
 read. Every claim should be sourced from the corresponding kill chain page, which is
 itself sourced from post-mortems (see `CONTRIBUTING_KILL_CHAINS.md`).
+
+## Two shapes of scenario
+
+Most scenarios are a single incident's attack path: one `attacker`-typed origin, edges
+pointing the way compromise actually propagated, and every node reachable from that
+origin (the visualizer's own validation — see the BFS check in `blast-radius.js` —
+expects this). `defaultOrigin` should be that entry point.
+
+A **coverage map** (like `controls-coverage.json`) is a different shape on purpose: it
+has no single attacker or narrative. `control`-typed nodes point at the `impact`-typed
+incidents they would have stopped, sourced from those incidents' own "How to Defend"
+sections. Selecting a control shows how many real incidents it covers — that's the
+point of the feature, not a chain to walk end to end. Full reachability from one origin
+is *not* expected here; don't try to force it. Set `defaultOrigin` to whichever control
+has the most representative (not necessarily the largest) coverage.
