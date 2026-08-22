@@ -1,0 +1,75 @@
+{
+  "id": "xz-utils-backdoor",
+  "title": "XZ Utils (2021\u20132024)",
+  "description": "A two-year social campaign made 'Jia Tan' the maintainer, shipping a backdoor only in release tarballs that hooked sshd for pre-auth RCE \u2014 caught by a 500ms latency regression.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "'Jia Tan' persona",
+      "type": "attacker"
+    },
+    {
+      "id": "trust",
+      "label": "Two years building maintainer trust",
+      "type": "identity"
+    },
+    {
+      "id": "pressure",
+      "label": "Sockpuppets pressure real maintainer",
+      "type": "identity"
+    },
+    {
+      "id": "tarball",
+      "label": "Backdoor in 5.6.0/5.6.1 release tarballs",
+      "type": "service"
+    },
+    {
+      "id": "sshd",
+      "label": "IFUNC hook into sshd via liblzma",
+      "type": "compute"
+    },
+    {
+      "id": "rce",
+      "label": "Pre-auth RCE for one Ed448 key",
+      "type": "impact"
+    },
+    {
+      "id": "caught",
+      "label": "Caught by 500ms sshd latency (A. Freund)",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "trust",
+      "tech": "T1585 \u2013 Establish Accounts"
+    },
+    {
+      "source": "trust",
+      "target": "pressure",
+      "tech": "T1656 \u2013 Impersonation"
+    },
+    {
+      "source": "pressure",
+      "target": "tarball",
+      "tech": "T1195.001 \u2013 Compromise Software Dependencies and Development Tools"
+    },
+    {
+      "source": "tarball",
+      "target": "sshd",
+      "tech": "T1027 \u2013 Obfuscated Files or Information"
+    },
+    {
+      "source": "sshd",
+      "target": "rce",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "sshd",
+      "target": "caught",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "scattered-spider-mgm",
+  "title": "Scattered Spider / MGM Resorts (2023)",
+  "description": "One vishing call to the MGM help desk became Okta super admin, Azure AD control, data exfiltration, and ALPHV ransomware across 100+ ESXi hypervisors.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    { "id": "attacker", "label": "Scattered Spider (UNC3944)", "type": "attacker" },
+    { "id": "employee-osint", "label": "Employee identity from LinkedIn", "type": "identity" },
+    { "id": "helpdesk", "label": "MGM IT help desk", "type": "service" },
+    { "id": "employee-account", "label": "Employee account (MFA reset by help desk)", "type": "identity" },
+    { "id": "sharepoint", "label": "Internal SharePoint (VPN/VDI docs)", "type": "storage" },
+    { "id": "okta", "label": "Okta tenant", "type": "service" },
+    { "id": "okta-superadmin", "label": "Okta Super Administrator", "type": "credential" },
+    { "id": "azure-ad", "label": "Azure AD (Global Admin)", "type": "service" },
+    { "id": "new-vms", "label": "Attacker-created VMs (persistence)", "type": "compute" },
+    { "id": "corp-data", "label": "Exfiltrated customer & corporate data", "type": "data" },
+    { "id": "esxi", "label": "100+ ESXi hypervisors", "type": "compute" },
+    { "id": "ransomware", "label": "ALPHV/BlackCat encryption · 10-day outage · ~$100M loss", "type": "impact" }
+  ],
+  "links": [
+    { "source": "attacker", "target": "employee-osint", "tech": "T1589.002 – Gather Victim Identity Information" },
+    { "source": "employee-osint", "target": "helpdesk", "tech": "T1566.004 – Phishing: Voice (vishing)" },
+    { "source": "helpdesk", "target": "employee-account", "tech": "T1656 – Impersonation (MFA reset granted)" },
+    { "source": "employee-account", "target": "sharepoint", "tech": "T1213.002 – Data from SharePoint" },
+    { "source": "employee-account", "target": "okta", "tech": "T1078.004 – Valid Accounts: Cloud Accounts" },
+    { "source": "okta", "target": "okta-superadmin", "tech": "T1098 – Account Manipulation (MFA removed from admins)" },
+    { "source": "okta-superadmin", "target": "azure-ad", "tech": "T1078.004 – Valid Accounts: Cloud Accounts" },
+    { "source": "azure-ad", "target": "new-vms", "tech": "T1578.002 – Create Cloud Instance" },
+    { "source": "azure-ad", "target": "corp-data", "tech": "T1530 – Data from Cloud Storage" },
+    { "source": "okta-superadmin", "target": "esxi", "tech": "T1021.001 – Remote Services: RDP (living off the land)" },
+    { "source": "esxi", "target": "ransomware", "tech": "T1486 – Data Encrypted for Impact" },
+    { "source": "corp-data", "target": "ransomware", "tech": "T1657 – Financial Theft (double extortion)" }
+  ]
+}

@@ -22,10 +22,11 @@ See `tools/UPDATE_SRI_README.md` for the full story.
 | --- | --- | --- |
 | `goatcounter-count.js` | <https://www.goatcounter.com> | ISC |
 | `minisearch-7.1.2.min.js` | <https://github.com/lucaong/minisearch> | MIT |
+| `d3.v7.min.js` | <https://github.com/d3/d3> (v7.9.0) | ISC |
 
 ## Local modifications
 
-`minisearch-7.1.2.min.js` is a pristine upstream copy.
+`minisearch-7.1.2.min.js` and `d3.v7.min.js` are pristine upstream copies.
 `goatcounter-count.js` is **not** - it carries two local patches, each marked in
 the source with a `CSOH LOCAL MODIFICATION` comment. If you ever re-vendor a
 newer upstream release, you must re-apply them: a straight overwrite silently

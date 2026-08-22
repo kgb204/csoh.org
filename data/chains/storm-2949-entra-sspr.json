@@ -1,0 +1,85 @@
+{
+  "id": "storm-2949-entra-sspr",
+  "title": "Storm-2949 (2026)",
+  "description": "A Self-Service Password Reset plus a fake IT call took over MFA methods, then abused existing Azure RBAC to drain Key Vault, SQL and storage.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Storm-2949",
+      "type": "attacker"
+    },
+    {
+      "id": "sspr",
+      "label": "SSPR reset + fake IT call",
+      "type": "identity"
+    },
+    {
+      "id": "mfa",
+      "label": "Attacker MFA device enrolled",
+      "type": "credential"
+    },
+    {
+      "id": "graph",
+      "label": "Microsoft Graph enumeration",
+      "type": "service"
+    },
+    {
+      "id": "rbac",
+      "label": "Existing privileged Azure RBAC",
+      "type": "credential"
+    },
+    {
+      "id": "keyvault",
+      "label": "Key Vault \u2014 dozens of secrets in 4 min",
+      "type": "data"
+    },
+    {
+      "id": "vms",
+      "label": "Backdoor admins on Azure VMs; Defender off",
+      "type": "compute"
+    },
+    {
+      "id": "storage",
+      "label": "OneDrive/SharePoint + blob drain",
+      "type": "data"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "sspr",
+      "tech": "T1621 \u2013 MFA Request Generation"
+    },
+    {
+      "source": "sspr",
+      "target": "mfa",
+      "tech": "T1556.006 \u2013 Modify Authentication Process: MFA"
+    },
+    {
+      "source": "mfa",
+      "target": "graph",
+      "tech": "T1078.004 \u2013 Cloud Accounts"
+    },
+    {
+      "source": "graph",
+      "target": "rbac",
+      "tech": "T1098.005 \u2013 Account Manipulation: Device Registration"
+    },
+    {
+      "source": "rbac",
+      "target": "keyvault",
+      "tech": "T1552 \u2013 Unsecured Credentials"
+    },
+    {
+      "source": "rbac",
+      "target": "vms",
+      "tech": "T1078.004 \u2013 Cloud Accounts"
+    },
+    {
+      "source": "vms",
+      "target": "storage",
+      "tech": "T1530 \u2013 Data from Cloud Storage"
+    }
+  ]
+}

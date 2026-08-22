@@ -1,0 +1,65 @@
+{
+  "id": "tj-actions-changed-files",
+  "title": "tj-actions/changed-files (2025)",
+  "description": "A stolen PAT retagged an action to a malicious commit that dumped runner memory into public build logs \u2014 exposing secrets across 23,000+ repositories.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Threat actor",
+      "type": "attacker"
+    },
+    {
+      "id": "pat",
+      "label": "Compromised bot PAT (reviewdog chain)",
+      "type": "credential"
+    },
+    {
+      "id": "retag",
+      "label": "Version tags retargeted to malicious commit",
+      "type": "service"
+    },
+    {
+      "id": "runnermem",
+      "label": "Runner memory scraped for credentials",
+      "type": "compute"
+    },
+    {
+      "id": "logs",
+      "label": "Secrets written to build logs",
+      "type": "data"
+    },
+    {
+      "id": "public",
+      "label": "Public repo logs \u2192 23,000+ repos exposed",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "pat",
+      "tech": "T1078 \u2013 Valid Accounts"
+    },
+    {
+      "source": "pat",
+      "target": "retag",
+      "tech": "T1195.001 \u2013 Compromise Software Dependencies and Tools"
+    },
+    {
+      "source": "retag",
+      "target": "runnermem",
+      "tech": "T1552.001 \u2013 Credentials in Files"
+    },
+    {
+      "source": "runnermem",
+      "target": "logs",
+      "tech": "T1552.001 \u2013 Credentials in Files"
+    },
+    {
+      "source": "logs",
+      "target": "public",
+      "tech": "T1213 \u2013 Data from Information Repositories"
+    }
+  ]
+}

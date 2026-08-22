@@ -1,0 +1,65 @@
+{
+  "id": "midnight-blizzard-microsoft",
+  "title": "Midnight Blizzard / Microsoft (2023\u20132024)",
+  "description": "A password spray on a forgotten test tenant reached a legacy OAuth app with production rights, exposing executive email \u2014 and secrets in that email led to source code.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Midnight Blizzard (APT29)",
+      "type": "attacker"
+    },
+    {
+      "id": "testtenant",
+      "label": "Legacy test tenant \u2014 weak password, no MFA",
+      "type": "identity"
+    },
+    {
+      "id": "oauthapp",
+      "label": "Legacy OAuth app with elevated rights",
+      "type": "service"
+    },
+    {
+      "id": "execmail",
+      "label": "Senior leadership + security/legal email",
+      "type": "data"
+    },
+    {
+      "id": "emailsecrets",
+      "label": "Secrets found in the email",
+      "type": "credential"
+    },
+    {
+      "id": "source",
+      "label": "Source-code repositories + internal systems",
+      "type": "data"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "testtenant",
+      "tech": "T1110.003 \u2013 Password Spraying"
+    },
+    {
+      "source": "testtenant",
+      "target": "oauthapp",
+      "tech": "T1550.001 \u2013 Application Access Token"
+    },
+    {
+      "source": "oauthapp",
+      "target": "execmail",
+      "tech": "T1098.002 \u2013 Additional Email Delegate Permissions"
+    },
+    {
+      "source": "execmail",
+      "target": "emailsecrets",
+      "tech": "T1552 \u2013 Unsecured Credentials"
+    },
+    {
+      "source": "emailsecrets",
+      "target": "source",
+      "tech": "T1078 \u2013 Valid Accounts"
+    }
+  ]
+}

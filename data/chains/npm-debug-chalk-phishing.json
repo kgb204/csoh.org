@@ -1,0 +1,65 @@
+{
+  "id": "npm-debug-chalk-phishing",
+  "title": "npm debug / chalk (2025)",
+  "description": "A fake 2FA-reset email relayed a live TOTP, took over a maintainer account, and trojanized 18 packages totaling 2.6 billion weekly downloads.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Threat actor",
+      "type": "attacker"
+    },
+    {
+      "id": "phish",
+      "label": "Fake 2FA-reset email (lookalike domain)",
+      "type": "network"
+    },
+    {
+      "id": "totp",
+      "label": "Relayed live TOTP",
+      "type": "credential"
+    },
+    {
+      "id": "account",
+      "label": "Maintainer npm account",
+      "type": "identity"
+    },
+    {
+      "id": "packages",
+      "label": "18 trojanized packages (chalk, debug, ansi-styles)",
+      "type": "service"
+    },
+    {
+      "id": "impact",
+      "label": "2.6B weekly downloads at risk",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "phish",
+      "tech": "T1566.002 \u2013 Spearphishing Link"
+    },
+    {
+      "source": "phish",
+      "target": "totp",
+      "tech": "T1111 \u2013 Multi-Factor Authentication Interception"
+    },
+    {
+      "source": "totp",
+      "target": "account",
+      "tech": "T1078 \u2013 Valid Accounts"
+    },
+    {
+      "source": "account",
+      "target": "packages",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "packages",
+      "target": "impact",
+      "tech": "T1059.007 \u2013 JavaScript"
+    }
+  ]
+}

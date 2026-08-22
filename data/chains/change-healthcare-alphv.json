@@ -1,0 +1,65 @@
+{
+  "id": "change-healthcare-alphv",
+  "title": "Change Healthcare / ALPHV (2024)",
+  "description": "Stolen credentials on a Citrix portal with no MFA gave nine days of lateral movement before ransomware \u2014 disrupting a third of US healthcare transactions.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "ALPHV/BlackCat affiliate",
+      "type": "attacker"
+    },
+    {
+      "id": "citrix",
+      "label": "Citrix portal \u2014 no MFA",
+      "type": "service"
+    },
+    {
+      "id": "lateral",
+      "label": "9 days of lateral movement",
+      "type": "network"
+    },
+    {
+      "id": "exfil",
+      "label": "Exfiltrated patient + claims data",
+      "type": "data"
+    },
+    {
+      "id": "ransom",
+      "label": "Ransomware deployed Feb 21",
+      "type": "impact"
+    },
+    {
+      "id": "outage",
+      "label": "Pharmacies + providers offline; ~$22M paid",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "citrix",
+      "tech": "T1133 \u2013 External Remote Services"
+    },
+    {
+      "source": "citrix",
+      "target": "lateral",
+      "tech": "T1078 \u2013 Valid Accounts"
+    },
+    {
+      "source": "lateral",
+      "target": "exfil",
+      "tech": "T1041 \u2013 Exfiltration Over C2 Channel"
+    },
+    {
+      "source": "exfil",
+      "target": "ransom",
+      "tech": "T1486 \u2013 Data Encrypted for Impact"
+    },
+    {
+      "source": "ransom",
+      "target": "outage",
+      "tech": "T1657 \u2013 Financial Theft"
+    }
+  ]
+}

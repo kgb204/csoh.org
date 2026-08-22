@@ -1,0 +1,85 @@
+{
+  "id": "nx-s1ngularity",
+  "title": "Nx / s1ngularity (2025)",
+  "description": "A PR-title injection in pull_request_target stole an npm token, then weaponized local AI CLIs to hunt secrets and published them to public repos.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Threat actor",
+      "type": "attacker"
+    },
+    {
+      "id": "injection",
+      "label": "PR-title injection in pull_request_target",
+      "type": "compute"
+    },
+    {
+      "id": "ghtoken",
+      "label": "Read/write GitHub token",
+      "type": "credential"
+    },
+    {
+      "id": "publish",
+      "label": "Dispatched publish workflow \u2192 npm token",
+      "type": "credential"
+    },
+    {
+      "id": "releases",
+      "label": "Trojanized Nx releases",
+      "type": "service"
+    },
+    {
+      "id": "aiclis",
+      "label": "Local AI CLIs weaponized (bypass flags)",
+      "type": "compute"
+    },
+    {
+      "id": "secrets",
+      "label": "Secrets across the filesystem",
+      "type": "data"
+    },
+    {
+      "id": "public",
+      "label": "Private repos flipped public; shell rc sabotaged",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "injection",
+      "tech": "T1059.004 \u2013 Command and Scripting Interpreter: Unix Shell"
+    },
+    {
+      "source": "injection",
+      "target": "ghtoken",
+      "tech": "T1190 \u2013 Exploit Public-Facing Application"
+    },
+    {
+      "source": "ghtoken",
+      "target": "publish",
+      "tech": "T1552.007 \u2013 Unsecured Credentials: Container API"
+    },
+    {
+      "source": "publish",
+      "target": "releases",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "releases",
+      "target": "aiclis",
+      "tech": "T1059 \u2013 Command and Scripting Interpreter"
+    },
+    {
+      "source": "aiclis",
+      "target": "secrets",
+      "tech": "T1552.001 \u2013 Credentials in Files"
+    },
+    {
+      "source": "secrets",
+      "target": "public",
+      "tech": "T1070 \u2013 Indicator Removal"
+    }
+  ]
+}

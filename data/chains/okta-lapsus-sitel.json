@@ -1,0 +1,55 @@
+{
+  "id": "okta-lapsus-sitel",
+  "title": "Okta / LAPSUS$ (2022)",
+  "description": "A subcontractor's support engineer laptop gave LAPSUS$ five days inside Okta's support tooling \u2014 password-reset powers exposing up to 366 customers.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "LAPSUS$",
+      "type": "attacker"
+    },
+    {
+      "id": "sitel",
+      "label": "Sitel support engineer laptop",
+      "type": "endpoint"
+    },
+    {
+      "id": "support",
+      "label": "Okta support tooling (reset powers)",
+      "type": "service"
+    },
+    {
+      "id": "resets",
+      "label": "Password / MFA reset capability",
+      "type": "credential"
+    },
+    {
+      "id": "customers",
+      "label": "Up to 366 customers (~2.5%)",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "sitel",
+      "tech": "T1199 \u2013 Trusted Relationship"
+    },
+    {
+      "source": "sitel",
+      "target": "support",
+      "tech": "T1078 \u2013 Valid Accounts"
+    },
+    {
+      "source": "support",
+      "target": "resets",
+      "tech": "T1098 \u2013 Account Manipulation"
+    },
+    {
+      "source": "resets",
+      "target": "customers",
+      "tech": "T1213 \u2013 Data from Information Repositories"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "sharepoint-toolshell",
+  "title": "SharePoint 'ToolShell' (2025)",
+  "description": "Unauthenticated deserialization at ToolPane.aspx gave a web shell and MachineKey theft \u2014 forging __VIEWSTATE forever and, at some victims, Warlock ransomware.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Storm-2603",
+      "type": "attacker"
+    },
+    {
+      "id": "toolpane",
+      "label": "Unauth deserialization at ToolPane.aspx",
+      "type": "service"
+    },
+    {
+      "id": "webshell",
+      "label": "Web shell",
+      "type": "compute"
+    },
+    {
+      "id": "machinekey",
+      "label": "ASP.NET MachineKeys (Validation/Decryption)",
+      "type": "credential"
+    },
+    {
+      "id": "viewstate",
+      "label": "Forged __VIEWSTATE (durable access)",
+      "type": "credential"
+    },
+    {
+      "id": "domain",
+      "label": "Domain-joined, service-account-rich server",
+      "type": "compute"
+    },
+    {
+      "id": "ransom",
+      "label": "Warlock ransomware",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "toolpane",
+      "tech": "T1190 \u2013 Exploit Public-Facing Application"
+    },
+    {
+      "source": "toolpane",
+      "target": "webshell",
+      "tech": "T1505.003 \u2013 Server Software Component: Web Shell"
+    },
+    {
+      "source": "webshell",
+      "target": "machinekey",
+      "tech": "T1552.004 \u2013 Unsecured Credentials: Private Keys"
+    },
+    {
+      "source": "machinekey",
+      "target": "viewstate",
+      "tech": "T1606 \u2013 Forge Web Credentials"
+    },
+    {
+      "source": "viewstate",
+      "target": "domain",
+      "tech": "T1550 \u2013 Use Alternate Authentication Material"
+    },
+    {
+      "source": "domain",
+      "target": "ransom",
+      "tech": "T1486 \u2013 Data Encrypted for Impact"
+    }
+  ]
+}

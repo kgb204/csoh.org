@@ -1,0 +1,25 @@
+{
+  "id": "snowflake-unc5537",
+  "title": "UNC5537 / Snowflake (2024)",
+  "description": "Years-old infostealer credentials with no MFA gave UNC5537 direct access to 165 customers' Snowflake tenants for bulk exfiltration and extortion.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    { "id": "attacker", "label": "UNC5537", "type": "attacker" },
+    { "id": "contractor-pcs", "label": "Infostealer-infected contractor PCs", "type": "endpoint" },
+    { "id": "stealer-logs", "label": "Harvested Snowflake credentials (some from 2020)", "type": "credential" },
+    { "id": "snowflake-tenants", "label": "165 customer Snowflake tenants (no MFA)", "type": "service" },
+    { "id": "databases", "label": "Customer databases (SHOW TABLES recon)", "type": "storage" },
+    { "id": "staged-data", "label": "Staged tables (CREATE TABLE AS SELECT)", "type": "data" },
+    { "id": "external-stage", "label": "Attacker external stage (COPY INTO)", "type": "storage" },
+    { "id": "extortion", "label": "100+ orgs extorted · data sold on BreachForums", "type": "impact" }
+  ],
+  "links": [
+    { "source": "attacker", "target": "contractor-pcs", "tech": "T1555.003 – Credentials from Web Browsers (infostealer malware)" },
+    { "source": "contractor-pcs", "target": "stealer-logs", "tech": "T1555.003 – Credentials from Web Browsers" },
+    { "source": "stealer-logs", "target": "snowflake-tenants", "tech": "T1078.004 – Valid Accounts: Cloud Accounts (no MFA challenge)" },
+    { "source": "snowflake-tenants", "target": "databases", "tech": "T1619 – Cloud Storage Object Discovery" },
+    { "source": "databases", "target": "staged-data", "tech": "T1530 – Data from Cloud Storage" },
+    { "source": "staged-data", "target": "external-stage", "tech": "T1530 – Data from Cloud Storage (COPY INTO external stage)" },
+    { "source": "external-stage", "target": "extortion", "tech": "T1657 – Financial Theft" }
+  ]
+}

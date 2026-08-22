@@ -1,0 +1,75 @@
+{
+  "id": "entra-id-actor-token",
+  "title": "Entra ID Actor Token (2025)",
+  "description": "An undocumented service-to-service Actor token, requested from any attacker-controlled tenant, forged an unsigned impersonation JWT that legacy Azure AD Graph accepted \u2014 Global Admin in any tenant, unlogged.",
+  "defaultOrigin": "researcher",
+  "nodes": [
+    {
+      "id": "researcher",
+      "label": "Researcher (Dirk-jan Mollema)",
+      "type": "attacker"
+    },
+    {
+      "id": "actortoken",
+      "label": "Actor token from any tenant",
+      "type": "credential"
+    },
+    {
+      "id": "forge",
+      "label": "Unsigned impersonation JWT",
+      "type": "credential"
+    },
+    {
+      "id": "netid",
+      "label": "Target netId (brute-forceable)",
+      "type": "identity"
+    },
+    {
+      "id": "legacygraph",
+      "label": "Legacy Azure AD Graph \u2014 no tenant check",
+      "type": "service"
+    },
+    {
+      "id": "gadmin",
+      "label": "Global Administrator in target tenant",
+      "type": "credential"
+    },
+    {
+      "id": "directory",
+      "label": "Full directory access \u2014 no logs",
+      "type": "data"
+    }
+  ],
+  "links": [
+    {
+      "source": "researcher",
+      "target": "actortoken",
+      "tech": "T1528 \u2013 Steal Application Access Token"
+    },
+    {
+      "source": "actortoken",
+      "target": "forge",
+      "tech": "T1606 \u2013 Forge Web Credentials"
+    },
+    {
+      "source": "forge",
+      "target": "netid",
+      "tech": "T1087.004 \u2013 Account Discovery: Cloud Account"
+    },
+    {
+      "source": "netid",
+      "target": "legacygraph",
+      "tech": "T1550.001 \u2013 Application Access Token"
+    },
+    {
+      "source": "legacygraph",
+      "target": "gadmin",
+      "tech": "T1078.004 \u2013 Cloud Accounts"
+    },
+    {
+      "source": "gadmin",
+      "target": "directory",
+      "tech": "T1098 \u2013 Account Manipulation"
+    }
+  ]
+}

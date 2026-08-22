@@ -1,0 +1,75 @@
+{
+  "id": "codecov-bash-uploader",
+  "title": "Codecov Bash Uploader (2021)",
+  "description": "A credential leaked by a Docker build let an attacker add one line to a script thousands of CI jobs curl \u2014 exfiltrating two months of CI environment variables.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Threat actor",
+      "type": "attacker"
+    },
+    {
+      "id": "dockerbug",
+      "label": "Docker image build error",
+      "type": "service"
+    },
+    {
+      "id": "gcskey",
+      "label": "Google Cloud Storage key",
+      "type": "credential"
+    },
+    {
+      "id": "uploader",
+      "label": "Hosted Bash Uploader script",
+      "type": "service"
+    },
+    {
+      "id": "cijobs",
+      "label": "Thousands of customer CI jobs",
+      "type": "compute"
+    },
+    {
+      "id": "envvars",
+      "label": "CI env vars: cloud keys, tokens, DB creds",
+      "type": "data"
+    },
+    {
+      "id": "impact",
+      "label": "Downstream systems those creds reached",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "dockerbug",
+      "tech": "T1552.001 \u2013 Credentials in Files"
+    },
+    {
+      "source": "dockerbug",
+      "target": "gcskey",
+      "tech": "T1552.001 \u2013 Credentials in Files"
+    },
+    {
+      "source": "gcskey",
+      "target": "uploader",
+      "tech": "T1078.004 \u2013 Cloud Accounts"
+    },
+    {
+      "source": "uploader",
+      "target": "cijobs",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "cijobs",
+      "target": "envvars",
+      "tech": "T1552.007 \u2013 Unsecured Credentials: Container API"
+    },
+    {
+      "source": "envvars",
+      "target": "impact",
+      "tech": "T1041 \u2013 Exfiltration Over C2 Channel"
+    }
+  ]
+}

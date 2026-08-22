@@ -1,0 +1,85 @@
+{
+  "id": "mini-shai-hulud-tanstack",
+  "title": "Mini Shai-Hulud / TanStack (2026)",
+  "description": "A pwn-request poisoned the Actions cache, stole the OIDC token from runner memory, and published npm packages with valid SLSA provenance \u2014 worming across 150+ packages.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Throwaway forker",
+      "type": "attacker"
+    },
+    {
+      "id": "pwnreq",
+      "label": "Pwn request (fork code in base context)",
+      "type": "compute"
+    },
+    {
+      "id": "cache",
+      "label": "Poisoned Actions cache",
+      "type": "compute"
+    },
+    {
+      "id": "oidc",
+      "label": "OIDC token from /proc/pid/mem",
+      "type": "credential"
+    },
+    {
+      "id": "npmcreds",
+      "label": "npm publishing credentials",
+      "type": "credential"
+    },
+    {
+      "id": "packages",
+      "label": "150+ packages republished (valid provenance)",
+      "type": "service"
+    },
+    {
+      "id": "installs",
+      "label": "Credential + metadata sweep on install",
+      "type": "data"
+    },
+    {
+      "id": "devmachines",
+      "label": "OS services + editor configs on dev machines",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "pwnreq",
+      "tech": "T1677 \u2013 CI/CD Pipeline Abuse"
+    },
+    {
+      "source": "pwnreq",
+      "target": "cache",
+      "tech": "T1036.005 \u2013 Match Legitimate Name or Location"
+    },
+    {
+      "source": "cache",
+      "target": "oidc",
+      "tech": "T1528 \u2013 Steal Application Access Token"
+    },
+    {
+      "source": "oidc",
+      "target": "npmcreds",
+      "tech": "T1550.001 \u2013 Application Access Token"
+    },
+    {
+      "source": "npmcreds",
+      "target": "packages",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "packages",
+      "target": "installs",
+      "tech": "T1552.005 \u2013 Cloud Instance Metadata API"
+    },
+    {
+      "source": "installs",
+      "target": "devmachines",
+      "tech": "T1543.001 \u2013 Launch Agent"
+    }
+  ]
+}

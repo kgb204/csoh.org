@@ -1,0 +1,29 @@
+{
+  "id": "microsoft-sas-leak",
+  "title": "Microsoft AI Research SAS Token (2023)",
+  "description": "A full-control Account SAS token with a 30-year expiry sat in a public GitHub README for three years, exposing a 38TB storage account.",
+  "defaultOrigin": "public-internet",
+  "nodes": [
+    { "id": "public-internet", "label": "Anyone on the internet", "type": "attacker" },
+    { "id": "github-repo", "label": "Public GitHub repo (robust-models-transfer README)", "type": "storage" },
+    { "id": "sas-token", "label": "Account SAS token (full control, 30-year expiry)", "type": "credential" },
+    { "id": "storage-account", "label": "Azure storage account (entire account, not one container)", "type": "storage" },
+    { "id": "employee-backups", "label": "Employee workstation disk backups", "type": "data" },
+    { "id": "secrets", "label": "Keys, passwords & internal credentials", "type": "credential" },
+    { "id": "teams-messages", "label": "30K+ internal Teams messages", "type": "data" },
+    { "id": "ai-models", "label": "AI training data & models (writable!)", "type": "data" },
+    { "id": "exposure", "label": "38TB exposed for 3 years", "type": "impact" }
+  ],
+  "links": [
+    { "source": "public-internet", "target": "github-repo", "tech": "T1593 – Search Open Websites/Domains" },
+    { "source": "github-repo", "target": "sas-token", "tech": "T1552.004 – Unsecured Credentials: Private Keys" },
+    { "source": "sas-token", "target": "storage-account", "tech": "T1078.004 – Valid Accounts: Cloud Accounts (SAS is self-authorising)" },
+    { "source": "storage-account", "target": "employee-backups", "tech": "T1530 – Data from Cloud Storage" },
+    { "source": "storage-account", "target": "secrets", "tech": "T1552 – Unsecured Credentials" },
+    { "source": "storage-account", "target": "teams-messages", "tech": "T1530 – Data from Cloud Storage" },
+    { "source": "storage-account", "target": "ai-models", "tech": "T1565 – Data Manipulation (token allowed write)" },
+    { "source": "employee-backups", "target": "exposure", "tech": "T1530 – Data from Cloud Storage" },
+    { "source": "secrets", "target": "exposure", "tech": "T1552 – Unsecured Credentials" },
+    { "source": "teams-messages", "target": "exposure", "tech": "T1530 – Data from Cloud Storage" }
+  ]
+}

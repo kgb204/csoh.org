@@ -1,0 +1,65 @@
+{
+  "id": "codefinger-s3",
+  "title": "Codefinger / S3 Ransomware (2025)",
+  "description": "Stolen AWS keys authenticated to the victim account, enumerated buckets, and re-encrypted objects with an attacker-held SSE-C key \u2014 with a 7-day deletion timer and a Bitcoin ransom.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "Codefinger",
+      "type": "attacker"
+    },
+    {
+      "id": "keys",
+      "label": "Stolen AWS access keys",
+      "type": "credential"
+    },
+    {
+      "id": "account",
+      "label": "Victim AWS account",
+      "type": "service"
+    },
+    {
+      "id": "buckets",
+      "label": "Enumerated S3 buckets + objects",
+      "type": "storage"
+    },
+    {
+      "id": "encrypt",
+      "label": "Objects re-encrypted with SSE-C key",
+      "type": "data"
+    },
+    {
+      "id": "ransom",
+      "label": "7-day delete timer + BTC ransom",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "keys",
+      "tech": "T1552 \u2013 Unsecured Credentials"
+    },
+    {
+      "source": "keys",
+      "target": "account",
+      "tech": "T1078.004 \u2013 Cloud Accounts"
+    },
+    {
+      "source": "account",
+      "target": "buckets",
+      "tech": "T1619 \u2013 Cloud Storage Object Discovery"
+    },
+    {
+      "source": "buckets",
+      "target": "encrypt",
+      "tech": "T1486 \u2013 Data Encrypted for Impact"
+    },
+    {
+      "source": "encrypt",
+      "target": "ransom",
+      "tech": "T1657 \u2013 Financial Theft"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "capital-one",
+  "title": "Capital One (2019)",
+  "description": "SSRF against a misconfigured WAF reached the EC2 metadata service, leaked an over-privileged IAM role, and exposed 106M customer records in S3.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    { "id": "attacker", "label": "Attacker (Paige Thompson)", "type": "attacker" },
+    { "id": "waf", "label": "ModSecurity WAF on EC2", "type": "service" },
+    { "id": "imds", "label": "EC2 IMDSv1 (169.254.169.254)", "type": "service" },
+    { "id": "iam-role", "label": "ISRM-WAF-Role temp credentials", "type": "credential" },
+    { "id": "s3-buckets", "label": "700+ S3 buckets", "type": "storage" },
+    { "id": "cc-apps", "label": "106M credit card applications", "type": "data" },
+    { "id": "ssns", "label": "140K Social Security numbers", "type": "data" },
+    { "id": "bank-accounts", "label": "80K bank account numbers", "type": "data" },
+    { "id": "exposure", "label": "30GB exfiltrated · $80M penalty", "type": "impact" }
+  ],
+  "links": [
+    { "source": "attacker", "target": "waf", "tech": "T1190 – Exploit Public-Facing Application (SSRF)" },
+    { "source": "waf", "target": "imds", "tech": "T1190 – SSRF relayed to metadata endpoint" },
+    { "source": "imds", "target": "iam-role", "tech": "T1552.005 – Cloud Instance Metadata API" },
+    { "source": "iam-role", "target": "s3-buckets", "tech": "T1619 – Cloud Storage Object Discovery" },
+    { "source": "s3-buckets", "target": "cc-apps", "tech": "T1530 – Data from Cloud Storage" },
+    { "source": "s3-buckets", "target": "ssns", "tech": "T1530 – Data from Cloud Storage" },
+    { "source": "s3-buckets", "target": "bank-accounts", "tech": "T1530 – Data from Cloud Storage" },
+    { "source": "cc-apps", "target": "exposure", "tech": "T1530 – Bulk exfiltration via aws s3 sync" },
+    { "source": "ssns", "target": "exposure", "tech": "T1530 – Bulk exfiltration via aws s3 sync" },
+    { "source": "bank-accounts", "target": "exposure", "tech": "T1530 – Bulk exfiltration via aws s3 sync" }
+  ]
+}

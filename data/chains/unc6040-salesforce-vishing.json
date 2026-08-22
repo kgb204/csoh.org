@@ -1,0 +1,75 @@
+{
+  "id": "unc6040-salesforce-vishing",
+  "title": "UNC6040 (2025)",
+  "description": "Vishing the help desk got victims to authorize a fake Data Loader as an OAuth connected app, enabling bulk Salesforce exfiltration and later extortion.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "UNC6040",
+      "type": "attacker"
+    },
+    {
+      "id": "vishing",
+      "label": "Vishing call impersonating IT",
+      "type": "identity"
+    },
+    {
+      "id": "consent",
+      "label": "Victim authorizes fake Data Loader",
+      "type": "service"
+    },
+    {
+      "id": "oauthapp",
+      "label": "OAuth connected app (session-independent)",
+      "type": "credential"
+    },
+    {
+      "id": "salesforce",
+      "label": "Bulk Salesforce exfiltration",
+      "type": "data"
+    },
+    {
+      "id": "reuse",
+      "label": "Creds reused vs Okta + M365",
+      "type": "credential"
+    },
+    {
+      "id": "extort",
+      "label": "UNC6240 extortion (72h BTC)",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "vishing",
+      "tech": "T1566.004 \u2013 Spearphishing Voice"
+    },
+    {
+      "source": "vishing",
+      "target": "consent",
+      "tech": "T1656 \u2013 Impersonation"
+    },
+    {
+      "source": "consent",
+      "target": "oauthapp",
+      "tech": "T1204.001 \u2013 User Execution: Malicious Link"
+    },
+    {
+      "source": "oauthapp",
+      "target": "salesforce",
+      "tech": "T1528 \u2013 Steal Application Access Token"
+    },
+    {
+      "source": "salesforce",
+      "target": "reuse",
+      "tech": "T1550.001 \u2013 Application Access Token"
+    },
+    {
+      "source": "salesforce",
+      "target": "extort",
+      "tech": "T1213 \u2013 Data from Information Repositories"
+    }
+  ]
+}

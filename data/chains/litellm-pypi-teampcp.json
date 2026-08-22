@@ -1,0 +1,85 @@
+{
+  "id": "litellm-pypi-teampcp",
+  "title": "LiteLLM / TeamPCP (2026)",
+  "description": "A poisoned security scanner running in CI stole a PyPI token, published trojanized releases, and swept cloud credentials and Kubernetes tokens via a .pth autorun.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "TeamPCP",
+      "type": "attacker"
+    },
+    {
+      "id": "trivy",
+      "label": "Poisoned Trivy scanner (CI step)",
+      "type": "service"
+    },
+    {
+      "id": "pypitoken",
+      "label": "Stolen PyPI publishing token",
+      "type": "credential"
+    },
+    {
+      "id": "release",
+      "label": "Trojanized 1.82.7/1.82.8 on PyPI",
+      "type": "service"
+    },
+    {
+      "id": "autorun",
+      "label": ".pth autorun on install",
+      "type": "compute"
+    },
+    {
+      "id": "cloudcreds",
+      "label": "AWS/GCP/Azure keys, SSH, kubeconfigs",
+      "type": "credential"
+    },
+    {
+      "id": "k8s",
+      "label": "Kubernetes lateral movement",
+      "type": "compute"
+    },
+    {
+      "id": "c2",
+      "label": "systemd 'sysmon' beacon to C2",
+      "type": "network"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "trivy",
+      "tech": "T1195.001 \u2013 Compromise Software Dependencies and Development Tools"
+    },
+    {
+      "source": "trivy",
+      "target": "pypitoken",
+      "tech": "T1552.007 \u2013 Unsecured Credentials: Container API"
+    },
+    {
+      "source": "pypitoken",
+      "target": "release",
+      "tech": "T1195.002 \u2013 Compromise Software Supply Chain"
+    },
+    {
+      "source": "release",
+      "target": "autorun",
+      "tech": "T1546 \u2013 Event Triggered Execution"
+    },
+    {
+      "source": "autorun",
+      "target": "cloudcreds",
+      "tech": "T1552.001 \u2013 Credentials in Files"
+    },
+    {
+      "source": "cloudcreds",
+      "target": "k8s",
+      "tech": "T1552.005 \u2013 Cloud Instance Metadata API"
+    },
+    {
+      "source": "k8s",
+      "target": "c2",
+      "tech": "T1543 \u2013 Create or Modify System Process"
+    }
+  ]
+}

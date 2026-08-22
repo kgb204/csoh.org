@@ -60,6 +60,24 @@
     .pm-link { display: inline-flex; align-items: center; gap: .3rem; font-size: .78rem; font-family: var(--bt-mono); color: var(--secondary-color, #3498db); text-decoration: none; margin-top: .75rem; margin-right: .75rem; }
     .pm-link:hover { text-decoration: underline; }
 
+    /* "Visualize blast radius" CTA — deep-links into blast-radius.html with
+       this chain's scenario pre-selected. Rendered on each breach page and on
+       the breach-timeline index. */
+    .blast-cta-row { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+    .blast-cta {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--bt-mono); font-size: .8rem; font-weight: 700;
+      padding: .6rem 1rem; border-radius: 8px; text-decoration: none;
+      color: #b91c1c; background: rgba(239,68,68,.08);
+      border: 1px solid rgba(239,68,68,.35);
+      transition: background .15s, border-color .15s, transform .1s;
+    }
+    .blast-cta:hover { background: rgba(239,68,68,.16); border-color: var(--bt-red); }
+    .blast-cta:active { transform: translateY(1px); }
+    .blast-cta:focus-visible { outline: 2px solid var(--bt-red); outline-offset: 2px; }
+    .blast-cta .blast-cta-icon { font-size: 1rem; line-height: 1; }
+    .blast-cta .blast-cta-sub { font-weight: 400; opacity: .8; }
+
     /* Kill chain */
     .kill-chain { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; position: relative; }
     .kill-chain::before {
@@ -255,6 +273,8 @@
   :root:not([data-theme]) .chip-src   { border-color: #a78bfa; color: #c4b5fd; background: rgba(167,139,250,.08); }
   :root:not([data-theme]) .mitnick-note { color: #c084fc; }
   :root:not([data-theme]) .mitnick-note a { color: #c084fc; }
+  :root:not([data-theme]) .blast-cta { color: #fca5a5; background: rgba(239,68,68,.1); border-color: rgba(239,68,68,.4); }
+  :root:not([data-theme]) .blast-cta:hover { background: rgba(239,68,68,.2); }
 }
 
 [data-theme="dark"] .incident-tabs { background: #0f172a; border-color: #1e293b; }
@@ -322,6 +342,8 @@
 [data-theme="dark"] .chip-src   { border-color: #a78bfa; color: #c4b5fd; background: rgba(167,139,250,.08); }
 [data-theme="dark"] .mitnick-note { color: #c084fc; }
 [data-theme="dark"] .mitnick-note a { color: #c084fc; }
+[data-theme="dark"] .blast-cta { color: #fca5a5; background: rgba(239,68,68,.1); border-color: rgba(239,68,68,.4); }
+[data-theme="dark"] .blast-cta:hover { background: rgba(239,68,68,.2); }
 
 /* =========================================================================
    BREACH-TIMELINE.HTML INDEX (after split into per-breach pages)

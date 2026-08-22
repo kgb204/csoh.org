@@ -1,0 +1,65 @@
+{
+  "id": "vimeo-anodot-shinyhunters",
+  "title": "Vimeo / Anodot (2026)",
+  "description": "Stolen analytics-vendor tokens gave direct Snowflake and BigQuery access with no interactive login \u2014 119,000 records exfiltrated and extorted, without touching Vimeo's perimeter.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "ShinyHunters",
+      "type": "attacker"
+    },
+    {
+      "id": "anodot",
+      "label": "Anodot analytics vendor (compromised)",
+      "type": "service"
+    },
+    {
+      "id": "tokens",
+      "label": "Stolen service-to-service tokens",
+      "type": "credential"
+    },
+    {
+      "id": "warehouses",
+      "label": "Vimeo Snowflake + BigQuery",
+      "type": "storage"
+    },
+    {
+      "id": "records",
+      "label": "119,000 records (bulk queries)",
+      "type": "data"
+    },
+    {
+      "id": "extort",
+      "label": "Extortion (April 30 deadline)",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "anodot",
+      "tech": "T1199 \u2013 Trusted Relationship"
+    },
+    {
+      "source": "anodot",
+      "target": "tokens",
+      "tech": "T1528 \u2013 Steal Application Access Token"
+    },
+    {
+      "source": "tokens",
+      "target": "warehouses",
+      "tech": "T1078.004 \u2013 Cloud Accounts"
+    },
+    {
+      "source": "warehouses",
+      "target": "records",
+      "tech": "T1530 \u2013 Data from Cloud Storage"
+    },
+    {
+      "source": "records",
+      "target": "extort",
+      "tech": "T1657 \u2013 Financial Theft"
+    }
+  ]
+}

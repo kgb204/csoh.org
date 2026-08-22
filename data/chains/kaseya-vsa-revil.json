@@ -1,0 +1,65 @@
+{
+  "id": "kaseya-vsa-revil",
+  "title": "Kaseya VSA / REvil (2021)",
+  "description": "An authentication bypass in an internet-facing RMM server let REvil push ransomware as a software update \u2014 encrypting ~1,500 businesses through their IT providers.",
+  "defaultOrigin": "attacker",
+  "nodes": [
+    {
+      "id": "attacker",
+      "label": "REvil affiliates",
+      "type": "attacker"
+    },
+    {
+      "id": "vsa",
+      "label": "Internet-facing Kaseya VSA server",
+      "type": "service"
+    },
+    {
+      "id": "update",
+      "label": "Legitimate agent update mechanism",
+      "type": "compute"
+    },
+    {
+      "id": "msps",
+      "label": "50\u201360 MSPs",
+      "type": "identity"
+    },
+    {
+      "id": "endpoints",
+      "label": "Managed endpoints across customers",
+      "type": "compute"
+    },
+    {
+      "id": "ransom",
+      "label": "~1,500 businesses encrypted; $70M demand",
+      "type": "impact"
+    }
+  ],
+  "links": [
+    {
+      "source": "attacker",
+      "target": "vsa",
+      "tech": "T1190 \u2013 Exploit Public-Facing Application"
+    },
+    {
+      "source": "vsa",
+      "target": "update",
+      "tech": "T1072 \u2013 Software Deployment Tools"
+    },
+    {
+      "source": "update",
+      "target": "msps",
+      "tech": "T1072 \u2013 Software Deployment Tools"
+    },
+    {
+      "source": "msps",
+      "target": "endpoints",
+      "tech": "T1562.001 \u2013 Impair Defenses: Disable or Modify Tools"
+    },
+    {
+      "source": "endpoints",
+      "target": "ransom",
+      "tech": "T1486 \u2013 Data Encrypted for Impact"
+    }
+  ]
+}
