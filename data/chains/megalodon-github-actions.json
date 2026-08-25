@@ -1,0 +1,83 @@
+{
+  "id": "megalodon-github-actions",
+  "name": "Megalodon",
+  "title": "Megalodon - Infostealer-Harvested GitHub Credentials \u2192 5,718 Automated Commits in Six Hours \u2192 Injected Actions Workflows \u2192 CI Secret and OIDC Theft Across 5,561 Repos",
+  "url": "/breaches/megalodon-github-actions.html",
+  "year": "May 2026",
+  "severity": "critical",
+  "provider": "GitHub Actions",
+  "techniques": [
+    {
+      "id": "T1555.003",
+      "name": "Credentials from Password Stores: Credentials from Web Browsers",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1589.001",
+      "name": "Gather Victim Identity Information: Credentials",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1036",
+      "name": "Masquerading",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1053",
+      "name": "Scheduled Task/Job",
+      "tactic": "Persistence",
+      "inferred": false
+    },
+    {
+      "id": "T1543",
+      "name": "Create or Modify System Process",
+      "tactic": "Persistence",
+      "inferred": false
+    },
+    {
+      "id": "T1059.004",
+      "name": "Command and Scripting Interpreter: Unix Shell",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1027",
+      "name": "Obfuscated Files or Information",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1552.005",
+      "name": "Unsecured Credentials: Cloud Instance Metadata API",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1552.007",
+      "name": "Unsecured Credentials: Container API",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1041",
+      "name": "Exfiltration Over C2 Channel",
+      "tactic": "Exfiltration",
+      "inferred": false
+    },
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    }
+  ]
+}

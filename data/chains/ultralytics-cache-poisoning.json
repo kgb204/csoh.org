@@ -1,0 +1,47 @@
+{
+  "id": "ultralytics-cache-poisoning",
+  "name": "Ultralytics",
+  "title": "Ultralytics - Fork Branch Name as Shell Injection \u2192 Actions Cache Poisoned \u2192 Malicious Build Published Through Trusted Publishing \u2192 XMRig, Then a Forgotten Token",
+  "url": "/breaches/ultralytics-cache-poisoning.html",
+  "year": "December 2024",
+  "severity": "critical",
+  "provider": "PyPI / GitHub Actions",
+  "techniques": [
+    {
+      "id": "T1059.004",
+      "name": "Command and Scripting Interpreter: Unix Shell",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1195.001",
+      "name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1552.007",
+      "name": "Unsecured Credentials: Container API",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1496",
+      "name": "Resource Hijacking",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}

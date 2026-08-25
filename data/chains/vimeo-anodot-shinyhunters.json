@@ -1,0 +1,65 @@
+{
+  "id": "vimeo-anodot-shinyhunters",
+  "name": "Vimeo / Anodot",
+  "title": "Vimeo / Anodot - Stolen Analytics Vendor Tokens \u2192 Direct Snowflake and BigQuery Access \u2192 119,000 Records Exfiltrated \u2192 Extortion",
+  "url": "/breaches/vimeo-anodot-shinyhunters.html",
+  "year": "April 2026",
+  "severity": "critical",
+  "provider": "Snowflake / BigQuery",
+  "techniques": [
+    {
+      "id": "T1199",
+      "name": "Trusted Relationship",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1528",
+      "name": "Steal Application Access Token",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Persistence",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access",
+      "inferred": true
+    },
+    {
+      "id": "T1580",
+      "name": "Cloud Infrastructure Discovery",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1087.004",
+      "name": "Account Discovery: Cloud Account",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1213",
+      "name": "Data from Information Repositories",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1560.001",
+      "name": "Archive Collected Data: Archive via Utility",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}

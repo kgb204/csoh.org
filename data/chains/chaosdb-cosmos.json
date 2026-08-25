@@ -1,0 +1,35 @@
+{
+  "id": "chaosdb-cosmos",
+  "name": "ChaosDB",
+  "title": "ChaosDB - A Notebook Feature in a Managed Database \u2192 Local Privilege Escalation \u2192 Firewall Rules Rewritten \u2192 Full Admin on Other Tenants' Databases",
+  "url": "/breaches/chaosdb-cosmos.html",
+  "year": "August 2021",
+  "severity": "critical",
+  "provider": "Azure Cosmos DB",
+  "techniques": [
+    {
+      "id": "T1580",
+      "name": "Cloud Infrastructure Discovery",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1611",
+      "name": "Escape to Host",
+      "tactic": "Privilege Escalation",
+      "inferred": false
+    },
+    {
+      "id": "T1562.007",
+      "name": "Impair Defenses: Disable or Modify Cloud Firewall",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1552",
+      "name": "Unsecured Credentials",
+      "tactic": "Credential Access",
+      "inferred": false
+    }
+  ]
+}

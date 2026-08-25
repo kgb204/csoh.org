@@ -1,0 +1,47 @@
+{
+  "id": "polyfill-io",
+  "name": "Polyfill.io",
+  "title": "Polyfill.io - The Domain Was Sold \u2192 Every Site Still Loading the Script Handed Over Its Users \u2192 Conditional Mobile Redirects to Scam Sites",
+  "url": "/breaches/polyfill-io.html",
+  "year": "February-June 2024",
+  "severity": "critical",
+  "provider": "CDN / Third-Party Script",
+  "techniques": [
+    {
+      "id": "T1583.001",
+      "name": "Acquire Infrastructure: Domains",
+      "tactic": "Resource Development",
+      "inferred": false
+    },
+    {
+      "id": "T1059.007",
+      "name": "Command and Scripting Interpreter: JavaScript",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1497",
+      "name": "Virtualization/Sandbox Evasion",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1027",
+      "name": "Obfuscated Files or Information",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}

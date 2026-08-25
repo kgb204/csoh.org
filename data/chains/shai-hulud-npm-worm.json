@@ -1,0 +1,77 @@
+{
+  "id": "shai-hulud-npm-worm",
+  "name": "Shai-Hulud",
+  "title": "Shai-Hulud - npm Phishing \u2192 TruffleHog Sweep of the Developer's Machine \u2192 Self-Replication Across 500+ Packages \u2192 Secrets Committed to Public Repos",
+  "url": "/breaches/shai-hulud-npm-worm.html",
+  "year": "September 2025",
+  "severity": "critical",
+  "provider": "npm",
+  "techniques": [
+    {
+      "id": "T1566.002",
+      "name": "Phishing: Spearphishing Link",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1111",
+      "name": "Multi-Factor Authentication Interception",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1059.007",
+      "name": "Command and Scripting Interpreter: JavaScript",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1552.001",
+      "name": "Unsecured Credentials: Credentials In Files",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1105",
+      "name": "Ingress Tool Transfer",
+      "tactic": "Command and Control",
+      "inferred": false
+    },
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Initial Access",
+      "inferred": true
+    },
+    {
+      "id": "T1543",
+      "name": "Create or Modify System Process",
+      "tactic": "Persistence",
+      "inferred": false
+    },
+    {
+      "id": "T1552.007",
+      "name": "Unsecured Credentials: Container API",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1567.001",
+      "name": "Exfiltration Over Web Service: Exfiltration to Code Repository",
+      "tactic": "Exfiltration",
+      "inferred": false
+    },
+    {
+      "id": "T1195",
+      "name": "Supply Chain Compromise",
+      "tactic": "Initial Access",
+      "inferred": false
+    }
+  ]
+}

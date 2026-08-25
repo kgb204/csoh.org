@@ -1,0 +1,59 @@
+{
+  "id": "mini-shai-hulud-tanstack",
+  "name": "Mini Shai-Hulud / TanStack",
+  "title": "Mini Shai-Hulud / TanStack - Pwn Request \u2192 Actions Cache Poisoning \u2192 OIDC Theft from Runner Memory \u2192 npm Publish with Valid SLSA Provenance \u2192 150+ Packages Wormed",
+  "url": "/breaches/mini-shai-hulud-tanstack.html",
+  "year": "May 2026",
+  "severity": "critical",
+  "provider": null,
+  "techniques": [
+    {
+      "id": "T1677",
+      "name": "Poisoned Pipeline Execution",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1036.005",
+      "name": "Masquerading: Match Legitimate Name or Location",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1528",
+      "name": "Steal Application Access Token",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1550.001",
+      "name": "Use Alternate Authentication Material: Application Access Token",
+      "tactic": "Defense Evasion",
+      "inferred": true
+    },
+    {
+      "id": "T1552.005",
+      "name": "Unsecured Credentials: Cloud Instance Metadata API",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1543.001",
+      "name": "Create or Modify System Process: Launch Agent",
+      "tactic": "Persistence",
+      "inferred": false
+    },
+    {
+      "id": "T1567.001",
+      "name": "Exfiltration Over Web Service: Exfiltration to Code Repository",
+      "tactic": "Exfiltration",
+      "inferred": false
+    }
+  ]
+}

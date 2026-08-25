@@ -1,0 +1,41 @@
+{
+  "id": "snowflake-unc5537",
+  "name": "UNC5537 / Snowflake",
+  "title": "UNC5537 / Snowflake - Infostealer Creds \u2192 No MFA \u2192 SHOW TABLES \u2192 Bulk Exfil \u2192 165+ Orgs Extorted",
+  "url": "/breaches/snowflake-unc5537.html",
+  "year": "April-June 2024",
+  "severity": "critical",
+  "provider": null,
+  "techniques": [
+    {
+      "id": "T1555.003",
+      "name": "Credentials from Password Stores: Credentials from Web Browsers",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1619",
+      "name": "Cloud Storage Object Discovery",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}

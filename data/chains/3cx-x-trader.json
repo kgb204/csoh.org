@@ -1,0 +1,59 @@
+{
+  "id": "3cx-x-trader",
+  "name": "3CX / X_TRADER",
+  "title": "3CX / X_TRADER - Trojanized Trading App on a Personal PC \u2192 Stolen 3CX Credentials \u2192 VPN Access \u2192 Both Build Environments Compromised \u2192 Signed Softphone Shipped to Customers",
+  "url": "/breaches/3cx-x-trader.html",
+  "year": "March 2023",
+  "severity": "critical",
+  "provider": "Cascading Supply Chain",
+  "techniques": [
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1204.002",
+      "name": "User Execution: Malicious File",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1555",
+      "name": "Credentials from Password Stores",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1133",
+      "name": "External Remote Services",
+      "tactic": "Initial Access",
+      "inferred": true
+    },
+    {
+      "id": "T1021",
+      "name": "Remote Services",
+      "tactic": "Lateral Movement",
+      "inferred": false
+    },
+    {
+      "id": "T1553.002",
+      "name": "Subvert Trust Controls: Code Signing",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1102",
+      "name": "Web Service",
+      "tactic": "Command and Control",
+      "inferred": false
+    },
+    {
+      "id": "T1001.002",
+      "name": "Data Obfuscation: Steganography",
+      "tactic": "Command and Control",
+      "inferred": false
+    }
+  ]
+}

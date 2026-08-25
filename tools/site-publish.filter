@@ -21,6 +21,15 @@
 + /preview-mapping.json
 + /meetings-search-index.json
 + /search-index.json
+# ATT&CK heatmap kill-chain data - one JSON per breach plus chains-index.json.
+# A prefix carve-out, not a fixed filename list, so a new chain file needs no
+# edit here. Must precede the `- *.json` catch-all below (first match wins)
+# and mirrors the `location ^~ /data/` carve-out in nginx.conf - keep both in
+# step. Only ever put JSON under /data/: this rule sits above the `- *.md`
+# rule further down, so anything else dropped in this directory (docs,
+# review notes) would ship to production too - keep those files elsewhere.
++ /data/
++ /data/**
 - *.json
 
 # --- Hidden files/dirs (nginx: `location ~ /\.` -> 403) ---

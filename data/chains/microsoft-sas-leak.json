@@ -1,0 +1,29 @@
+{
+  "id": "microsoft-sas-leak",
+  "name": "Microsoft AI Research SAS Token",
+  "title": "Microsoft AI Research SAS Token - Over-Permissioned Token \u2192 Public GitHub \u2192 38TB Internal Data Exposed for 3 Years",
+  "url": "/breaches/microsoft-sas-leak.html",
+  "year": "July 2020 - June 2023 (3-year exposure)",
+  "severity": "critical",
+  "provider": "Azure Blob Storage",
+  "techniques": [
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1552.001",
+      "name": "Unsecured Credentials: Credentials In Files",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "kaseya-vsa-revil",
+  "name": "Kaseya VSA / REvil",
+  "title": "Kaseya VSA / REvil - Authentication Bypass in an RMM Server \u2192 Ransomware Pushed as a Software Update \u2192 ~1,500 Businesses Encrypted Through Their IT Provider",
+  "url": "/breaches/kaseya-vsa-revil.html",
+  "year": "July 2021",
+  "severity": "critical",
+  "provider": "MSP / RMM",
+  "techniques": [
+    {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1072",
+      "name": "Software Deployment Tools",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1562.001",
+      "name": "Impair Defenses: Disable or Modify Tools",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1486",
+      "name": "Data Encrypted for Impact",
+      "tactic": "Impact",
+      "inferred": false
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}

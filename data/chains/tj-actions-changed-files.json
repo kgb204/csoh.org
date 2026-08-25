@@ -1,0 +1,41 @@
+{
+  "id": "tj-actions-changed-files",
+  "name": "tj-actions/changed-files",
+  "title": "tj-actions/changed-files - Stolen PAT \u2192 Retag to Malicious Commit \u2192 Runner Memory Dump \u2192 Secrets in Public Logs \u2192 23,000+ Repos Exposed",
+  "url": "/breaches/tj-actions-changed-files.html",
+  "year": "March 2025",
+  "severity": "critical",
+  "provider": null,
+  "techniques": [
+    {
+      "id": "T1593",
+      "name": "Search Open Websites/Domains",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1195.001",
+      "name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1552.001",
+      "name": "Unsecured Credentials: Credentials In Files",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1213",
+      "name": "Data from Information Repositories",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

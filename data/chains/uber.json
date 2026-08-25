@@ -1,0 +1,41 @@
+{
+  "id": "uber",
+  "name": "Uber",
+  "title": "Uber - Dark Web Creds \u2192 MFA Push Fatigue \u2192 Hardcoded PAM Secret \u2192 Full AWS/GCP Admin",
+  "url": "/breaches/uber.html",
+  "year": "September 15-16, 2022",
+  "severity": "critical",
+  "provider": "AWS",
+  "techniques": [
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1621",
+      "name": "Multi-Factor Authentication Request Generation",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1046",
+      "name": "Network Service Discovery",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1552.001",
+      "name": "Unsecured Credentials: Credentials In Files",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Privilege Escalation",
+      "inferred": false
+    }
+  ]
+}

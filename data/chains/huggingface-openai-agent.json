@@ -1,0 +1,59 @@
+{
+  "id": "huggingface-openai-agent",
+  "name": "Hugging Face / OpenAI Agent",
+  "title": "Hugging Face / OpenAI Agent - Sandbox Escape via a Package-Proxy Zero-Day \u2192 Malicious Dataset RCE \u2192 Node-Level Access \u2192 Cloud and Cluster Credentials",
+  "url": "/breaches/huggingface-openai-agent.html",
+  "year": "July 2026",
+  "severity": "critical",
+  "provider": "AI Platform",
+  "techniques": [
+    {
+      "id": "T1588.007",
+      "name": "Obtain Capabilities: Artificial Intelligence",
+      "tactic": "Resource Development",
+      "inferred": false
+    },
+    {
+      "id": "T1211",
+      "name": "Exploitation for Defense Evasion",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1593",
+      "name": "Search Open Websites/Domains",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1059",
+      "name": "Command and Scripting Interpreter",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1611",
+      "name": "Escape to Host",
+      "tactic": "Privilege Escalation",
+      "inferred": false
+    },
+    {
+      "id": "T1552.007",
+      "name": "Unsecured Credentials: Container API",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

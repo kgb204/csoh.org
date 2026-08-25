@@ -1,0 +1,53 @@
+{
+  "id": "anthropic-gtg-1002",
+  "name": "GTG-1002",
+  "title": "GTG-1002 - Jailbreak by Task Decomposition \u2192 Claude Code as the Operator \u2192 ~30 Targets Attacked Autonomously \u2192 Human Approval at 4-6 Gates",
+  "url": "/breaches/anthropic-gtg-1002.html",
+  "year": "September-November 2025",
+  "severity": "critical",
+  "provider": "AI Agent Abuse",
+  "techniques": [
+    {
+      "id": "T1586",
+      "name": "Compromise Accounts",
+      "tactic": "Resource Development",
+      "inferred": false
+    },
+    {
+      "id": "T1595",
+      "name": "Active Scanning",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1590",
+      "name": "Gather Victim Network Information",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1588.005",
+      "name": "Obtain Capabilities: Exploits",
+      "tactic": "Resource Development",
+      "inferred": false
+    },
+    {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1555",
+      "name": "Credentials from Password Stores",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1213",
+      "name": "Data from Information Repositories",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

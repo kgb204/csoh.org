@@ -29,6 +29,7 @@ ASSETS: List[Tuple[str, str, str]] = [
     ('chat-resources.js', 'script', 'src'),
     ('breach-timeline.css', 'link', 'href'),
     ('breach-timeline.js', 'script', 'src'),
+    ('attack-heatmap.js', 'script', 'src'),
     ('meetings.js', 'script', 'src'),
     ('glossary.js', 'script', 'src'),
     ('404.js', 'script', 'src'),

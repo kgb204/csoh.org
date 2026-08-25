@@ -1,0 +1,47 @@
+{
+  "id": "okta-support-har",
+  "name": "Okta Support System",
+  "title": "Okta Support System - Credential Saved to a Personal Google Profile \u2192 Support Case System \u2192 HAR Files Full of Session Tokens \u2192 Customer Sessions Hijacked",
+  "url": "/breaches/okta-support-har.html",
+  "year": "September-October 2023",
+  "severity": "critical",
+  "provider": "Identity Provider",
+  "techniques": [
+    {
+      "id": "T1555.003",
+      "name": "Credentials from Password Stores: Credentials from Web Browsers",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1213",
+      "name": "Data from Information Repositories",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1539",
+      "name": "Steal Web Session Cookie",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1550.004",
+      "name": "Use Alternate Authentication Material: Web Session Cookie",
+      "tactic": "Defense Evasion",
+      "inferred": true
+    },
+    {
+      "id": "T1562.008",
+      "name": "Impair Defenses: Disable or Modify Cloud Logs",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    }
+  ]
+}

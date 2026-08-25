@@ -1,0 +1,107 @@
+{
+  "id": "scattered-spider-mgm",
+  "name": "Scattered Spider / MGM Resorts",
+  "title": "Scattered Spider / MGM Resorts - LinkedIn OSINT \u2192 Vishing Help Desk \u2192 Okta Super Admin \u2192 Azure AD \u2192 100 ESXi Servers Encrypted",
+  "url": "/breaches/scattered-spider-mgm.html",
+  "year": "September 2023",
+  "severity": "critical",
+  "provider": "Okta",
+  "techniques": [
+    {
+      "id": "T1591",
+      "name": "Gather Victim Org Information",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1589.002",
+      "name": "Gather Victim Identity Information: Email Addresses",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1566.004",
+      "name": "Phishing: Spearphishing Voice",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1684.001",
+      "name": "Social Engineering: Impersonation",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1213.002",
+      "name": "Data from Information Repositories: Sharepoint",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1046",
+      "name": "Network Service Discovery",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access",
+      "inferred": true
+    },
+    {
+      "id": "T1098",
+      "name": "Account Manipulation",
+      "tactic": "Persistence",
+      "inferred": true
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Privilege Escalation",
+      "inferred": false
+    },
+    {
+      "id": "T1578.002",
+      "name": "Modify Cloud Compute Infrastructure: Create Cloud Instance",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1021.001",
+      "name": "Remote Services: Remote Desktop Protocol",
+      "tactic": "Lateral Movement",
+      "inferred": false
+    },
+    {
+      "id": "T1685",
+      "name": "Disable or Modify Tools",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1486",
+      "name": "Data Encrypted for Impact",
+      "tactic": "Impact",
+      "inferred": false
+    },
+    {
+      "id": "T1490",
+      "name": "Inhibit System Recovery",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}

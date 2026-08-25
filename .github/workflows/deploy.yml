@@ -72,6 +72,7 @@ on:
       - 'chat-resources.js'
       - 'breach-timeline.css'
       - 'breach-timeline.js'
+      - 'attack-heatmap.js'
       - 'meetings.js'
       - 'glossary.js'
       - '404.js'
@@ -91,6 +92,11 @@ on:
       - 'security.txt'
       - '.well-known/**'
       - 'preview-mapping.json'
+      # --- ATT&CK heatmap kill-chain data (one JSON per breach + the index
+      # manifest); dropping in a new chain file here must trigger a deploy
+      # the same as any other content change - see the '**.html' note above
+      # for what happens when a paths filter misses a published directory.
+      - 'data/**'
       # --- images and media
       - 'img/**'
       - 'chat-screenshots/**'

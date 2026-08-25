@@ -1,0 +1,53 @@
+{
+  "id": "solarwinds",
+  "name": "SolarWinds",
+  "title": "SolarWinds - Build System Compromise \u2192 SUNBURST Backdoor \u2192 On-Prem to Cloud Pivot \u2192 Golden SAML \u2192 US Government Espionage",
+  "url": "/breaches/solarwinds.html",
+  "year": "October 2019 - December 2020 (14 months)",
+  "severity": "critical",
+  "provider": "Azure AD",
+  "techniques": [
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1071.004",
+      "name": "Application Layer Protocol: DNS",
+      "tactic": "Command and Control",
+      "inferred": false
+    },
+    {
+      "id": "T1078.002",
+      "name": "Valid Accounts: Domain Accounts",
+      "tactic": "Privilege Escalation",
+      "inferred": false
+    },
+    {
+      "id": "T1606.002",
+      "name": "Forge Web Credentials: SAML Tokens",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1550",
+      "name": "Use Alternate Authentication Material",
+      "tactic": "Defense Evasion",
+      "inferred": true
+    },
+    {
+      "id": "T1114.002",
+      "name": "Email Collection: Remote Email Collection",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1098",
+      "name": "Account Manipulation",
+      "tactic": "Persistence",
+      "inferred": true
+    }
+  ]
+}

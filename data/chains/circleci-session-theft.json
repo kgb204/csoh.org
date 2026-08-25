@@ -1,0 +1,41 @@
+{
+  "id": "circleci-session-theft",
+  "name": "CircleCI",
+  "title": "CircleCI - Malware on an Engineer's Laptop \u2192 A Live 2FA-Backed SSO Session Stolen \u2192 Production Access \u2192 Every Customer Secret Assumed Compromised",
+  "url": "/breaches/circleci-session-theft.html",
+  "year": "December 2022 - January 2023",
+  "severity": "critical",
+  "provider": "CI/CD Platform",
+  "techniques": [
+    {
+      "id": "T1204.002",
+      "name": "User Execution: Malicious File",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1027",
+      "name": "Obfuscated Files or Information",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1539",
+      "name": "Steal Web Session Cookie",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1550.004",
+      "name": "Use Alternate Authentication Material: Web Session Cookie",
+      "tactic": "Defense Evasion",
+      "inferred": true
+    },
+    {
+      "id": "T1552.007",
+      "name": "Unsecured Credentials: Container API",
+      "tactic": "Credential Access",
+      "inferred": false
+    }
+  ]
+}
