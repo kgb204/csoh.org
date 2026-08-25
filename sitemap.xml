@@ -1220,6 +1220,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- ATT&CK Coverage Heatmap - live technique aggregation over the kill chains -->
+  <url>
+    <loc>https://csoh.org/attack-heatmap.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Per-breach kill chain pages (split from breach-timeline.html) -->
   <url>
     <loc>https://csoh.org/breaches/0ktapus-twilio.html</loc>

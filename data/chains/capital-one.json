@@ -1,0 +1,41 @@
+{
+  "id": "capital-one",
+  "name": "Capital One",
+  "title": "Capital One - SSRF \u2192 IMDSv1 \u2192 Over-Privileged IAM Role \u2192 106M Record S3 Exfiltration",
+  "url": "/breaches/capital-one.html",
+  "year": "March-July 2019",
+  "severity": "critical",
+  "provider": "AWS",
+  "techniques": [
+    {
+      "id": "T1595",
+      "name": "Active Scanning",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1552.005",
+      "name": "Unsecured Credentials: Cloud Instance Metadata API",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1619",
+      "name": "Cloud Storage Object Discovery",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

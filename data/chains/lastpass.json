@@ -1,0 +1,47 @@
+{
+  "id": "lastpass",
+  "name": "LastPass",
+  "title": "LastPass - Dev Env Breach \u2192 Source Code Recon \u2192 DevOps Home PC (Plex Exploit) \u2192 Keylogger \u2192 AWS S3 Vault Backup Exfil",
+  "url": "/breaches/lastpass.html",
+  "year": "Aug 2022 - Jan 2023",
+  "severity": "critical",
+  "provider": "AWS S3",
+  "techniques": [
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1591",
+      "name": "Gather Victim Org Information",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1203",
+      "name": "Exploitation for Client Execution",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1056.001",
+      "name": "Input Capture: Keylogging",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1555",
+      "name": "Credentials from Password Stores",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

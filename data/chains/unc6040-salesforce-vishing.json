@@ -1,0 +1,65 @@
+{
+  "id": "unc6040-salesforce-vishing",
+  "name": "UNC6040",
+  "title": "UNC6040 - Vishing the Help Desk \u2192 Victim Authorizes a Fake Data Loader \u2192 OAuth Connected App \u2192 Bulk Salesforce Exfiltration \u2192 Extortion Months Later",
+  "url": "/breaches/unc6040-salesforce-vishing.html",
+  "year": "2025",
+  "severity": "critical",
+  "provider": "Salesforce",
+  "techniques": [
+    {
+      "id": "T1566.004",
+      "name": "Phishing: Spearphishing Voice",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1656",
+      "name": "Impersonation",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1204.001",
+      "name": "User Execution: Malicious Link",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1528",
+      "name": "Steal Application Access Token",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1550.001",
+      "name": "Use Alternate Authentication Material: Application Access Token",
+      "tactic": "Defense Evasion",
+      "inferred": true
+    },
+    {
+      "id": "T1213",
+      "name": "Data from Information Repositories",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1030",
+      "name": "Data Transfer Size Limits",
+      "tactic": "Exfiltration",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access",
+      "inferred": true
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}

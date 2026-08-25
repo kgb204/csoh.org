@@ -1,0 +1,47 @@
+{
+  "id": "midnight-blizzard-microsoft",
+  "name": "Midnight Blizzard / Microsoft",
+  "title": "Midnight Blizzard / Microsoft - Password Spray on a Forgotten Test Tenant \u2192 A Legacy OAuth App With Production Rights \u2192 Executive Email \u2192 Secrets in That Email \u2192 Source Code",
+  "url": "/breaches/midnight-blizzard-microsoft.html",
+  "year": "November 2023 - March 2024",
+  "severity": "critical",
+  "provider": "Microsoft 365 / Entra",
+  "techniques": [
+    {
+      "id": "T1110.003",
+      "name": "Brute Force: Password Spraying",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1090.002",
+      "name": "Proxy: External Proxy",
+      "tactic": "Command and Control",
+      "inferred": false
+    },
+    {
+      "id": "T1550.001",
+      "name": "Use Alternate Authentication Material: Application Access Token",
+      "tactic": "Defense Evasion",
+      "inferred": true
+    },
+    {
+      "id": "T1098.002",
+      "name": "Account Manipulation: Additional Email Delegate Permissions",
+      "tactic": "Persistence",
+      "inferred": false
+    },
+    {
+      "id": "T1114.002",
+      "name": "Email Collection: Remote Email Collection",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1552.001",
+      "name": "Unsecured Credentials: Credentials In Files",
+      "tactic": "Credential Access",
+      "inferred": false
+    }
+  ]
+}

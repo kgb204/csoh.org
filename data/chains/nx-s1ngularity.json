@@ -1,0 +1,71 @@
+{
+  "id": "nx-s1ngularity",
+  "name": "Nx / s1ngularity",
+  "title": "Nx / s1ngularity - PR Title Injection in pull_request_target \u2192 Stolen npm Token \u2192 AI CLIs Weaponized to Hunt Secrets \u2192 Credentials Published to Public Repos",
+  "url": "/breaches/nx-s1ngularity.html",
+  "year": "August 2025",
+  "severity": "critical",
+  "provider": "GitHub Actions / npm",
+  "techniques": [
+    {
+      "id": "T1059.004",
+      "name": "Command and Scripting Interpreter: Unix Shell",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1552.007",
+      "name": "Unsecured Credentials: Container API",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1070",
+      "name": "Indicator Removal",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1552.001",
+      "name": "Unsecured Credentials: Credentials In Files",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1059",
+      "name": "Command and Scripting Interpreter",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1567.001",
+      "name": "Exfiltration Over Web Service: Exfiltration to Code Repository",
+      "tactic": "Exfiltration",
+      "inferred": false
+    },
+    {
+      "id": "T1485",
+      "name": "Data Destruction",
+      "tactic": "Impact",
+      "inferred": false
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

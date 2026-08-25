@@ -1,0 +1,35 @@
+{
+  "id": "salesloft-drift-unc6395",
+  "name": "Salesloft Drift / UNC6395",
+  "title": "Salesloft Drift / UNC6395 - GitHub Compromise \u2192 Stolen Drift OAuth Tokens \u2192 Bulk SOQL Exfil \u2192 Secret-Mining \u2192 700+ Orgs Hit",
+  "url": "/breaches/salesloft-drift-unc6395.html",
+  "year": "August 2025",
+  "severity": "critical",
+  "provider": null,
+  "techniques": [
+    {
+      "id": "T1552",
+      "name": "Unsecured Credentials",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1528",
+      "name": "Steal Application Access Token",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1213",
+      "name": "Data from Information Repositories",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "okta-lapsus-sitel",
+  "name": "Okta / LAPSUS$",
+  "title": "Okta / LAPSUS$ - A Subcontractor's Support Engineer \u2192 Five Days Inside \u2192 366 Customers Exposed \u2192 And Two Months Before Anyone Was Told",
+  "url": "/breaches/okta-lapsus-sitel.html",
+  "year": "January-March 2022",
+  "severity": "critical",
+  "provider": "Identity Provider",
+  "techniques": [
+    {
+      "id": "T1199",
+      "name": "Trusted Relationship",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1098",
+      "name": "Account Manipulation",
+      "tactic": "Privilege Escalation",
+      "inferred": false
+    },
+    {
+      "id": "T1213",
+      "name": "Data from Information Repositories",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

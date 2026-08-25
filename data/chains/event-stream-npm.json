@@ -1,0 +1,53 @@
+{
+  "id": "event-stream-npm",
+  "name": "event-stream",
+  "title": "event-stream - \"Can I Maintain This?\" \u2192 Publish Rights Handed Over \u2192 Encrypted Payload in a New Dependency \u2192 Targeted Theft From One Bitcoin Wallet App",
+  "url": "/breaches/event-stream-npm.html",
+  "year": "September-November 2018",
+  "severity": "critical",
+  "provider": "npm",
+  "techniques": [
+    {
+      "id": "T1656",
+      "name": "Impersonation",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1195.001",
+      "name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1027",
+      "name": "Obfuscated Files or Information",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1059.007",
+      "name": "Command and Scripting Interpreter: JavaScript",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    },
+    {
+      "id": "T1555",
+      "name": "Credentials from Password Stores",
+      "tactic": "Credential Access",
+      "inferred": false
+    }
+  ]
+}

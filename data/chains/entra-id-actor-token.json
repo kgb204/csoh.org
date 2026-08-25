@@ -1,0 +1,59 @@
+{
+  "id": "entra-id-actor-token",
+  "name": "Entra ID Actor Token",
+  "title": "Entra ID Actor Token - Undocumented S2S Token \u2192 Unsigned Impersonation JWT \u2192 Legacy Graph Skips the Tenant Check \u2192 Global Admin in Any Tenant",
+  "url": "/breaches/entra-id-actor-token.html",
+  "year": "July 2025",
+  "severity": "critical",
+  "provider": "Entra ID",
+  "techniques": [
+    {
+      "id": "T1580",
+      "name": "Cloud Infrastructure Discovery",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1528",
+      "name": "Steal Application Access Token",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1606",
+      "name": "Forge Web Credentials",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1550.001",
+      "name": "Use Alternate Authentication Material: Application Access Token",
+      "tactic": "Defense Evasion",
+      "inferred": true
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1087.004",
+      "name": "Account Discovery: Cloud Account",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1098",
+      "name": "Account Manipulation",
+      "tactic": "Persistence",
+      "inferred": true
+    },
+    {
+      "id": "T1562.008",
+      "name": "Impair Defenses: Disable or Modify Cloud Logs",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    }
+  ]
+}

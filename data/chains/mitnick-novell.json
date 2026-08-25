@@ -1,0 +1,47 @@
+{
+  "id": "mitnick-novell",
+  "name": "Kevin Mitnick / Novell",
+  "title": "Kevin Mitnick / Novell - War Dialing \u2192 Pretexting \u2192 The Voicemail Trap That Named the Hacker \u2192 The Watched Honeypot",
+  "url": "/breaches/mitnick-novell.html",
+  "year": "1993-1995 (fugitive period)",
+  "severity": "critical",
+  "provider": "On-Premises / Dial-Up",
+  "techniques": [
+    {
+      "id": "T1591",
+      "name": "Gather Victim Org Information",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1589",
+      "name": "Gather Victim Identity Information",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1595",
+      "name": "Active Scanning",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1598",
+      "name": "Phishing for Information",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    },
+    {
+      "id": "T1566.004",
+      "name": "Phishing: Spearphishing Voice",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1684.001",
+      "name": "Social Engineering: Impersonation",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    }
+  ]
+}

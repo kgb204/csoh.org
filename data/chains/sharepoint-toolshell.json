@@ -1,0 +1,59 @@
+{
+  "id": "sharepoint-toolshell",
+  "name": "SharePoint \"ToolShell\"",
+  "title": "SharePoint \"ToolShell\" - Unauthenticated Deserialization at ToolPane.aspx \u2192 Web Shell \u2192 MachineKey Theft \u2192 Forged __VIEWSTATE Forever \u2192 Warlock Ransomware",
+  "url": "/breaches/sharepoint-toolshell.html",
+  "year": "July 2025",
+  "severity": "critical",
+  "provider": "On-Prem SharePoint",
+  "techniques": [
+    {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1505.003",
+      "name": "Server Software Component: Web Shell",
+      "tactic": "Persistence",
+      "inferred": false
+    },
+    {
+      "id": "T1552.004",
+      "name": "Unsecured Credentials: Private Keys",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1606",
+      "name": "Forge Web Credentials",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1550",
+      "name": "Use Alternate Authentication Material",
+      "tactic": "Defense Evasion",
+      "inferred": true
+    },
+    {
+      "id": "T1078.002",
+      "name": "Valid Accounts: Domain Accounts",
+      "tactic": "Privilege Escalation",
+      "inferred": false
+    },
+    {
+      "id": "T1213.002",
+      "name": "Data from Information Repositories: Sharepoint",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1486",
+      "name": "Data Encrypted for Impact",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}

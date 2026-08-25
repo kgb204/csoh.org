@@ -1,0 +1,47 @@
+{
+  "id": "change-healthcare-alphv",
+  "name": "Change Healthcare / ALPHV",
+  "title": "Change Healthcare / ALPHV - Stolen Credentials on a Citrix Portal With No MFA \u2192 Nine Days of Lateral Movement \u2192 Ransomware \u2192 A Third of US Patients Affected",
+  "url": "/breaches/change-healthcare-alphv.html",
+  "year": "February 2024",
+  "severity": "critical",
+  "provider": "Healthcare Infrastructure",
+  "techniques": [
+    {
+      "id": "T1133",
+      "name": "External Remote Services",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1021",
+      "name": "Remote Services",
+      "tactic": "Lateral Movement",
+      "inferred": false
+    },
+    {
+      "id": "T1041",
+      "name": "Exfiltration Over C2 Channel",
+      "tactic": "Exfiltration",
+      "inferred": false
+    },
+    {
+      "id": "T1486",
+      "name": "Data Encrypted for Impact",
+      "tactic": "Impact",
+      "inferred": false
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}

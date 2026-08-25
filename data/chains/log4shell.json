@@ -1,0 +1,35 @@
+{
+  "id": "log4shell",
+  "name": "Log4Shell",
+  "title": "Log4Shell - A Logging Library Interpreting Its Own Input \u2192 JNDI Lookup to an Attacker Server \u2192 Unauthenticated RCE Almost Everywhere \u2192 And Nobody Could Say Where \"Everywhere\" Was",
+  "url": "/breaches/log4shell.html",
+  "year": "December 2021",
+  "severity": "critical",
+  "provider": "Transitive Dependency",
+  "techniques": [
+    {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1059",
+      "name": "Command and Scripting Interpreter",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1195.001",
+      "name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1595.002",
+      "name": "Active Scanning: Vulnerability Scanning",
+      "tactic": "Reconnaissance",
+      "inferred": false
+    }
+  ]
+}

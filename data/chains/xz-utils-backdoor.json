@@ -1,0 +1,59 @@
+{
+  "id": "xz-utils-backdoor",
+  "name": "XZ Utils",
+  "title": "XZ Utils - A Two-Year Campaign to Become the Maintainer \u2192 Backdoor Shipped Only in Release Tarballs \u2192 IFUNC Hook Into sshd \u2192 Pre-Auth RCE for One Ed448 Key",
+  "url": "/breaches/xz-utils-backdoor.html",
+  "year": "2021-March 2024",
+  "severity": "critical",
+  "provider": "Open Source",
+  "techniques": [
+    {
+      "id": "T1585",
+      "name": "Establish Accounts",
+      "tactic": "Resource Development",
+      "inferred": false
+    },
+    {
+      "id": "T1587.001",
+      "name": "Develop Capabilities: Malware",
+      "tactic": "Resource Development",
+      "inferred": false
+    },
+    {
+      "id": "T1656",
+      "name": "Impersonation",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1195.001",
+      "name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1027",
+      "name": "Obfuscated Files or Information",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1574",
+      "name": "Hijack Execution Flow",
+      "tactic": "Privilege Escalation",
+      "inferred": false
+    },
+    {
+      "id": "T1554",
+      "name": "Compromise Host Software Binary",
+      "tactic": "Persistence",
+      "inferred": false
+    }
+  ]
+}

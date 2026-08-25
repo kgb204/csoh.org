@@ -1,0 +1,53 @@
+{
+  "id": "npm-debug-chalk-phishing",
+  "name": "npm debug / chalk",
+  "title": "npm debug / chalk - Fake 2FA-Reset Email \u2192 Live TOTP Relayed \u2192 Maintainer Account Taken Over \u2192 18 Packages at 2.6 Billion Weekly Downloads Trojanized",
+  "url": "/breaches/npm-debug-chalk-phishing.html",
+  "year": "September 2025",
+  "severity": "critical",
+  "provider": "npm",
+  "techniques": [
+    {
+      "id": "T1566.002",
+      "name": "Phishing: Spearphishing Link",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1111",
+      "name": "Multi-Factor Authentication Interception",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Persistence",
+      "inferred": false
+    },
+    {
+      "id": "T1059.007",
+      "name": "Command and Scripting Interpreter: JavaScript",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    },
+    {
+      "id": "T1195",
+      "name": "Supply Chain Compromise",
+      "tactic": "Initial Access",
+      "inferred": false
+    }
+  ]
+}

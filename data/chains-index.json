@@ -1,0 +1,276 @@
+{
+  "generated": "2026-08-25T09:41:37Z",
+  "count": 45,
+  "chains": [
+    {
+      "id": "0ktapus-twilio",
+      "file": "0ktapus-twilio.json",
+      "name": "0ktapus / Twilio",
+      "url": "/breaches/0ktapus-twilio.html"
+    },
+    {
+      "id": "3cx-x-trader",
+      "file": "3cx-x-trader.json",
+      "name": "3CX / X_TRADER",
+      "url": "/breaches/3cx-x-trader.html"
+    },
+    {
+      "id": "ai-assisted-aws-72-hours",
+      "file": "ai-assisted-aws-72-hours.json",
+      "name": "Suspected AI-Assisted AWS Compromise",
+      "url": "/breaches/ai-assisted-aws-72-hours.html"
+    },
+    {
+      "id": "anthropic-gtg-1002",
+      "file": "anthropic-gtg-1002.json",
+      "name": "GTG-1002",
+      "url": "/breaches/anthropic-gtg-1002.html"
+    },
+    {
+      "id": "capital-one",
+      "file": "capital-one.json",
+      "name": "Capital One",
+      "url": "/breaches/capital-one.html"
+    },
+    {
+      "id": "change-healthcare-alphv",
+      "file": "change-healthcare-alphv.json",
+      "name": "Change Healthcare / ALPHV",
+      "url": "/breaches/change-healthcare-alphv.html"
+    },
+    {
+      "id": "chaosdb-cosmos",
+      "file": "chaosdb-cosmos.json",
+      "name": "ChaosDB",
+      "url": "/breaches/chaosdb-cosmos.html"
+    },
+    {
+      "id": "circleci-session-theft",
+      "file": "circleci-session-theft.json",
+      "name": "CircleCI",
+      "url": "/breaches/circleci-session-theft.html"
+    },
+    {
+      "id": "codecov-bash-uploader",
+      "file": "codecov-bash-uploader.json",
+      "name": "Codecov Bash Uploader",
+      "url": "/breaches/codecov-bash-uploader.html"
+    },
+    {
+      "id": "codefinger-s3",
+      "file": "codefinger-s3.json",
+      "name": "Codefinger / S3 Ransomware",
+      "url": "/breaches/codefinger-s3.html"
+    },
+    {
+      "id": "entra-id-actor-token",
+      "file": "entra-id-actor-token.json",
+      "name": "Entra ID Actor Token",
+      "url": "/breaches/entra-id-actor-token.html"
+    },
+    {
+      "id": "event-stream-npm",
+      "file": "event-stream-npm.json",
+      "name": "event-stream",
+      "url": "/breaches/event-stream-npm.html"
+    },
+    {
+      "id": "huggingface-openai-agent",
+      "file": "huggingface-openai-agent.json",
+      "name": "Hugging Face / OpenAI Agent",
+      "url": "/breaches/huggingface-openai-agent.html"
+    },
+    {
+      "id": "kaseya-vsa-revil",
+      "file": "kaseya-vsa-revil.json",
+      "name": "Kaseya VSA / REvil",
+      "url": "/breaches/kaseya-vsa-revil.html"
+    },
+    {
+      "id": "lastpass",
+      "file": "lastpass.json",
+      "name": "LastPass",
+      "url": "/breaches/lastpass.html"
+    },
+    {
+      "id": "litellm-pypi-teampcp",
+      "file": "litellm-pypi-teampcp.json",
+      "name": "LiteLLM / TeamPCP",
+      "url": "/breaches/litellm-pypi-teampcp.html"
+    },
+    {
+      "id": "log4shell",
+      "file": "log4shell.json",
+      "name": "Log4Shell",
+      "url": "/breaches/log4shell.html"
+    },
+    {
+      "id": "megalodon-github-actions",
+      "file": "megalodon-github-actions.json",
+      "name": "Megalodon",
+      "url": "/breaches/megalodon-github-actions.html"
+    },
+    {
+      "id": "microsoft-sas-leak",
+      "file": "microsoft-sas-leak.json",
+      "name": "Microsoft AI Research SAS Token",
+      "url": "/breaches/microsoft-sas-leak.html"
+    },
+    {
+      "id": "midnight-blizzard-microsoft",
+      "file": "midnight-blizzard-microsoft.json",
+      "name": "Midnight Blizzard / Microsoft",
+      "url": "/breaches/midnight-blizzard-microsoft.html"
+    },
+    {
+      "id": "mini-shai-hulud-tanstack",
+      "file": "mini-shai-hulud-tanstack.json",
+      "name": "Mini Shai-Hulud / TanStack",
+      "url": "/breaches/mini-shai-hulud-tanstack.html"
+    },
+    {
+      "id": "mitnick-novell",
+      "file": "mitnick-novell.json",
+      "name": "Kevin Mitnick / Novell",
+      "url": "/breaches/mitnick-novell.html"
+    },
+    {
+      "id": "moveit-cl0p",
+      "file": "moveit-cl0p.json",
+      "name": "MOVEit Transfer / Cl0p",
+      "url": "/breaches/moveit-cl0p.html"
+    },
+    {
+      "id": "npm-debug-chalk-phishing",
+      "file": "npm-debug-chalk-phishing.json",
+      "name": "npm debug / chalk",
+      "url": "/breaches/npm-debug-chalk-phishing.html"
+    },
+    {
+      "id": "nx-s1ngularity",
+      "file": "nx-s1ngularity.json",
+      "name": "Nx / s1ngularity",
+      "url": "/breaches/nx-s1ngularity.html"
+    },
+    {
+      "id": "okta-lapsus-sitel",
+      "file": "okta-lapsus-sitel.json",
+      "name": "Okta / LAPSUS$",
+      "url": "/breaches/okta-lapsus-sitel.html"
+    },
+    {
+      "id": "okta-support-har",
+      "file": "okta-support-har.json",
+      "name": "Okta Support System",
+      "url": "/breaches/okta-support-har.html"
+    },
+    {
+      "id": "oracle-ebs-cl0p",
+      "file": "oracle-ebs-cl0p.json",
+      "name": "Oracle E-Business Suite / Cl0p",
+      "url": "/breaches/oracle-ebs-cl0p.html"
+    },
+    {
+      "id": "polyfill-io",
+      "file": "polyfill-io.json",
+      "name": "Polyfill.io",
+      "url": "/breaches/polyfill-io.html"
+    },
+    {
+      "id": "promptware",
+      "file": "promptware.json",
+      "name": "Promptware",
+      "url": "/breaches/promptware.html"
+    },
+    {
+      "id": "salesloft-drift-unc6395",
+      "file": "salesloft-drift-unc6395.json",
+      "name": "Salesloft Drift / UNC6395",
+      "url": "/breaches/salesloft-drift-unc6395.html"
+    },
+    {
+      "id": "scattered-spider-mgm",
+      "file": "scattered-spider-mgm.json",
+      "name": "Scattered Spider / MGM Resorts",
+      "url": "/breaches/scattered-spider-mgm.html"
+    },
+    {
+      "id": "shai-hulud-npm-worm",
+      "file": "shai-hulud-npm-worm.json",
+      "name": "Shai-Hulud",
+      "url": "/breaches/shai-hulud-npm-worm.html"
+    },
+    {
+      "id": "sharepoint-toolshell",
+      "file": "sharepoint-toolshell.json",
+      "name": "SharePoint \"ToolShell\"",
+      "url": "/breaches/sharepoint-toolshell.html"
+    },
+    {
+      "id": "snowflake-unc5537",
+      "file": "snowflake-unc5537.json",
+      "name": "UNC5537 / Snowflake",
+      "url": "/breaches/snowflake-unc5537.html"
+    },
+    {
+      "id": "solarwinds",
+      "file": "solarwinds.json",
+      "name": "SolarWinds",
+      "url": "/breaches/solarwinds.html"
+    },
+    {
+      "id": "storm-0558",
+      "file": "storm-0558.json",
+      "name": "Storm-0558",
+      "url": "/breaches/storm-0558.html"
+    },
+    {
+      "id": "storm-2949-entra-sspr",
+      "file": "storm-2949-entra-sspr.json",
+      "name": "Storm-2949",
+      "url": "/breaches/storm-2949-entra-sspr.html"
+    },
+    {
+      "id": "tj-actions-changed-files",
+      "file": "tj-actions-changed-files.json",
+      "name": "tj-actions/changed-files",
+      "url": "/breaches/tj-actions-changed-files.html"
+    },
+    {
+      "id": "uber",
+      "file": "uber.json",
+      "name": "Uber",
+      "url": "/breaches/uber.html"
+    },
+    {
+      "id": "ultralytics-cache-poisoning",
+      "file": "ultralytics-cache-poisoning.json",
+      "name": "Ultralytics",
+      "url": "/breaches/ultralytics-cache-poisoning.html"
+    },
+    {
+      "id": "unc6040-salesforce-vishing",
+      "file": "unc6040-salesforce-vishing.json",
+      "name": "UNC6040",
+      "url": "/breaches/unc6040-salesforce-vishing.html"
+    },
+    {
+      "id": "vercel-context-ai-oauth",
+      "file": "vercel-context-ai-oauth.json",
+      "name": "Vercel / Context.ai",
+      "url": "/breaches/vercel-context-ai-oauth.html"
+    },
+    {
+      "id": "vimeo-anodot-shinyhunters",
+      "file": "vimeo-anodot-shinyhunters.json",
+      "name": "Vimeo / Anodot",
+      "url": "/breaches/vimeo-anodot-shinyhunters.html"
+    },
+    {
+      "id": "xz-utils-backdoor",
+      "file": "xz-utils-backdoor.json",
+      "name": "XZ Utils",
+      "url": "/breaches/xz-utils-backdoor.html"
+    }
+  ]
+}

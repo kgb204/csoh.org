@@ -1,0 +1,77 @@
+{
+  "id": "vercel-context-ai-oauth",
+  "name": "Vercel / Context.ai",
+  "title": "Vercel / Context.ai - Infostealer at a Vendor \u2192 OAuth App Compromise \u2192 Google Workspace Takeover \u2192 Plaintext Environment Variables Across Customer Projects",
+  "url": "/breaches/vercel-context-ai-oauth.html",
+  "year": "April 2026",
+  "severity": "critical",
+  "provider": "SaaS / OAuth",
+  "techniques": [
+    {
+      "id": "T1204.002",
+      "name": "User Execution: Malicious File",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1555.003",
+      "name": "Credentials from Password Stores: Credentials from Web Browsers",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1528",
+      "name": "Steal Application Access Token",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access",
+      "inferred": true
+    },
+    {
+      "id": "T1550.001",
+      "name": "Use Alternate Authentication Material: Application Access Token",
+      "tactic": "Defense Evasion",
+      "inferred": true
+    },
+    {
+      "id": "T1199",
+      "name": "Trusted Relationship",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Initial Access",
+      "inferred": true
+    },
+    {
+      "id": "T1580",
+      "name": "Cloud Infrastructure Discovery",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1552.001",
+      "name": "Unsecured Credentials: Credentials In Files",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}

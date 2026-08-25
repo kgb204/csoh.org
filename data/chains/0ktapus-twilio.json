@@ -1,0 +1,35 @@
+{
+  "id": "0ktapus-twilio",
+  "name": "0ktapus / Twilio",
+  "title": "0ktapus / Twilio - SMS Phishing at Scale \u2192 Credentials and Live OTPs Relayed \u2192 130+ Organizations Breached \u2192 And the One That Held",
+  "url": "/breaches/0ktapus-twilio.html",
+  "year": "August 2022",
+  "severity": "critical",
+  "provider": "SaaS / Identity",
+  "techniques": [
+    {
+      "id": "T1566.003",
+      "name": "Phishing: Spearphishing via Service",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1656",
+      "name": "Impersonation",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1111",
+      "name": "Multi-Factor Authentication Interception",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1199",
+      "name": "Trusted Relationship",
+      "tactic": "Initial Access",
+      "inferred": false
+    }
+  ]
+}

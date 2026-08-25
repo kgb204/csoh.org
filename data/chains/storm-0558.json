@@ -1,0 +1,41 @@
+{
+  "id": "storm-0558",
+  "name": "Storm-0558",
+  "title": "Storm-0558 - Compromised Engineer \u2192 Crash Dump \u2192 Stolen MSA Signing Key \u2192 Forged Tokens \u2192 Government Email Espionage",
+  "url": "/breaches/storm-0558.html",
+  "year": "April 2021 - June 2023 (2 year operation)",
+  "severity": "critical",
+  "provider": "Azure AD / Exchange Online",
+  "techniques": [
+    {
+      "id": "T1078",
+      "name": "Valid Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1552",
+      "name": "Unsecured Credentials",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1606.001",
+      "name": "Forge Web Credentials: Web Cookies",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1212",
+      "name": "Exploitation for Credential Access",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1114.002",
+      "name": "Email Collection: Remote Email Collection",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "storm-2949-entra-sspr",
+  "name": "Storm-2949",
+  "title": "Storm-2949 - SSPR Reset + Fake IT Call \u2192 MFA Method Takeover \u2192 Azure RBAC Abuse \u2192 Key Vault, SQL and Storage Theft",
+  "url": "/breaches/storm-2949-entra-sspr.html",
+  "year": "May 2026",
+  "severity": "critical",
+  "provider": "Azure",
+  "techniques": [
+    {
+      "id": "T1621",
+      "name": "Multi-Factor Authentication Request Generation",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1556.006",
+      "name": "Modify Authentication Process: Multi-Factor Authentication",
+      "tactic": "Persistence",
+      "inferred": false
+    },
+    {
+      "id": "T1098.005",
+      "name": "Account Manipulation: Device Registration",
+      "tactic": "Persistence",
+      "inferred": false
+    },
+    {
+      "id": "T1087.004",
+      "name": "Account Discovery: Cloud Account",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1580",
+      "name": "Cloud Infrastructure Discovery",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Privilege Escalation",
+      "inferred": false
+    },
+    {
+      "id": "T1552",
+      "name": "Unsecured Credentials",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1555",
+      "name": "Credentials from Password Stores",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1528",
+      "name": "Steal Application Access Token",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1651",
+      "name": "Cloud Administration Command",
+      "tactic": "Execution",
+      "inferred": false
+    },
+    {
+      "id": "T1685",
+      "name": "Disable or Modify Tools",
+      "tactic": "Defense Evasion",
+      "inferred": false
+    },
+    {
+      "id": "T1530",
+      "name": "Data from Cloud Storage",
+      "tactic": "Collection",
+      "inferred": false
+    },
+    {
+      "id": "T1213.002",
+      "name": "Data from Information Repositories: Sharepoint",
+      "tactic": "Collection",
+      "inferred": false
+    }
+  ]
+}

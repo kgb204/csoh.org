@@ -1,0 +1,47 @@
+{
+  "id": "codecov-bash-uploader",
+  "name": "Codecov Bash Uploader",
+  "title": "Codecov Bash Uploader - Credential Leaked by a Docker Build \u2192 One Line Added to a Script Everyone Curls \u2192 Two Months of CI Environment Variables Exfiltrated",
+  "url": "/breaches/codecov-bash-uploader.html",
+  "year": "January-April 2021",
+  "severity": "critical",
+  "provider": "CI/CD Tooling",
+  "techniques": [
+    {
+      "id": "T1552.001",
+      "name": "Unsecured Credentials: Credentials In Files",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1195.002",
+      "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1552.007",
+      "name": "Unsecured Credentials: Container API",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1041",
+      "name": "Exfiltration Over C2 Channel",
+      "tactic": "Exfiltration",
+      "inferred": false
+    },
+    {
+      "id": "T1199",
+      "name": "Trusted Relationship",
+      "tactic": "Initial Access",
+      "inferred": false
+    }
+  ]
+}

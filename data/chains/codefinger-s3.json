@@ -1,0 +1,41 @@
+{
+  "id": "codefinger-s3",
+  "name": "Codefinger / S3 Ransomware",
+  "title": "Codefinger / S3 Ransomware - Stolen AWS Keys \u2192 Valid Access \u2192 Bucket Enum \u2192 SSE-C Encryption \u2192 7-Day Delete + BTC Ransom",
+  "url": "/breaches/codefinger-s3.html",
+  "year": "January 2025",
+  "severity": "critical",
+  "provider": null,
+  "techniques": [
+    {
+      "id": "T1552",
+      "name": "Unsecured Credentials",
+      "tactic": "Credential Access",
+      "inferred": false
+    },
+    {
+      "id": "T1078.004",
+      "name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access",
+      "inferred": false
+    },
+    {
+      "id": "T1619",
+      "name": "Cloud Storage Object Discovery",
+      "tactic": "Discovery",
+      "inferred": false
+    },
+    {
+      "id": "T1486",
+      "name": "Data Encrypted for Impact",
+      "tactic": "Impact",
+      "inferred": false
+    },
+    {
+      "id": "T1657",
+      "name": "Financial Theft",
+      "tactic": "Impact",
+      "inferred": false
+    }
+  ]
+}
